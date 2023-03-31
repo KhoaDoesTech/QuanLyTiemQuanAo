@@ -14,6 +14,7 @@ namespace QuanLyTiemQuanAo
         [STAThread]
         static void Main()
         {
+            //thêm comment
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
