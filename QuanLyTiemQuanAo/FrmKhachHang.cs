@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using BALayer;
 
 namespace QuanLyTiemQuanAo
 {
@@ -15,6 +17,11 @@ namespace QuanLyTiemQuanAo
         public FrmKhachHang()
         {
             InitializeComponent();
+        }
+
+        private void FrmKhachHang_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
