@@ -10,7 +10,7 @@ namespace DBLayer
 {
     public class DAL
     {
-        string ConnStr = @"Data Source=(local);Initial Catalog=QLTiemQuanAo;Integrated Security=True";
+        string ConnStr = @"Data Source=(local)\SQLEXPRESS; Initial Catalog=QLTiemQuanAo; Integrated Security=SSPI";
         SqlConnection conn = null;
         SqlCommand  comm = null;
         SqlDataAdapter da = null;
@@ -58,15 +58,13 @@ namespace DBLayer
             return check;
         }
         // Select
-        public DataTable ExecuteQueryDataTable(string strSQL, CommandType ct, params SqlParameter[] param)
+        public DataTable ExecuteQueryDataTable(string strSQL, CommandType ct)
         {
             OpenDB();
             
             comm.CommandText = strSQL;
             comm.CommandType = ct;
-            foreach (SqlParameter p in param)
-                comm.Parameters.Add(p);
-
+            
             da = new SqlDataAdapter(comm);
             DataTable dt = new DataTable();
             DataSet ds = new DataSet();

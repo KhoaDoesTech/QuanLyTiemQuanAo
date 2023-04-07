@@ -14,12 +14,13 @@ namespace QuanLyTiemQuanAo
 {
     public partial class frmProduct : Form
     {
-        DB_Product dbProduct;
+        DB_Product dbProduct;        
         DataTable dtProduct = null;
+        
         public frmProduct()
         {
             InitializeComponent();
-            dbProduct= new DB_Product();
+            dbProduct = new DB_Product();
         }
 
         void LoadData()
@@ -32,9 +33,9 @@ namespace QuanLyTiemQuanAo
 
                 dgvPRODUCT.DataSource = dtProduct;
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
-                MessageBox.Show("Không lấy được nội dung trong table KHACHHANG. Lỗi rồi!!!");
+                MessageBox.Show("Không lấy được nội dung trong table KHACHHANG. Lỗi rồi!!!" + e.Message);
             }
         }
 

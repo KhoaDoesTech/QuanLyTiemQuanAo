@@ -58,51 +58,51 @@
             // 
             // product_id
             // 
+            this.product_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.product_id.DataPropertyName = "product_id";
             this.product_id.HeaderText = "Mã sản phẩm";
             this.product_id.MinimumWidth = 6;
             this.product_id.Name = "product_id";
-            this.product_id.Width = 125;
             // 
             // category_id
             // 
+            this.category_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.category_id.DataPropertyName = "category_id";
             this.category_id.HeaderText = "Mã loại sản phẩm";
             this.category_id.MinimumWidth = 6;
             this.category_id.Name = "category_id";
-            this.category_id.Width = 125;
             // 
             // product_name
             // 
+            this.product_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.product_name.DataPropertyName = "product_name";
             this.product_name.HeaderText = "Tên sản phẩm";
             this.product_name.MinimumWidth = 6;
             this.product_name.Name = "product_name";
-            this.product_name.Width = 125;
             // 
             // product_size
             // 
+            this.product_size.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.product_size.DataPropertyName = "product_size";
             this.product_size.HeaderText = "Size";
             this.product_size.MinimumWidth = 6;
             this.product_size.Name = "product_size";
-            this.product_size.Width = 125;
             // 
             // color
             // 
+            this.color.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.color.DataPropertyName = "color";
             this.color.HeaderText = "Màu sắc";
             this.color.MinimumWidth = 6;
             this.color.Name = "color";
-            this.color.Width = 125;
             // 
             // unit_price
             // 
+            this.unit_price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.unit_price.DataPropertyName = "unit_price";
             this.unit_price.HeaderText = "Giá";
             this.unit_price.MinimumWidth = 6;
             this.unit_price.Name = "unit_price";
-            this.unit_price.Width = 125;
             // 
             // frmProduct
             // 

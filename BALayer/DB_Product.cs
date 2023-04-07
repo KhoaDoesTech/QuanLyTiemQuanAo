@@ -18,7 +18,7 @@ namespace BALayer
         }
         public DataTable GetProduct()
         {
-            return db.ExecuteQueryDataTable("SELECT * FROM Product", CommandType.Text, null);
+            return db.ExecuteQueryDataTable("select * from Product", CommandType.Text);
         }
         public bool InsertProduct(ref string err, string product_id, string category_id,
             string product_name, string product_size, string color, int unit_price)
