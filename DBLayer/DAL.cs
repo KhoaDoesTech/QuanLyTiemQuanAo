@@ -30,15 +30,16 @@ namespace DBLayer
         {
             conn.Close();
         }
+
         // Insert, Delete, Update
-        public bool MyExecuteNonQuery(string strSQL, CommandType ct, ref string error, params SqlParameter[] param)
+        public bool MyExecuteNonQuery(string strSQL, ref string error, params SqlParameter[] param)
         {
             bool check = false;
             OpenDB();
 
             comm.Parameters.Clear();
             comm.CommandText = strSQL;
-            comm.CommandType = ct;
+            comm.CommandType = CommandType.StoredProcedure;
             foreach (SqlParameter p in param)
                 comm.Parameters.Add(p);
 
@@ -57,19 +58,61 @@ namespace DBLayer
             }
             return check;
         }
+
+        public bool MyExecuteQuery(string strSQL, ref string error)
+        {
+            bool check = false;
+            OpenDB();
+
+            comm.Parameters.Clear();
+            comm.CommandText = strSQL;
+            comm.CommandType = CommandType.Text;
+
+            try
+            {
+                comm.ExecuteNonQuery();
+                check = true;
+            }
+            catch (SqlException ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                CloseDB();
+            }
+            return check;
+        }
+
         // Select
-        public DataTable ExecuteQueryDataTable(string strSQL, CommandType ct)
+        public DataTable ExecuteQueryDataTable(string strSQL)
         {
             OpenDB();
             
             comm.CommandText = strSQL;
-            comm.CommandType = ct;
+            comm.CommandType = CommandType.Text;
             
             da = new SqlDataAdapter(comm);
             DataTable dt = new DataTable();
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            dt = ds.Tables[0];
+            da.Fill(dt);
+
+            CloseDB();
+            return dt;
+        }
+
+        public DataTable ExecuteNonQueryDataTable(string strSQL, params SqlParameter[] param) 
+        {
+            OpenDB();
+
+            comm.CommandText = strSQL;
+            comm.CommandType = CommandType.StoredProcedure;
+
+            foreach (SqlParameter p in param)
+                comm.Parameters.Add(p);
+
+            da = new SqlDataAdapter(comm);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
 
             CloseDB();
             return dt;

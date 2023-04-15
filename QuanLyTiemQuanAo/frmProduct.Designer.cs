@@ -52,7 +52,7 @@
             this.dgvPRODUCT.Name = "dgvPRODUCT";
             this.dgvPRODUCT.RowHeadersWidth = 51;
             this.dgvPRODUCT.RowTemplate.Height = 24;
-            this.dgvPRODUCT.Size = new System.Drawing.Size(797, 193);
+            this.dgvPRODUCT.Size = new System.Drawing.Size(1021, 193);
             this.dgvPRODUCT.TabIndex = 0;
             this.dgvPRODUCT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPRODUCT_CellContentClick);
             // 
@@ -108,9 +108,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1022, 513);
             this.Controls.Add(this.dgvPRODUCT);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khách hàng";
             this.Load += new System.EventHandler(this.FrmKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPRODUCT)).EndInit();
