@@ -105,20 +105,5 @@ namespace QuanLyTiemQuanAo
         {
             MoHienThi();
         }
-
-        private void cb_product_type_id_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

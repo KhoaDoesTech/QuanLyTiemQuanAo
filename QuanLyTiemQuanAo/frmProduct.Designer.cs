@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnThem = new System.Windows.Forms.ToolStripButton();
             this.btnSua = new System.Windows.Forms.ToolStripButton();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
             this.btnHuy = new System.Windows.Forms.ToolStripButton();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnLayHinh = new System.Windows.Forms.Button();
@@ -77,22 +77,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.SuspendLayout();
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnThem,
-            this.btnSua,
-            this.btnXoa,
-            this.btnLuu,
-            this.btnHuy,
-            this.btnThoat});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(878, 47);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
             // btnThem
             // 
             this.btnThem.Image = global::QuanLyTiemQuanAo.Properties.Resources.Add_32x32;
@@ -120,7 +104,6 @@
             this.btnXoa.Size = new System.Drawing.Size(39, 44);
             this.btnXoa.Text = "Xoá";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -150,6 +133,22 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnThem,
+            this.btnSua,
+            this.btnXoa,
+            this.btnLuu,
+            this.btnHuy,
+            this.btnThoat});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(878, 47);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -167,7 +166,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.dgvProduct);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(878, 430);
-            this.splitContainerControl1.SplitterPosition = 245;
+            this.splitContainerControl1.SplitterPosition = 241;
             this.splitContainerControl1.TabIndex = 1;
             // 
             // groupControl1
@@ -194,7 +193,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(878, 245);
+            this.groupControl1.Size = new System.Drawing.Size(878, 241);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông tin sản phẩm";
             // 
@@ -231,7 +230,6 @@
             this.cb_product_type_id.Name = "cb_product_type_id";
             this.cb_product_type_id.Size = new System.Drawing.Size(184, 24);
             this.cb_product_type_id.TabIndex = 122;
-            this.cb_product_type_id.SelectedIndexChanged += new System.EventHandler(this.cb_product_type_id_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -241,7 +239,6 @@
             this.label1.Size = new System.Drawing.Size(90, 32);
             this.label1.TabIndex = 121;
             this.label1.Text = "Loại sản phẩm\r\n\r\n";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label9
             // 
@@ -375,7 +372,7 @@
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.RowHeadersWidth = 51;
             this.dgvProduct.RowTemplate.Height = 24;
-            this.dgvProduct.Size = new System.Drawing.Size(878, 173);
+            this.dgvProduct.Size = new System.Drawing.Size(878, 177);
             this.dgvProduct.TabIndex = 1;
             // 
             // product_id
