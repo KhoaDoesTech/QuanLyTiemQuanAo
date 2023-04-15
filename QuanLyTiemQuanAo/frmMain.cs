@@ -17,5 +17,17 @@ namespace QuanLyTiemQuanAo
         {
             InitializeComponent();
         }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmProduct frm = new frmProduct();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

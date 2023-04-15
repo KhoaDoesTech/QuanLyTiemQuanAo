@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,26 +13,46 @@ using BALayer;
 
 namespace QuanLyTiemQuanAo
 {
-    public partial class frmProduct : Form
+    public partial class frmProduct : DevExpress.XtraEditors.XtraForm
     {
-        DB_Product dbProduct;        
+        DB_Product dbp;
         DataTable dtProduct = null;
-        
+
+        DB_ProductType dbpt;
+        DataTable dtProductType = null;
+
         public frmProduct()
         {
             InitializeComponent();
-            dbProduct = new DB_Product();
+            dbp = new DB_Product();
+            dbpt = new DB_ProductType();
         }
 
         void LoadData()
         {
             try
             {
+                // Vận chuyển dữ liệu vào DataTable dtProductType 
+                dtProductType = new DataTable();
+                dtProductType.Clear();
+                dtProductType = dbpt.GetProductType();
+                // Đưa dữ liệu lên ComboBox trong DataGridView
+                (dgvProduct.Columns["product_type_id"] as
+                DataGridViewComboBoxColumn).DataSource = dtProductType;
+                (dgvProduct.Columns["product_type_id"] as
+                DataGridViewComboBoxColumn).DisplayMember =
+                "product_type_name";
+                (dgvProduct.Columns["product_type_id"] as
+                DataGridViewComboBoxColumn).ValueMember =
+                "product_type_id";
+
+                // Vận chuyển dữ liệu vào DataTable dtProduct
                 dtProduct = new DataTable();
                 dtProduct.Clear();
-                dtProduct = dbProduct.GetProduct();
+                dtProduct = dbp.GetProduct();
+                // Đưa dữ liệu lên DataGridView 
+                dgvProduct.DataSource = dtProduct;
 
-                dgvPRODUCT.DataSource = dtProduct;
             }
             catch (SqlException e)
             {
@@ -39,14 +60,50 @@ namespace QuanLyTiemQuanAo
             }
         }
 
-        private void FrmKhachHang_Load(object sender, EventArgs e)
+        private void KhoaHienThi()
+        {
+            btnThem.Visible= false;
+            btnSua.Visible= false;
+            btnXoa.Visible= false;
+            btnLuu.Visible= true;
+            btnHuy.Visible= true;
+            btnThoat.Visible= false;
+        }
+
+        private void MoHienThi()
+        {
+            btnThem.Visible = true;
+            btnSua.Visible = true;
+            btnXoa.Visible = true;
+            btnLuu.Visible = true;
+            btnHuy.Visible = true;
+            btnThoat.Visible = true;
+            groupControl1.Enabled = false;
+        }
+
+        private void XoaTrong()
+        {
+            txt_product_id.ResetText();
+            txt_product_name.ResetText();
+            txt_size.ResetText();
+            txt_color.ResetText();
+            txt_unit_price.ResetText();
+            txtSearch.ResetText();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            KhoaHienThi();
+        }
+
+        private void frmProduct_Load(object sender, EventArgs e)
         {
             LoadData();
         }
 
-        private void dgvPRODUCT_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnHuy_Click(object sender, EventArgs e)
         {
-
+            MoHienThi();
         }
     }
 }
