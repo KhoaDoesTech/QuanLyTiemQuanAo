@@ -71,8 +71,6 @@
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage3,
-            this.ribbonPage5,
-            this.ribbonPage4,
             this.ribbonPage2,
             this.ribbonPage1});
             this.ribbon.Size = new System.Drawing.Size(1054, 193);
@@ -156,9 +154,7 @@
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup5,
-            this.ribbonPageGroup10});
+            this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "CÁ NHÂN";
             // 
@@ -172,13 +168,9 @@
             // 
             // ribbonPage3
             // 
-            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
-            this.ribbonPageGroup13.Text = "ribbonPageGroup13";
             // 
             // ribbonPageGroup14
             // 
-            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
-            this.ribbonPageGroup14.Text = "ribbonPageGroup14";
             // 
             // ribbonStatusBar
             // 
@@ -189,8 +181,6 @@
             // 
             // xtraTabbedMdiManager1
             // 
-            this.ribbonPageGroup15.Name = "ribbonPageGroup15";
-            this.ribbonPageGroup15.Text = "ribbonPageGroup15";
             // 
             // barButtonItem5
             // 

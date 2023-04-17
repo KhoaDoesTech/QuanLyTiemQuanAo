@@ -569,10 +569,6 @@
             this.Controls.Add(this.panelPurchaseOrder);
             this.Controls.Add(this.panelCustomer);
             this.Controls.Add(this.panelControl4);
-            this.Controls.Add(this.panelControl3);
-            this.Controls.Add(this.panelControl1);
-            this.Controls.Add(this.panelControl2);
-            this.Controls.Add(this.toolStrip1);
             this.Name = "frmOrder";
             this.Text = "Hóa đơn";
             ((System.ComponentModel.ISupportInitialize)(this.panelPurchaseOrder)).EndInit();
