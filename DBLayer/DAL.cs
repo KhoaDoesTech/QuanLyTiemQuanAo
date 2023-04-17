@@ -10,7 +10,7 @@ namespace DBLayer
 {
     public class DAL
     {
-        string ConnStr = @"Data Source=(local)\SQLEXPRESS; Initial Catalog=QLTiemQuanAo; Integrated Security=SSPI";
+        string ConnStr = @"Data Source=(local); Initial Catalog=QLTiemQuanAo; Integrated Security=SSPI";
         SqlConnection conn = null;
         SqlCommand  comm = null;
         SqlDataAdapter da = null;

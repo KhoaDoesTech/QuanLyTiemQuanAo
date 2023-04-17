@@ -111,7 +111,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.dgvProduct);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(878, 430);
-            this.splitContainerControl1.SplitterPosition = 241;
+            this.splitContainerControl1.SplitterPosition = 245;
             this.splitContainerControl1.TabIndex = 1;
             // 
             // groupControl1
@@ -138,7 +138,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(878, 241);
+            this.groupControl1.Size = new System.Drawing.Size(878, 245);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông tin sản phẩm";
             // 
@@ -167,6 +167,7 @@
             this.cb_product_type_id.Name = "cb_product_type_id";
             this.cb_product_type_id.Size = new System.Drawing.Size(184, 24);
             this.cb_product_type_id.TabIndex = 122;
+            this.cb_product_type_id.SelectedIndexChanged += new System.EventHandler(this.cb_product_type_id_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -176,6 +177,7 @@
             this.label1.Size = new System.Drawing.Size(90, 32);
             this.label1.TabIndex = 121;
             this.label1.Text = "Loại sản phẩm\r\n\r\n";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label9
             // 
@@ -309,7 +311,7 @@
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.RowHeadersWidth = 51;
             this.dgvProduct.RowTemplate.Height = 24;
-            this.dgvProduct.Size = new System.Drawing.Size(878, 177);
+            this.dgvProduct.Size = new System.Drawing.Size(878, 173);
             this.dgvProduct.TabIndex = 1;
             // 
             // product_id
