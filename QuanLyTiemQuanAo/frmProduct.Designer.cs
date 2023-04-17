@@ -104,7 +104,6 @@
             this.btnXoa.Size = new System.Drawing.Size(39, 44);
             this.btnXoa.Text = "Xoá";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -114,7 +113,6 @@
             this.btnLuu.Size = new System.Drawing.Size(37, 44);
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnHuy
             // 
