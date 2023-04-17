@@ -105,5 +105,28 @@ namespace QuanLyTiemQuanAo
         {
             MoHienThi();
         }
+<<<<<<< HEAD
+
+        private void cb_product_type_id_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
+        }
+=======
+>>>>>>> 2e8ab74 (Product sắp xong)
     }
 }
