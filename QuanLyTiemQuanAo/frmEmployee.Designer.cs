@@ -187,10 +187,9 @@
             this.panel.Controls.Add(this.label4);
             this.panel.Controls.Add(this.label3);
             this.panel.Controls.Add(this.label2);
-            this.panel.Enabled = false;
             this.panel.Location = new System.Drawing.Point(2, 31);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1423, 178);
+            this.panel.Size = new System.Drawing.Size(1417, 178);
             this.panel.TabIndex = 127;
             // 
             // ckb_work_status

@@ -172,7 +172,6 @@
             this.panel.Controls.Add(this.txt_bonus_salary);
             this.panel.Controls.Add(this.label4);
             this.panel.Controls.Add(this.label2);
-            this.panel.Enabled = false;
             this.panel.Location = new System.Drawing.Point(2, 31);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(789, 178);

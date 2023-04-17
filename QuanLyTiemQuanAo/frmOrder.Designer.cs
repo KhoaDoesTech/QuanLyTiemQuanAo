@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panelPurchaseOrder = new DevExpress.XtraEditors.PanelControl();
+            this.cb_customer_id = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.txt_total_cost = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dtp_order_date = new System.Windows.Forms.DateTimePicker();
@@ -43,9 +45,14 @@
             this.txtPO_order_id = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panelOrderDetail = new DevExpress.XtraEditors.PanelControl();
+            this.txt_quantity = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtOD_order_id = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.cb_product_id = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.panelCustomer = new DevExpress.XtraEditors.PanelControl();
-            this.label16 = new System.Windows.Forms.Label();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.label15 = new System.Windows.Forms.Label();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -61,20 +68,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.cb_customer_id = new System.Windows.Forms.ComboBox();
-            this.cb_product_id = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtOD_order_id = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txt_quantity = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.product_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnThanhToan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.panelPurchaseOrder)).BeginInit();
             this.panelPurchaseOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelOrderDetail)).BeginInit();
@@ -108,6 +111,26 @@
             this.panelPurchaseOrder.Name = "panelPurchaseOrder";
             this.panelPurchaseOrder.Size = new System.Drawing.Size(511, 440);
             this.panelPurchaseOrder.TabIndex = 6;
+            // 
+            // cb_customer_id
+            // 
+            this.cb_customer_id.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.cb_customer_id.FormattingEnabled = true;
+            this.cb_customer_id.Location = new System.Drawing.Point(224, 121);
+            this.cb_customer_id.Name = "cb_customer_id";
+            this.cb_customer_id.Size = new System.Drawing.Size(247, 30);
+            this.cb_customer_id.TabIndex = 198;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(137, 15);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(269, 27);
+            this.label16.TabIndex = 171;
+            this.label16.Text = "THÔNG TIN ĐƠN HÀNG";
             // 
             // txt_total_cost
             // 
@@ -232,6 +255,9 @@
             // 
             // panelOrderDetail
             // 
+            this.panelOrderDetail.Controls.Add(this.btnThanhToan);
+            this.panelOrderDetail.Controls.Add(this.btnXoa);
+            this.panelOrderDetail.Controls.Add(this.btnThem);
             this.panelOrderDetail.Controls.Add(this.txt_quantity);
             this.panelOrderDetail.Controls.Add(this.label20);
             this.panelOrderDetail.Controls.Add(this.txtOD_order_id);
@@ -244,6 +270,72 @@
             this.panelOrderDetail.Name = "panelOrderDetail";
             this.panelOrderDetail.Size = new System.Drawing.Size(475, 440);
             this.panelOrderDetail.TabIndex = 8;
+            // 
+            // txt_quantity
+            // 
+            this.txt_quantity.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txt_quantity.Location = new System.Drawing.Point(165, 173);
+            this.txt_quantity.Name = "txt_quantity";
+            this.txt_quantity.Size = new System.Drawing.Size(269, 30);
+            this.txt_quantity.TabIndex = 203;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label20.Location = new System.Drawing.Point(34, 180);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(85, 23);
+            this.label20.TabIndex = 202;
+            this.label20.Text = "Số lượng";
+            // 
+            // txtOD_order_id
+            // 
+            this.txtOD_order_id.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtOD_order_id.Location = new System.Drawing.Point(165, 75);
+            this.txtOD_order_id.Name = "txtOD_order_id";
+            this.txtOD_order_id.Size = new System.Drawing.Size(269, 30);
+            this.txtOD_order_id.TabIndex = 200;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label19.Location = new System.Drawing.Point(34, 82);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(93, 23);
+            this.label19.TabIndex = 199;
+            this.label19.Text = "Đơn hàng";
+            // 
+            // cb_product_id
+            // 
+            this.cb_product_id.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.cb_product_id.FormattingEnabled = true;
+            this.cb_product_id.Location = new System.Drawing.Point(165, 122);
+            this.cb_product_id.Name = "cb_product_id";
+            this.cb_product_id.Size = new System.Drawing.Size(269, 30);
+            this.cb_product_id.TabIndex = 200;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label18.Location = new System.Drawing.Point(31, 129);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(96, 23);
+            this.label18.TabIndex = 199;
+            this.label18.Text = "Sản phẩm";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
+            this.label17.ForeColor = System.Drawing.Color.Red;
+            this.label17.Location = new System.Drawing.Point(120, 15);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(242, 27);
+            this.label17.TabIndex = 201;
+            this.label17.Text = "CHI TIẾT ĐƠN HÀNG";
             // 
             // panelCustomer
             // 
@@ -267,26 +359,6 @@
             this.panelCustomer.Name = "panelCustomer";
             this.panelCustomer.Size = new System.Drawing.Size(986, 279);
             this.panelCustomer.TabIndex = 4;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
-            this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(137, 15);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(269, 27);
-            this.label16.TabIndex = 171;
-            this.label16.Text = "THÔNG TIN ĐƠN HÀNG";
-            // 
-            // panelControl4
-            // 
-            this.panelControl4.Controls.Add(this.dgvOrder);
-            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl4.Location = new System.Drawing.Point(986, 0);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(784, 719);
-            this.panelControl4.TabIndex = 3;
             // 
             // label15
             // 
@@ -429,80 +501,14 @@
             this.label2.TabIndex = 186;
             this.label2.Text = "Mã khách hàng";
             // 
-            // label17
+            // panelControl4
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
-            this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(120, 15);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(242, 27);
-            this.label17.TabIndex = 201;
-            this.label17.Text = "CHI TIẾT ĐƠN HÀNG";
-            // 
-            // cb_customer_id
-            // 
-            this.cb_customer_id.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.cb_customer_id.FormattingEnabled = true;
-            this.cb_customer_id.Location = new System.Drawing.Point(224, 121);
-            this.cb_customer_id.Name = "cb_customer_id";
-            this.cb_customer_id.Size = new System.Drawing.Size(247, 30);
-            this.cb_customer_id.TabIndex = 198;
-            // 
-            // cb_product_id
-            // 
-            this.cb_product_id.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.cb_product_id.FormattingEnabled = true;
-            this.cb_product_id.Location = new System.Drawing.Point(165, 122);
-            this.cb_product_id.Name = "cb_product_id";
-            this.cb_product_id.Size = new System.Drawing.Size(269, 30);
-            this.cb_product_id.TabIndex = 200;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.label18.Location = new System.Drawing.Point(31, 129);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(96, 23);
-            this.label18.TabIndex = 199;
-            this.label18.Text = "Sản phẩm";
-            // 
-            // txtOD_order_id
-            // 
-            this.txtOD_order_id.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txtOD_order_id.Location = new System.Drawing.Point(165, 75);
-            this.txtOD_order_id.Name = "txtOD_order_id";
-            this.txtOD_order_id.Size = new System.Drawing.Size(269, 30);
-            this.txtOD_order_id.TabIndex = 200;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.label19.Location = new System.Drawing.Point(34, 82);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(93, 23);
-            this.label19.TabIndex = 199;
-            this.label19.Text = "Đơn hàng";
-            // 
-            // txt_quantity
-            // 
-            this.txt_quantity.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txt_quantity.Location = new System.Drawing.Point(165, 173);
-            this.txt_quantity.Name = "txt_quantity";
-            this.txt_quantity.Size = new System.Drawing.Size(269, 30);
-            this.txt_quantity.TabIndex = 203;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.label20.Location = new System.Drawing.Point(34, 180);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(85, 23);
-            this.label20.TabIndex = 202;
-            this.label20.Text = "Số lượng";
+            this.panelControl4.Controls.Add(this.dgvOrder);
+            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelControl4.Location = new System.Drawing.Point(986, 0);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(784, 719);
+            this.panelControl4.TabIndex = 3;
             // 
             // dgvOrder
             // 
@@ -560,6 +566,36 @@
             this.color.Name = "color";
             this.color.Width = 125;
             // 
+            // btnThem
+            // 
+            this.btnThem.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.btnThem.Location = new System.Drawing.Point(26, 262);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(130, 41);
+            this.btnThem.TabIndex = 204;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.btnXoa.Location = new System.Drawing.Point(175, 262);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(130, 41);
+            this.btnXoa.TabIndex = 205;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.btnThanhToan.Location = new System.Drawing.Point(320, 262);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(130, 41);
+            this.btnThanhToan.TabIndex = 206;
+            this.btnThanhToan.Text = "Thanh toán";
+            this.btnThanhToan.UseVisualStyleBackColor = true;
+            // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -584,7 +620,6 @@
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -636,5 +671,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn size;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn color;
+        private System.Windows.Forms.Button btnThanhToan;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnThem;
     }
 }

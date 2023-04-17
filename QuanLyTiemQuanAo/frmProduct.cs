@@ -115,5 +115,10 @@ namespace QuanLyTiemQuanAo
         {
 
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

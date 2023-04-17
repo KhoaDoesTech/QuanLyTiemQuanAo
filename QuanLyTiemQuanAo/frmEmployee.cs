@@ -67,7 +67,6 @@ namespace QuanLyTiemQuanAo
                 // Không cho thao tác trên các nút Lưu / Hủy
                 this.btnLuu.Enabled = false;
                 this.btnHuy.Enabled = false;
-                this.panel.Enabled = false;
                 // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
                 this.btnThem.Enabled = true;
                 this.btnSua.Enabled = true;
