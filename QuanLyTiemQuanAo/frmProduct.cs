@@ -105,8 +105,6 @@ namespace QuanLyTiemQuanAo
         {
             MoHienThi();
         }
-<<<<<<< HEAD
-
         private void cb_product_type_id_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -126,7 +124,5 @@ namespace QuanLyTiemQuanAo
         {
 
         }
-=======
->>>>>>> 2e8ab74 (Product sắp xong)
     }
 }

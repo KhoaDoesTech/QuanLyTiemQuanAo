@@ -45,6 +45,9 @@
             this.txtPO_order_id = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panelOrderDetail = new DevExpress.XtraEditors.PanelControl();
+            this.btnThanhToan = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.txt_quantity = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtOD_order_id = new System.Windows.Forms.TextBox();
@@ -75,9 +78,10 @@
             this.size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnThanhToan = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnTim = new System.Windows.Forms.Button();
+            this.cbSearch = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelPurchaseOrder)).BeginInit();
             this.panelPurchaseOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelOrderDetail)).BeginInit();
@@ -107,9 +111,9 @@
             this.panelPurchaseOrder.Controls.Add(this.txtPO_order_id);
             this.panelPurchaseOrder.Controls.Add(this.label6);
             this.panelPurchaseOrder.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelPurchaseOrder.Location = new System.Drawing.Point(0, 279);
+            this.panelPurchaseOrder.Location = new System.Drawing.Point(0, 337);
             this.panelPurchaseOrder.Name = "panelPurchaseOrder";
-            this.panelPurchaseOrder.Size = new System.Drawing.Size(511, 440);
+            this.panelPurchaseOrder.Size = new System.Drawing.Size(511, 427);
             this.panelPurchaseOrder.TabIndex = 6;
             // 
             // cb_customer_id
@@ -266,10 +270,40 @@
             this.panelOrderDetail.Controls.Add(this.label18);
             this.panelOrderDetail.Controls.Add(this.label17);
             this.panelOrderDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelOrderDetail.Location = new System.Drawing.Point(511, 279);
+            this.panelOrderDetail.Location = new System.Drawing.Point(511, 337);
             this.panelOrderDetail.Name = "panelOrderDetail";
-            this.panelOrderDetail.Size = new System.Drawing.Size(475, 440);
+            this.panelOrderDetail.Size = new System.Drawing.Size(475, 427);
             this.panelOrderDetail.TabIndex = 8;
+            // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.btnThanhToan.Location = new System.Drawing.Point(320, 262);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(130, 41);
+            this.btnThanhToan.TabIndex = 206;
+            this.btnThanhToan.Text = "Thanh toán";
+            this.btnThanhToan.UseVisualStyleBackColor = true;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.btnXoa.Location = new System.Drawing.Point(175, 262);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(130, 41);
+            this.btnXoa.TabIndex = 205;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.btnThem.Location = new System.Drawing.Point(26, 262);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(130, 41);
+            this.btnThem.TabIndex = 204;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
             // 
             // txt_quantity
             // 
@@ -339,8 +373,12 @@
             // 
             // panelCustomer
             // 
+            this.panelCustomer.Controls.Add(this.label21);
             this.panelCustomer.Controls.Add(this.label15);
+            this.panelCustomer.Controls.Add(this.txtSearch);
+            this.panelCustomer.Controls.Add(this.btnTim);
             this.panelCustomer.Controls.Add(this.txt_email);
+            this.panelCustomer.Controls.Add(this.cbSearch);
             this.panelCustomer.Controls.Add(this.label7);
             this.panelCustomer.Controls.Add(this.cb_customer_type_id);
             this.panelCustomer.Controls.Add(this.label5);
@@ -357,7 +395,7 @@
             this.panelCustomer.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCustomer.Location = new System.Drawing.Point(0, 0);
             this.panelCustomer.Name = "panelCustomer";
-            this.panelCustomer.Size = new System.Drawing.Size(986, 279);
+            this.panelCustomer.Size = new System.Drawing.Size(986, 337);
             this.panelCustomer.TabIndex = 4;
             // 
             // label15
@@ -507,7 +545,7 @@
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl4.Location = new System.Drawing.Point(986, 0);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(784, 719);
+            this.panelControl4.Size = new System.Drawing.Size(784, 764);
             this.panelControl4.TabIndex = 3;
             // 
             // dgvOrder
@@ -566,41 +604,51 @@
             this.color.Name = "color";
             this.color.Width = 125;
             // 
-            // btnThem
+            // label21
             // 
-            this.btnThem.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btnThem.Location = new System.Drawing.Point(26, 262);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(130, 41);
-            this.btnThem.TabIndex = 204;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label21.Location = new System.Drawing.Point(239, 280);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(86, 23);
+            this.label21.TabIndex = 222;
+            this.label21.Text = "Tìm kiếm";
             // 
-            // btnXoa
+            // txtSearch
             // 
-            this.btnXoa.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btnXoa.Location = new System.Drawing.Point(175, 262);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(130, 41);
-            this.btnXoa.TabIndex = 205;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            this.txtSearch.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtSearch.Location = new System.Drawing.Point(472, 271);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(168, 30);
+            this.txtSearch.TabIndex = 221;
             // 
-            // btnThanhToan
+            // btnTim
             // 
-            this.btnThanhToan.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btnThanhToan.Location = new System.Drawing.Point(320, 262);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(130, 41);
-            this.btnThanhToan.TabIndex = 206;
-            this.btnThanhToan.Text = "Thanh toán";
-            this.btnThanhToan.UseVisualStyleBackColor = true;
+            this.btnTim.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.btnTim.Location = new System.Drawing.Point(647, 271);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(75, 32);
+            this.btnTim.TabIndex = 219;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseVisualStyleBackColor = true;
+            // 
+            // cbSearch
+            // 
+            this.cbSearch.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.cbSearch.FormattingEnabled = true;
+            this.cbSearch.Location = new System.Drawing.Point(332, 271);
+            this.cbSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.cbSearch.Name = "cbSearch";
+            this.cbSearch.Size = new System.Drawing.Size(129, 30);
+            this.cbSearch.TabIndex = 220;
             // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1770, 719);
+            this.ClientSize = new System.Drawing.Size(1770, 764);
             this.Controls.Add(this.panelOrderDetail);
             this.Controls.Add(this.panelPurchaseOrder);
             this.Controls.Add(this.panelCustomer);
@@ -674,5 +722,9 @@
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.ComboBox cbSearch;
     }
 }

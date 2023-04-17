@@ -77,7 +77,7 @@ namespace QuanLyTiemQuanAo
             btnLuu.Visible = true;
             btnHuy.Visible = true;
             btnThoat.Visible = true;
-            groupControl1.Enabled = false;
+            panel.Enabled = false;
         }
 
         private void XoaTrong()
@@ -278,6 +278,11 @@ namespace QuanLyTiemQuanAo
             dgvMonthSummary.Rows[r].Cells[4].Value.ToString();
             this.txt_salary.Text =
             dgvMonthSummary.Rows[r].Cells[5].Value.ToString();
+        }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

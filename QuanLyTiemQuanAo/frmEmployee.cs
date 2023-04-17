@@ -99,7 +99,7 @@ namespace QuanLyTiemQuanAo
             btnLuu.Visible = true;
             btnHuy.Visible = true;
             btnThoat.Visible = true;
-            groupControl1.Enabled = false;
+            panel.Enabled = false;
         }
 
         private void XoaTrong()

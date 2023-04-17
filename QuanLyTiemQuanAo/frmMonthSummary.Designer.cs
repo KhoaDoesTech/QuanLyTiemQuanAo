@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnThem = new System.Windows.Forms.ToolStripButton();
             this.btnSua = new System.Windows.Forms.ToolStripButton();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
             this.btnHuy = new System.Windows.Forms.ToolStripButton();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.panel = new System.Windows.Forms.Panel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.panel = new DevExpress.XtraEditors.GroupControl();
             this.cb_summary_month = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_salary = new System.Windows.Forms.TextBox();
@@ -61,27 +61,14 @@
             this.bonus_salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panel)).BeginInit();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonthSummary)).BeginInit();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnThem,
-            this.btnSua,
-            this.btnXoa,
-            this.btnLuu,
-            this.btnHuy,
-            this.btnThoat});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(790, 47);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
             // 
             // btnThem
             // 
@@ -143,16 +130,39 @@
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // groupControl1
+            // toolStrip1
             // 
-            this.groupControl1.Controls.Add(this.panel);
-            this.groupControl1.Controls.Add(this.dgvMonthSummary);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 47);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(790, 468);
-            this.groupControl1.TabIndex = 3;
-            this.groupControl1.Text = "Bảng lương nhân viên";
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnThem,
+            this.btnSua,
+            this.btnXoa,
+            this.btnLuu,
+            this.btnHuy,
+            this.btnThoat});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(927, 47);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 47);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.panel);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dgvMonthSummary);
+            this.splitContainer1.Size = new System.Drawing.Size(927, 468);
+            this.splitContainer1.SplitterDistance = 263;
+            this.splitContainer1.TabIndex = 3;
             // 
             // panel
             // 
@@ -172,143 +182,146 @@
             this.panel.Controls.Add(this.txt_bonus_salary);
             this.panel.Controls.Add(this.label4);
             this.panel.Controls.Add(this.label2);
-            this.panel.Location = new System.Drawing.Point(2, 31);
+            this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel.Location = new System.Drawing.Point(0, 0);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(789, 178);
-            this.panel.TabIndex = 127;
+            this.panel.Size = new System.Drawing.Size(927, 263);
+            this.panel.TabIndex = 1;
+            this.panel.Text = "Thông tin sản phẩm";
+            this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // cb_summary_month
             // 
             this.cb_summary_month.FormattingEnabled = true;
-            this.cb_summary_month.Location = new System.Drawing.Point(168, 52);
+            this.cb_summary_month.Location = new System.Drawing.Point(175, 95);
             this.cb_summary_month.Name = "cb_summary_month";
             this.cb_summary_month.Size = new System.Drawing.Size(125, 24);
-            this.cb_summary_month.TabIndex = 165;
+            this.cb_summary_month.TabIndex = 181;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 57);
+            this.label3.Location = new System.Drawing.Point(65, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 16);
-            this.label3.TabIndex = 164;
+            this.label3.TabIndex = 180;
             this.label3.Text = "Tháng";
             // 
             // txt_salary
             // 
-            this.txt_salary.Location = new System.Drawing.Point(578, 87);
+            this.txt_salary.Location = new System.Drawing.Point(585, 130);
             this.txt_salary.Name = "txt_salary";
             this.txt_salary.Size = new System.Drawing.Size(140, 23);
-            this.txt_salary.TabIndex = 161;
+            this.txt_salary.TabIndex = 179;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(428, 90);
+            this.label6.Location = new System.Drawing.Point(435, 133);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 16);
-            this.label6.TabIndex = 160;
+            this.label6.TabIndex = 178;
             this.label6.Text = "Lương tổng";
             // 
             // cb_summary_year
             // 
             this.cb_summary_year.FormattingEnabled = true;
-            this.cb_summary_year.Location = new System.Drawing.Point(168, 87);
+            this.cb_summary_year.Location = new System.Drawing.Point(175, 130);
             this.cb_summary_year.Name = "cb_summary_year";
             this.cb_summary_year.Size = new System.Drawing.Size(125, 24);
-            this.cb_summary_year.TabIndex = 159;
+            this.cb_summary_year.TabIndex = 177;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(58, 92);
+            this.label5.Location = new System.Drawing.Point(65, 135);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 16);
-            this.label5.TabIndex = 158;
+            this.label5.TabIndex = 176;
             this.label5.Text = "Năm";
             // 
             // txt_products_sold
             // 
-            this.txt_products_sold.Location = new System.Drawing.Point(578, 15);
+            this.txt_products_sold.Location = new System.Drawing.Point(585, 58);
             this.txt_products_sold.Name = "txt_products_sold";
             this.txt_products_sold.Size = new System.Drawing.Size(140, 23);
-            this.txt_products_sold.TabIndex = 154;
+            this.txt_products_sold.TabIndex = 175;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(426, 22);
+            this.label1.Location = new System.Drawing.Point(433, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 16);
-            this.label1.TabIndex = 153;
+            this.label1.TabIndex = 174;
             this.label1.Text = "Số sản phẩm bán được";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(191, 134);
+            this.label9.Location = new System.Drawing.Point(198, 177);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 16);
-            this.label9.TabIndex = 152;
+            this.label9.TabIndex = 173;
             this.label9.Text = "Tìm kiếm";
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(363, 131);
+            this.txtSearch.Location = new System.Drawing.Point(370, 174);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(145, 24);
-            this.txtSearch.TabIndex = 151;
+            this.txtSearch.TabIndex = 172;
             // 
             // btnTim
             // 
-            this.btnTim.Location = new System.Drawing.Point(515, 129);
+            this.btnTim.Location = new System.Drawing.Point(522, 172);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(75, 32);
-            this.btnTim.TabIndex = 149;
+            this.btnTim.TabIndex = 170;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
             // 
             // cbSearch
             // 
             this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(254, 131);
+            this.cbSearch.Location = new System.Drawing.Point(261, 174);
             this.cbSearch.Margin = new System.Windows.Forms.Padding(4);
             this.cbSearch.Name = "cbSearch";
             this.cbSearch.Size = new System.Drawing.Size(101, 24);
-            this.cbSearch.TabIndex = 150;
+            this.cbSearch.TabIndex = 171;
             // 
             // txt_employee_id
             // 
-            this.txt_employee_id.Location = new System.Drawing.Point(168, 17);
+            this.txt_employee_id.Location = new System.Drawing.Point(175, 60);
             this.txt_employee_id.Name = "txt_employee_id";
             this.txt_employee_id.Size = new System.Drawing.Size(125, 23);
-            this.txt_employee_id.TabIndex = 148;
+            this.txt_employee_id.TabIndex = 169;
             // 
             // txt_bonus_salary
             // 
-            this.txt_bonus_salary.Location = new System.Drawing.Point(578, 50);
+            this.txt_bonus_salary.Location = new System.Drawing.Point(585, 93);
             this.txt_bonus_salary.Name = "txt_bonus_salary";
             this.txt_bonus_salary.Size = new System.Drawing.Size(140, 23);
-            this.txt_bonus_salary.TabIndex = 146;
+            this.txt_bonus_salary.TabIndex = 168;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(427, 58);
+            this.label4.Location = new System.Drawing.Point(434, 101);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 16);
-            this.label4.TabIndex = 144;
+            this.label4.TabIndex = 167;
             this.label4.Text = "Lương cộng thêm";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 23);
+            this.label2.Location = new System.Drawing.Point(65, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 16);
-            this.label2.TabIndex = 142;
+            this.label2.TabIndex = 166;
             this.label2.Text = "Mã nhân viên";
             // 
             // dgvMonthSummary
@@ -322,12 +335,13 @@
             this.bonus_salary,
             this.salary});
             this.dgvMonthSummary.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvMonthSummary.Location = new System.Drawing.Point(1, 209);
+            this.dgvMonthSummary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMonthSummary.Location = new System.Drawing.Point(0, 0);
             this.dgvMonthSummary.Name = "dgvMonthSummary";
             this.dgvMonthSummary.RowHeadersWidth = 51;
             this.dgvMonthSummary.RowTemplate.Height = 24;
-            this.dgvMonthSummary.Size = new System.Drawing.Size(798, 261);
-            this.dgvMonthSummary.TabIndex = 126;
+            this.dgvMonthSummary.Size = new System.Drawing.Size(927, 201);
+            this.dgvMonthSummary.TabIndex = 130;
             // 
             // employee_id
             // 
@@ -385,15 +399,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(790, 515);
-            this.Controls.Add(this.groupControl1);
+            this.ClientSize = new System.Drawing.Size(927, 515);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmMonthSummary";
             this.Text = "Danh mục lương nhân viên";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panel)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonthSummary)).EndInit();
@@ -404,15 +421,17 @@
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnThem;
         private System.Windows.Forms.ToolStripButton btnSua;
         private System.Windows.Forms.ToolStripButton btnXoa;
         private System.Windows.Forms.ToolStripButton btnLuu;
         private System.Windows.Forms.ToolStripButton btnHuy;
         private System.Windows.Forms.ToolStripButton btnThoat;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private DevExpress.XtraEditors.GroupControl panel;
+        private System.Windows.Forms.ComboBox cb_summary_month;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_salary;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cb_summary_year;
@@ -428,8 +447,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvMonthSummary;
-        private System.Windows.Forms.ComboBox cb_summary_month;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn employee_id;
         private System.Windows.Forms.DataGridViewComboBoxColumn summary_month;
         private System.Windows.Forms.DataGridViewComboBoxColumn summary_year;
