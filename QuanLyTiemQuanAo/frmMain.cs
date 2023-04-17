@@ -30,18 +30,14 @@ namespace QuanLyTiemQuanAo
             frm.Show();
         }
 
-        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
+        private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmEmployee frm = new frmEmployee();
-            frm.MdiParent = this;
-            frm.Show();
+
         }
 
-        private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
+        private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmMonthSummary frm = new frmMonthSummary();
-            frm.MdiParent = this;
-            frm.Show();
+
         }
     }
 }
