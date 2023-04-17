@@ -18,6 +18,21 @@ namespace QuanLyTiemQuanAo
             InitializeComponent();
         }
 
+        void openForm(Type typeForm)
+        {
+            foreach(var frm in MdiChildren)
+            {
+                if(frm.GetType() == typeForm)
+                {
+                    frm.Activate();
+                    return;
+                }
+            }
+            Form f = (Form)Activator.CreateInstance(typeForm);
+            f.MdiParent = this;
+            f.Show();
+        }
+
         private void frmMain_Load(object sender, EventArgs e)
         {
 
@@ -25,9 +40,7 @@ namespace QuanLyTiemQuanAo
 
         private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmProduct frm = new frmProduct();
-            frm.MdiParent = this;
-            frm.Show();
+            openForm(typeof(frmProduct));
         }
     }
 }
