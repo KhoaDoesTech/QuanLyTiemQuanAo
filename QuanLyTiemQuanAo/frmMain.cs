@@ -29,5 +29,15 @@ namespace QuanLyTiemQuanAo
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }
