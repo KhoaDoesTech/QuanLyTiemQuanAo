@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB_Job.cs" />
+    <Compile Include="DB_Employee.cs" />
+    <Compile Include="DB_MonthSummary.cs" />
     <Compile Include="DB_Product.cs" />
     <Compile Include="DB_ProductType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
