@@ -9,13 +9,12 @@ using System.Data;
 namespace DBLayer
 {
     public class DAL
-    {
-        string ConnStr = @"Data Source=(local)\SQLEXPRESS; Initial Catalog=QLTiemQuanAo; Integrated Security=SSPI";
+    {        
         SqlConnection conn = null;
         SqlCommand  comm = null;
         SqlDataAdapter da = null;
         
-        public DAL() 
+        public DAL(string ConnStr) 
         {
             conn = new SqlConnection(ConnStr);
             comm = conn.CreateCommand();
