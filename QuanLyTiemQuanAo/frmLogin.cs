@@ -34,7 +34,7 @@ namespace QuanLyTiemQuanAo
                 comm.Parameters.AddWithValue("@passcode", txtPass.Text.Trim());
                 comm.CommandType = CommandType.Text;
                 bool result = (bool)comm.ExecuteScalar();
-                if (result == !true) 
+                if (result == true) 
                 {
                     SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
                     builder.DataSource = @"(local)";
@@ -43,7 +43,7 @@ namespace QuanLyTiemQuanAo
                     builder.Password = txtPass.Text.Trim();
 
                     string connectionString = builder.ConnectionString;
-                    MessageBox.Show(connectionString);
+                    
                     frmMain home = new frmMain(connectionString);
                     this.Hide();
                     home.Show();            
