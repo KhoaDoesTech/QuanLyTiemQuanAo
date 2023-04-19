@@ -13,9 +13,11 @@ namespace QuanLyTiemQuanAo
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public frmMain()
+        string ConnStr;
+        public frmMain(string strConnect_local)
         {
             InitializeComponent();
+            ConnStr = strConnect_local;
         }
 
         void openForm(Type typeForm)

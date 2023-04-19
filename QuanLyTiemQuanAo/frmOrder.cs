@@ -17,5 +17,10 @@ namespace QuanLyTiemQuanAo
         {
             InitializeComponent();
         }
+
+        private void dgvOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
