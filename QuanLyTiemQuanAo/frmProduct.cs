@@ -13,21 +13,25 @@ using BALayer;
 
 namespace QuanLyTiemQuanAo
 {
-    public partial class frmProduct : DevExpress.XtraEditors.XtraForm
-    {
+    public partial class frmProduct : DevExpress.XtraEditors.XtraForm, IConnectionForm
+    {       
         DB_Product dbp;
         DataTable dtProduct = null;
 
         DB_ProductType dbpt;
         DataTable dtProductType = null;
-
+        string ConnStr;
+        public void SetConnection(string connectString)
+        {
+            ConnStr = connectString;
+            dbp = new DB_Product(ConnStr);
+            dbpt = new DB_ProductType(ConnStr);
+        }
         public frmProduct()
         {
             InitializeComponent();
-            dbp = new DB_Product();
-            dbpt = new DB_ProductType();
+            
         }
-
         void LoadData()
         {
             try
@@ -59,7 +63,6 @@ namespace QuanLyTiemQuanAo
                 MessageBox.Show("Không lấy được nội dung trong table KHACHHANG. Lỗi rồi!!!" + e.Message);
             }
         }
-
         private void KhoaHienThi()
         {
             btnThem.Visible= false;

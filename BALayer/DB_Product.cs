@@ -12,9 +12,9 @@ namespace BALayer
     public class DB_Product
     {
         DAL db = null;
-        public DB_Product ()
+        public DB_Product (string strConnect_local)
         {
-            db = new DAL ();
+            db = new DAL (strConnect_local);
         }
         public DataTable GetProduct()
         {

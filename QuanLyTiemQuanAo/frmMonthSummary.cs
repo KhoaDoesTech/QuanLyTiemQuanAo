@@ -19,10 +19,17 @@ namespace QuanLyTiemQuanAo
         DataTable dtMonthSummary = null;
         // Khai báo biến kiểm tra việc Thêm hay Sửa dữ liệu 
         bool Add;
+
+        string ConnStr;
+        public void SetConnection(string connectString)
+        {
+            ConnStr = connectString;
+        }
+
         public frmMonthSummary()
         {
             InitializeComponent();
-            dbms = new DB_MonthSummary();
+            dbms = new DB_MonthSummary(ConnStr);
         }
         void LoadData()
         {
@@ -281,6 +288,11 @@ namespace QuanLyTiemQuanAo
         }
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
         {
 
         }

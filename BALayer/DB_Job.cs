@@ -13,9 +13,9 @@ namespace BALayer
     public class DB_Job
     {
         DAL db = null;
-        public DB_Job()
+        public DB_Job(string strConnect_local)
         {
-            db = new DAL();
+            db = new DAL(strConnect_local);
         }
         public DataTable GetJob()
         {
