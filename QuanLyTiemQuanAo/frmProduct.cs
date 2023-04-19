@@ -108,5 +108,40 @@ namespace QuanLyTiemQuanAo
         {
             MoHienThi();
         }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLayHinh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

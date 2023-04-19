@@ -68,5 +68,10 @@ namespace QuanLyTiemQuanAo
         {
             openForm(typeof(frmOrder));
         }
+
+        private void barButtonItem10_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmProductType));
+        }
     }
 }
