@@ -219,7 +219,7 @@
             this.splitContainerControl2.Panel2.Controls.Add(this.layoutControl2);
             this.splitContainerControl2.Panel2.Text = "Panel2";
             this.splitContainerControl2.Size = new System.Drawing.Size(1278, 260);
-            this.splitContainerControl2.SplitterPosition = 674;
+            this.splitContainerControl2.SplitterPosition = 692;
             this.splitContainerControl2.TabIndex = 0;
             // 
             // layoutControl1
@@ -233,7 +233,7 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1002, 50, 812, 500);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(674, 260);
+            this.layoutControl1.Size = new System.Drawing.Size(692, 260);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -248,14 +248,14 @@
             this.layoutControlItem3,
             this.layoutControlItem4});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(674, 260);
+            this.Root.Size = new System.Drawing.Size(692, 260);
             this.Root.TextVisible = false;
             // 
             // txt_product_type_id
             // 
             this.txt_product_type_id.Location = new System.Drawing.Point(168, 12);
             this.txt_product_type_id.Name = "txt_product_type_id";
-            this.txt_product_type_id.Size = new System.Drawing.Size(494, 26);
+            this.txt_product_type_id.Size = new System.Drawing.Size(512, 26);
             this.txt_product_type_id.TabIndex = 4;
             // 
             // layoutControlItem1
@@ -265,7 +265,7 @@
             this.layoutControlItem1.Control = this.txt_product_type_id;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(654, 30);
+            this.layoutControlItem1.Size = new System.Drawing.Size(672, 30);
             this.layoutControlItem1.Text = "Mã loại khách:";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(144, 26);
             // 
@@ -274,14 +274,14 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 120);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(654, 120);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(672, 120);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // txt_product_type_name
             // 
             this.txt_product_type_name.Location = new System.Drawing.Point(168, 42);
             this.txt_product_type_name.Name = "txt_product_type_name";
-            this.txt_product_type_name.Size = new System.Drawing.Size(494, 26);
+            this.txt_product_type_name.Size = new System.Drawing.Size(512, 26);
             this.txt_product_type_name.TabIndex = 5;
             // 
             // layoutControlItem2
@@ -291,7 +291,7 @@
             this.layoutControlItem2.Control = this.txt_product_type_name;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 30);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(654, 30);
+            this.layoutControlItem2.Size = new System.Drawing.Size(672, 30);
             this.layoutControlItem2.Text = "Tên loại khách:";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(144, 26);
             // 
@@ -299,7 +299,7 @@
             // 
             this.txt_class.Location = new System.Drawing.Point(168, 72);
             this.txt_class.Name = "txt_class";
-            this.txt_class.Size = new System.Drawing.Size(494, 26);
+            this.txt_class.Size = new System.Drawing.Size(512, 26);
             this.txt_class.TabIndex = 6;
             // 
             // layoutControlItem3
@@ -309,7 +309,7 @@
             this.layoutControlItem3.Control = this.txt_class;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 60);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(654, 30);
+            this.layoutControlItem3.Size = new System.Drawing.Size(672, 30);
             this.layoutControlItem3.Text = "Loại:";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(144, 26);
             // 
@@ -317,7 +317,7 @@
             // 
             this.txt_gender.Location = new System.Drawing.Point(168, 102);
             this.txt_gender.Name = "txt_gender";
-            this.txt_gender.Size = new System.Drawing.Size(494, 26);
+            this.txt_gender.Size = new System.Drawing.Size(512, 26);
             this.txt_gender.TabIndex = 7;
             // 
             // layoutControlItem4
@@ -327,7 +327,7 @@
             this.layoutControlItem4.Control = this.txt_gender;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 90);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(654, 30);
+            this.layoutControlItem4.Size = new System.Drawing.Size(672, 30);
             this.layoutControlItem4.Text = "Giới tính:";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(144, 26);
             // 
@@ -341,7 +341,7 @@
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(813, 468, 812, 500);
             this.layoutControl2.Root = this.layoutControlGroup1;
-            this.layoutControl2.Size = new System.Drawing.Size(592, 260);
+            this.layoutControl2.Size = new System.Drawing.Size(574, 260);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -355,14 +355,14 @@
             this.layoutControlItem7,
             this.layoutControlItem5});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(592, 260);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(574, 260);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(264, 12);
+            this.txtSearch.Location = new System.Drawing.Point(256, 12);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(208, 25);
+            this.txtSearch.Size = new System.Drawing.Size(228, 25);
             this.txtSearch.TabIndex = 4;
             // 
             // layoutControlItem5
@@ -370,9 +370,9 @@
             this.layoutControlItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem5.Control = this.txtSearch;
-            this.layoutControlItem5.Location = new System.Drawing.Point(252, 0);
+            this.layoutControlItem5.Location = new System.Drawing.Point(244, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(212, 34);
+            this.layoutControlItem5.Size = new System.Drawing.Size(232, 34);
             this.layoutControlItem5.Text = "Tìm kiếm";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
@@ -382,7 +382,7 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 34);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(572, 206);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(554, 206);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // btnSearch
@@ -390,9 +390,9 @@
             this.btnSearch.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Appearance.Options.UseFont = true;
             this.btnSearch.ImageOptions.Image = global::QuanLyTiemQuanAo.Properties.Resources.Search_16x16;
-            this.btnSearch.Location = new System.Drawing.Point(476, 12);
+            this.btnSearch.Location = new System.Drawing.Point(488, 12);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(104, 30);
+            this.btnSearch.Size = new System.Drawing.Size(74, 30);
             this.btnSearch.StyleController = this.layoutControl2;
             this.btnSearch.TabIndex = 5;
             this.btnSearch.Text = "Tìm";
@@ -402,9 +402,9 @@
             this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem6.Control = this.btnSearch;
-            this.layoutControlItem6.Location = new System.Drawing.Point(464, 0);
+            this.layoutControlItem6.Location = new System.Drawing.Point(476, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(108, 34);
+            this.layoutControlItem6.Size = new System.Drawing.Size(78, 34);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -413,7 +413,7 @@
             this.cbSearch.FormattingEnabled = true;
             this.cbSearch.Location = new System.Drawing.Point(114, 12);
             this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(146, 24);
+            this.cbSearch.Size = new System.Drawing.Size(138, 24);
             this.cbSearch.TabIndex = 6;
             // 
             // layoutControlItem7
@@ -423,7 +423,7 @@
             this.layoutControlItem7.Control = this.cbSearch;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(252, 34);
+            this.layoutControlItem7.Size = new System.Drawing.Size(244, 34);
             this.layoutControlItem7.Text = "Tìm kiếm";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(90, 26);
             // 

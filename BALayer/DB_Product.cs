@@ -32,18 +32,10 @@ namespace BALayer
                 new SqlParameter("@picture", picture),
                 new SqlParameter("@unit_price", unit_price));
         }
-        public bool FindProduct(ref string err, string product_id, string product_type_id,
-            string product_name, string @size, string color, int unit_price, int type)
+        public DataTable FindProductByID(string product_id)
         {
-            return db.MyExecuteNonQuery("SP_Find_Product",
-                ref err,
-                new SqlParameter("@product_id", product_id),
-                new SqlParameter("@product_type_id", product_type_id),
-                new SqlParameter("@product_name", product_name),
-                new SqlParameter("@@size", @size),
-                new SqlParameter("@color", color),
-                new SqlParameter("@unit_price", unit_price),
-                new SqlParameter("@type", type));
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindProductByID(@product_id)", 
+                new SqlParameter("@product_id", product_id));
         }
     }
 }
