@@ -21,25 +21,43 @@ namespace BALayer
         {
             return db.ExecuteQueryDataTable("select * from Job");
         }
-        public bool InsertJob(ref string err, string job_title_id,
+        public bool InsertJob(ref string err, string job_id, string job_title_id,
             string branch_id, string job_name, int base_salary)
         {
             return db.MyExecuteNonQuery("SP_Insert_Job",
                 ref err,
+                new SqlParameter("@job_id", job_id),
                 new SqlParameter("@job_title_id", job_title_id),
                 new SqlParameter("@branch_id", branch_id),
                 new SqlParameter("@job_name", job_name),
                 new SqlParameter("@base_salary", base_salary));
         }
-        public bool FindJob(ref string err, string job_title_id,
+        public bool UpdateJob(ref string err, string job_id, string job_title_id,
             string branch_id, string job_name, int base_salary)
         {
-            return db.MyExecuteNonQuery("SP_Find_Job",
+            return db.MyExecuteNonQuery("SP_Update_Job",
                 ref err,
+                new SqlParameter("@job_id", job_id),
                 new SqlParameter("@job_title_id", job_title_id),
                 new SqlParameter("@branch_id", branch_id),
                 new SqlParameter("@job_name", job_name),
                 new SqlParameter("@base_salary", base_salary));
+        }
+        public bool FindJob(ref string err, string job_id, string job_title_id,
+            string branch_id, string job_name, int base_salary)
+        {
+            return db.MyExecuteNonQuery("SP_Find_Job",
+                ref err,
+                new SqlParameter("@job_id", job_id),
+                new SqlParameter("@job_title_id", job_title_id),
+                new SqlParameter("@branch_id", branch_id),
+                new SqlParameter("@job_name", job_name),
+                new SqlParameter("@base_salary", base_salary));
+        }
+        public bool DeleteJob(ref string err, string job_id)
+        {
+            return db.MyExecuteNonQuery("SP_Delete_Job", ref err,
+                new SqlParameter("@job_id", job_id));
         }
     }
 }

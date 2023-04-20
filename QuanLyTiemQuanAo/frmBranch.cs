@@ -13,16 +13,22 @@ using BALayer;
 
 namespace QuanLyTiemQuanAo
 {
-    public partial class frmBranch : DevExpress.XtraEditors.XtraForm
+    public partial class frmBranch : DevExpress.XtraEditors.XtraForm, IConnectionForm
     {
+        string ConnStr;
         DB_Branch dbms;
         DataTable dtBranch = null;
         // Khai báo biến kiểm tra việc Thêm hay Sửa dữ liệu 
         bool Add;
+        public void SetConnection(string connectString)
+        {
+            ConnStr = connectString;
+            dbms = new DB_Branch(ConnStr);
+        }
+
         public frmBranch()
         {
             InitializeComponent();
-            dbms = new DB_Branch();
         }
         void LoadData()
         {
@@ -31,7 +37,7 @@ namespace QuanLyTiemQuanAo
                 // Vận chuyển dữ liệu vào DataTable dtProduct
                 dtBranch = new DataTable();
                 dtBranch.Clear();
-                dtBranch = dbms.GetMonthSummary();
+                dtBranch = dbms.GetBranch();
                 // Đưa dữ liệu lên DataGridView 
                 dgvBranch.DataSource = dtBranch;
 
@@ -185,7 +191,7 @@ namespace QuanLyTiemQuanAo
                 try
                 {
                     f = dbms.InsertBranch(ref err, txt_branch_id.Text,
-                        Convert.ToInt32(txt_branch_name.Text),
+                        txt_branch_name.Text,
                         Convert.ToInt32(txt_max_stock.Text),
                         Convert.ToInt32(txt_rent_amount.Text));
                     if (f)
@@ -211,7 +217,7 @@ namespace QuanLyTiemQuanAo
                 try
                 {
                     f = dbms.UpdateBranch(ref err, txt_branch_id.Text,
-                        Convert.ToInt32(txt_branch_name.Text),
+                        txt_branch_name.Text,
                         Convert.ToInt32(txt_max_stock.Text),
                         Convert.ToInt32(txt_rent_amount.Text));
                     if (f)

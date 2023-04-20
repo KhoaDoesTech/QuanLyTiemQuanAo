@@ -1,20 +1,20 @@
-﻿using DBLayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DBLayer;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace BALayer
 {
     public class DB_Branch
     {
         DAL db = null;
-        public DB_Branch(string strConnect_local)
+        public DB_Branch (string strConnect_local)
         {
-            db = new DAL(strConnect_local);
+            db = new DAL (strConnect_local);
         }
         public DataTable GetBranch()
         {

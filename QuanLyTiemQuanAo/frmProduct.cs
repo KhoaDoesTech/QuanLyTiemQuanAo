@@ -23,7 +23,6 @@ namespace QuanLyTiemQuanAo
         DB_ProductType dbpt;
         DataTable dtProductType = null;
 
-        bool Them;
         // Mảng lưu ảnh
         MemoryStream ms;
         byte[] arrImage;

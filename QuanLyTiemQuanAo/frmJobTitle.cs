@@ -153,7 +153,7 @@ namespace QuanLyTiemQuanAo
                 {
 
                     // Thực hiện câu lệnh SQL 
-                    bool f = dbms.DeleteJob(ref err, str_job_title_id);
+                    bool f = dbms.DeleteJobTitle(ref err, str_job_title_id);
                     if (f)
                     {
                         // Cập nhật lại DataGridView 
@@ -187,9 +187,9 @@ namespace QuanLyTiemQuanAo
                 string err = "";
                 try
                 {
-                    f = dbms.InsertJob(ref err, txt_job_title_id.Text,
-                        Convert.ToInt32(txt_job_title_name.Text),
-                        Convert.ToInt32(txt_job_description.Text));
+                    f = dbms.InsertJobTitle(ref err, txt_job_title_id.Text,
+                        txt_job_title_name.Text,
+                        txt_job_description.Text);
                     if (f)
                     {
                         // Load lại dữ liệu trên DataGridView 
@@ -213,8 +213,8 @@ namespace QuanLyTiemQuanAo
                 try
                 {
                     f = dbms.UpdateJobTitle(ref err, txt_job_title_id.Text,
-                        Convert.ToInt32(txt_job_title_name.Text),
-                        Convert.ToInt32(txt_job_description.Text));
+                        txt_job_title_name.Text,
+                        txt_job_description.Text);
                     if (f)
                     {
                         // Load lại dữ liệu trên DataGridView 

@@ -13,16 +13,22 @@ using BALayer;
 
 namespace QuanLyTiemQuanAo
 {
-    public partial class frmJob : DevExpress.XtraEditors.XtraForm
+    public partial class frmJob : DevExpress.XtraEditors.XtraForm, IConnectionForm
     {
+        string ConnStr;
         DB_Job dbms;
         DataTable dtJob = null;
         // Khai báo biến kiểm tra việc Thêm hay Sửa dữ liệu 
         bool Add;
+        public void SetConnection(string connectString)
+        {
+            ConnStr = connectString;
+            dbms = new DB_Job(ConnStr);
+        }
+
         public frmJob()
         {
             InitializeComponent();
-            dbms = new DB_Job();
         }
         void LoadData()
         {
@@ -31,7 +37,7 @@ namespace QuanLyTiemQuanAo
                 // Vận chuyển dữ liệu vào DataTable dtProduct
                 dtJob = new DataTable();
                 dtJob.Clear();
-                dtJob = dbms.GetMonthSummary();
+                dtJob = dbms.GetJob();
                 // Đưa dữ liệu lên DataGridView 
                 dgvJob.DataSource = dtJob;
 
@@ -185,9 +191,9 @@ namespace QuanLyTiemQuanAo
                 try
                 {
                     f = dbms.InsertJob(ref err, txt_job_id.Text,
-                        Convert.ToInt32(txt_job_title_id.Text),
-                        Convert.ToInt32(txt_branch_id.Text),
-                        Convert.ToInt32(txt_job_name.Text),
+                        txt_job_title_id.Text,
+                        txt_branch_id.Text,
+                        txt_job_name.Text,
                         Convert.ToInt32(txt_base_salary.Text));
                     if (f)
                     {
@@ -212,9 +218,9 @@ namespace QuanLyTiemQuanAo
                 try
                 {
                     f = dbms.UpdateJob(ref err, txt_job_id.Text,
-                        Convert.ToInt32(txt_job_title_id.Text),
-                        Convert.ToInt32(txt_branch_id.Text),
-                        Convert.ToInt32(txt_job_name.Text),
+                        txt_job_title_id.Text,
+                        txt_branch_id.Text,
+                        txt_job_name.Text,
                         Convert.ToInt32(txt_base_salary.Text));
                     if (f)
                     {
