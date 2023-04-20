@@ -63,8 +63,12 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
-            this.cbSearch = new System.Windows.Forms.ComboBox();
+            this.btnTim = new DevExpress.XtraEditors.SimpleButton();
+            this.txtTim = new System.Windows.Forms.TextBox();
+            this.cbTim = new System.Windows.Forms.ComboBox();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -78,10 +82,6 @@
             this.unit_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
@@ -124,12 +124,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).BeginInit();
             this.layoutControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             this.SuspendLayout();
             // 
             // btnThem
@@ -423,7 +423,7 @@
             this.splitContainerControl3.Panel2.Controls.Add(this.layoutControl4);
             this.splitContainerControl3.Panel2.Text = "Panel2";
             this.splitContainerControl3.Size = new System.Drawing.Size(617, 256);
-            this.splitContainerControl3.SplitterPosition = 67;
+            this.splitContainerControl3.SplitterPosition = 197;
             this.splitContainerControl3.TabIndex = 4;
             // 
             // layoutControl3
@@ -435,7 +435,7 @@
             this.layoutControl3.Name = "layoutControl3";
             this.layoutControl3.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1108, 50, 812, 500);
             this.layoutControl3.Root = this.layoutControlGroup2;
-            this.layoutControl3.Size = new System.Drawing.Size(617, 67);
+            this.layoutControl3.Size = new System.Drawing.Size(617, 197);
             this.layoutControl3.TabIndex = 0;
             this.layoutControl3.Text = "layoutControl3";
             // 
@@ -448,13 +448,14 @@
             this.btnLayHinh.StyleController = this.layoutControl3;
             this.btnLayHinh.TabIndex = 143;
             this.btnLayHinh.Text = "Lấy ảnh";
+            this.btnLayHinh.Click += new System.EventHandler(this.btnLayHinh_Click);
             // 
             // pic_picture
             // 
             this.pic_picture.BackColor = System.Drawing.Color.Silver;
             this.pic_picture.Location = new System.Drawing.Point(74, 12);
             this.pic_picture.Name = "pic_picture";
-            this.pic_picture.Size = new System.Drawing.Size(440, 43);
+            this.pic_picture.Size = new System.Drawing.Size(440, 173);
             this.pic_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_picture.TabIndex = 141;
             this.pic_picture.TabStop = false;
@@ -467,7 +468,7 @@
             this.layoutControlItem8,
             this.layoutControlItem13});
             this.layoutControlGroup2.Name = "Root";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(617, 67);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(617, 197);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem8
@@ -475,7 +476,7 @@
             this.layoutControlItem8.Control = this.pic_picture;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(506, 47);
+            this.layoutControlItem8.Size = new System.Drawing.Size(506, 177);
             this.layoutControlItem8.Text = "Hình ảnh";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(50, 16);
             // 
@@ -484,52 +485,89 @@
             this.layoutControlItem13.Control = this.btnLayHinh;
             this.layoutControlItem13.Location = new System.Drawing.Point(506, 0);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(91, 47);
+            this.layoutControlItem13.Size = new System.Drawing.Size(91, 177);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
             // layoutControl4
             // 
-            this.layoutControl4.Controls.Add(this.textBox1);
-            this.layoutControl4.Controls.Add(this.simpleButton1);
-            this.layoutControl4.Controls.Add(this.cbSearch);
+            this.layoutControl4.Controls.Add(this.btnTim);
+            this.layoutControl4.Controls.Add(this.txtTim);
+            this.layoutControl4.Controls.Add(this.cbTim);
             this.layoutControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl4.Location = new System.Drawing.Point(0, 0);
             this.layoutControl4.Name = "layoutControl4";
+            this.layoutControl4.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(996, 551, 812, 500);
             this.layoutControl4.Root = this.layoutControlGroup3;
-            this.layoutControl4.Size = new System.Drawing.Size(617, 177);
+            this.layoutControl4.Size = new System.Drawing.Size(617, 47);
             this.layoutControl4.TabIndex = 0;
             this.layoutControl4.Text = "layoutControl4";
             // 
-            // cbSearch
+            // btnTim
             // 
-            this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(139, 12);
-            this.cbSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(167, 24);
-            this.cbSearch.TabIndex = 138;
+            this.btnTim.ImageOptions.Image = global::QuanLyTiemQuanAo.Properties.Resources.Search_16x16;
+            this.btnTim.Location = new System.Drawing.Point(517, 12);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(67, 27);
+            this.btnTim.StyleController = this.layoutControl4;
+            this.btnTim.TabIndex = 6;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // txtTim
+            // 
+            this.txtTim.Location = new System.Drawing.Point(227, 12);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Size = new System.Drawing.Size(286, 25);
+            this.txtTim.TabIndex = 5;
+            this.txtTim.TextChanged += new System.EventHandler(this.txtTim_TextChanged);
+            // 
+            // cbTim
+            // 
+            this.cbTim.FormattingEnabled = true;
+            this.cbTim.Location = new System.Drawing.Point(77, 12);
+            this.cbTim.Name = "cbTim";
+            this.cbTim.Size = new System.Drawing.Size(146, 24);
+            this.cbTim.TabIndex = 4;
             // 
             // layoutControlGroup3
             // 
             this.layoutControlGroup3.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup3.GroupBordersVisible = false;
             this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem11,
             this.layoutControlItem9,
-            this.layoutControlItem10});
-            this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(617, 177);
+            this.layoutControlItem10,
+            this.layoutControlItem11});
+            this.layoutControlGroup3.Name = "Root";
+            this.layoutControlGroup3.Size = new System.Drawing.Size(596, 51);
             this.layoutControlGroup3.TextVisible = false;
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.cbTim;
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(215, 31);
+            this.layoutControlItem9.Text = "Tìm kiếm";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(53, 16);
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.txtTim;
+            this.layoutControlItem10.Location = new System.Drawing.Point(215, 0);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(290, 31);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem10.TextVisible = false;
             // 
             // layoutControlItem11
             // 
-            this.layoutControlItem11.Control = this.cbSearch;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem11.Control = this.btnTim;
+            this.layoutControlItem11.Location = new System.Drawing.Point(505, 0);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(298, 157);
-            this.layoutControlItem11.Text = "Tìm kiếm";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(115, 16);
+            this.layoutControlItem11.Size = new System.Drawing.Size(71, 31);
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem11.TextVisible = false;
             // 
             // layoutControlGroup1
             // 
@@ -643,39 +681,6 @@
             this.btnSearch.TabIndex = 5;
             this.btnSearch.Text = "Tìm";
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(466, 12);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(139, 27);
-            this.simpleButton1.StyleController = this.layoutControl4;
-            this.simpleButton1.TabIndex = 140;
-            this.simpleButton1.Text = "simpleButton1";
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.simpleButton1;
-            this.layoutControlItem9.Location = new System.Drawing.Point(454, 0);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(143, 157);
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem9.TextVisible = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(437, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(25, 25);
-            this.textBox1.TabIndex = 141;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.textBox1;
-            this.layoutControlItem10.Location = new System.Drawing.Point(298, 0);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(156, 157);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(115, 16);
-            // 
             // frmProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -729,12 +734,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();
             this.layoutControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -787,12 +792,12 @@
         private DevExpress.XtraEditors.SimpleButton btnLayHinh;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraLayout.LayoutControl layoutControl4;
-        private System.Windows.Forms.ComboBox cbSearch;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
-        private System.Windows.Forms.TextBox textBox1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnTim;
+        private System.Windows.Forms.TextBox txtTim;
+        private System.Windows.Forms.ComboBox cbTim;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
     }
 }
