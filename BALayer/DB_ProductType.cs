@@ -13,9 +13,9 @@ namespace BALayer
     {
         DAL db = null;
 
-        public DB_ProductType() 
+        public DB_ProductType(string strConnect_local) 
         {
-            db = new DAL();
+            db = new DAL(strConnect_local);
         }
         public DataTable GetProductType()
         {

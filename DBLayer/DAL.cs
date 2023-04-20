@@ -104,10 +104,10 @@ namespace DBLayer
             OpenDB();
 
             comm.CommandText = strSQL;
-            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandType = CommandType.Text;
 
             foreach (SqlParameter p in param)
-                comm.Parameters.Add(p);
+                comm.Parameters.AddWithValue(p.ParameterName, p.Value);
 
             da = new SqlDataAdapter(comm);
             DataTable dt = new DataTable();

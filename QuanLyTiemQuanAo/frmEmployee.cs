@@ -20,14 +20,18 @@ namespace QuanLyTiemQuanAo
 
         DB_Job dbj;
         DataTable dtJob = null;
-
+        string ConnStr;
+        public void SetConnection(string connectString)
+        {
+            ConnStr = connectString;
+        }
         // Khai báo biến kiểm tra việc Thêm hay Sửa dữ liệu 
         bool Add;
         public frmEmployee()
         {
             InitializeComponent();
-            dbe = new DB_Employee();
-            dbj = new DB_Job();
+            dbe = new DB_Employee(ConnStr);
+            dbj = new DB_Job(ConnStr);
         }
 
         void LoadData()

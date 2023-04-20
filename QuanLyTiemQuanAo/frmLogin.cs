@@ -29,16 +29,24 @@ namespace QuanLyTiemQuanAo
             try
             {
                 comm.Parameters.Clear();
-                comm.CommandText = "Select * dbo.CheckLogin(@username, @passcode)";
+                comm.CommandText = "Select dbo.CheckLogin(@username, @passcode)";
                 comm.Parameters.AddWithValue("@username", txtUser.Text.Trim());
                 comm.Parameters.AddWithValue("@passcode", txtPass.Text.Trim());
-                comm.CommandType = CommandType.StoredProcedure;
+                comm.CommandType = CommandType.Text;
                 bool result = (bool)comm.ExecuteScalar();
                 if (result == true) 
                 {
+                    SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+                    builder.DataSource = @"(local)";
+                    builder.InitialCatalog = @"QLTiemQuanAo";
+                    builder.UserID = txtUser.Text.Trim();
+                    builder.Password = txtPass.Text.Trim();
 
-                    MessageBox.Show("Dang nhap thanh cong.", "Ket qua", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    string connectionString = builder.ConnectionString;
+                    
+                    frmMain home = new frmMain(connectionString);
+                    this.Hide();
+                    home.Show();            
                 }
                 else
                 {

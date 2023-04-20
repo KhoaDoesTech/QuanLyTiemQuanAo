@@ -12,9 +12,9 @@ namespace BALayer
     public class DB_MonthSummary
     {
         DAL db = null;
-        public DB_MonthSummary()
+        public DB_MonthSummary(string strConnect_local)
         {
-            db = new DAL();
+            db = new DAL(strConnect_local);
         }
         public bool InsertMonthSummary(ref string err, string employee_id,
             int summary_month, int summary_year,
