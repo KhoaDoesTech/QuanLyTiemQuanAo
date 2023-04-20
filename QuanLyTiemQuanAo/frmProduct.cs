@@ -113,31 +113,7 @@ namespace QuanLyTiemQuanAo
         private void btnHuy_Click(object sender, EventArgs e)
         {
             MoHienThi();
-        }
-
-        private void btnTim_Click(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt = dbp.FindProductByID(txtSearch.Text);
-            dgvProduct.DataSource = dt;
-        }
-
-        private void btnLayHinh_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog odlgOpenFile = new OpenFileDialog();
-            odlgOpenFile.InitialDirectory = "C:\\";
-            odlgOpenFile.Title = "Open File";
-            odlgOpenFile.Filter = "Image files (*.jpg)|*.jpg|All files (*.*)|*.*";
-            if (odlgOpenFile.ShowDialog() == DialogResult.OK)
-            {
-                pic_picture.Image = System.Drawing.Image.FromFile(odlgOpenFile.FileName);
-                //
-                ms = new MemoryStream();
-                pic_picture.Image.Save(ms, pic_picture.Image.RawFormat);
-                arrImage = ms.GetBuffer();
-                ms.Close();
-            }
-        }
+        }        
 
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -169,7 +145,31 @@ namespace QuanLyTiemQuanAo
 
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
+        private void btnLayHinh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog odlgOpenFile = new OpenFileDialog();
+            odlgOpenFile.InitialDirectory = "C:\\";
+            odlgOpenFile.Title = "Open File";
+            odlgOpenFile.Filter = "Image files (*.jpg)|*.jpg|All files (*.*)|*.*";
+            if (odlgOpenFile.ShowDialog() == DialogResult.OK)
+            {
+                pic_picture.Image = System.Drawing.Image.FromFile(odlgOpenFile.FileName);
+                //
+                ms = new MemoryStream();
+                pic_picture.Image.Save(ms, pic_picture.Image.RawFormat);
+                arrImage = ms.GetBuffer();
+                ms.Close();
+            }
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = dbp.FindProductByID(txtTim.Text);
+            dgvProduct.DataSource = dt;
+        }
+
+        private void txtTim_TextChanged(object sender, EventArgs e)
         {
 
         }
