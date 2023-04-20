@@ -164,13 +164,7 @@ namespace QuanLyTiemQuanAo
             // Kiểm tra có nhắp chọn nút Ok không? 
             if (traloi == DialogResult.OK) this.Close();
         }
-
-        private void cbSearch_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
+        private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
