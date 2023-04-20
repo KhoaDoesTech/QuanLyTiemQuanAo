@@ -56,8 +56,12 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panelCustomer = new DevExpress.XtraEditors.PanelControl();
+            this.label21 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnTim = new System.Windows.Forms.Button();
             this.txt_email = new System.Windows.Forms.TextBox();
+            this.cbSearch = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cb_customer_type_id = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -78,10 +82,6 @@
             this.size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label21 = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnTim = new System.Windows.Forms.Button();
-            this.cbSearch = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelPurchaseOrder)).BeginInit();
             this.panelPurchaseOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelOrderDetail)).BeginInit();
@@ -398,6 +398,16 @@
             this.panelCustomer.Size = new System.Drawing.Size(986, 337);
             this.panelCustomer.TabIndex = 4;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label21.Location = new System.Drawing.Point(239, 280);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(86, 23);
+            this.label21.TabIndex = 222;
+            this.label21.Text = "Tìm kiếm";
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -409,6 +419,27 @@
             this.label15.TabIndex = 200;
             this.label15.Text = "THÔNG TIN KHÁCH HÀNG";
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtSearch.Location = new System.Drawing.Point(472, 271);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(168, 30);
+            this.txtSearch.TabIndex = 221;
+            // 
+            // btnTim
+            // 
+            this.btnTim.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.btnTim.Location = new System.Drawing.Point(647, 271);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(75, 32);
+            this.btnTim.TabIndex = 219;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
             // txt_email
             // 
             this.txt_email.Font = new System.Drawing.Font("Tahoma", 11F);
@@ -416,6 +447,16 @@
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(264, 30);
             this.txt_email.TabIndex = 199;
+            // 
+            // cbSearch
+            // 
+            this.cbSearch.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.cbSearch.FormattingEnabled = true;
+            this.cbSearch.Location = new System.Drawing.Point(332, 271);
+            this.cbSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.cbSearch.Name = "cbSearch";
+            this.cbSearch.Size = new System.Drawing.Size(129, 30);
+            this.cbSearch.TabIndex = 220;
             // 
             // label7
             // 
@@ -561,8 +602,9 @@
             this.dgvOrder.Name = "dgvOrder";
             this.dgvOrder.RowHeadersWidth = 51;
             this.dgvOrder.RowTemplate.Height = 24;
-            this.dgvOrder.Size = new System.Drawing.Size(784, 598);
+            this.dgvOrder.Size = new System.Drawing.Size(784, 764);
             this.dgvOrder.TabIndex = 0;
+            this.dgvOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellContentClick);
             // 
             // product_id
             // 
@@ -603,46 +645,6 @@
             this.color.MinimumWidth = 6;
             this.color.Name = "color";
             this.color.Width = 125;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.label21.Location = new System.Drawing.Point(239, 280);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(86, 23);
-            this.label21.TabIndex = 222;
-            this.label21.Text = "Tìm kiếm";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txtSearch.Location = new System.Drawing.Point(472, 271);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(168, 30);
-            this.txtSearch.TabIndex = 221;
-            // 
-            // btnTim
-            // 
-            this.btnTim.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btnTim.Location = new System.Drawing.Point(647, 271);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(75, 32);
-            this.btnTim.TabIndex = 219;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.UseVisualStyleBackColor = true;
-            // 
-            // cbSearch
-            // 
-            this.cbSearch.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(332, 271);
-            this.cbSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(129, 30);
-            this.cbSearch.TabIndex = 220;
             // 
             // frmOrder
             // 

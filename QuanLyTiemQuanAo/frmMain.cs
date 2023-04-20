@@ -13,9 +13,11 @@ namespace QuanLyTiemQuanAo
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public frmMain()
+        string ConnStr;
+        public frmMain(string strConnect_local)
         {
             InitializeComponent();
+            ConnStr = strConnect_local;
         }
 
         void openForm(Type typeForm)
@@ -29,6 +31,10 @@ namespace QuanLyTiemQuanAo
                 }
             }
             Form f = (Form)Activator.CreateInstance(typeForm);
+            if (f is IConnectionForm connectionForm)
+            {
+                connectionForm.SetConnection(ConnStr);
+            }
             f.MdiParent = this;
             f.Show();
         }
@@ -45,30 +51,27 @@ namespace QuanLyTiemQuanAo
 
         private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmOrder frm = new frmOrder();
-            frm.MdiParent = this;
-            frm.Show();
+            openForm(typeof(frmOrder));
         }
 
         private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmEmployee frm = new frmEmployee();
-            frm.MdiParent = this;
-            frm.Show();
+            openForm(typeof(frmEmployee));
         }
 
         private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmMonthSummary frm = new frmMonthSummary();
-            frm.MdiParent = this;
-            frm.Show();
+            openForm(typeof(frmMonthSummary));
         }
 
         private void barButtonItem6_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-            frmOrder frm = new frmOrder();
-            frm.MdiParent = this;
-            frm.Show();
+            openForm(typeof(frmOrder));
+        }
+
+        private void barButtonItem10_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmProductType));
         }
     }
 }

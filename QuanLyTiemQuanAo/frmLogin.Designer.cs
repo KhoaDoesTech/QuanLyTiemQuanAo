@@ -98,6 +98,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(303, 30);
             this.txtUser.TabIndex = 1;
+            
             // 
             // label1
             // 

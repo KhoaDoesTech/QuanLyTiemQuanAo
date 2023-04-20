@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProduct));
             this.btnThem = new System.Windows.Forms.ToolStripButton();
             this.btnSua = new System.Windows.Forms.ToolStripButton();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
@@ -37,14 +38,14 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.btnLayHinh = new System.Windows.Forms.Button();
+            this.btnLayHinh = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTim = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.pic_picture = new System.Windows.Forms.PictureBox();
             this.cb_product_type_id = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnTim = new System.Windows.Forms.Button();
             this.cbSearch = new System.Windows.Forms.ComboBox();
             this.txt_color = new System.Windows.Forms.TextBox();
             this.txt_unit_price = new System.Windows.Forms.TextBox();
@@ -95,6 +96,7 @@
             this.btnSua.Size = new System.Drawing.Size(38, 44);
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -104,6 +106,7 @@
             this.btnXoa.Size = new System.Drawing.Size(39, 44);
             this.btnXoa.Text = "Xoá";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -113,6 +116,7 @@
             this.btnLuu.Size = new System.Drawing.Size(37, 44);
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnHuy
             // 
@@ -132,6 +136,7 @@
             this.btnThoat.Size = new System.Drawing.Size(51, 44);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // toolStrip1
             // 
@@ -145,7 +150,7 @@
             this.btnThoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(878, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(1278, 47);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -165,20 +170,20 @@
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.dgvProduct);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(878, 430);
-            this.splitContainerControl1.SplitterPosition = 241;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1278, 463);
+            this.splitContainerControl1.SplitterPosition = 310;
             this.splitContainerControl1.TabIndex = 1;
             // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.btnLayHinh);
+            this.groupControl1.Controls.Add(this.btnTim);
             this.groupControl1.Controls.Add(this.label5);
             this.groupControl1.Controls.Add(this.pic_picture);
             this.groupControl1.Controls.Add(this.cb_product_type_id);
             this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Controls.Add(this.label9);
             this.groupControl1.Controls.Add(this.txtSearch);
-            this.groupControl1.Controls.Add(this.btnTim);
             this.groupControl1.Controls.Add(this.cbSearch);
             this.groupControl1.Controls.Add(this.txt_color);
             this.groupControl1.Controls.Add(this.txt_unit_price);
@@ -193,23 +198,36 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(878, 241);
+            this.groupControl1.Size = new System.Drawing.Size(1278, 310);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông tin sản phẩm";
             // 
             // btnLayHinh
             // 
-            this.btnLayHinh.Location = new System.Drawing.Point(672, 48);
+            this.btnLayHinh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLayHinh.ImageOptions.Image")));
+            this.btnLayHinh.Location = new System.Drawing.Point(672, 71);
             this.btnLayHinh.Name = "btnLayHinh";
-            this.btnLayHinh.Size = new System.Drawing.Size(75, 32);
-            this.btnLayHinh.TabIndex = 125;
+            this.btnLayHinh.Size = new System.Drawing.Size(109, 46);
+            this.btnLayHinh.TabIndex = 127;
             this.btnLayHinh.Text = "Lấy hình";
-            this.btnLayHinh.UseVisualStyleBackColor = true;
+            this.btnLayHinh.Click += new System.EventHandler(this.btnLayHinh_Click);
+            // 
+            // btnTim
+            // 
+            this.btnTim.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btnTim.Appearance.Options.UseForeColor = true;
+            this.btnTim.ImageOptions.Image = global::QuanLyTiemQuanAo.Properties.Resources.Search_16x16;
+            this.btnTim.Location = new System.Drawing.Point(731, 195);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(75, 29);
+            this.btnTim.TabIndex = 126;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(405, 56);
+            this.label5.Location = new System.Drawing.Point(407, 85);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 16);
             this.label5.TabIndex = 124;
@@ -217,7 +235,7 @@
             // 
             // pic_picture
             // 
-            this.pic_picture.Location = new System.Drawing.Point(468, 42);
+            this.pic_picture.Location = new System.Drawing.Point(470, 71);
             this.pic_picture.Name = "pic_picture";
             this.pic_picture.Size = new System.Drawing.Size(184, 83);
             this.pic_picture.TabIndex = 123;
@@ -226,7 +244,7 @@
             // cb_product_type_id
             // 
             this.cb_product_type_id.FormattingEnabled = true;
-            this.cb_product_type_id.Location = new System.Drawing.Point(188, 72);
+            this.cb_product_type_id.Location = new System.Drawing.Point(190, 101);
             this.cb_product_type_id.Name = "cb_product_type_id";
             this.cb_product_type_id.Size = new System.Drawing.Size(184, 24);
             this.cb_product_type_id.TabIndex = 122;
@@ -234,7 +252,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(78, 77);
+            this.label1.Location = new System.Drawing.Point(80, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 32);
             this.label1.TabIndex = 121;
@@ -243,7 +261,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(405, 172);
+            this.label9.Location = new System.Drawing.Point(407, 201);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 16);
             this.label9.TabIndex = 120;
@@ -251,62 +269,55 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(577, 169);
+            this.txtSearch.Location = new System.Drawing.Point(579, 198);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(145, 24);
             this.txtSearch.TabIndex = 119;
-            // 
-            // btnTim
-            // 
-            this.btnTim.Location = new System.Drawing.Point(729, 167);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(75, 32);
-            this.btnTim.TabIndex = 117;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.UseVisualStyleBackColor = true;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // cbSearch
             // 
             this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(468, 169);
+            this.cbSearch.Location = new System.Drawing.Point(470, 198);
             this.cbSearch.Margin = new System.Windows.Forms.Padding(4);
             this.cbSearch.Name = "cbSearch";
             this.cbSearch.Size = new System.Drawing.Size(101, 24);
             this.cbSearch.TabIndex = 118;
+            this.cbSearch.SelectedIndexChanged += new System.EventHandler(this.cbSearch_SelectedIndexChanged);
             // 
             // txt_color
             // 
-            this.txt_color.Location = new System.Drawing.Point(188, 170);
+            this.txt_color.Location = new System.Drawing.Point(190, 199);
             this.txt_color.Name = "txt_color";
             this.txt_color.Size = new System.Drawing.Size(184, 23);
             this.txt_color.TabIndex = 116;
             // 
             // txt_unit_price
             // 
-            this.txt_unit_price.Location = new System.Drawing.Point(468, 138);
+            this.txt_unit_price.Location = new System.Drawing.Point(470, 167);
             this.txt_unit_price.Name = "txt_unit_price";
             this.txt_unit_price.Size = new System.Drawing.Size(184, 23);
             this.txt_unit_price.TabIndex = 115;
             // 
             // txt_product_id
             // 
-            this.txt_product_id.Location = new System.Drawing.Point(188, 42);
+            this.txt_product_id.Location = new System.Drawing.Point(190, 71);
             this.txt_product_id.Name = "txt_product_id";
             this.txt_product_id.Size = new System.Drawing.Size(184, 23);
             this.txt_product_id.TabIndex = 114;
             // 
             // txt_product_name
             // 
-            this.txt_product_name.Location = new System.Drawing.Point(188, 106);
+            this.txt_product_name.Location = new System.Drawing.Point(190, 135);
             this.txt_product_name.Name = "txt_product_name";
             this.txt_product_name.Size = new System.Drawing.Size(184, 23);
             this.txt_product_name.TabIndex = 113;
             // 
             // txt_size
             // 
-            this.txt_size.Location = new System.Drawing.Point(188, 138);
+            this.txt_size.Location = new System.Drawing.Point(190, 167);
             this.txt_size.Name = "txt_size";
             this.txt_size.Size = new System.Drawing.Size(184, 23);
             this.txt_size.TabIndex = 112;
@@ -314,7 +325,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(78, 173);
+            this.label8.Location = new System.Drawing.Point(80, 202);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 16);
             this.label8.TabIndex = 111;
@@ -323,7 +334,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(405, 141);
+            this.label6.Location = new System.Drawing.Point(407, 170);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(25, 16);
             this.label6.TabIndex = 110;
@@ -332,7 +343,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(78, 141);
+            this.label4.Location = new System.Drawing.Point(80, 170);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 16);
             this.label4.TabIndex = 109;
@@ -341,7 +352,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(78, 109);
+            this.label3.Location = new System.Drawing.Point(80, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 16);
             this.label3.TabIndex = 108;
@@ -350,7 +361,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(78, 48);
+            this.label2.Location = new System.Drawing.Point(80, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 16);
             this.label2.TabIndex = 107;
@@ -372,7 +383,7 @@
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.RowHeadersWidth = 51;
             this.dgvProduct.RowTemplate.Height = 24;
-            this.dgvProduct.Size = new System.Drawing.Size(878, 177);
+            this.dgvProduct.Size = new System.Drawing.Size(1278, 141);
             this.dgvProduct.TabIndex = 1;
             // 
             // product_id
@@ -435,7 +446,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 477);
+            this.ClientSize = new System.Drawing.Size(1278, 510);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmProduct";
@@ -470,14 +481,21 @@
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private System.Windows.Forms.DataGridView dgvProduct;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private System.Windows.Forms.Button btnLayHinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn product_id;
+        private System.Windows.Forms.DataGridViewComboBoxColumn product_type_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn product_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn size;
+        private System.Windows.Forms.DataGridViewTextBoxColumn color;
+        private System.Windows.Forms.DataGridViewImageColumn picture;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unit_price;
+        private DevExpress.XtraEditors.SimpleButton btnLayHinh;
+        private DevExpress.XtraEditors.SimpleButton btnTim;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pic_picture;
         private System.Windows.Forms.ComboBox cb_product_type_id;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.ComboBox cbSearch;
         private System.Windows.Forms.TextBox txt_color;
         private System.Windows.Forms.TextBox txt_unit_price;
@@ -489,12 +507,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn product_id;
-        private System.Windows.Forms.DataGridViewComboBoxColumn product_type_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn product_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn size;
-        private System.Windows.Forms.DataGridViewTextBoxColumn color;
-        private System.Windows.Forms.DataGridViewImageColumn picture;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unit_price;
     }
 }
