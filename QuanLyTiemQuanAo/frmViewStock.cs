@@ -11,17 +11,11 @@ using System.Windows.Forms;
 
 namespace QuanLyTiemQuanAo
 {
-    public partial class frmProductType : DevExpress.XtraEditors.XtraForm
+    public partial class frmViewStock : DevExpress.XtraEditors.XtraForm
     {
-
-        public frmProductType()
+        public frmViewStock()
         {
             InitializeComponent();
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

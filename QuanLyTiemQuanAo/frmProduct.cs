@@ -66,6 +66,8 @@ namespace QuanLyTiemQuanAo
                 // Đưa dữ liệu lên DataGridView 
                 dgvProduct.DataSource = dtProduct;
 
+                dgvProduct_CellClick(null, null);
+
             }
             catch (SqlException e)
             {
@@ -81,7 +83,7 @@ namespace QuanLyTiemQuanAo
             btnHuy.Visible= true;
             btnThoat.Visible= false;
 
-            btnLayHinh.Visible= false;
+            btnLayHinh.Enabled= true;
         }
 
         private void MoHienThi()
@@ -89,11 +91,11 @@ namespace QuanLyTiemQuanAo
             btnThem.Visible = true;
             btnSua.Visible = true;
             
-            btnLuu.Visible = true;
-            btnHuy.Visible = true;
-            btnThoat.Visible = true;   
-            
-            btnLayHinh.Visible = true;
+            btnLuu.Visible = false;
+            btnHuy.Visible = false;
+            btnThoat.Visible = true;
+
+            btnLayHinh.Enabled = false;
         }
 
         private void XoaTrong()
@@ -186,7 +188,7 @@ namespace QuanLyTiemQuanAo
                 string err = "";
                 try
                 {
-                    f = dbp.UpdateProduct(ref err, txt_product_id.Text, cb_product_type_id.SelectedValue.ToString(), txt_product_name.Text, txt_size.Text, txt_color.Text, arrImage, Convert.ToInt32(txt_unit_price.Text));
+                    f = dbp.UpdateProduct(ref err, txt_product_id.Text, cb_product_type_id.SelectedValue.ToString(), txt_product_name.Text, txt_size.Text, txt_color.Text, arrImage, int.Parse(txt_unit_price.Text.Replace(".", "")));
                     if (f)
                     {
                         // Load lại dữ liệu trên DataGridView 

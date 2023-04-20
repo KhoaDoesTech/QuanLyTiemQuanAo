@@ -131,6 +131,12 @@
     <Compile Include="frmProductType.Designer.cs">
       <DependentUpon>frmProductType.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmViewStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewStock.Designer.cs">
+      <DependentUpon>frmViewStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="IConnectionForm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -163,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductType.resx">
       <DependentUpon>frmProductType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewStock.resx">
+      <DependentUpon>frmViewStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
