@@ -12,9 +12,9 @@ namespace BALayer
     public class DB_Branch
     {
         DAL db = null;
-        public DB_Branch()
+        public DB_Branch(string strConnect_local)
         {
-            db = new DAL();
+            db = new DAL(strConnect_local);
         }
         public DataTable GetBranch()
         {

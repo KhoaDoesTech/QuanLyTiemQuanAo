@@ -12,9 +12,9 @@ namespace BALayer
     public class DB_JobTitle
     {
         DAL db = null;
-        public DB_JobTitle()
+        public DB_JobTitle(string strConnect_local)
         {
-            db = new DAL();
+            db = new DAL(strConnect_local);
         }
         public DataTable GetJobTitle()
         {

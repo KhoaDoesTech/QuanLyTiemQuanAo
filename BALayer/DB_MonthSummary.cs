@@ -16,6 +16,12 @@ namespace BALayer
         {
             db = new DAL(strConnect_local);
         }
+
+        public DataTable GetMonthSummary()
+        {
+            return db.ExecuteQueryDataTable("select * from MonthSummary");
+        }
+
         public bool InsertMonthSummary(ref string err, string employee_id,
             int summary_month, int summary_year,
             int products_sold, int bonus_salary, int salary)

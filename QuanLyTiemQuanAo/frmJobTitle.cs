@@ -13,16 +13,22 @@ using BALayer;
 
 namespace QuanLyTiemQuanAo
 {
-    public partial class frmJobTitle : DevExpress.XtraEditors.XtraForm
+    public partial class frmJobTitle : DevExpress.XtraEditors.XtraForm, IConnectionForm
     {
+        string ConnStr;
         DB_JobTitle dbms;
         DataTable dtJobTitle = null;
         // Khai báo biến kiểm tra việc Thêm hay Sửa dữ liệu 
         bool Add;
+        public void SetConnection(string connectString)
+        {
+            ConnStr = connectString;
+            dbms = new DB_JobTitle(ConnStr);            
+        }
+
         public frmJobTitle()
         {
-            InitializeComponent();
-            dbms = new DB_JobTitle();
+            InitializeComponent();            
         }
         void LoadData()
         {
@@ -31,7 +37,7 @@ namespace QuanLyTiemQuanAo
                 // Vận chuyển dữ liệu vào DataTable dtProduct
                 dtJobTitle = new DataTable();
                 dtJobTitle.Clear();
-                dtJobTitle = dbms.GetMonthSummary();
+                dtJobTitle = dbms.GetJobTitle();
                 // Đưa dữ liệu lên DataGridView 
                 dgvJobTitle.DataSource = dtJobTitle;
 
@@ -206,7 +212,7 @@ namespace QuanLyTiemQuanAo
                 string err = "";
                 try
                 {
-                    f = dbms.UpdateJob(ref err, txt_job_title_id.Text,
+                    f = dbms.UpdateJobTitle(ref err, txt_job_title_id.Text,
                         Convert.ToInt32(txt_job_title_name.Text),
                         Convert.ToInt32(txt_job_description.Text));
                     if (f)
