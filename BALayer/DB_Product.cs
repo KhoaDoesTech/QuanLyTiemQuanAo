@@ -50,6 +50,5 @@ namespace BALayer
                 new SqlParameter("@picture", picture),
                 new SqlParameter("@unit_price", unit_price));
         }
-
     }
 }

@@ -26,7 +26,7 @@ namespace QuanLyTiemQuanAo
         // Mảng lưu ảnh
         MemoryStream ms;
         byte[] arrImage;
-
+        bool Them;
         public void SetConnection(string connectString)
         {
             ConnStr = connectString;
@@ -59,6 +59,10 @@ namespace QuanLyTiemQuanAo
                 dtProduct = new DataTable();
                 dtProduct.Clear();
                 dtProduct = dbp.GetProduct();
+
+                MoHienThi();
+                KhoaTuongTac();
+
                 // Đưa dữ liệu lên DataGridView 
                 dgvProduct.DataSource = dtProduct;
 
@@ -72,21 +76,24 @@ namespace QuanLyTiemQuanAo
         {
             btnThem.Visible= false;
             btnSua.Visible= false;
-            btnXoa.Visible= false;
+            
             btnLuu.Visible= true;
             btnHuy.Visible= true;
             btnThoat.Visible= false;
+
+            btnLayHinh.Visible= false;
         }
 
         private void MoHienThi()
         {
             btnThem.Visible = true;
             btnSua.Visible = true;
-            btnXoa.Visible = true;
+            
             btnLuu.Visible = true;
             btnHuy.Visible = true;
-            btnThoat.Visible = true;
-            groupControl1.Enabled = false;
+            btnThoat.Visible = true;   
+            
+            btnLayHinh.Visible = true;
         }
 
         private void XoaTrong()
@@ -98,35 +105,105 @@ namespace QuanLyTiemQuanAo
             txt_unit_price.ResetText();
             txtSearch.ResetText();
         }
+        private void MoTuongTac()
+        {            
+            txt_product_id.Enabled = false;
+            cb_product_type_id.Enabled = true;
+            txt_product_name.Enabled = true;
+            txt_size.Enabled = true;
+            txt_color.Enabled = true;
+            txt_unit_price.Enabled = true;            
+        }
+        private void KhoaTuongTac()
+        {
+            txt_product_id.Enabled = false;
+            cb_product_type_id.Enabled = false;
+            txt_product_name.Enabled = false;
+            txt_size.Enabled = false;
+            txt_color.Enabled = false;
+            txt_unit_price.Enabled = false;            
+        }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            KhoaHienThi();
+            KhoaHienThi();            
+            XoaTrong();
+            MoTuongTac();
+            txt_product_name.Focus();
         }
 
         private void frmProduct_Load(object sender, EventArgs e)
-        {
+        {            
             LoadData();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
             MoHienThi();
+            XoaTrong();
+            KhoaTuongTac();
+            dgvProduct_CellClick(null, null);
         }        
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
+            // Kích hoạt biến Sửa 
+            Them = false;
+            MoTuongTac();
+            dgvProduct_CellClick(null, null);
+            KhoaHienThi();
+            txt_product_name.Focus();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
+            bool f = false;
+            if (Them)
+            {
+                string err = "";
+                try
+                {
+                    f = dbp.InsertProduct(ref err, cb_product_type_id.SelectedValue.ToString(), txt_product_name.Text, txt_size.Text, txt_color.Text, arrImage, Convert.ToInt32(txt_unit_price.Text));
+                    if (f)
+                    {
+                        // Load lại dữ liệu trên DataGridView 
+                        LoadData();
+                        // Thông báo 
+                        MessageBox.Show("Đã thêm xong!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã thêm chưa xong!\n\r" + "Lỗi:" + err);
+                    }
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Không thêm được. Lỗi rồi!");
+                }
+            }
+            else // Sửa ThanhPho
+            {
+                string err = "";
+                try
+                {
+                    f = dbp.UpdateProduct(ref err, txt_product_id.Text, cb_product_type_id.SelectedValue.ToString(), txt_product_name.Text, txt_size.Text, txt_color.Text, arrImage, Convert.ToInt32(txt_unit_price.Text));
+                    if (f)
+                    {
+                        // Load lại dữ liệu trên DataGridView 
+                        LoadData();
+                        // Thông báo 
+                        MessageBox.Show("Đã cap nhat xong!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã cap nhat chưa xong!\n\r" + "Lỗi:" + err);
+                    }
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Không cap nhat được. Lỗi rồi!");
+                }
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -141,7 +218,27 @@ namespace QuanLyTiemQuanAo
         }
         private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            // Đưa dữ liệu lên ComboBox
+            cb_product_type_id.DataSource = dtProductType;
+            cb_product_type_id.DisplayMember = "product_type_name";
+            cb_product_type_id.ValueMember = "product_type_id";
+            // Thứ tự dòng hiện hành 
+            int r = dgvProduct.CurrentCell.RowIndex;
+            // Chuyển thông tin lên panel 
+            txt_product_id.Text =
+            dgvProduct.Rows[r].Cells[0].Value.ToString();
+            cb_product_type_id.SelectedValue =
+            dgvProduct.Rows[r].Cells[1].Value.ToString();
+            txt_product_name.Text =
+            dgvProduct.Rows[r].Cells[2].Value.ToString();
+            txt_size.Text =
+            dgvProduct.Rows[r].Cells[3].Value.ToString();
+            txt_color.Text =
+            dgvProduct.Rows[r].Cells[4].Value.ToString();
+            pic_picture.Image = (System.Drawing.Image)
+            dgvProduct.Rows[r].Cells[5].FormattedValue;
+            txt_unit_price.Text =
+            dgvProduct.Rows[r].Cells[6].Value.ToString();
         }
 
         private void btnLayHinh_Click(object sender, EventArgs e)
