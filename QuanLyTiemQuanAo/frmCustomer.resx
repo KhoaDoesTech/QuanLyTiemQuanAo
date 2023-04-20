@@ -123,47 +123,6 @@
   <metadata name="toolStrip1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="splitContainerControl1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnLayHinh.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
   <metadata name="product_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -185,10 +144,67 @@
   <metadata name="unit_price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="customer_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+  <metadata name="customer_type_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="full_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="gender.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="brithday.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="phone.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="email.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="product_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="product_type_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="product_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="size.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="color.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="picture.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="unit_price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="customer_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="customer_type_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="full_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="gender.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="brithday.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="phone.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="email.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
 </root>
