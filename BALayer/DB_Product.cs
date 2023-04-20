@@ -37,7 +37,19 @@ namespace BALayer
             return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindProductByID(@product_id)", 
                 new SqlParameter("@product_id", product_id));
         }
-
+        public bool UpdateProduct(ref string err, string product_id, string product_type_id,
+            string product_name, string size, string color, byte[] picture, int unit_price)
+        {
+            return db.MyExecuteNonQuery("SP_Update_Product",
+                ref err,
+                new SqlParameter("@product_id", product_id),
+                new SqlParameter("@product_type_id", product_type_id),
+                new SqlParameter("@product_name", product_name),
+                new SqlParameter("@size", size),
+                new SqlParameter("@color", color),
+                new SqlParameter("@picture", picture),
+                new SqlParameter("@unit_price", unit_price));
+        }
 
     }
 }
