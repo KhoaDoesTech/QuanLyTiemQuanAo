@@ -18,7 +18,7 @@ namespace QuanLyTiemQuanAo
         DB_MonthSummary dbms;
         DataTable dtMonthSummary = null;
         // Khai báo biến kiểm tra việc Thêm hay Sửa dữ liệu 
-        bool Add;
+        bool Them;
 
         string ConnStr;
         public void SetConnection(string connectString)
@@ -39,24 +39,13 @@ namespace QuanLyTiemQuanAo
                 dtMonthSummary = new DataTable();
                 dtMonthSummary.Clear();
                 dtMonthSummary = dbms.GetMonthSummary();
+
+                MoHienThi();
+                KhoaTuongTac();
+
                 // Đưa dữ liệu lên DataGridView 
                 dgvMonthSummary.DataSource = dtMonthSummary;
 
-                // Xóa trống các đối tượng trong Panel 
-                this.txt_employee_id.ResetText();
-                this.txt_products_sold.ResetText();
-                this.txt_bonus_salary.ResetText();
-                this.txt_salary.ResetText();
-                // Không cho thao tác trên các nút Lưu / Hủy
-                this.btnLuu.Enabled = false;
-                this.btnHuy.Enabled = false;
-                this.panel.Enabled = false;
-                // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
-                this.btnThem.Enabled = true;
-                this.btnSua.Enabled = true;
-                this.btnXoa.Enabled = true;
-                this.btnThoat.Enabled = true;
-                //
                 dgvMonthSummary_CellClick(null, null);
 
             }
@@ -70,7 +59,7 @@ namespace QuanLyTiemQuanAo
         {
             btnThem.Visible = false;
             btnSua.Visible = false;
-            btnXoa.Visible = false;
+
             btnLuu.Visible = true;
             btnHuy.Visible = true;
             btnThoat.Visible = false;
@@ -80,122 +69,68 @@ namespace QuanLyTiemQuanAo
         {
             btnThem.Visible = true;
             btnSua.Visible = true;
-            btnXoa.Visible = true;
-            btnLuu.Visible = true;
-            btnHuy.Visible = true;
+
+            btnLuu.Visible = false;
+            btnHuy.Visible = false;
             btnThoat.Visible = true;
-            panel.Enabled = false;
         }
 
         private void XoaTrong()
         {
             txt_employee_id.ResetText();
+            cb_summary_month.ResetText();
+            cb_summary_year.ResetText();
             txt_products_sold.ResetText();
             txt_bonus_salary.ResetText();
             txt_salary.ResetText();
             txtSearch.ResetText();
         }
+        private void MoTuongTac()
+        {
+            txt_employee_id.Enabled = false;
+            cb_summary_month.Enabled = true;
+            cb_summary_year.Enabled = true;
+            txt_products_sold.Enabled = true;
+            txt_bonus_salary.Enabled = true;
+            txt_salary.Enabled = true;
+        }
+        private void KhoaTuongTac()
+        {
+            txt_employee_id.Enabled = false;
+            cb_summary_month.Enabled = false;
+            cb_summary_year.Enabled = false;
+            txt_products_sold.Enabled = false;
+            txt_bonus_salary.Enabled = false;
+            txt_salary.Enabled = false;
+        }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            //Kích hoạt biến thêm
-            Add = true;
-            //Xóa trống các đối tượng
+            KhoaHienThi();
             XoaTrong();
-            // Cho thao tác trên các nút Lưu / Hủy / Panel 
-            this.btnLuu.Enabled = true;
-            this.btnHuy.Enabled = true;
-            this.panel.Enabled = true;
-            // Không cho thao tác trên các nút Thêm / Xóa / Thoát 
-            this.btnThem.Enabled = false;
-            this.btnSua.Enabled = false;
-            this.btnXoa.Enabled = false;
-            this.btnThoat.Enabled = false;
-
-            // Đưa con trỏ đến TextField txt_employee_id
-            this.txt_employee_id.Focus();
+            MoTuongTac();
+            txt_employee_id.Focus();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             // Kích hoạt biến Sửa 
-            Add = false;
+            Them = false;
+            MoTuongTac();
             dgvMonthSummary_CellClick(null, null);
-            // Cho thao tác trên các nút Lưu / Hủy / Panel
-            this.btnLuu.Enabled = true;
-            this.btnHuy.Enabled = true;
-            this.panel.Enabled = true;
-            // Không cho thao tác trên các nút Thêm / Xóa / Thoát 
-            this.btnThem.Enabled = false;
-            this.btnSua.Enabled = false;
-            this.btnXoa.Enabled = false;
-            this.btnThoat.Enabled = false;
-            // Đưa con trỏ đến TextField txt_employee_id           
-            this.txt_employee_id.Focus();
+            KhoaHienThi();
+            txt_employee_id.Focus();
         }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Lấy thứ tự record hiện hành 
-                int r = dgvMonthSummary.CurrentCell.RowIndex;
-                // Lấy employee_id của record hiện hành 
-                string str_employee_id =
-                dgvMonthSummary.Rows[r].Cells[0].Value.ToString();
-                // Viết câu lệnh SQL 
-                // Hiện thông báo xác nhận việc xóa mẫu tin 
-                // Khai báo biến answer 
-                DialogResult answer;
-                // Hiện hộp thoại hỏi đáp 
-                answer = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                // Kiểm tra có nhấp chọn nút Ok không? 
-                string err = "";
-                if (answer == DialogResult.Yes)
-                {
-
-                    // Thực hiện câu lệnh SQL 
-                    bool f = dbms.DeleteMonthSummary(ref err, str_employee_id);
-                    if (f)
-                    {
-                        // Cập nhật lại DataGridView 
-                        LoadData();
-                        // Thông báo 
-                        MessageBox.Show("Đã xóa xong!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không xóa được!\n\r" + "Lỗi:" + err);
-                    }
-                }
-                else
-                {
-                    // Thông báo 
-                    MessageBox.Show("Không thực hiện việc xóa mẫu tin!");
-                }
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Không xóa được. Lỗi rồi!!!");
-            }
-            // Đóng kết nối
-        }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             bool f = false;
-            if (Add)
+            if (Them)
             {
                 string err = "";
                 try
                 {
-                    f = dbms.InsertMonthSummary(ref err, txt_employee_id.Text,
-                        Convert.ToInt32(cb_summary_month.Text),
-                        Convert.ToInt32(cb_summary_year.Text),
-                        Convert.ToInt32(txt_products_sold.Text),
-                        Convert.ToInt32(txt_bonus_salary.Text),
-                        Convert.ToInt32(txt_salary.Text));
+                    f = dbms.InsertMonthSummary(ref err, cb_summary_month.SelectedIndex + 1,
+                        cb_summary_year.SelectedIndex + 2003);
                     if (f)
                     {
                         // Load lại dữ liệu trên DataGridView 
@@ -213,17 +148,11 @@ namespace QuanLyTiemQuanAo
                     MessageBox.Show("Không thêm được. Lỗi rồi!");
                 }
             }
-            if (!Add)
+            /*if (!Them)
             {
                 string err = "";
                 try
                 {
-                    f = dbms.UpdateMonthSummary(ref err, txt_employee_id.Text,
-                        Convert.ToInt32(cb_summary_month.Text),
-                        Convert.ToInt32(cb_summary_year.Text),
-                        Convert.ToInt32(txt_products_sold.Text),
-                        Convert.ToInt32(txt_bonus_salary.Text),
-                        Convert.ToInt32(txt_salary.Text));
                     if (f)
                     {
                         // Load lại dữ liệu trên DataGridView 
@@ -240,22 +169,15 @@ namespace QuanLyTiemQuanAo
                 {
                     MessageBox.Show("Không cập nhật được. Lỗi rồi!");
                 }
-            }
+            }*/
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            // Xóa trống các đối tượng trong Panel 
+            MoHienThi();
             XoaTrong();
-            // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
-            this.btnThem.Enabled = true;
-            this.btnSua.Enabled = true;
-            this.btnXoa.Enabled = true;
-            this.btnThoat.Enabled = true;
-            // Không cho thao tác trên các nút Lưu / Hủy / Panel
-            this.btnLuu.Enabled = false;
-            this.btnHuy.Enabled = false;
-            this.panel.Enabled = false;
+            KhoaTuongTac();
+            dgvMonthSummary_CellClick(null, null);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -273,18 +195,18 @@ namespace QuanLyTiemQuanAo
             // Thứ tự dòng hiện hành 
             int r = dgvMonthSummary.CurrentCell.RowIndex;
             // Chuyển thông tin lên panel 
-            this.txt_employee_id.Text =
+            txt_employee_id.Text =
             dgvMonthSummary.Rows[r].Cells[0].Value.ToString();
-            this.cb_summary_month.Text =
+            cb_summary_month.SelectedValue =
             dgvMonthSummary.Rows[r].Cells[1].Value.ToString();
-            this.cb_summary_year.Text =
+            cb_summary_year.Text =
             dgvMonthSummary.Rows[r].Cells[2].Value.ToString();
-            this.txt_products_sold.Text =
+            txt_products_sold.Text =
             dgvMonthSummary.Rows[r].Cells[3].Value.ToString();
-            this.txt_bonus_salary.Text =
+            txt_bonus_salary.Text =
             dgvMonthSummary.Rows[r].Cells[4].Value.ToString();
-            this.txt_salary.Text =
-            dgvMonthSummary.Rows[r].Cells[5].Value.ToString();
+            txt_salary.Text =
+            dgvMonthSummary.Rows[r].Cells[6].Value.ToString();
         }
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
@@ -294,7 +216,32 @@ namespace QuanLyTiemQuanAo
 
         private void btnTim_Click(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
+            //choose type to search
+            dgvMonthSummary.DataSource = dt;
 
+            cbSearch.Items.Add("Mã nhân viên");
+            cbSearch.Items.Add("Tháng");
+            cbSearch.Items.Add("Năm");
+            cbSearch.Text = cbSearch.Items[0].ToString();
+            cbSearch.Text = cbSearch.Items[1].ToString();
+            cbSearch.Text = cbSearch.Items[2].ToString();
+            int x = cbSearch.SelectedIndex;
+            switch (x)
+            {
+                case 1:
+                    dt = dbms.FindMonthSummaryByID(txtSearch.Text);
+                    dgvMonthSummary.DataSource = dt;
+                    break;
+                case 2:
+                    dt = dbms.FindMonthSummaryByMonth(Convert.ToInt32(txtSearch.Text));
+                    dgvMonthSummary.DataSource = dt;
+                    break;
+                case 3:
+                    dt = dbms.FindMonthSummaryByYear(Convert.ToInt32(txtSearch.Text));
+                    dgvMonthSummary.DataSource = dt;
+                    break;
+            }
         }
     }
 }

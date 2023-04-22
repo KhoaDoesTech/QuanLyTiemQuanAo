@@ -24,37 +24,30 @@ namespace BALayer
              string branch_name, int max_stock, int rent_amount)
         {
             return db.MyExecuteNonQuery("SP_Insert_Branch",
-                ref err,
-                new SqlParameter("@branch_id", branch_id),
+                ref err,                
                 new SqlParameter("@branch_name", branch_name),
                 new SqlParameter("@max_stock", max_stock),
                 new SqlParameter("@rent_amount", rent_amount));
         }
-        public bool FindBranch(ref string err, string branch_id,
-             string branch_name, int max_stock, int rent_amount)
+        public DataTable FindBranchByID(string branch_id)
         {
-            return db.MyExecuteNonQuery("SP_Find_Branch",
-                ref err,
-                new SqlParameter("@branch_id", branch_id),
-                new SqlParameter("@branch_name", branch_name),
-                new SqlParameter("@max_stock", max_stock),
-                new SqlParameter("@rent_amount", rent_amount));
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindBranchByID(@branch_id)",
+                new SqlParameter("@branch_id", branch_id));
+        }
+        public DataTable FindBranchByName(string branch_name)
+        {
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindBranchByName(@branch_name)",
+                new SqlParameter("@branch_name", branch_name));
         }
         public bool UpdateBranch(ref string err, string branch_id,
              string branch_name, int max_stock, int rent_amount)
         {
             return db.MyExecuteNonQuery("SP_Update_Branch",
                 ref err,
-                new SqlParameter("@branch_id", branch_id),
+                new SqlParameter("@branch_id", branch_id), 
                 new SqlParameter("@branch_name", branch_name),
                 new SqlParameter("@max_stock", max_stock),
                 new SqlParameter("@rent_amount", rent_amount));
         }
-        public bool DeleteBranch(ref string err, string branch_id)
-        {
-            return db.MyExecuteNonQuery("SP_Delete_Branch", ref err,
-                new SqlParameter("@branch_id", branch_id));
-        }
-
     }
 }

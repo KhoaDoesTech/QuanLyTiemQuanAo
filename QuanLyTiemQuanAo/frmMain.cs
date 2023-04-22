@@ -39,6 +39,26 @@ namespace QuanLyTiemQuanAo
             f.Show();
         }
 
+        void openViewForm(Type typeForm, int viewForm)
+        {
+            foreach (var frm in MdiChildren)
+            {
+                if (frm.GetType() == typeForm)
+                {
+                    frm.Activate();
+                    return;
+                }
+            }
+            Form f = (Form)Activator.CreateInstance(typeForm);
+            if (f is IConnectionForm connectionForm)
+            {
+                connectionForm.SetConnection(ConnStr);
+                f.Text = viewForm.ToString();
+            }
+            f.MdiParent = this;
+            f.Show();
+        }
+
         private void frmMain_Load(object sender, EventArgs e)
         {
 
@@ -72,6 +92,16 @@ namespace QuanLyTiemQuanAo
         private void barButtonItem10_ItemClick(object sender, ItemClickEventArgs e)
         {
             openForm(typeof(frmProductType));
+        }
+
+        private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openViewForm(typeof(frmView), 1);
+        }
+
+        private void btnXemThongTin_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmPerson));
         }
     }
 }

@@ -29,14 +29,15 @@ namespace BALayer
                 new SqlParameter("@job_title_name", job_title_name),
                 new SqlParameter("@job_description", job_description));
         }
-        public bool FindJobTitle(ref string err, string job_title_id,
-             string job_title_name, string job_description)
+        public DataTable FindJobTitletByID(string job_title_id)
         {
-            return db.MyExecuteNonQuery("SP_Find_JobTitle",
-                ref err,
-                new SqlParameter("@job_title_id", job_title_id),
-                new SqlParameter("@job_title_name", job_title_name),
-                new SqlParameter("@job_description", job_description));
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindJobTitleByID(@job_title_id)",
+                 new SqlParameter("@job_title_id", job_title_id));
+        }
+        public DataTable FindJobTitleByName(string job_title_name)
+        {
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindJobTitleByName(@job_title_name)",
+                 new SqlParameter("@job_title_name", job_title_name));
         }
         public bool UpdateJobTitle(ref string err, string job_title_id,
              string job_title_name, string job_description)
@@ -46,11 +47,6 @@ namespace BALayer
                 new SqlParameter("@job_title_id", job_title_id),
                 new SqlParameter("@job_title_name", job_title_name),
                 new SqlParameter("@job_description", job_description));
-        }
-        public bool DeleteJobTitle(ref string err, string job_title_id)
-        {
-            return db.MyExecuteNonQuery("SP_Delete_JobTitle", ref err,
-                new SqlParameter("@job_title_id", job_title_id));
         }
     }
 }

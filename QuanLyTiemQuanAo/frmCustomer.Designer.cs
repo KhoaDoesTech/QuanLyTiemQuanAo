@@ -28,47 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomer));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnThem = new System.Windows.Forms.ToolStripButton();
             this.btnSua = new System.Windows.Forms.ToolStripButton();
-            this.btnXoa = new System.Windows.Forms.ToolStripButton();
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
             this.btnHuy = new System.Windows.Forms.ToolStripButton();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.product_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.product_type_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.picture = new System.Windows.Forms.DataGridViewImageColumn();
-            this.unit_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cb_product_type_id = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btn_Tim = new DevExpress.XtraEditors.SimpleButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnTim = new System.Windows.Forms.Button();
             this.cbSearch = new System.Windows.Forms.ComboBox();
-            this.txt_color = new System.Windows.Forms.TextBox();
-            this.txt_unit_price = new System.Windows.Forms.TextBox();
-            this.txt_product_id = new System.Windows.Forms.TextBox();
-            this.txt_product_name = new System.Windows.Forms.TextBox();
-            this.txt_size = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtp_birthday = new System.Windows.Forms.DateTimePicker();
+            this.txt_gender = new System.Windows.Forms.TextBox();
+            this.txt_phone = new System.Windows.Forms.TextBox();
+            this.txt_email = new System.Windows.Forms.TextBox();
+            this.cb_customer_type_id = new System.Windows.Forms.ComboBox();
+            this.txt_full_name = new System.Windows.Forms.TextBox();
+            this.txt_customer_id = new System.Windows.Forms.TextBox();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.customer_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customer_type_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.customer__type_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brithday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
@@ -78,8 +74,20 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -88,72 +96,61 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnThem,
             this.btnSua,
-            this.btnXoa,
             this.btnLuu,
             this.btnHuy,
             this.btnThoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(896, 42);
-            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Size = new System.Drawing.Size(1028, 47);
+            this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // btnThem
             // 
-            this.btnThem.Image = global::QuanLyTiemQuanAo.Properties.Resources.Add_32x32;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(41, 39);
+            this.btnThem.Size = new System.Drawing.Size(50, 44);
             this.btnThem.Text = "Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
-            this.btnSua.Image = global::QuanLyTiemQuanAo.Properties.Resources.Edit_32x32;
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(30, 39);
+            this.btnSua.Size = new System.Drawing.Size(38, 44);
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // btnXoa
-            // 
-            this.btnXoa.Image = global::QuanLyTiemQuanAo.Properties.Resources.Trash_32x32;
-            this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(31, 39);
-            this.btnXoa.Text = "Xoá";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
             // btnLuu
             // 
-            this.btnLuu.Image = global::QuanLyTiemQuanAo.Properties.Resources.Save_32x32;
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(31, 39);
+            this.btnLuu.Size = new System.Drawing.Size(37, 44);
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnHuy
             // 
-            this.btnHuy.Image = global::QuanLyTiemQuanAo.Properties.Resources.Undo_32x32;
+            this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
             this.btnHuy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(48, 39);
+            this.btnHuy.Size = new System.Drawing.Size(60, 44);
             this.btnHuy.Text = "Bỏ qua";
             this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnThoat
             // 
-            this.btnThoat.Image = global::QuanLyTiemQuanAo.Properties.Resources.Action_Close_32x32;
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(41, 39);
+            this.btnThoat.Size = new System.Drawing.Size(51, 44);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -161,7 +158,8 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 42);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 47);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -171,339 +169,329 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(896, 390);
-            this.splitContainer1.SplitterDistance = 208;
-            this.splitContainer1.TabIndex = 2;
+            this.splitContainer1.Panel2.Controls.Add(this.dgvCustomer);
+            this.splitContainer1.Size = new System.Drawing.Size(1028, 458);
+            this.splitContainer1.SplitterDistance = 217;
+            this.splitContainer1.SplitterWidth = 5;
+            this.splitContainer1.TabIndex = 4;
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.dgvProduct);
-            this.groupControl1.Controls.Add(this.textBox1);
-            this.groupControl1.Controls.Add(this.label7);
-            this.groupControl1.Controls.Add(this.cb_product_type_id);
-            this.groupControl1.Controls.Add(this.label1);
-            this.groupControl1.Controls.Add(this.label9);
-            this.groupControl1.Controls.Add(this.txtSearch);
-            this.groupControl1.Controls.Add(this.btnTim);
-            this.groupControl1.Controls.Add(this.cbSearch);
-            this.groupControl1.Controls.Add(this.txt_color);
-            this.groupControl1.Controls.Add(this.txt_unit_price);
-            this.groupControl1.Controls.Add(this.txt_product_id);
-            this.groupControl1.Controls.Add(this.txt_product_name);
-            this.groupControl1.Controls.Add(this.txt_size);
-            this.groupControl1.Controls.Add(this.label8);
-            this.groupControl1.Controls.Add(this.label6);
-            this.groupControl1.Controls.Add(this.label4);
-            this.groupControl1.Controls.Add(this.label3);
-            this.groupControl1.Controls.Add(this.label2);
+            this.groupControl1.Controls.Add(this.layoutControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(896, 208);
-            this.groupControl1.TabIndex = 2;
-            this.groupControl1.Text = "Thông tin sản phẩm";
+            this.groupControl1.Size = new System.Drawing.Size(1028, 217);
+            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Text = "Thông tin khách hàng";
             // 
-            // dgvProduct
+            // layoutControl1
             // 
-            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.product_id,
-            this.product_type_id,
-            this.product_name,
-            this.size,
-            this.color,
-            this.picture,
-            this.unit_price});
-            this.dgvProduct.Location = new System.Drawing.Point(19, 231);
-            this.dgvProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvProduct.Name = "dgvProduct";
-            this.dgvProduct.RowHeadersWidth = 51;
-            this.dgvProduct.RowTemplate.Height = 24;
-            this.dgvProduct.Size = new System.Drawing.Size(930, 155);
-            this.dgvProduct.TabIndex = 146;
+            this.layoutControl1.Controls.Add(this.btn_Tim);
+            this.layoutControl1.Controls.Add(this.txtSearch);
+            this.layoutControl1.Controls.Add(this.cbSearch);
+            this.layoutControl1.Controls.Add(this.dtp_birthday);
+            this.layoutControl1.Controls.Add(this.txt_gender);
+            this.layoutControl1.Controls.Add(this.txt_phone);
+            this.layoutControl1.Controls.Add(this.txt_email);
+            this.layoutControl1.Controls.Add(this.cb_customer_type_id);
+            this.layoutControl1.Controls.Add(this.txt_full_name);
+            this.layoutControl1.Controls.Add(this.txt_customer_id);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(2, 28);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.Root;
+            this.layoutControl1.Size = new System.Drawing.Size(1024, 187);
+            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.Text = "layoutControl1";
             // 
-            // product_id
+            // btn_Tim
             // 
-            this.product_id.DataPropertyName = "product_id";
-            this.product_id.HeaderText = "Mã loại khách";
-            this.product_id.MinimumWidth = 6;
-            this.product_id.Name = "product_id";
-            this.product_id.Width = 125;
-            // 
-            // product_type_id
-            // 
-            this.product_type_id.DataPropertyName = "product_type_id";
-            this.product_type_id.HeaderText = "Mã khách hàng";
-            this.product_type_id.MinimumWidth = 6;
-            this.product_type_id.Name = "product_type_id";
-            this.product_type_id.Width = 125;
-            // 
-            // product_name
-            // 
-            this.product_name.DataPropertyName = "product_name";
-            this.product_name.HeaderText = "Họ tên";
-            this.product_name.MinimumWidth = 6;
-            this.product_name.Name = "product_name";
-            this.product_name.Width = 125;
-            // 
-            // size
-            // 
-            this.size.DataPropertyName = "size";
-            this.size.HeaderText = "Ngày sinh";
-            this.size.MinimumWidth = 6;
-            this.size.Name = "size";
-            this.size.Width = 125;
-            // 
-            // color
-            // 
-            this.color.DataPropertyName = "color";
-            this.color.HeaderText = "Số điện thoại";
-            this.color.MinimumWidth = 6;
-            this.color.Name = "color";
-            this.color.Width = 125;
-            // 
-            // picture
-            // 
-            this.picture.DataPropertyName = "picture";
-            this.picture.HeaderText = "Hình ảnh";
-            this.picture.MinimumWidth = 6;
-            this.picture.Name = "picture";
-            this.picture.Width = 125;
-            // 
-            // unit_price
-            // 
-            this.unit_price.DataPropertyName = "unit_price";
-            this.unit_price.HeaderText = "Giới tính";
-            this.unit_price.MinimumWidth = 6;
-            this.unit_price.Name = "unit_price";
-            this.unit_price.Width = 125;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(384, 36);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 21);
-            this.textBox1.TabIndex = 145;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(290, 39);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 13);
-            this.label7.TabIndex = 144;
-            this.label7.Text = "Email";
-            // 
-            // cb_product_type_id
-            // 
-            this.cb_product_type_id.FormattingEnabled = true;
-            this.cb_product_type_id.Location = new System.Drawing.Point(110, 63);
-            this.cb_product_type_id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cb_product_type_id.Name = "cb_product_type_id";
-            this.cb_product_type_id.Size = new System.Drawing.Size(158, 21);
-            this.cb_product_type_id.TabIndex = 143;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
-            this.label1.TabIndex = 142;
-            this.label1.Text = "Mã loại khách";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(296, 145);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 13);
-            this.label9.TabIndex = 141;
-            this.label9.Text = "Tìm kiếm";
+            this.btn_Tim.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Tim.ImageOptions.Image")));
+            this.btn_Tim.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btn_Tim.Location = new System.Drawing.Point(763, 131);
+            this.btn_Tim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Tim.Name = "btn_Tim";
+            this.btn_Tim.Size = new System.Drawing.Size(247, 27);
+            this.btn_Tim.StyleController = this.layoutControl1;
+            this.btn_Tim.TabIndex = 232;
+            this.btn_Tim.Text = "Tìm";
+            this.btn_Tim.Click += new System.EventHandler(this.btn_Tim_Click);
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(444, 142);
-            this.txtSearch.Multiline = true;
+            this.txtSearch.Location = new System.Drawing.Point(763, 102);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(125, 20);
-            this.txtSearch.TabIndex = 140;
-            // 
-            // btnTim
-            // 
-            this.btnTim.Location = new System.Drawing.Point(574, 141);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(64, 26);
-            this.btnTim.TabIndex = 138;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.UseVisualStyleBackColor = true;
+            this.txtSearch.Size = new System.Drawing.Size(247, 25);
+            this.txtSearch.TabIndex = 231;
             // 
             // cbSearch
             // 
             this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(350, 142);
+            this.cbSearch.Location = new System.Drawing.Point(619, 102);
+            this.cbSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(87, 21);
-            this.cbSearch.TabIndex = 139;
+            this.cbSearch.Size = new System.Drawing.Size(140, 24);
+            this.cbSearch.TabIndex = 230;
             // 
-            // txt_color
+            // dtp_birthday
             // 
-            this.txt_color.Location = new System.Drawing.Point(384, 68);
-            this.txt_color.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_color.Name = "txt_color";
-            this.txt_color.Size = new System.Drawing.Size(158, 21);
-            this.txt_color.TabIndex = 137;
+            this.dtp_birthday.CalendarFont = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_birthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_birthday.Location = new System.Drawing.Point(619, 72);
+            this.dtp_birthday.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.dtp_birthday.Name = "dtp_birthday";
+            this.dtp_birthday.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtp_birthday.Size = new System.Drawing.Size(391, 23);
+            this.dtp_birthday.TabIndex = 229;
             // 
-            // txt_unit_price
+            // txt_gender
             // 
-            this.txt_unit_price.Location = new System.Drawing.Point(384, 97);
-            this.txt_unit_price.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_unit_price.Name = "txt_unit_price";
-            this.txt_unit_price.Size = new System.Drawing.Size(158, 21);
-            this.txt_unit_price.TabIndex = 136;
+            this.txt_gender.Location = new System.Drawing.Point(619, 43);
+            this.txt_gender.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txt_gender.Name = "txt_gender";
+            this.txt_gender.Size = new System.Drawing.Size(391, 25);
+            this.txt_gender.TabIndex = 228;
             // 
-            // txt_product_id
+            // txt_phone
             // 
-            this.txt_product_id.Location = new System.Drawing.Point(110, 39);
-            this.txt_product_id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_product_id.Name = "txt_product_id";
-            this.txt_product_id.Size = new System.Drawing.Size(158, 21);
-            this.txt_product_id.TabIndex = 135;
+            this.txt_phone.Location = new System.Drawing.Point(619, 14);
+            this.txt_phone.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txt_phone.Name = "txt_phone";
+            this.txt_phone.Size = new System.Drawing.Size(391, 25);
+            this.txt_phone.TabIndex = 223;
             // 
-            // txt_product_name
+            // txt_email
             // 
-            this.txt_product_name.Location = new System.Drawing.Point(110, 91);
-            this.txt_product_name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_product_name.Name = "txt_product_name";
-            this.txt_product_name.Size = new System.Drawing.Size(158, 21);
-            this.txt_product_name.TabIndex = 134;
+            this.txt_email.Location = new System.Drawing.Point(120, 102);
+            this.txt_email.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(389, 25);
+            this.txt_email.TabIndex = 227;
             // 
-            // txt_size
+            // cb_customer_type_id
             // 
-            this.txt_size.Location = new System.Drawing.Point(110, 117);
-            this.txt_size.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_size.Name = "txt_size";
-            this.txt_size.Size = new System.Drawing.Size(158, 21);
-            this.txt_size.TabIndex = 133;
+            this.cb_customer_type_id.FormattingEnabled = true;
+            this.cb_customer_type_id.Location = new System.Drawing.Point(120, 72);
+            this.cb_customer_type_id.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.cb_customer_type_id.Name = "cb_customer_type_id";
+            this.cb_customer_type_id.Size = new System.Drawing.Size(389, 24);
+            this.cb_customer_type_id.TabIndex = 226;
             // 
-            // label8
+            // txt_full_name
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(290, 71);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 13);
-            this.label8.TabIndex = 132;
-            this.label8.Text = "Số điện thoại";
+            this.txt_full_name.Location = new System.Drawing.Point(120, 43);
+            this.txt_full_name.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txt_full_name.Name = "txt_full_name";
+            this.txt_full_name.Size = new System.Drawing.Size(389, 25);
+            this.txt_full_name.TabIndex = 216;
             // 
-            // label6
+            // txt_customer_id
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(296, 97);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 13);
-            this.label6.TabIndex = 131;
-            this.label6.Text = "Giới tính";
+            this.txt_customer_id.Location = new System.Drawing.Point(120, 14);
+            this.txt_customer_id.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txt_customer_id.Name = "txt_customer_id";
+            this.txt_customer_id.Size = new System.Drawing.Size(389, 25);
+            this.txt_customer_id.TabIndex = 215;
             // 
-            // label4
+            // Root
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 120);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 13);
-            this.label4.TabIndex = 130;
-            this.label4.Text = "Ngày sinh";
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.layoutControlItem4,
+            this.layoutControlItem5,
+            this.layoutControlItem6,
+            this.layoutControlItem7,
+            this.layoutControlItem8,
+            this.layoutControlItem9,
+            this.layoutControlItem10});
+            this.Root.Name = "Root";
+            this.Root.Size = new System.Drawing.Size(1024, 187);
+            this.Root.TextVisible = false;
             // 
-            // label3
+            // layoutControlItem1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 94);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 13);
-            this.label3.TabIndex = 129;
-            this.label3.Text = "Họ tên";
+            this.layoutControlItem1.Control = this.txt_customer_id;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(499, 29);
+            this.layoutControlItem1.Text = "Mã khách hàng";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(92, 16);
             // 
-            // label2
+            // layoutControlItem2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 13);
-            this.label2.TabIndex = 128;
-            this.label2.Text = "Mã khách hàng";
+            this.layoutControlItem2.Control = this.txt_full_name;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 29);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(499, 29);
+            this.layoutControlItem2.Text = "Họ và tên";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(92, 16);
             // 
-            // dataGridView1
+            // layoutControlItem3
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.layoutControlItem3.Control = this.cb_customer_type_id;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 58);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(499, 30);
+            this.layoutControlItem3.Text = "Loại khách hàng";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(92, 16);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.txt_email;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 88);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(499, 75);
+            this.layoutControlItem4.Text = "Email";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(92, 16);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.txt_phone;
+            this.layoutControlItem5.Location = new System.Drawing.Point(499, 0);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(501, 29);
+            this.layoutControlItem5.Text = "Số điện thoại";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(92, 16);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.txt_gender;
+            this.layoutControlItem6.Location = new System.Drawing.Point(499, 29);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(501, 29);
+            this.layoutControlItem6.Text = "Giới tính";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(92, 16);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.dtp_birthday;
+            this.layoutControlItem7.Location = new System.Drawing.Point(499, 58);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(501, 30);
+            this.layoutControlItem7.Text = "Ngày sinh";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(92, 16);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.cbSearch;
+            this.layoutControlItem8.Location = new System.Drawing.Point(499, 88);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(250, 75);
+            this.layoutControlItem8.Text = "Tìm kiếm ";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(92, 16);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.txtSearch;
+            this.layoutControlItem9.Location = new System.Drawing.Point(749, 88);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(251, 29);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem9.TextVisible = false;
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.btn_Tim;
+            this.layoutControlItem10.Location = new System.Drawing.Point(749, 117);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(251, 46);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem10.TextVisible = false;
+            // 
+            // dgvCustomer
+            // 
+            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.customer_id,
-            this.customer_type_id,
+            this.customer__type_id,
             this.full_name,
             this.gender,
-            this.brithday,
+            this.birthday,
             this.phone,
             this.email});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(896, 178);
-            this.dataGridView1.TabIndex = 147;
+            this.dgvCustomer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvCustomer.Location = new System.Drawing.Point(9, 10);
+            this.dgvCustomer.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.dgvCustomer.Name = "dgvCustomer";
+            this.dgvCustomer.RowHeadersWidth = 51;
+            this.dgvCustomer.RowTemplate.Height = 24;
+            this.dgvCustomer.Size = new System.Drawing.Size(1028, 233);
+            this.dgvCustomer.TabIndex = 132;
             // 
             // customer_id
             // 
             this.customer_id.DataPropertyName = "customer_id";
-            this.customer_id.HeaderText = "Mã Khách hàng";
+            this.customer_id.HeaderText = "Mã khách hàng";
+            this.customer_id.MinimumWidth = 6;
             this.customer_id.Name = "customer_id";
+            this.customer_id.Width = 115;
             // 
-            // customer_type_id
+            // customer__type_id
             // 
-            this.customer_type_id.DataPropertyName = "customer_type_id";
-            this.customer_type_id.HeaderText = "Loại khách";
-            this.customer_type_id.Name = "customer_type_id";
+            this.customer__type_id.DataPropertyName = "customer_type_id";
+            this.customer__type_id.HeaderText = "Loại khách";
+            this.customer__type_id.MinimumWidth = 6;
+            this.customer__type_id.Name = "customer__type_id";
+            this.customer__type_id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.customer__type_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.customer__type_id.Width = 125;
             // 
             // full_name
             // 
             this.full_name.DataPropertyName = "full_name";
-            this.full_name.HeaderText = "Họ tên";
+            this.full_name.HeaderText = "Họ và tên";
+            this.full_name.MinimumWidth = 6;
             this.full_name.Name = "full_name";
+            this.full_name.Width = 200;
             // 
             // gender
             // 
             this.gender.DataPropertyName = "gender";
             this.gender.HeaderText = "Giới tính";
+            this.gender.MinimumWidth = 6;
             this.gender.Name = "gender";
+            this.gender.Width = 75;
             // 
-            // brithday
+            // birthday
             // 
-            this.brithday.DataPropertyName = "brithday";
-            this.brithday.HeaderText = "Ngày sinh";
-            this.brithday.Name = "brithday";
+            this.birthday.DataPropertyName = "birthday";
+            this.birthday.HeaderText = "Ngày sinh";
+            this.birthday.MinimumWidth = 6;
+            this.birthday.Name = "birthday";
+            this.birthday.Width = 175;
             // 
             // phone
             // 
             this.phone.DataPropertyName = "phone";
             this.phone.HeaderText = "Số điện thoại";
+            this.phone.MinimumWidth = 6;
             this.phone.Name = "phone";
+            this.phone.Width = 125;
             // 
             // email
             // 
             this.email.DataPropertyName = "email";
             this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
             this.email.Name = "email";
+            this.email.Width = 200;
             // 
             // frmCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 432);
+            this.ClientSize = new System.Drawing.Size(1028, 505);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmCustomer";
             this.Text = "frmCustomer";
             this.toolStrip1.ResumeLayout(false);
@@ -514,9 +502,20 @@
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,45 +526,40 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnThem;
         private System.Windows.Forms.ToolStripButton btnSua;
-        private System.Windows.Forms.ToolStripButton btnXoa;
         private System.Windows.Forms.ToolStripButton btnLuu;
         private System.Windows.Forms.ToolStripButton btnHuy;
         private System.Windows.Forms.ToolStripButton btnThoat;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private System.Windows.Forms.DataGridView dgvProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn product_id;
-        private System.Windows.Forms.DataGridViewComboBoxColumn product_type_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn product_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn size;
-        private System.Windows.Forms.DataGridViewTextBoxColumn color;
-        private System.Windows.Forms.DataGridViewImageColumn picture;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unit_price;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cb_product_type_id;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnTim;
-        private System.Windows.Forms.ComboBox cbSearch;
-        private System.Windows.Forms.TextBox txt_color;
-        private System.Windows.Forms.TextBox txt_unit_price;
-        private System.Windows.Forms.TextBox txt_product_id;
-        private System.Windows.Forms.TextBox txt_product_name;
-        private System.Windows.Forms.TextBox txt_size;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn customer_id;
-        private System.Windows.Forms.DataGridViewComboBoxColumn customer_type_id;
+        private System.Windows.Forms.DataGridViewComboBoxColumn customer__type_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn full_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn gender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn brithday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birthday;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraLayout.LayoutControlGroup Root;
+        private System.Windows.Forms.TextBox txt_customer_id;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private System.Windows.Forms.TextBox txt_full_name;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private System.Windows.Forms.ComboBox cb_customer_type_id;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private System.Windows.Forms.TextBox txt_phone;
+        private System.Windows.Forms.TextBox txt_email;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private System.Windows.Forms.TextBox txt_gender;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private System.Windows.Forms.DateTimePicker dtp_birthday;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private System.Windows.Forms.ComboBox cbSearch;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private System.Windows.Forms.TextBox txtSearch;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraEditors.SimpleButton btn_Tim;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
     }
 }

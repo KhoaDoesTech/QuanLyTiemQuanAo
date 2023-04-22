@@ -417,6 +417,7 @@
             this.cbTim.Name = "cbTim";
             this.cbTim.Size = new System.Drawing.Size(154, 24);
             this.cbTim.TabIndex = 4;
+            this.cbTim.SelectedIndexChanged += new System.EventHandler(this.cbTim_SelectedIndexChanged);
             // 
             // layoutControlGroup3
             // 

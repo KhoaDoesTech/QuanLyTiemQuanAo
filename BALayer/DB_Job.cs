@@ -54,10 +54,5 @@ namespace BALayer
                 new SqlParameter("@job_name", job_name),
                 new SqlParameter("@base_salary", base_salary));
         }
-        public bool DeleteJob(ref string err, string job_id)
-        {
-            return db.MyExecuteNonQuery("SP_Delete_Job", ref err,
-                new SqlParameter("@job_id", job_id));
-        }
     }
 }

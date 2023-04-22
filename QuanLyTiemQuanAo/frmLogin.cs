@@ -78,6 +78,7 @@ namespace QuanLyTiemQuanAo
         {
             try
             {
+                // Khởi động connection
                 conn = new SqlConnection(ConnStr);
                 if (conn.State == ConnectionState.Open) conn.Close();
                 conn.Open();

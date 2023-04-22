@@ -26,7 +26,7 @@ namespace QuanLyTiemQuanAo
             ConnStr = connectString;
         }
         // Khai báo biến kiểm tra việc Thêm hay Sửa dữ liệu 
-        bool Add;
+        bool Them;
         public frmEmployee()
         {
             InitializeComponent();
@@ -56,27 +56,13 @@ namespace QuanLyTiemQuanAo
                 dtEmployee = new DataTable();
                 dtEmployee.Clear();
                 dtEmployee = dbe.GetEmployee();
+
+                MoHienThi();
+                KhoaTuongTac();
+
                 // Đưa dữ liệu lên DataGridView 
                 dgvEmployee.DataSource = dtEmployee;
 
-                // Xóa trống các đối tượng trong Panel 
-                this.txt_employee_id.ResetText();
-                this.txt_full_name.ResetText();
-                this.txt_gender.ResetText();
-                this.dtp_birthday.ResetText();
-                this.txt_phone.ResetText();
-                this.txt_employee_address.ResetText();
-                this.txt_email.ResetText();
-                this.ckb_work_status.Checked = true;
-                // Không cho thao tác trên các nút Lưu / Hủy
-                this.btnLuu.Enabled = false;
-                this.btnHuy.Enabled = false;
-                // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
-                this.btnThem.Enabled = true;
-                this.btnSua.Enabled = true;
-                this.btnXoa.Enabled = true;
-                this.btnThoat.Enabled = true;
-                //
                 dgvEmployee_CellClick(null, null);
 
             }
@@ -89,7 +75,7 @@ namespace QuanLyTiemQuanAo
         {
             btnThem.Visible = false;
             btnSua.Visible = false;
-            btnXoa.Visible = false;
+            btnXoa.Visible = true;
             btnLuu.Visible = true;
             btnHuy.Visible = true;
             btnThoat.Visible = false;
@@ -100,22 +86,47 @@ namespace QuanLyTiemQuanAo
             btnThem.Visible = true;
             btnSua.Visible = true;
             btnXoa.Visible = true;
-            btnLuu.Visible = true;
-            btnHuy.Visible = true;
+            btnLuu.Visible = false;
+            btnHuy.Visible = false;
             btnThoat.Visible = true;
-            panel.Enabled = false;
         }
 
         private void XoaTrong()
         {
             txt_employee_id.ResetText();
             txt_full_name.ResetText();
+            cb_job_id.ResetText();
             txt_gender.ResetText();
             dtp_birthday.ResetText();
             txt_phone.ResetText();
             txt_employee_address.ResetText();
             txt_email.ResetText();
+            ckb_work_status.ResetText();
             txtSearch.ResetText();
+        }
+        private void MoTuongTac()
+        {
+            txt_employee_id.Enabled = false;
+            txt_full_name.Enabled = true;
+            cb_job_id.Enabled = true;
+            txt_gender.Enabled = true;
+            dtp_birthday.Enabled = true;
+            txt_phone.Enabled = true;
+            txt_employee_address.Enabled = true;
+            txt_email.Enabled = true;
+            ckb_work_status.Enabled = true;
+        }
+        private void KhoaTuongTac()
+        {
+            txt_employee_id.Enabled = false;
+            txt_full_name.Enabled = false;
+            cb_job_id.Enabled = false;
+            txt_gender.Enabled = false;
+            dtp_birthday.Enabled = false;
+            txt_phone.Enabled = false;
+            txt_employee_address.Enabled = false;
+            txt_email.Enabled = false;
+            ckb_work_status.Enabled = false;
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -125,40 +136,20 @@ namespace QuanLyTiemQuanAo
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            //Kích hoạt biến thêm
-            Add = true;
-            //Xóa trống các đối tượng
+            KhoaHienThi();
             XoaTrong();
-            // Cho thao tác trên các nút Lưu / Hủy / Panel 
-            this.btnLuu.Enabled = true;
-            this.btnHuy.Enabled = true;
-            this.panel.Enabled = true;
-            // Không cho thao tác trên các nút Thêm / Xóa / Thoát 
-            this.btnThem.Enabled = false;
-            this.btnSua.Enabled = false;
-            this.btnXoa.Enabled = false;
-            this.btnThoat.Enabled = false;
-
-            // Đưa con trỏ đến TextField txt_employee_id
-            this.txt_employee_id.Focus();
+            MoTuongTac();
+            txt_full_name.Focus();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             // Kích hoạt biến Sửa 
-            Add = false;
+            Them = false;
+            MoTuongTac();
             dgvEmployee_CellClick(null, null);
-            // Cho thao tác trên các nút Lưu / Hủy / Panel
-            this.btnLuu.Enabled = true;
-            this.btnHuy.Enabled = true;
-            this.panel.Enabled = true;
-            // Không cho thao tác trên các nút Thêm / Xóa / Thoát 
-            this.btnThem.Enabled = false;
-            this.btnSua.Enabled = false;
-            this.btnXoa.Enabled = false;
-            this.btnThoat.Enabled = false;
-            // Đưa con trỏ đến TextField txt_employee_id           
-            this.txt_employee_id.Focus();
+            KhoaHienThi();
+            txt_full_name.Focus();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -212,14 +203,14 @@ namespace QuanLyTiemQuanAo
         private void btnLuu_Click(object sender, EventArgs e)
         {
             bool f = false;
-            if (Add)
+            if (Them)
             {
                 string err = "";
                 try
                 {
-                    f = dbe.InsertEmployee(ref err, txt_employee_id.Text, txt_employee_id.Text,
+                    f = dbe.InsertEmployee(ref err, cb_job_id.Text,
                         txt_full_name.Text, txt_gender.Text,
-                        DateTime.Parse(dtp_birthday.Text), txt_phone.Text,
+                        DateTime.Parse(dtp_birthday.Text.ToString()), txt_phone.Text,
                         txt_employee_address.Text, txt_email.Text, ckb_work_status.Checked);
                     if (f)
                     {
@@ -238,14 +229,14 @@ namespace QuanLyTiemQuanAo
                     MessageBox.Show("Không thêm được. Lỗi rồi!");
                 }
             }
-            if (!Add)
+            if (!Them)
             {
                 string err = "";
                 try
                 {
-                    f = dbe.UpdateEmployee(ref err, txt_employee_id.Text, txt_employee_id.Text,
+                    f = dbe.UpdateEmployee(ref err, cb_job_id.Text,
                         txt_full_name.Text, txt_gender.Text,
-                        DateTime.Parse(dtp_birthday.Text), txt_phone.Text,
+                        DateTime.Parse(dtp_birthday.Text.ToString()), txt_phone.Text,
                         txt_employee_address.Text, txt_email.Text, ckb_work_status.Checked);
                     if (f)
                     {
@@ -268,17 +259,10 @@ namespace QuanLyTiemQuanAo
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            // Xóa trống các đối tượng trong Panel 
+            MoHienThi();
             XoaTrong();
-            // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
-            this.btnThem.Enabled = true;
-            this.btnSua.Enabled = true;
-            this.btnXoa.Enabled = true;
-            this.btnThoat.Enabled = true;
-            // Không cho thao tác trên các nút Lưu / Hủy / Panel
-            this.btnLuu.Enabled = false;
-            this.btnHuy.Enabled = false;
-            this.panel.Enabled = false;
+            KhoaTuongTac();
+            dgvEmployee_CellClick(null, null);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -293,27 +277,53 @@ namespace QuanLyTiemQuanAo
         }
         private void dgvEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Đưa dữ liệu lên ComboBox
+            cb_job_id.DataSource = dtJob;
+            cb_job_id.DisplayMember = "job_name";
+            cb_job_id.ValueMember = "job_id";
             // Thứ tự dòng hiện hành 
             int r = dgvEmployee.CurrentCell.RowIndex;
             // Chuyển thông tin lên panel 
-            this.txt_employee_id.Text =
+            txt_employee_id.Text =
             dgvEmployee.Rows[r].Cells[0].Value.ToString();
-            this.cb_job_id.Text =
+            cb_job_id.SelectedValue =
             dgvEmployee.Rows[r].Cells[1].Value.ToString();
-            this.txt_full_name.Text =
+            txt_full_name.Text =
             dgvEmployee.Rows[r].Cells[2].Value.ToString();
-            this.txt_gender.Text =
+            txt_gender.Text =
             dgvEmployee.Rows[r].Cells[3].Value.ToString();
-            this.dtp_birthday.Text =
+            dtp_birthday.Text =
             dgvEmployee.Rows[r].Cells[4].Value.ToString();
-            this.txt_phone.Text =
+            txt_phone.Text =
             dgvEmployee.Rows[r].Cells[5].Value.ToString();
-            this.txt_employee_address.Text =
+            txt_employee_address.Text =
             dgvEmployee.Rows[r].Cells[6].Value.ToString();
-            this.txt_email.Text =
+            txt_email.Text =
             dgvEmployee.Rows[r].Cells[7].Value.ToString();
-            this.ckb_work_status.Checked = Boolean.Parse(
-            dgvEmployee.Rows[r].Cells[8].Value.ToString());
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            //choose type to search
+            dgvEmployee.DataSource = dt;
+
+            cbSearch.Items.Add("Mã nhân viên");
+            cbSearch.Items.Add("Tên nhân viên");
+            cbSearch.Text = cbSearch.Items[0].ToString();
+            cbSearch.Text = cbSearch.Items[1].ToString();
+            int x = cbSearch.SelectedIndex;
+            switch (x)
+            {
+                case 1:
+                    dt = dbe.FindEmployeeByID(txtSearch.Text);
+                    dgvEmployee.DataSource = dt;
+                    break;
+                case 2:
+                    dt = dbe.FindEmployeeByName(txtSearch.Text);
+                    dgvEmployee.DataSource = dt;
+                    break;
+            }
         }
     }
 }

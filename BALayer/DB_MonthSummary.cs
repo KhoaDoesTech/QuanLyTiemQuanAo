@@ -22,34 +22,31 @@ namespace BALayer
             return db.ExecuteQueryDataTable("select * from MonthSummary");
         }
 
-        public bool InsertMonthSummary(ref string err, string employee_id,
-            int summary_month, int summary_year,
-            int products_sold, int bonus_salary, int salary)
+        public bool InsertMonthSummary(ref string err,
+            int summary_month, int summary_year)
         {
             return db.MyExecuteNonQuery("SP_Insert_MonthSummary",
                 ref err,
-                new SqlParameter("@employee_id", employee_id),
                 new SqlParameter("@summary_month", summary_month),
-                new SqlParameter("@summary_year", summary_year),
-                new SqlParameter("@products_sold", products_sold),
-                new SqlParameter("@bonus_salary", bonus_salary),
-                new SqlParameter("@salary", salary));
+                new SqlParameter("@summary_year", summary_year));
         }
-        public bool FindMonthSummary(ref string err, string employee_id,
-            int summary_month, int summary_year,
-            int products_sold, int bonus_salary, int salary)
+        public DataTable FindMonthSummaryByID(string employee_id)
         {
-            return db.MyExecuteNonQuery("SP_Find_MonthSummary",
-                ref err,
-                new SqlParameter("@employee_id", employee_id),
-                new SqlParameter("@summary_month", summary_month),
-                new SqlParameter("@summary_year", summary_year),
-                new SqlParameter("@products_sold", products_sold),
-                new SqlParameter("@bonus_salary", bonus_salary),
-                new SqlParameter("@salary", salary));
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindMonthSummaryByID(@employee_id)",
+                 new SqlParameter("@employee_id", employee_id));
         }
-        public bool UpdateMonthSummary(ref string err, string employee_id,
-            int summary_month, int summary_year,
+        public DataTable FindMonthSummaryByMonth(int summary_month)
+        {
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindMonthSummaryByMonth(@summary_month)",
+                 new SqlParameter("@summary_month", summary_month));
+        }
+        public DataTable FindMonthSummaryByYear(int summary_year)
+        {
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindMonthSummaryByYear(@summary_year)",
+                 new SqlParameter("@summary_year", summary_year));
+        }
+        public bool UpdateMonthSummary(ref string err,
+            string employee_id, int summary_month, int summary_year,
             int products_sold, int bonus_salary, int salary)
         {
             return db.MyExecuteNonQuery("SP_Update_MonthSummary",
@@ -60,11 +57,6 @@ namespace BALayer
                 new SqlParameter("@products_sold", products_sold),
                 new SqlParameter("@bonus_salary", bonus_salary),
                 new SqlParameter("@salary", salary));
-        }
-        public bool DeleteMonthSummary(ref string err, string employee_id)
-        {
-            return db.MyExecuteNonQuery("SP_Delete_MonthSummary", ref err,
-                new SqlParameter("@employee_id", employee_id));
         }
     }
 }

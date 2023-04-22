@@ -77,11 +77,29 @@
     <Compile Include="frmBranch.Designer.cs">
       <DependentUpon>frmBranch.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomerType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerType.Designer.cs">
+      <DependentUpon>frmCustomerType.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEmployee.Designer.cs">
       <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvent.Designer.cs">
+      <DependentUpon>frmEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="frmJob.cs">
       <SubType>Form</SubType>
@@ -119,6 +137,12 @@
     <Compile Include="frmOrder.Designer.cs">
       <DependentUpon>frmOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPerson.Designer.cs">
+      <DependentUpon>frmPerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,11 +155,11 @@
     <Compile Include="frmProductType.Designer.cs">
       <DependentUpon>frmProductType.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmViewStock.cs">
+    <Compile Include="frmView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmViewStock.Designer.cs">
-      <DependentUpon>frmViewStock.cs</DependentUpon>
+    <Compile Include="frmView.Designer.cs">
+      <DependentUpon>frmView.cs</DependentUpon>
     </Compile>
     <Compile Include="IConnectionForm.cs" />
     <Compile Include="Program.cs" />
@@ -143,8 +167,17 @@
     <EmbeddedResource Include="frmBranch.resx">
       <DependentUpon>frmBranch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerType.resx">
+      <DependentUpon>frmCustomerType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmployee.resx">
       <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvent.resx">
+      <DependentUpon>frmEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmJob.resx">
       <DependentUpon>frmJob.cs</DependentUpon>
@@ -164,14 +197,17 @@
     <EmbeddedResource Include="frmOrder.resx">
       <DependentUpon>frmOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPerson.resx">
+      <DependentUpon>frmPerson.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductType.resx">
       <DependentUpon>frmProductType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmViewStock.resx">
-      <DependentUpon>frmViewStock.cs</DependentUpon>
+    <EmbeddedResource Include="frmView.resx">
+      <DependentUpon>frmView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

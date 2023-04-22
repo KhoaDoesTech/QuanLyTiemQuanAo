@@ -44,13 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB_Customer.cs" />
     <Compile Include="DB_Branch.cs" />
+    <Compile Include="DB_CustomerType.cs" />
+    <Compile Include="DB_Event.cs" />
     <Compile Include="DB_Job.cs" />
     <Compile Include="DB_Employee.cs" />
     <Compile Include="DB_JobTitle.cs" />
     <Compile Include="DB_MonthSummary.cs" />
+    <Compile Include="DB_Personal.cs" />
     <Compile Include="DB_Product.cs" />
     <Compile Include="DB_ProductType.cs" />
+    <Compile Include="DB_PurchaseOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

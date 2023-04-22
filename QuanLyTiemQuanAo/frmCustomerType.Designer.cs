@@ -28,186 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.btnLayHinh = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pic_picture = new System.Windows.Forms.PictureBox();
-            this.cb_product_type_id = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnTim = new System.Windows.Forms.Button();
-            this.cbSearch = new System.Windows.Forms.ComboBox();
-            this.txt_product_name = new System.Windows.Forms.TextBox();
-            this.txt_size = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomerType));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.cbSearch = new System.Windows.Forms.ComboBox();
+            this.txt_customer_type_id = new System.Windows.Forms.TextBox();
+            this.txt_customer_type_name = new System.Windows.Forms.TextBox();
+            this.txt_units_purchased = new System.Windows.Forms.TextBox();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.dgvCustomerType = new System.Windows.Forms.DataGridView();
+            this.customer_type_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customer_type_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.units_purchased = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Tim = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.btnThem = new System.Windows.Forms.ToolStripButton();
             this.btnSua = new System.Windows.Forms.ToolStripButton();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
             this.btnHuy = new System.Windows.Forms.ToolStripButton();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
-            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.product_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.product_type_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.picture = new System.Windows.Forms.DataGridViewImageColumn();
-            this.unit_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_picture)).BeginInit();
-            this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
-            this.splitContainerControl1.Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).BeginInit();
-            this.splitContainerControl1.Panel2.SuspendLayout();
-            this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(this.btnLayHinh);
-            this.groupControl1.Controls.Add(this.label5);
-            this.groupControl1.Controls.Add(this.pic_picture);
-            this.groupControl1.Controls.Add(this.cb_product_type_id);
-            this.groupControl1.Controls.Add(this.label1);
-            this.groupControl1.Controls.Add(this.label9);
-            this.groupControl1.Controls.Add(this.txtSearch);
-            this.groupControl1.Controls.Add(this.btnTim);
-            this.groupControl1.Controls.Add(this.cbSearch);
-            this.groupControl1.Controls.Add(this.txt_product_name);
-            this.groupControl1.Controls.Add(this.txt_size);
-            this.groupControl1.Controls.Add(this.label4);
-            this.groupControl1.Controls.Add(this.label3);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 0);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(928, 196);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Thông tin sản phẩm";
-            // 
-            // btnLayHinh
-            // 
-            this.btnLayHinh.Location = new System.Drawing.Point(576, 49);
-            this.btnLayHinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLayHinh.Name = "btnLayHinh";
-            this.btnLayHinh.Size = new System.Drawing.Size(64, 26);
-            this.btnLayHinh.TabIndex = 125;
-            this.btnLayHinh.Text = "Lấy hình";
-            this.btnLayHinh.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(347, 56);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 124;
-            this.label5.Text = "Hình ảnh";
-            // 
-            // pic_picture
-            // 
-            this.pic_picture.Location = new System.Drawing.Point(401, 44);
-            this.pic_picture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pic_picture.Name = "pic_picture";
-            this.pic_picture.Size = new System.Drawing.Size(158, 67);
-            this.pic_picture.TabIndex = 123;
-            this.pic_picture.TabStop = false;
-            // 
-            // cb_product_type_id
-            // 
-            this.cb_product_type_id.FormattingEnabled = true;
-            this.cb_product_type_id.Location = new System.Drawing.Point(161, 68);
-            this.cb_product_type_id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cb_product_type_id.Name = "cb_product_type_id";
-            this.cb_product_type_id.Size = new System.Drawing.Size(158, 21);
-            this.cb_product_type_id.TabIndex = 122;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
-            this.label1.TabIndex = 121;
-            this.label1.Text = "Mã loại khách";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(347, 150);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 13);
-            this.label9.TabIndex = 120;
-            this.label9.Text = "Tìm kiếm";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(495, 147);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(125, 20);
-            this.txtSearch.TabIndex = 119;
-            // 
-            // btnTim
-            // 
-            this.btnTim.Location = new System.Drawing.Point(625, 146);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(64, 26);
-            this.btnTim.TabIndex = 117;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.UseVisualStyleBackColor = true;
-            // 
-            // cbSearch
-            // 
-            this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(401, 147);
-            this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(87, 21);
-            this.cbSearch.TabIndex = 118;
-            // 
-            // txt_product_name
-            // 
-            this.txt_product_name.Location = new System.Drawing.Point(161, 105);
-            this.txt_product_name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_product_name.Name = "txt_product_name";
-            this.txt_product_name.Size = new System.Drawing.Size(158, 21);
-            this.txt_product_name.TabIndex = 113;
-            // 
-            // txt_size
-            // 
-            this.txt_size.Location = new System.Drawing.Point(161, 146);
-            this.txt_size.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_size.Name = "txt_size";
-            this.txt_size.Size = new System.Drawing.Size(158, 21);
-            this.txt_size.TabIndex = 112;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(67, 149);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 13);
-            this.label4.TabIndex = 109;
-            this.label4.Text = "Số lượng bán hàng ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 108);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
-            this.label3.TabIndex = 108;
-            this.label3.Text = "Tên loại khách";
             // 
             // toolStrip1
             // 
@@ -221,183 +95,353 @@
             this.btnThoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(928, 42);
+            this.toolStrip1.Size = new System.Drawing.Size(910, 47);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 47);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.groupControl1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dgvCustomerType);
+            this.splitContainer1.Size = new System.Drawing.Size(910, 387);
+            this.splitContainer1.SplitterDistance = 179;
+            this.splitContainer1.SplitterWidth = 5;
+            this.splitContainer1.TabIndex = 5;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.layoutControl1);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(910, 179);
+            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Text = "Thông tin loại khách";
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.btn_Tim);
+            this.layoutControl1.Controls.Add(this.txtSearch);
+            this.layoutControl1.Controls.Add(this.cbSearch);
+            this.layoutControl1.Controls.Add(this.txt_customer_type_id);
+            this.layoutControl1.Controls.Add(this.txt_customer_type_name);
+            this.layoutControl1.Controls.Add(this.txt_units_purchased);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(2, 28);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(716, 0, 650, 400);
+            this.layoutControl1.Root = this.Root;
+            this.layoutControl1.Size = new System.Drawing.Size(906, 149);
+            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(661, 12);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(138, 27);
+            this.txtSearch.TabIndex = 219;
+            // 
+            // cbSearch
+            // 
+            this.cbSearch.FormattingEnabled = true;
+            this.cbSearch.Location = new System.Drawing.Point(577, 12);
+            this.cbSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.cbSearch.Name = "cbSearch";
+            this.cbSearch.Size = new System.Drawing.Size(80, 24);
+            this.cbSearch.TabIndex = 218;
+            // 
+            // txt_customer_type_id
+            // 
+            this.txt_customer_type_id.Location = new System.Drawing.Point(136, 12);
+            this.txt_customer_type_id.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txt_customer_type_id.Name = "txt_customer_type_id";
+            this.txt_customer_type_id.Size = new System.Drawing.Size(313, 25);
+            this.txt_customer_type_id.TabIndex = 217;
+            // 
+            // txt_customer_type_name
+            // 
+            this.txt_customer_type_name.Location = new System.Drawing.Point(136, 55);
+            this.txt_customer_type_name.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txt_customer_type_name.Name = "txt_customer_type_name";
+            this.txt_customer_type_name.Size = new System.Drawing.Size(313, 25);
+            this.txt_customer_type_name.TabIndex = 216;
+            // 
+            // txt_units_purchased
+            // 
+            this.txt_units_purchased.Location = new System.Drawing.Point(136, 112);
+            this.txt_units_purchased.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txt_units_purchased.Name = "txt_units_purchased";
+            this.txt_units_purchased.Size = new System.Drawing.Size(313, 25);
+            this.txt_units_purchased.TabIndex = 215;
+            // 
+            // Root
+            // 
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.emptySpaceItem2,
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.emptySpaceItem1,
+            this.emptySpaceItem3,
+            this.layoutControlItem4,
+            this.layoutControlItem5,
+            this.emptySpaceItem4,
+            this.layoutControlItem6});
+            this.Root.Name = "Root";
+            this.Root.Size = new System.Drawing.Size(906, 149);
+            this.Root.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.txt_units_purchased;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 100);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(441, 29);
+            this.layoutControlItem1.Text = "Số lượng hàng mua";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(112, 16);
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(441, 52);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(445, 77);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.txt_customer_type_name;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 43);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(441, 29);
+            this.layoutControlItem2.Text = "Tên loại khách";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(112, 16);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.txt_customer_type_id;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(441, 29);
+            this.layoutControlItem3.Text = "Mã loại khách";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(112, 16);
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 29);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(441, 14);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 72);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(441, 28);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.cbSearch;
+            this.layoutControlItem4.Location = new System.Drawing.Point(441, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(208, 31);
+            this.layoutControlItem4.Text = "Tìm kiếm";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(112, 16);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.txtSearch;
+            this.layoutControlItem5.CustomizationFormText = "|";
+            this.layoutControlItem5.Location = new System.Drawing.Point(649, 0);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(142, 31);
+            this.layoutControlItem5.Text = "|";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
+            // 
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.Location = new System.Drawing.Point(441, 31);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(445, 21);
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // dgvCustomerType
+            // 
+            this.dgvCustomerType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomerType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.customer_type_id,
+            this.customer_type_name,
+            this.units_purchased});
+            this.dgvCustomerType.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvCustomerType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCustomerType.Location = new System.Drawing.Point(0, 0);
+            this.dgvCustomerType.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.dgvCustomerType.Name = "dgvCustomerType";
+            this.dgvCustomerType.RowHeadersWidth = 51;
+            this.dgvCustomerType.RowTemplate.Height = 24;
+            this.dgvCustomerType.Size = new System.Drawing.Size(910, 203);
+            this.dgvCustomerType.TabIndex = 133;
+            // 
+            // customer_type_id
+            // 
+            this.customer_type_id.DataPropertyName = "customer_type_id";
+            this.customer_type_id.HeaderText = "Mã loại khách ";
+            this.customer_type_id.MinimumWidth = 6;
+            this.customer_type_id.Name = "customer_type_id";
+            this.customer_type_id.Width = 115;
+            // 
+            // customer_type_name
+            // 
+            this.customer_type_name.DataPropertyName = "customer_type_name";
+            this.customer_type_name.HeaderText = "Tên loại khách";
+            this.customer_type_name.MinimumWidth = 6;
+            this.customer_type_name.Name = "customer_type_name";
+            this.customer_type_name.Width = 200;
+            // 
+            // units_purchased
+            // 
+            this.units_purchased.DataPropertyName = "units_purchased";
+            this.units_purchased.HeaderText = "Số lượng hàng bán";
+            this.units_purchased.MinimumWidth = 6;
+            this.units_purchased.Name = "units_purchased";
+            this.units_purchased.Width = 75;
+            // 
+            // btn_Tim
+            // 
+            this.btn_Tim.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Tim.ImageOptions.Image")));
+            this.btn_Tim.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btn_Tim.Location = new System.Drawing.Point(803, 12);
+            this.btn_Tim.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Tim.Name = "btn_Tim";
+            this.btn_Tim.Size = new System.Drawing.Size(91, 27);
+            this.btn_Tim.StyleController = this.layoutControl1;
+            this.btn_Tim.TabIndex = 220;
+            this.btn_Tim.Text = "Tìm";
+            this.btn_Tim.Click += new System.EventHandler(this.btn_Tim_Click);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.btn_Tim;
+            this.layoutControlItem6.Location = new System.Drawing.Point(791, 0);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(95, 31);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
+            // 
             // btnThem
             // 
-            this.btnThem.Image = global::QuanLyTiemQuanAo.Properties.Resources.Add_32x32;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(41, 39);
+            this.btnThem.Size = new System.Drawing.Size(50, 44);
             this.btnThem.Text = "Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
-            this.btnSua.Image = global::QuanLyTiemQuanAo.Properties.Resources.Edit_32x32;
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(30, 39);
+            this.btnSua.Size = new System.Drawing.Size(38, 44);
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
-            this.btnXoa.Image = global::QuanLyTiemQuanAo.Properties.Resources.Trash_32x32;
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(31, 39);
+            this.btnXoa.Size = new System.Drawing.Size(39, 44);
             this.btnXoa.Text = "Xoá";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // btnLuu
             // 
-            this.btnLuu.Image = global::QuanLyTiemQuanAo.Properties.Resources.Save_32x32;
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(31, 39);
+            this.btnLuu.Size = new System.Drawing.Size(37, 44);
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnHuy
             // 
-            this.btnHuy.Image = global::QuanLyTiemQuanAo.Properties.Resources.Undo_32x32;
+            this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
             this.btnHuy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(48, 39);
+            this.btnHuy.Size = new System.Drawing.Size(60, 44);
             this.btnHuy.Text = "Bỏ qua";
             this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnThoat
             // 
-            this.btnThoat.Image = global::QuanLyTiemQuanAo.Properties.Resources.Action_Close_32x32;
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(41, 39);
+            this.btnThoat.Size = new System.Drawing.Size(51, 44);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // splitContainerControl1
-            // 
-            this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.splitContainerControl1.Name = "splitContainerControl1";
-            // 
-            // splitContainerControl1.Panel1
-            // 
-            this.splitContainerControl1.Panel1.Controls.Add(this.groupControl1);
-            this.splitContainerControl1.Panel1.Text = "Panel1";
-            // 
-            // splitContainerControl1.Panel2
-            // 
-            this.splitContainerControl1.Panel2.Controls.Add(this.dgvProduct);
-            this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(928, 359);
-            this.splitContainerControl1.SplitterPosition = 196;
-            this.splitContainerControl1.TabIndex = 5;
-            // 
-            // dgvProduct
-            // 
-            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.product_id,
-            this.product_type_id,
-            this.product_name,
-            this.size,
-            this.color,
-            this.picture,
-            this.unit_price});
-            this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProduct.Location = new System.Drawing.Point(0, 0);
-            this.dgvProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvProduct.Name = "dgvProduct";
-            this.dgvProduct.RowHeadersWidth = 51;
-            this.dgvProduct.RowTemplate.Height = 24;
-            this.dgvProduct.Size = new System.Drawing.Size(928, 153);
-            this.dgvProduct.TabIndex = 1;
-            // 
-            // product_id
-            // 
-            this.product_id.DataPropertyName = "product_id";
-            this.product_id.HeaderText = "Mã sản phẩm";
-            this.product_id.MinimumWidth = 6;
-            this.product_id.Name = "product_id";
-            this.product_id.Width = 125;
-            // 
-            // product_type_id
-            // 
-            this.product_type_id.DataPropertyName = "product_type_id";
-            this.product_type_id.HeaderText = "Loại sản phẩm";
-            this.product_type_id.MinimumWidth = 6;
-            this.product_type_id.Name = "product_type_id";
-            this.product_type_id.Width = 125;
-            // 
-            // product_name
-            // 
-            this.product_name.DataPropertyName = "product_name";
-            this.product_name.HeaderText = "Tên sản phẩm";
-            this.product_name.MinimumWidth = 6;
-            this.product_name.Name = "product_name";
-            this.product_name.Width = 125;
-            // 
-            // size
-            // 
-            this.size.DataPropertyName = "size";
-            this.size.HeaderText = "Kích cỡ";
-            this.size.MinimumWidth = 6;
-            this.size.Name = "size";
-            this.size.Width = 125;
-            // 
-            // color
-            // 
-            this.color.DataPropertyName = "color";
-            this.color.HeaderText = "Màu sắc";
-            this.color.MinimumWidth = 6;
-            this.color.Name = "color";
-            this.color.Width = 125;
-            // 
-            // picture
-            // 
-            this.picture.DataPropertyName = "picture";
-            this.picture.HeaderText = "Hình ảnh";
-            this.picture.MinimumWidth = 6;
-            this.picture.Name = "picture";
-            this.picture.Width = 125;
-            // 
-            // unit_price
-            // 
-            this.unit_price.DataPropertyName = "unit_price";
-            this.unit_price.HeaderText = "Đơn giá";
-            this.unit_price.MinimumWidth = 6;
-            this.unit_price.Name = "unit_price";
-            this.unit_price.Width = 125;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // frmCustomerType
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 359);
+            this.ClientSize = new System.Drawing.Size(910, 434);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.splitContainerControl1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCustomerType";
             this.Text = "frmCustomerType";
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_picture)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
-            this.splitContainerControl1.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).EndInit();
-            this.splitContainerControl1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
-            this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,20 +449,6 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private System.Windows.Forms.Button btnLayHinh;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pic_picture;
-        private System.Windows.Forms.ComboBox cb_product_type_id;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnTim;
-        private System.Windows.Forms.ComboBox cbSearch;
-        private System.Windows.Forms.TextBox txt_product_name;
-        private System.Windows.Forms.TextBox txt_size;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnThem;
         private System.Windows.Forms.ToolStripButton btnSua;
@@ -426,14 +456,29 @@
         private System.Windows.Forms.ToolStripButton btnLuu;
         private System.Windows.Forms.ToolStripButton btnHuy;
         private System.Windows.Forms.ToolStripButton btnThoat;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private System.Windows.Forms.DataGridView dgvProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn product_id;
-        private System.Windows.Forms.DataGridViewComboBoxColumn product_type_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn product_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn size;
-        private System.Windows.Forms.DataGridViewTextBoxColumn color;
-        private System.Windows.Forms.DataGridViewImageColumn picture;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unit_price;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.DataGridView dgvCustomerType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customer_type_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customer_type_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn units_purchased;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraLayout.LayoutControlGroup Root;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private System.Windows.Forms.TextBox txt_units_purchased;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private System.Windows.Forms.TextBox txt_customer_type_id;
+        private System.Windows.Forms.TextBox txt_customer_type_name;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
+        private System.Windows.Forms.ComboBox cbSearch;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private System.Windows.Forms.TextBox txtSearch;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraEditors.SimpleButton btn_Tim;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
     }
 }

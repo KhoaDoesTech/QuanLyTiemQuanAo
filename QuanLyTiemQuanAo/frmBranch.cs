@@ -34,28 +34,24 @@ namespace QuanLyTiemQuanAo
         {
             try
             {
-                // Vận chuyển dữ liệu vào DataTable dtProduct
+                // Vận chuyển dữ liệu vào DataTable dtBranch
                 dtBranch = new DataTable();
                 dtBranch.Clear();
                 dtBranch = dbms.GetBranch();
-                // Đưa dữ liệu lên DataGridView 
-                dgvBranch.DataSource = dtBranch;
+
 
                 // Xóa trống các đối tượng trong Panel 
                 this.txt_branch_id.ResetText();
                 this.txt_branch_name.ResetText();
                 this.txt_max_stock.ResetText();
                 this.txt_rent_amount.ResetText();
-                // Không cho thao tác trên các nút Lưu / Hủy
-                this.btnLuu.Enabled = false;
-                this.btnHuy.Enabled = false;
-                this.panel.Enabled = false;
-                // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
-                this.btnThem.Enabled = true;
-                this.btnSua.Enabled = true;
-                this.btnXoa.Enabled = true;
-                this.btnThoat.Enabled = true;
-                //
+
+
+                MoHienThi();
+                KhoaTuongTac();
+
+                // Đưa dữ liệu lên DataGridView 
+                dgvBranch.DataSource = dtBranch;
                 dgvBranch_CellClick(null, null);
 
             }
@@ -69,7 +65,6 @@ namespace QuanLyTiemQuanAo
         {
             btnThem.Visible = false;
             btnSua.Visible = false;
-            btnXoa.Visible = false;
             btnLuu.Visible = true;
             btnHuy.Visible = true;
             btnThoat.Visible = false;
@@ -79,7 +74,6 @@ namespace QuanLyTiemQuanAo
         {
             btnThem.Visible = true;
             btnSua.Visible = true;
-            btnXoa.Visible = true;
             btnLuu.Visible = true;
             btnHuy.Visible = true;
             btnThoat.Visible = true;
@@ -94,25 +88,27 @@ namespace QuanLyTiemQuanAo
             txt_rent_amount.ResetText();
             txtSearch.ResetText();
         }
+        private void MoTuongTac()
+        {
+            txt_branch_id.Enabled = false;
+            txt_branch_name.Enabled = true;
+            txt_max_stock.Enabled = true;
+            txt_rent_amount.Enabled = true;
+        }
+        private void KhoaTuongTac()
+        {
+            txt_branch_id.Enabled = false;
+            txt_branch_name.Enabled = false;
+            txt_max_stock.Enabled = false;
+            txt_rent_amount.Enabled = false;
+        }
 
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            //Kích hoạt biến thêm
-            Add = true;
-            //Xóa trống các đối tượng
+            KhoaHienThi();
             XoaTrong();
-            // Cho thao tác trên các nút Lưu / Hủy / Panel 
-            this.btnLuu.Enabled = true;
-            this.btnHuy.Enabled = true;
-            this.panel.Enabled = true;
-            // Không cho thao tác trên các nút Thêm / Xóa / Thoát 
-            this.btnThem.Enabled = false;
-            this.btnSua.Enabled = false;
-            this.btnXoa.Enabled = false;
-            this.btnThoat.Enabled = false;
-
-            // Đưa con trỏ đến TextField txt_employee_id
+            MoTuongTac();
             this.txt_branch_id.Focus();
         }
 
@@ -120,66 +116,10 @@ namespace QuanLyTiemQuanAo
         {
             // Kích hoạt biến Sửa 
             Add = false;
+            MoTuongTac();
             dgvBranch_CellClick(null, null);
-            // Cho thao tác trên các nút Lưu / Hủy / Panel
-            this.btnLuu.Enabled = true;
-            this.btnHuy.Enabled = true;
-            this.panel.Enabled = true;
-            // Không cho thao tác trên các nút Thêm / Xóa / Thoát 
-            this.btnThem.Enabled = false;
-            this.btnSua.Enabled = false;
-            this.btnXoa.Enabled = false;
-            this.btnThoat.Enabled = false;
-            // Đưa con trỏ đến TextField txt_employee_id           
+            KhoaHienThi();         
             this.txt_branch_id.Focus();
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Lấy thứ tự record hiện hành 
-                int r = dgvBranch.CurrentCell.RowIndex;
-                // Lấy employee_id của record hiện hành 
-                string str_branch_id =
-                dgvBranch.Rows[r].Cells[0].Value.ToString();
-                // Viết câu lệnh SQL 
-                // Hiện thông báo xác nhận việc xóa mẫu tin 
-                // Khai báo biến answer 
-                DialogResult answer;
-                // Hiện hộp thoại hỏi đáp 
-                answer = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                // Kiểm tra có nhấp chọn nút Ok không? 
-                string err = "";
-                if (answer == DialogResult.Yes)
-                {
-
-                    // Thực hiện câu lệnh SQL 
-                    bool f = dbms.DeleteBranch(ref err, str_branch_id);
-                    if (f)
-                    {
-                        // Cập nhật lại DataGridView 
-                        LoadData();
-                        // Thông báo 
-                        MessageBox.Show("Đã xóa xong!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không xóa được!\n\r" + "Lỗi:" + err);
-                    }
-                }
-                else
-                {
-                    // Thông báo 
-                    MessageBox.Show("Không thực hiện việc xóa mẫu tin!");
-                }
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Không xóa được. Lỗi rồi!!!");
-            }
-            // Đóng kết nối
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -241,17 +181,10 @@ namespace QuanLyTiemQuanAo
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            // Xóa trống các đối tượng trong Panel 
+            MoHienThi();
             XoaTrong();
-            // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
-            this.btnThem.Enabled = true;
-            this.btnSua.Enabled = true;
-            this.btnXoa.Enabled = true;
-            this.btnThoat.Enabled = true;
-            // Không cho thao tác trên các nút Lưu / Hủy / Panel
-            this.btnLuu.Enabled = false;
-            this.btnHuy.Enabled = false;
-            this.panel.Enabled = false;
+            KhoaTuongTac();
+            dgvBranch_CellClick(null, null);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -273,15 +206,27 @@ namespace QuanLyTiemQuanAo
             this.txt_branch_id.Text =
             dgvBranch.Rows[r].Cells[0].Value.ToString();
             this.txt_branch_name.Text =
-            dgvBranch.Rows[r].Cells[3].Value.ToString();
+            dgvBranch.Rows[r].Cells[1].Value.ToString();
             this.txt_max_stock.Text =
-            dgvBranch.Rows[r].Cells[4].Value.ToString();
+            dgvBranch.Rows[r].Cells[2].Value.ToString();
             this.txt_rent_amount.Text =
-            dgvBranch.Rows[r].Cells[5].Value.ToString();
+            dgvBranch.Rows[r].Cells[3].Value.ToString();
         }
         private void groupControl1_Paint(object sender, PaintEventArgs e)
         {
 
         }
+        private void frmBranch_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = dbms.FindBranchByID(txtSearch.Text);
+            dgvBranch.DataSource = dt;
+        }
+
+
     }
 }

@@ -58,7 +58,7 @@ namespace QuanLyTiemQuanAo
                 // Vận chuyển dữ liệu vào DataTable dtProduct
                 dtProduct = new DataTable();
                 dtProduct.Clear();
-                dtProduct = dbp.GetProduct();
+                dtProduct = dbp.GetProduct();                
 
                 MoHienThi();
                 KhoaTuongTac();
@@ -203,7 +203,7 @@ namespace QuanLyTiemQuanAo
                 }
                 catch (SqlException)
                 {
-                    MessageBox.Show("Không cap nhat được. Lỗi rồi!");
+                    MessageBox.Show("Không cập nhật được. Lỗi rồi!");
                 }
             }
         }
@@ -268,6 +268,11 @@ namespace QuanLyTiemQuanAo
         }
 
         private void txtTim_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbTim_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

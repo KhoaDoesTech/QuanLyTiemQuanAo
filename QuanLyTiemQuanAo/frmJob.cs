@@ -38,25 +38,13 @@ namespace QuanLyTiemQuanAo
                 dtJob = new DataTable();
                 dtJob.Clear();
                 dtJob = dbms.GetJob();
+
+                MoHienThi();
+                KhoaTuongTac();
+
                 // Đưa dữ liệu lên DataGridView 
                 dgvJob.DataSource = dtJob;
 
-                // Xóa trống các đối tượng trong Panel 
-                this.txt_job_id.ResetText();
-                this.txt_job_title_id.ResetText();
-                this.txt_branch_id.ResetText();
-                this.txt_job_name.ResetText();
-                this.txt_base_salary.ResetText();
-                // Không cho thao tác trên các nút Lưu / Hủy
-                this.btnLuu.Enabled = false;
-                this.btnHuy.Enabled = false;
-                this.panel.Enabled = false;
-                // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
-                this.btnThem.Enabled = true;
-                this.btnSua.Enabled = true;
-                this.btnXoa.Enabled = true;
-                this.btnThoat.Enabled = true;
-                //
                 dgvJob_CellClick(null, null);
 
             }
@@ -69,7 +57,6 @@ namespace QuanLyTiemQuanAo
         {
             btnThem.Visible = false;
             btnSua.Visible = false;
-            btnXoa.Visible = false;
             btnLuu.Visible = true;
             btnHuy.Visible = true;
             btnThoat.Visible = false;
@@ -79,11 +66,9 @@ namespace QuanLyTiemQuanAo
         {
             btnThem.Visible = true;
             btnSua.Visible = true;
-            btnXoa.Visible = true;
             btnLuu.Visible = true;
             btnHuy.Visible = true;
             btnThoat.Visible = true;
-            panel.Enabled = false;
         }
 
         private void XoaTrong()
@@ -95,91 +80,39 @@ namespace QuanLyTiemQuanAo
             txt_base_salary.ResetText();
             txtSearch.ResetText();
         }
+        private void MoTuongTac()
+        {
+            txt_branch_id.Enabled = false;
+            txt_job_title_id.Enabled = true;
+            txt_branch_id.Enabled = true;
+            txt_job_name.Enabled = true;
+            txt_base_salary.Enabled = true;
+        }
+        private void KhoaTuongTac()
+        {
+            txt_job_id.Enabled = false;
+            txt_job_title_id.Enabled = false;
+            txt_branch_id.Enabled = false;
+            txt_job_name.Enabled = false;
+            txt_base_salary.Enabled = false;
+        }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            //Kích hoạt biến thêm
-            Add = true;
-            //Xóa trống các đối tượng
+            KhoaHienThi();
             XoaTrong();
-            // Cho thao tác trên các nút Lưu / Hủy / Panel 
-            this.btnLuu.Enabled = true;
-            this.btnHuy.Enabled = true;
-            this.panel.Enabled = true;
-            // Không cho thao tác trên các nút Thêm / Xóa / Thoát 
-            this.btnThem.Enabled = false;
-            this.btnSua.Enabled = false;
-            this.btnXoa.Enabled = false;
-            this.btnThoat.Enabled = false;
-
-            // Đưa con trỏ đến TextField txt_employee_id
-            this.txt_job_id.Focus();
+            MoTuongTac();
+            txt_job_id.Focus();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             // Kích hoạt biến Sửa 
             Add = false;
+            MoTuongTac();
             dgvJob_CellClick(null, null);
-            // Cho thao tác trên các nút Lưu / Hủy / Panel
-            this.btnLuu.Enabled = true;
-            this.btnHuy.Enabled = true;
-            this.panel.Enabled = true;
-            // Không cho thao tác trên các nút Thêm / Xóa / Thoát 
-            this.btnThem.Enabled = false;
-            this.btnSua.Enabled = false;
-            this.btnXoa.Enabled = false;
-            this.btnThoat.Enabled = false;
-            // Đưa con trỏ đến TextField txt_employee_id           
-            this.txt_job_id.Focus();
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Lấy thứ tự record hiện hành 
-                int r = dgvJob.CurrentCell.RowIndex;
-                // Lấy employee_id của record hiện hành 
-                string str_job_id =
-                dgvJob.Rows[r].Cells[0].Value.ToString();
-                // Viết câu lệnh SQL 
-                // Hiện thông báo xác nhận việc xóa mẫu tin 
-                // Khai báo biến answer 
-                DialogResult answer;
-                // Hiện hộp thoại hỏi đáp 
-                answer = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                // Kiểm tra có nhấp chọn nút Ok không? 
-                string err = "";
-                if (answer == DialogResult.Yes)
-                {
-
-                    // Thực hiện câu lệnh SQL 
-                    bool f = dbms.DeleteJob(ref err, str_job_id);
-                    if (f)
-                    {
-                        // Cập nhật lại DataGridView 
-                        LoadData();
-                        // Thông báo 
-                        MessageBox.Show("Đã xóa xong!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không xóa được!\n\r" + "Lỗi:" + err);
-                    }
-                }
-                else
-                {
-                    // Thông báo 
-                    MessageBox.Show("Không thực hiện việc xóa mẫu tin!");
-                }
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Không xóa được. Lỗi rồi!!!");
-            }
-            // Đóng kết nối
+            KhoaHienThi();
+            txt_job_id.Focus();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -243,17 +176,10 @@ namespace QuanLyTiemQuanAo
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            // Xóa trống các đối tượng trong Panel 
+            MoHienThi();
             XoaTrong();
-            // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
-            this.btnThem.Enabled = true;
-            this.btnSua.Enabled = true;
-            this.btnXoa.Enabled = true;
-            this.btnThoat.Enabled = true;
-            // Không cho thao tác trên các nút Lưu / Hủy / Panel
-            this.btnLuu.Enabled = false;
-            this.btnHuy.Enabled = false;
-            this.panel.Enabled = false;
+            KhoaTuongTac();
+            dgvJob_CellClick(null, null);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -272,18 +198,28 @@ namespace QuanLyTiemQuanAo
             // Thứ tự dòng hiện hành 
             int r = dgvJob.CurrentCell.RowIndex;
             // Chuyển thông tin lên panel 
-            this.txt_job_id.Text =
+            txt_job_id.Text =
             dgvJob.Rows[r].Cells[0].Value.ToString();
-            this.txt_job_title_id.Text =
-            dgvJob.Rows[r].Cells[0].Value.ToString();
-            this.txt_branch_id.Text =
+            txt_job_title_id.Text =
+            dgvJob.Rows[r].Cells[1].Value.ToString();
+            txt_branch_id.Text =
+            dgvJob.Rows[r].Cells[2].Value.ToString();
+            txt_job_name.Text =
             dgvJob.Rows[r].Cells[3].Value.ToString();
-            this.txt_job_name.Text =
+            txt_base_salary.Text =
             dgvJob.Rows[r].Cells[4].Value.ToString();
-            this.txt_base_salary.Text =
-            dgvJob.Rows[r].Cells[5].Value.ToString();
         }
         private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void frmJob_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
         {
 
         }
