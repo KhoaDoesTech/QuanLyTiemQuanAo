@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DBLayer;
 using System.Data;
 using System.Data.SqlClient;
+using System.ComponentModel.Design;
 
 namespace BALayer
 {
@@ -15,6 +16,10 @@ namespace BALayer
         public DB_Customer(string strConnect_local)
         {
             db = new DAL(strConnect_local);
+        }
+        public string GetDefaultCustomerID()
+        {
+            return (string)db.MyExecuteScalar("SELECT DBO.AutoIDCustomer()");
         }
         public DataTable GetCustomer()
         {

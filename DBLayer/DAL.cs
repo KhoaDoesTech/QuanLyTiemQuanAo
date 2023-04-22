@@ -116,5 +116,18 @@ namespace DBLayer
             CloseDB();
             return dt;
         }
+
+        public object MyExecuteScalar(string strSQL)
+        {
+            OpenDB();
+
+            comm.CommandText = strSQL;
+            comm.CommandType = CommandType.Text;
+
+            object result = comm.ExecuteScalar();
+
+            CloseDB();
+            return result;
+        }
     }
 }
