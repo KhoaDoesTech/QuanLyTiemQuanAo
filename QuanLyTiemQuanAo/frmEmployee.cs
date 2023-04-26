@@ -38,7 +38,7 @@ namespace QuanLyTiemQuanAo
         {
             try
             {
-                // Vận chuyển dữ liệu vào DataTable dtProductType 
+                // Vận chuyển dữ liệu vào DataTable dtJob 
                 dtJob = new DataTable();
                 dtJob.Clear();
                 dtJob = dbj.GetJob();
@@ -52,7 +52,7 @@ namespace QuanLyTiemQuanAo
                 DataGridViewComboBoxColumn).ValueMember =
                 "job_id";
 
-                // Vận chuyển dữ liệu vào DataTable dtProduct
+                // Vận chuyển dữ liệu vào DataTable dtEmployee
                 dtEmployee = new DataTable();
                 dtEmployee.Clear();
                 dtEmployee = dbe.GetEmployee();
@@ -75,7 +75,7 @@ namespace QuanLyTiemQuanAo
         {
             btnThem.Visible = false;
             btnSua.Visible = false;
-            btnXoa.Visible = true;
+            btnXoa.Visible = false;
             btnLuu.Visible = true;
             btnHuy.Visible = true;
             btnThoat.Visible = false;
@@ -304,26 +304,39 @@ namespace QuanLyTiemQuanAo
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            //choose type to search
-            dgvEmployee.DataSource = dt;
+            if(txtSearch.Text == "")
+            {
+                LoadData();
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                //choose type to search
+                dgvEmployee.DataSource = dt;
 
+                int x = cbSearch.SelectedIndex;
+                switch (x)
+                {
+                    case 0:
+                        dt = dbe.FindEmployeeByID(txtSearch.Text);
+                        dgvEmployee.DataSource = dt;
+                        break;
+                    case 1:
+                        dt = dbe.FindEmployeeByName(txtSearch.Text);
+                        dgvEmployee.DataSource = dt;
+                        break;
+                }
+            }
+        }
+
+        private void frmEmployee_Load(object sender, EventArgs e)
+        {
+            // Nội dung tìm Nhân viên
             cbSearch.Items.Add("Mã nhân viên");
             cbSearch.Items.Add("Tên nhân viên");
             cbSearch.Text = cbSearch.Items[0].ToString();
-            cbSearch.Text = cbSearch.Items[1].ToString();
-            int x = cbSearch.SelectedIndex;
-            switch (x)
-            {
-                case 1:
-                    dt = dbe.FindEmployeeByID(txtSearch.Text);
-                    dgvEmployee.DataSource = dt;
-                    break;
-                case 2:
-                    dt = dbe.FindEmployeeByName(txtSearch.Text);
-                    dgvEmployee.DataSource = dt;
-                    break;
-            }
+
+            LoadData();
         }
     }
 }

@@ -206,26 +206,39 @@ namespace QuanLyTiemQuanAo
 
         private void btn_Tim_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            //choose type to search
-            dgvEvent.DataSource = dt;
+            if (txtSearch.Text == "")
+            {
+                LoadData();
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                //choose type to search
+                dgvEvent.DataSource = dt;
 
+                int x = cbSearch.SelectedIndex;
+                switch (x)
+                {
+                    case 0:
+                        dt = dbe.FindEventByID(txtSearch.Text);
+                        dgvEvent.DataSource = dt;
+                        break;
+                    case 1:
+                        dt = dbe.FindEventByName(txtSearch.Text);
+                        dgvEvent.DataSource = dt;
+                        break;
+                }
+            }
+        }
+
+        private void frmEvent_Load(object sender, EventArgs e)
+        {
+            //Nội dung tìm sự kiện
             cbSearch.Items.Add("Mã sự kiện");
             cbSearch.Items.Add("Tên sự kiện");
             cbSearch.Text = cbSearch.Items[0].ToString();
-            cbSearch.Text = cbSearch.Items[1].ToString();
-            int x = cbSearch.SelectedIndex;
-            switch (x)
-            {
-                case 1:
-                    dt = dbe.FindEventByID(txtSearch.Text);
-                    dgvEvent.DataSource = dt;
-                    break;
-                case 2:
-                    dt = dbe.FindEventByName(txtSearch.Text);
-                    dgvEvent.DataSource = dt;
-                    break;
-            }
+
+            LoadData();
         }
     }
 }

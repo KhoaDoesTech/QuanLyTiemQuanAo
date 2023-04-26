@@ -262,9 +262,29 @@ namespace QuanLyTiemQuanAo
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = dbp.FindProductByID(txtTim.Text);
-            dgvProduct.DataSource = dt;
+            if (txtSearch.Text == "")
+            {
+                LoadData();
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                //choose type to search
+                dgvProduct.DataSource = dt;
+
+                int x = cbTim.SelectedIndex;
+                switch (x)
+                {
+                    case 0:
+                        dt = dbp.FindProductByID(txtSearch.Text);
+                        dgvProduct.DataSource = dt;
+                        break;
+                    case 1:
+                        dt = dbp.FindProductByName(txtSearch.Text);
+                        dgvProduct.DataSource = dt;
+                        break;
+                }
+            }
         }
 
         private void txtTim_TextChanged(object sender, EventArgs e)

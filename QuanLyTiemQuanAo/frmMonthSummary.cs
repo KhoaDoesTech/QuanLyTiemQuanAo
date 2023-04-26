@@ -58,7 +58,7 @@ namespace QuanLyTiemQuanAo
         private void KhoaHienThi()
         {
             btnThem.Visible = false;
-            btnSua.Visible = false;
+            
 
             btnLuu.Visible = true;
             btnHuy.Visible = true;
@@ -68,7 +68,7 @@ namespace QuanLyTiemQuanAo
         private void MoHienThi()
         {
             btnThem.Visible = true;
-            btnSua.Visible = true;
+            
 
             btnLuu.Visible = false;
             btnHuy.Visible = false;
@@ -109,16 +109,6 @@ namespace QuanLyTiemQuanAo
             KhoaHienThi();
             XoaTrong();
             MoTuongTac();
-            txt_employee_id.Focus();
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            // Kích hoạt biến Sửa 
-            Them = false;
-            MoTuongTac();
-            dgvMonthSummary_CellClick(null, null);
-            KhoaHienThi();
             txt_employee_id.Focus();
         }
         private void btnLuu_Click(object sender, EventArgs e)
@@ -242,6 +232,11 @@ namespace QuanLyTiemQuanAo
                     dgvMonthSummary.DataSource = dt;
                     break;
             }
+        }
+
+        private void frmMonthSummary_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

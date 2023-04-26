@@ -223,6 +223,7 @@
             this.btnThanhToan.Size = new System.Drawing.Size(87, 44);
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // btnHuy
             // 
@@ -808,6 +809,7 @@
             this.cb_size.Name = "cb_size";
             this.cb_size.Size = new System.Drawing.Size(369, 24);
             this.cb_size.TabIndex = 292;
+            this.cb_size.SelectionChangeCommitted += new System.EventHandler(this.cb_size_SelectionChangeCommitted);
             // 
             // cb_product_name
             // 
@@ -816,6 +818,7 @@
             this.cb_product_name.Name = "cb_product_name";
             this.cb_product_name.Size = new System.Drawing.Size(369, 24);
             this.cb_product_name.TabIndex = 291;
+            this.cb_product_name.SelectionChangeCommitted += new System.EventHandler(this.cb_product_name_SelectionChangeCommitted);
             // 
             // btnFind
             // 
@@ -826,6 +829,7 @@
             this.btnFind.StyleController = this.layoutControl3;
             this.btnFind.TabIndex = 290;
             this.btnFind.Text = "Tìm";
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // txtFind
             // 
@@ -849,6 +853,7 @@
             this.cb_color.Name = "cb_color";
             this.cb_color.Size = new System.Drawing.Size(369, 24);
             this.cb_color.TabIndex = 287;
+            this.cb_color.SelectionChangeCommitted += new System.EventHandler(this.cb_color_SelectionChangeCommitted);
             // 
             // txtTonKho
             // 

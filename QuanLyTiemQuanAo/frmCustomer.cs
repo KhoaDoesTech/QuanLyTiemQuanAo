@@ -237,26 +237,39 @@ namespace QuanLyTiemQuanAo
 
         private void btn_Tim_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            //choose type to search
-            dgvCustomer.DataSource = dt;
+            if (txtSearch.Text == "")
+            {
+                LoadData();
+            }
+            else
+            {
+               DataTable dt = new DataTable();
+               //choose type to search
+               dgvCustomer.DataSource = dt;
 
+               int x = cbSearch.SelectedIndex;
+               switch (x)
+               {
+                   case 0:
+                       dt = dbc.FindCustomerByID(txtSearch.Text);
+                       dgvCustomer.DataSource = dt;
+                       break;
+                   case 1:
+                       dt = dbc.FindCustomerByName(txtSearch.Text);
+                       dgvCustomer.DataSource = dt;
+                       break;
+               }
+            }
+        }
+
+        private void frmCustomer_Load(object sender, EventArgs e)
+        {
+            //Nội dung tìm khách hàng
             cbSearch.Items.Add("Mã khách hàng");
             cbSearch.Items.Add("Tên khách hàng");
             cbSearch.Text = cbSearch.Items[0].ToString();
-            cbSearch.Text = cbSearch.Items[1].ToString();
-            int x = cbSearch.SelectedIndex;
-            switch (x)
-            {
-                case 1:
-                    dt = dbc.FindCustomerByID(txtSearch.Text);
-                    dgvCustomer.DataSource = dt;
-                    break;
-                case 2:
-                    dt = dbc.FindCustomerByName(txtSearch.Text);
-                    dgvCustomer.DataSource = dt;
-                    break;
-            }
+
+            LoadData();
         }
     } 
 }

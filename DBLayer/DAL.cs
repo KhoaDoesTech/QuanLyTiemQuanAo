@@ -9,25 +9,44 @@ using System.Data;
 namespace DBLayer
 {
     public class DAL
-    {        
+    {
+        string ConnStr;
         SqlConnection conn = null;
         SqlCommand  comm = null;
         SqlDataAdapter da = null;
         
-        public DAL(string ConnStr) 
+        public DAL(string ConnString) 
         {
-            conn = new SqlConnection(ConnStr);
-            comm = conn.CreateCommand();
+            ConnStr = ConnString;            
         }
         public void OpenDB()
         {
+            conn = new SqlConnection(ConnStr);
+            comm = conn.CreateCommand();
             if (conn.State == ConnectionState.Open)
                 conn.Close();
             conn.Open();
         }
         public void CloseDB()
         {
-            conn.Close();
+            if (da != null)
+            {
+                da.Dispose();
+                da = null;
+            }
+
+            if (comm != null)
+            {
+                comm.Dispose();
+                comm = null;
+            }
+
+            if (conn != null)
+            {
+                conn.Close();
+                conn.Dispose(); 
+                conn = null;
+            }
         }
 
         // Insert, Delete, Update

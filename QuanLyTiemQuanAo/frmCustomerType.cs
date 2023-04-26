@@ -35,7 +35,7 @@ namespace QuanLyTiemQuanAo
         {
             try
             {
-                // Vận chuyển dữ liệu vào DataTable dtProduct
+                // Vận chuyển dữ liệu vào DataTable dtCustomerType
                 dtCustomerType = new DataTable();
                 dtCustomerType.Clear();
                 dtCustomerType = dbt.GetCustomerType();
@@ -93,10 +93,6 @@ namespace QuanLyTiemQuanAo
             txt_customer_type_id.Enabled = false;
             txt_customer_type_name.Enabled = false;
             txt_units_purchased.Enabled = false;
-        }
-        private void frmCustomerType_Load(object sender, EventArgs e)
-        {
-            LoadData();
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -201,26 +197,39 @@ namespace QuanLyTiemQuanAo
 
         private void btn_Tim_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            //choose type to search
-            dgvCustomerType.DataSource = dt;
+            if (txtSearch.Text == "")
+            {
+                LoadData();
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                //choose type to search
+                dgvCustomerType.DataSource = dt;
 
+                int x = cbSearch.SelectedIndex;
+                switch (x)
+                {
+                    case 0:
+                        dt = dbt.FindCustomerTypeByID(txtSearch.Text);
+                        dgvCustomerType.DataSource = dt;
+                        break;
+                    case 1:
+                        dt = dbt.FindCustomerTypeByName(txtSearch.Text);
+                        dgvCustomerType.DataSource = dt;
+                        break;
+                }
+            }
+        }
+
+        private void frmCustomerType_Load(object sender, EventArgs e)
+        {
+            //Nội dung tìm loại khách hàng
             cbSearch.Items.Add("Loại khách hàng");
             cbSearch.Items.Add("Tên loại khách hàng");
             cbSearch.Text = cbSearch.Items[0].ToString();
-            cbSearch.Text = cbSearch.Items[1].ToString();
-            int x = cbSearch.SelectedIndex;
-            switch (x)
-            {
-                case 1:
-                    dt = dbt.FindCustomerTypeByID(txtSearch.Text);
-                    dgvCustomerType.DataSource = dt;
-                    break;
-                case 2:
-                    dt = dbt.FindCustomerTypeByName(txtSearch.Text);
-                    dgvCustomerType.DataSource = dt;
-                    break;
-            }
+
+            LoadData();
         }
     }
 }

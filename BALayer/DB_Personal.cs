@@ -17,7 +17,7 @@ namespace BALayer
             db = new DAL(strConnect_local);
         }
 
-        public DataTable FindProductTypeByGender(string username, string passcode)
+        public DataTable GetPersonInformation(string username, string passcode)
         {
             return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.GetPersonInformation(@username, @passcode)",
                 new SqlParameter("@username", username),

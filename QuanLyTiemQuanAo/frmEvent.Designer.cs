@@ -454,6 +454,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEvent";
             this.Text = "frmEvent";
+            this.Load += new System.EventHandler(this.frmEvent_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);

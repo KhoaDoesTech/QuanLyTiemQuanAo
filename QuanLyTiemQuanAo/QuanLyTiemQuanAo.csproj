@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bussiness.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bussiness.Designer.cs">
+      <DependentUpon>Bussiness.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBranch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     <Compile Include="IConnectionForm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Bussiness.resx">
+      <DependentUpon>Bussiness.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBranch.resx">
       <DependentUpon>frmBranch.cs</DependentUpon>
     </EmbeddedResource>

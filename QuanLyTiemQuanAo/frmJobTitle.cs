@@ -16,14 +16,15 @@ namespace QuanLyTiemQuanAo
     public partial class frmJobTitle : DevExpress.XtraEditors.XtraForm, IConnectionForm
     {
         string ConnStr;
-        DB_JobTitle dbms;
+        DB_JobTitle dbjt;
         DataTable dtJobTitle = null;
-        // Khai báo biến kiểm tra việc Thêm hay Sửa dữ liệu 
-        bool Add;
+
+        bool Them;
+
         public void SetConnection(string connectString)
         {
             ConnStr = connectString;
-            dbms = new DB_JobTitle(ConnStr);            
+            dbjt = new DB_JobTitle(ConnStr);
         }
 
         public frmJobTitle()
@@ -34,10 +35,10 @@ namespace QuanLyTiemQuanAo
         {
             try
             {
-                // Vận chuyển dữ liệu vào DataTable dtProduct
+                // Vận chuyển dữ liệu vào DataTable dtJobTitle
                 dtJobTitle = new DataTable();
                 dtJobTitle.Clear();
-                dtJobTitle = dbms.GetJobTitle();
+                dtJobTitle = dbjt.GetJobTitle();
 
                 MoHienThi();
                 KhoaTuongTac();
@@ -58,7 +59,6 @@ namespace QuanLyTiemQuanAo
         {
             btnThem.Visible = false;
             btnSua.Visible = false;
-            btnXoa.Visible = false;
             btnLuu.Visible = true;
             btnHuy.Visible = true;
             btnThoat.Visible = false;
@@ -68,9 +68,9 @@ namespace QuanLyTiemQuanAo
         {
             btnThem.Visible = true;
             btnSua.Visible = true;
-            btnXoa.Visible = true;
-            btnLuu.Visible = true;
-            btnHuy.Visible = true;
+
+            btnLuu.Visible = false;
+            btnHuy.Visible = false;
             btnThoat.Visible = true;
         }
 
@@ -106,7 +106,7 @@ namespace QuanLyTiemQuanAo
         private void btnSua_Click(object sender, EventArgs e)
         {
             // Kích hoạt biến Sửa 
-            Add = false;
+            Them = false;
             MoTuongTac();
             dgvJobTitle_CellClick(null, null);
             KhoaHienThi();
@@ -116,13 +116,12 @@ namespace QuanLyTiemQuanAo
         private void btnLuu_Click(object sender, EventArgs e)
         {
             bool f = false;
-            if (Add)
+            if (Them)
             {
                 string err = "";
                 try
                 {
-                    f = dbms.InsertJobTitle(ref err, txt_job_title_id.Text,
-                        txt_job_title_name.Text,
+                    f = dbjt.InsertJobTitle(ref err, txt_job_title_name.Text,
                         txt_job_description.Text);
                     if (f)
                     {
@@ -141,12 +140,12 @@ namespace QuanLyTiemQuanAo
                     MessageBox.Show("Không thêm được. Lỗi rồi!");
                 }
             }
-            if (!Add)
+            if (!Them)
             {
                 string err = "";
                 try
                 {
-                    f = dbms.UpdateJobTitle(ref err, txt_job_title_id.Text,
+                    f = dbjt.UpdateJobTitle(ref err, txt_job_title_id.Text,
                         txt_job_title_name.Text,
                         txt_job_description.Text);
                     if (f)
@@ -206,11 +205,39 @@ namespace QuanLyTiemQuanAo
 
         private void frmJobTitle_Load(object sender, EventArgs e)
         {
+            //Nội dung tìm loại khách hàng
+            cbSearch.Items.Add("Mã chức danh công việc");
+            cbSearch.Items.Add("Tên chức danh công việc");
+            cbSearch.Text = cbSearch.Items[0].ToString();
 
+            LoadData();
         }
 
         private void btnTim_Click(object sender, EventArgs e)
         {
+            if (txtSearch.Text == "")
+            {
+                LoadData();
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                //choose type to search
+                dgvJobTitle.DataSource = dt;
+
+                int x = cbSearch.SelectedIndex;
+                switch (x)
+                {
+                    case 0:
+                        dt = dbjt.FindJobTitleByID(txtSearch.Text);
+                        dgvJobTitle.DataSource = dt;
+                        break;
+                    case 1:
+                        dt = dbjt.FindJobTitleByName(txtSearch.Text);
+                        dgvJobTitle.DataSource = dt;
+                        break;
+                }
+            }
 
         }
     }

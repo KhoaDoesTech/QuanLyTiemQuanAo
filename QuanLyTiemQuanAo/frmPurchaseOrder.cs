@@ -13,6 +13,7 @@ using System.Data.SqlClient;
 using BALayer;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QuanLyTiemQuanAo
 {
@@ -30,12 +31,16 @@ namespace QuanLyTiemQuanAo
 
         DB_Customer dbc;
         DataTable dtCustomer = null;
+
+        DB_Product dbp;
+        DataTable dtProduct = null;
         public void SetConnection(string connectString)
         {
             ConnStr = connectString;
             dbcn = new DB_Personal(ConnStr);
             dbct = new DB_CustomerType(ConnStr);
             dbc = new DB_Customer(ConnStr);
+            dbp = new DB_Product(ConnStr);
 
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(ConnStr);
             username = builder.UserID;
@@ -52,6 +57,7 @@ namespace QuanLyTiemQuanAo
             {
                 MoTuongTacKhach();
                 XoaTrongKhach();
+                KhoaTuongTacDon();
             }
             catch (SqlException e)
             {
@@ -63,7 +69,7 @@ namespace QuanLyTiemQuanAo
         {
             dtPersonal = new DataTable();
             dtPersonal.Clear();
-            dtPersonal = dbcn.FindProductTypeByGender(username, password);
+            dtPersonal = dbcn.GetPersonInformation(username, password);
             DataRow r = dtPersonal.Rows[0];
 
             lb_nv.Text = "Nhân viên: " + r[0].ToString();
@@ -75,9 +81,8 @@ namespace QuanLyTiemQuanAo
             cbTim.Text = cbTim.Items[0].ToString();
 
             // Nội dung tìm sản phẩm
-            cbFind.Items.Add("Tên sản phẩm");
             cbFind.Items.Add("Mã sản phẩm");
-            cbFind.Items.Add("Loại sản phẩm");
+            cbFind.Items.Add("Tên sản phẩm");                      
             cbFind.Text = cbFind.Items[0].ToString();
 
             LoadData();
@@ -119,6 +124,26 @@ namespace QuanLyTiemQuanAo
             dtp_birthday.ResetText();
         }
 
+        private void XoaTrongDon()
+        {
+            cb_product_name.ResetText();
+            cb_size.ResetText();
+            cb_color.ResetText();
+            pic_picture.Refresh();
+            txtTonKho.ResetText();
+        }
+
+        private void KhoaTuongTacDon()
+        {
+            txt_order_id.Enabled=false;
+            txt_discount.Enabled=false;
+            txtTongTien.Enabled=false;
+            txtGiamGia.Enabled=false;
+            txt_total_cost.Enabled=false;
+            txtTonKho.Enabled=false;
+        }
+
+
         private void dgvDetail_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -147,16 +172,138 @@ namespace QuanLyTiemQuanAo
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            if(txtTim.Text == "")
+            if (txtTim.Text == "")
             {
-                MoTuongTacKhach();
                 XoaTrongKhach();
-            }    
+            }
             else
             {
-                KhoaTuongTacKhach();
-            }         
+                XoaTrongKhach();
+                DataRow r;
+                DataTable dt;
+                int x = cbTim.SelectedIndex;
+                switch (x)
+                {
+                    case 0:
+                        dt = dbc.FindCustomerByID(txtTim.Text);
+                        r = dt.Rows[0];
+                        txt_customer_type_id.Text = r[0].ToString();
+                        txt_gender.Text = r[1].ToString();
+                        txt_phone.Text = r[2].ToString();
+                        txt_email.Text = r[3].ToString();
+                        txt_full_name.Text = r[4].ToString();
+                        dtp_birthday.Text = r[5].ToString();
+                        break;
+                    case 1:
+                        dt = dbc.FindCustomerByName(txtTim.Text);
+                        r = dt.Rows[0];
+                        txt_customer_type_id.Text = r[0].ToString();
+                        txt_gender.Text = r[1].ToString();
+                        txt_phone.Text = r[2].ToString();
+                        txt_email.Text = r[3].ToString();
+                        txt_full_name.Text = r[4].ToString();
+                        dtp_birthday.Text = r[5].ToString();
+                        break;
+                }
+            }
+        }
 
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+
+        }     
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            if (txtFind.Text == "")
+            {
+                XoaTrongDon();
+            }
+            else
+            {
+                XoaTrongDon();
+                DataTable dt = new DataTable();
+                int x = cbFind.SelectedIndex;
+                switch (x)
+                {
+                    case 0:
+                        dt = dbp.FindProductNameByID(txtFind.Text);
+                        cb_product_name.DataSource = dt;
+                        cb_product_name.DisplayMember = "product_name";
+                        cb_product_name.ValueMember = "product_name";
+                        
+                        break;
+                    case 1:
+                        dt = dbp.FindProductNameByName(txtFind.Text);
+                        cb_product_name.DataSource = dt;
+                        cb_product_name.DisplayMember = "product_name";
+                        cb_product_name.ValueMember = "product_name";
+                        break;
+                }
+            }
+        }
+
+        private void cb_product_name_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+
+            dt = dbp.FindSizeByName(cb_product_name.SelectedValue.ToString());
+            cb_size.DataSource = dt;
+            cb_size.DisplayMember = "size";
+            cb_size.ValueMember = "size";
+
+            DataTable dtt = new DataTable();
+
+            dtt = dbp.FindColorByName(cb_product_name.SelectedValue.ToString());
+            cb_color.DataSource = dtt;
+            cb_color.DisplayMember = "color";
+            cb_color.ValueMember = "color";
+        }
+
+        private void cb_size_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+
+            dt = dbp.FindColorBySize(cb_size.SelectedValue.ToString(), cb_product_name.SelectedValue.ToString());
+            cb_color.DataSource = dt;
+            cb_color.DisplayMember = "color";
+            cb_color.ValueMember = "color";
+
+            LayThongTin();
+        }
+
+        private void cb_color_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+
+            dt = dbp.FindSizeByColor(cb_color.SelectedValue.ToString(), cb_product_name.SelectedValue.ToString());
+            cb_size.DataSource = dt;
+            cb_size.DisplayMember = "size";
+            cb_size.ValueMember = "size";
+
+            LayThongTin();
+        }
+
+        private void LayThongTin()
+        {
+            DataTable dt = new DataTable();
+
+            dt = dbp.FindInfoProduct(cb_product_name.SelectedValue.ToString(), cb_size.SelectedValue.ToString(), cb_color.SelectedValue.ToString(), dtPersonal.Rows[0][10].ToString());
+
+            byte[] imageData = (byte[])dt.Rows[0][4];
+            if (imageData != null)
+            {
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    pic_picture.Image = Image.FromStream(ms);
+                }
+            }
+            else
+            {
+                pic_picture.Image = null;
+            }
+
+            txtTonKho.Text = dt.Rows[0][7].ToString();
         }
     }
 }

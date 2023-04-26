@@ -117,6 +117,13 @@ namespace QuanLyTiemQuanAo
         }
         private void frmProductType_Load(object sender, EventArgs e)
         {
+            // Nội dung tìm Loại sản phẩm
+            cbSearch.Items.Add("Mã loại sản phẩm");
+            cbSearch.Items.Add("Tên loại sản phẩm");
+            cbSearch.Items.Add("Lớp sản phẩm");
+            cbSearch.Items.Add("Giới tính");
+            cbSearch.Text = cbSearch.Items[0].ToString();
+
             LoadData();
         }
 
@@ -156,39 +163,37 @@ namespace QuanLyTiemQuanAo
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            //choose type to search
-            dgvProductType.DataSource = dt;
-
-            cbSearch.Items.Add("Mã loại sản phẩm");
-            cbSearch.Items.Add("Tên loại sản phẩm");
-            cbSearch.Items.Add("Lớp sản phẩm");
-            cbSearch.Items.Add("Giới tính");
-            cbSearch.Text = cbSearch.Items[0].ToString();
-            cbSearch.Text = cbSearch.Items[1].ToString();
-            cbSearch.Text = cbSearch.Items[2].ToString();
-            cbSearch.Text = cbSearch.Items[3].ToString();
-            int x = cbSearch.SelectedIndex;
-            switch(x)
+            if(txtSearch.Text == "")
             {
-                case 1:
-                    dt = dbpt.FindProductTypeByID(txtSearch.Text);
-                    dgvProductType.DataSource = dt;
-                    break;
-                case 2:
-                    dt = dbpt.FindProductTypeByName(txtSearch.Text);
-                    dgvProductType.DataSource = dt;
-                    break;
-                case 3:
-                    dt = dbpt.FindProductTypeByClass(txtSearch.Text);
-                    dgvProductType.DataSource = dt;
-                    break;
-                case 4:
-                    dt = dbpt.FindProductTypeByGender(txtSearch.Text);
-                    dgvProductType.DataSource = dt;
-                    break;
+                LoadData();
             }
-            
+            else
+            {
+                DataTable dt = new DataTable();
+                //choose type to search
+                dgvProductType.DataSource = dt;
+
+                int x = cbSearch.SelectedIndex;
+                switch (x)
+                {
+                    case 0:
+                        dt = dbpt.FindProductTypeByID(txtSearch.Text);
+                        dgvProductType.DataSource = dt;
+                        break;
+                    case 1:
+                        dt = dbpt.FindProductTypeByName(txtSearch.Text);
+                        dgvProductType.DataSource = dt;
+                        break;
+                    case 2:
+                        dt = dbpt.FindProductTypeByClass(txtSearch.Text);
+                        dgvProductType.DataSource = dt;
+                        break;
+                    case 3:
+                        dt = dbpt.FindProductTypeByGender(txtSearch.Text);
+                        dgvProductType.DataSource = dt;
+                        break;
+                }                
+            }
         }
 
         private void cbSearch_SelectedIndexChanged(object sender, EventArgs e)

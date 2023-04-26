@@ -123,5 +123,10 @@ namespace QuanLyTiemQuanAo
         {
             openForm(typeof(frmPerson));
         }
+
+        private void barButtonItem33_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(Bussiness));
+        }
     }
 }

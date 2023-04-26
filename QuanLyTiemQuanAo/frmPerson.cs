@@ -42,7 +42,7 @@ namespace QuanLyTiemQuanAo
                 // Vận chuyển dữ liệu vào DataTable dtProduct
                 dtPersonal = new DataTable();
                 dtPersonal.Clear();
-                dtPersonal = dbp.FindProductTypeByGender(username, password);
+                dtPersonal = dbp.GetPersonInformation(username, password);
                 DataRow r = dtPersonal.Rows[0];
 
                 txt_full_name.Text = r[0].ToString();
@@ -68,8 +68,21 @@ namespace QuanLyTiemQuanAo
 
         private void frmPerson_Load(object sender, EventArgs e)
         {
+            txt_full_name.Enabled= false;
+            txt_gender.Enabled= false;
+            txt_birthday.Enabled = false;
+            txt_phone.Enabled = false;
+            txt_employee_address.Enabled = false;
+            txt_email.Enabled = false;
+            txt_job_title_name.Enabled = false;
+            txt_branch_name.Enabled = false;
+            txt_base_salary.Enabled = false;
             LoadData();
         }
 
+        private void txt_full_name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

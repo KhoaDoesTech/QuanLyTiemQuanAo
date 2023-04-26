@@ -16,14 +16,14 @@ namespace QuanLyTiemQuanAo
     public partial class frmBranch : DevExpress.XtraEditors.XtraForm, IConnectionForm
     {
         string ConnStr;
-        DB_Branch dbms;
+        DB_Branch dbb;
         DataTable dtBranch = null;
         // Khai báo biến kiểm tra việc Thêm hay Sửa dữ liệu 
-        bool Add;
+        bool Them;
         public void SetConnection(string connectString)
         {
             ConnStr = connectString;
-            dbms = new DB_Branch(ConnStr);
+            dbb = new DB_Branch(ConnStr);
         }
 
         public frmBranch()
@@ -37,15 +37,7 @@ namespace QuanLyTiemQuanAo
                 // Vận chuyển dữ liệu vào DataTable dtBranch
                 dtBranch = new DataTable();
                 dtBranch.Clear();
-                dtBranch = dbms.GetBranch();
-
-
-                // Xóa trống các đối tượng trong Panel 
-                this.txt_branch_id.ResetText();
-                this.txt_branch_name.ResetText();
-                this.txt_max_stock.ResetText();
-                this.txt_rent_amount.ResetText();
-
+                dtBranch = dbb.GetBranch();
 
                 MoHienThi();
                 KhoaTuongTac();
@@ -65,6 +57,7 @@ namespace QuanLyTiemQuanAo
         {
             btnThem.Visible = false;
             btnSua.Visible = false;
+
             btnLuu.Visible = true;
             btnHuy.Visible = true;
             btnThoat.Visible = false;
@@ -74,10 +67,10 @@ namespace QuanLyTiemQuanAo
         {
             btnThem.Visible = true;
             btnSua.Visible = true;
-            btnLuu.Visible = true;
-            btnHuy.Visible = true;
+
+            btnLuu.Visible = false;
+            btnHuy.Visible = false;
             btnThoat.Visible = true;
-            panel.Enabled = false;
         }
 
         private void XoaTrong()
@@ -115,22 +108,22 @@ namespace QuanLyTiemQuanAo
         private void btnSua_Click(object sender, EventArgs e)
         {
             // Kích hoạt biến Sửa 
-            Add = false;
+            Them = false;
             MoTuongTac();
             dgvBranch_CellClick(null, null);
-            KhoaHienThi();         
+            KhoaHienThi();
             this.txt_branch_id.Focus();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             bool f = false;
-            if (Add)
+            if (Them)
             {
                 string err = "";
                 try
                 {
-                    f = dbms.InsertBranch(ref err, txt_branch_id.Text,
+                    f = dbb.InsertBranch(ref err, txt_branch_id.Text,
                         txt_branch_name.Text,
                         Convert.ToInt32(txt_max_stock.Text),
                         Convert.ToInt32(txt_rent_amount.Text));
@@ -151,12 +144,12 @@ namespace QuanLyTiemQuanAo
                     MessageBox.Show("Không thêm được. Lỗi rồi!");
                 }
             }
-            if (!Add)
+            if (!Them)
             {
                 string err = "";
                 try
                 {
-                    f = dbms.UpdateBranch(ref err, txt_branch_id.Text,
+                    f = dbb.UpdateBranch(ref err, txt_branch_id.Text,
                         txt_branch_name.Text,
                         Convert.ToInt32(txt_max_stock.Text),
                         Convert.ToInt32(txt_rent_amount.Text));
@@ -218,15 +211,38 @@ namespace QuanLyTiemQuanAo
         }
         private void frmBranch_Load(object sender, EventArgs e)
         {
+            //Nội dung tìm chi nhánh
+            cbSearch.Items.Add("Mã chi nhánh");
+            cbSearch.Items.Add("Tên chi nhánh");
+            cbSearch.Text = cbSearch.Items[0].ToString();
+
             LoadData();
         }
         private void btnTim_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = dbms.FindBranchByID(txtSearch.Text);
-            dgvBranch.DataSource = dt;
+            if (txtSearch.Text == "")
+            {
+                LoadData();
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                //choose type to search
+                dgvBranch.DataSource = dt;
+
+                int x = cbSearch.SelectedIndex;
+                switch (x)
+                {
+                    case 0:
+                        dt = dbb.FindBranchByID(txtSearch.Text);
+                        dgvBranch.DataSource = dt;
+                        break;
+                    case 1:
+                        dt = dbb.FindBranchByName(txtSearch.Text);
+                        dgvBranch.DataSource = dt;
+                        break;
+                }
+            }
         }
-
-
     }
 }

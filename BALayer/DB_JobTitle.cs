@@ -20,16 +20,15 @@ namespace BALayer
         {
             return db.ExecuteQueryDataTable("select * from JobTitle");
         }
-        public bool InsertJobTitle(ref string err, string job_title_id,
+        public bool InsertJobTitle(ref string err,
              string job_title_name, string job_description)
         {
             return db.MyExecuteNonQuery("SP_Insert_JobTitle",
                 ref err,
-                new SqlParameter("@job_title_id", job_title_id),
                 new SqlParameter("@job_title_name", job_title_name),
                 new SqlParameter("@job_description", job_description));
         }
-        public DataTable FindJobTitletByID(string job_title_id)
+        public DataTable FindJobTitleByID(string job_title_id)
         {
             return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindJobTitleByID(@job_title_id)",
                  new SqlParameter("@job_title_id", job_title_id));
