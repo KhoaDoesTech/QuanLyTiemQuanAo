@@ -77,11 +77,23 @@
     <Compile Include="Bussiness.Designer.cs">
       <DependentUpon>Bussiness.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAccount.Designer.cs">
+      <DependentUpon>frmAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBranch.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBranch.Designer.cs">
       <DependentUpon>frmBranch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCurrentDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCurrentDiscount.Designer.cs">
+      <DependentUpon>frmCurrentDiscount.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
@@ -94,6 +106,12 @@
     </Compile>
     <Compile Include="frmCustomerType.Designer.cs">
       <DependentUpon>frmCustomerType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDiscount.Designer.cs">
+      <DependentUpon>frmDiscount.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEmployee.cs">
       <SubType>Form</SubType>
@@ -173,14 +191,23 @@
     <EmbeddedResource Include="Bussiness.resx">
       <DependentUpon>Bussiness.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAccount.resx">
+      <DependentUpon>frmAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBranch.resx">
       <DependentUpon>frmBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCurrentDiscount.resx">
+      <DependentUpon>frmCurrentDiscount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerType.resx">
       <DependentUpon>frmCustomerType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDiscount.resx">
+      <DependentUpon>frmDiscount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmployee.resx">
       <DependentUpon>frmEmployee.cs</DependentUpon>

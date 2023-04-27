@@ -34,6 +34,11 @@ namespace QuanLyTiemQuanAo
 
         DB_Product dbp;
         DataTable dtProduct = null;
+
+        DB_PurchaseOrder dbpo;
+        DataTable dtPurchaseOrder = null;
+
+        bool Them;
         public void SetConnection(string connectString)
         {
             ConnStr = connectString;
@@ -151,7 +156,34 @@ namespace QuanLyTiemQuanAo
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            bool f = false;
 
+            if (Them)
+            {
+                string err = "";
+                try
+                {
+                    DataTable dt = new DataTable();
+                    dt = dbp.FindInfoProduct(cb_product_name.SelectedValue.ToString(),
+                        cb_size.SelectedValue.ToString(), cb_color.SelectedValue.ToString(), dtPersonal.Rows[0][10].ToString());
+                    dgvDetail.Rows.Add(cb_product_name, txt_quantity.Text,dt.Rows[0][5].ToString());
+                    if (f)
+                    {
+                        // Load lại dữ liệu trên DataGridView 
+                        LoadData();
+                        // Thông báo 
+                        MessageBox.Show("Đã thêm xong!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã thêm chưa xong!\n\r" + "Lỗi:" + err);
+                    }
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Không thêm được. Lỗi rồi!");
+                }
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -161,7 +193,50 @@ namespace QuanLyTiemQuanAo
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Lấy thứ tự record hiện hành 
+                int r = dgvDetail.CurrentCell.RowIndex;
+                // Lấy product_name của record hiện hành 
+                string str_employee_id =
+                dgvDetail.Rows[r].Cells[0].Value.ToString();
+                // Viết câu lệnh SQL 
+                // Hiện thông báo xác nhận việc xóa mẫu tin 
+                // Khai báo biến answer 
+                DialogResult answer;
+                // Hiện hộp thoại hỏi đáp 
+                answer = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                // Kiểm tra có nhấp chọn nút Ok không? 
+                string err = "";
+                if (answer == DialogResult.Yes)
+                {
 
+                    // Thực hiện câu lệnh SQL 
+                    bool f = dbpo.DeleteOrderDetail(ref err, cb_product_name.SelectedValue.ToString());
+                    if (f)
+                    {
+                        // Cập nhật lại DataGridView 
+                        LoadData();
+                        // Thông báo 
+                        MessageBox.Show("Đã xóa xong!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không xóa được!\n\r" + "Lỗi:" + err);
+                    }
+                }
+                else
+                {
+                    // Thông báo 
+                    MessageBox.Show("Không thực hiện việc xóa mẫu tin!");
+                }
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Không xóa được. Lỗi rồi!!!");
+            }
+            // Đóng kết nối
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -304,6 +379,11 @@ namespace QuanLyTiemQuanAo
             }
 
             txtTonKho.Text = dt.Rows[0][7].ToString();
+        }
+
+        private void dgvDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -44,9 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB_Account.cs" />
     <Compile Include="DB_Customer.cs" />
     <Compile Include="DB_Branch.cs" />
     <Compile Include="DB_CustomerType.cs" />
+    <Compile Include="DB_Discount.cs" />
     <Compile Include="DB_Event.cs" />
     <Compile Include="DB_Job.cs" />
     <Compile Include="DB_Employee.cs" />

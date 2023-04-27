@@ -805,7 +805,7 @@
             // cb_size
             // 
             this.cb_size.FormattingEnabled = true;
-            this.cb_size.Location = new System.Drawing.Point(83, 85);
+            this.cb_size.Location = new System.Drawing.Point(83, 11);
             this.cb_size.Name = "cb_size";
             this.cb_size.Size = new System.Drawing.Size(369, 24);
             this.cb_size.TabIndex = 292;
@@ -814,7 +814,7 @@
             // cb_product_name
             // 
             this.cb_product_name.FormattingEnabled = true;
-            this.cb_product_name.Location = new System.Drawing.Point(83, 55);
+            this.cb_product_name.Location = new System.Drawing.Point(83, -19);
             this.cb_product_name.Name = "cb_product_name";
             this.cb_product_name.Size = new System.Drawing.Size(369, 24);
             this.cb_product_name.TabIndex = 291;
@@ -823,7 +823,7 @@
             // btnFind
             // 
             this.btnFind.ImageOptions.Image = global::QuanLyTiemQuanAo.Properties.Resources.Search_16x16;
-            this.btnFind.Location = new System.Drawing.Point(392, 12);
+            this.btnFind.Location = new System.Drawing.Point(392, -62);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(60, 27);
             this.btnFind.StyleController = this.layoutControl3;
@@ -833,7 +833,7 @@
             // 
             // txtFind
             // 
-            this.txtFind.Location = new System.Drawing.Point(216, 12);
+            this.txtFind.Location = new System.Drawing.Point(216, -62);
             this.txtFind.Name = "txtFind";
             this.txtFind.Size = new System.Drawing.Size(172, 25);
             this.txtFind.TabIndex = 289;
@@ -841,7 +841,7 @@
             // cbFind
             // 
             this.cbFind.FormattingEnabled = true;
-            this.cbFind.Location = new System.Drawing.Point(83, 12);
+            this.cbFind.Location = new System.Drawing.Point(83, -62);
             this.cbFind.Name = "cbFind";
             this.cbFind.Size = new System.Drawing.Size(129, 24);
             this.cbFind.TabIndex = 288;
@@ -849,7 +849,7 @@
             // cb_color
             // 
             this.cb_color.FormattingEnabled = true;
-            this.cb_color.Location = new System.Drawing.Point(83, 115);
+            this.cb_color.Location = new System.Drawing.Point(83, 41);
             this.cb_color.Name = "cb_color";
             this.cb_color.Size = new System.Drawing.Size(369, 24);
             this.cb_color.TabIndex = 287;
@@ -857,7 +857,7 @@
             // 
             // txtTonKho
             // 
-            this.txtTonKho.Location = new System.Drawing.Point(83, 169);
+            this.txtTonKho.Location = new System.Drawing.Point(83, 95);
             this.txtTonKho.Name = "txtTonKho";
             this.txtTonKho.Size = new System.Drawing.Size(369, 25);
             this.txtTonKho.TabIndex = 285;
@@ -865,7 +865,7 @@
             // btnClear
             // 
             this.btnClear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.ImageOptions.Image")));
-            this.btnClear.Location = new System.Drawing.Point(345, 239);
+            this.btnClear.Location = new System.Drawing.Point(345, 165);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(107, 36);
             this.btnClear.StyleController = this.layoutControl3;
@@ -876,7 +876,7 @@
             // btnXoa
             // 
             this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(234, 239);
+            this.btnXoa.Location = new System.Drawing.Point(234, 165);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(107, 36);
             this.btnXoa.StyleController = this.layoutControl3;
@@ -887,7 +887,7 @@
             // btnSua
             // 
             this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
-            this.btnSua.Location = new System.Drawing.Point(123, 239);
+            this.btnSua.Location = new System.Drawing.Point(123, 165);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(107, 36);
             this.btnSua.StyleController = this.layoutControl3;
@@ -898,7 +898,7 @@
             // btnThem
             // 
             this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
-            this.btnThem.Location = new System.Drawing.Point(12, 239);
+            this.btnThem.Location = new System.Drawing.Point(12, 165);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(107, 36);
             this.btnThem.StyleController = this.layoutControl3;
@@ -909,7 +909,7 @@
             // txt_quantity
             // 
             this.txt_quantity.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txt_quantity.Location = new System.Drawing.Point(83, 198);
+            this.txt_quantity.Location = new System.Drawing.Point(83, 124);
             this.txt_quantity.Name = "txt_quantity";
             this.txt_quantity.Size = new System.Drawing.Size(369, 25);
             this.txt_quantity.TabIndex = 279;
@@ -917,7 +917,7 @@
             // pic_picture
             // 
             this.pic_picture.BackColor = System.Drawing.Color.Silver;
-            this.pic_picture.Location = new System.Drawing.Point(83, 145);
+            this.pic_picture.Location = new System.Drawing.Point(83, 71);
             this.pic_picture.Name = "pic_picture";
             this.pic_picture.Size = new System.Drawing.Size(369, 20);
             this.pic_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1101,6 +1101,7 @@
             this.dgvDetail.Size = new System.Drawing.Size(409, 463);
             this.dgvDetail.TabIndex = 0;
             this.dgvDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellClick);
+            this.dgvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentClick);
             // 
             // product_name
             // 
