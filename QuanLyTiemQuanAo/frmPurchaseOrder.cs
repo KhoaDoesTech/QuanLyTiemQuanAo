@@ -38,6 +38,9 @@ namespace QuanLyTiemQuanAo
         DB_PurchaseOrder dbpo;
         DataTable dtPurchaseOrder = null;
 
+        DB_Discount dbd;
+        DataTable dtDiscount = null;
+
         bool Them;
         public void SetConnection(string connectString)
         {
@@ -46,6 +49,8 @@ namespace QuanLyTiemQuanAo
             dbct = new DB_CustomerType(ConnStr);
             dbc = new DB_Customer(ConnStr);
             dbp = new DB_Product(ConnStr);
+            dbd = new DB_Discount(ConnStr);
+            dbpo = new DB_PurchaseOrder(ConnStr);
 
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(ConnStr);
             username = builder.UserID;
@@ -60,9 +65,30 @@ namespace QuanLyTiemQuanAo
         {
             try
             {
+                // Vận chuyển dữ liệu vào DataTable dtCurrentDiscount 
+                DataTable dt = new DataTable();
+                dt = dbd.GetCurrentDiscount(DateTime.Now);
+                cb_event.DataSource = dt;
+                cb_event.DisplayMember = "event_id";
+                cb_event.ValueMember = "event_id";
+
                 MoTuongTacKhach();
                 XoaTrongKhach();
                 KhoaTuongTacDon();
+
+                txt_order_id.Text = dbpo.GetDefaultOrderID();
+                txtTongTien.Text = dbpo.GetTotalCost().ToString();
+                 if (dt.Rows[0][2].ToString() != null)
+                {
+                    txt_discount.Text = dt.Rows[0][2].ToString();
+                    txtGiamGia.Text = (Convert.ToInt32(txtTongTien.Text) * Convert.ToDouble(txt_discount.Text)).ToString();
+                }
+                else
+                {
+                    txt_discount.Text = dt.Rows[0][3].ToString();
+                    txtGiamGia.Text = txt_discount.Text;
+                }
+                txt_total_cost.Text = (Convert.ToInt32(txtTongTien.Text) - Convert.ToDouble(txtGiamGia.Text)).ToString();
             }
             catch (SqlException e)
             {
@@ -151,44 +177,24 @@ namespace QuanLyTiemQuanAo
 
         private void dgvDetail_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            bool f = false;
-
-            if (Them)
+            string err = "";
+            try
             {
-                string err = "";
-                try
-                {
-                    DataTable dt = new DataTable();
-                    dt = dbp.FindInfoProduct(cb_product_name.SelectedValue.ToString(),
-                        cb_size.SelectedValue.ToString(), cb_color.SelectedValue.ToString(), dtPersonal.Rows[0][10].ToString());
-                    dgvDetail.Rows.Add(cb_product_name, txt_quantity.Text,dt.Rows[0][5].ToString());
-                    if (f)
-                    {
-                        // Load lại dữ liệu trên DataGridView 
-                        LoadData();
-                        // Thông báo 
-                        MessageBox.Show("Đã thêm xong!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Đã thêm chưa xong!\n\r" + "Lỗi:" + err);
-                    }
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Không thêm được. Lỗi rồi!");
-                }
+                DataTable dt = new DataTable();
+                dt = dbp.FindInfoProduct(cb_product_name.SelectedValue.ToString(),
+                    cb_size.SelectedValue.ToString(), cb_color.SelectedValue.ToString(), dtPersonal.Rows[0][10].ToString());
+                dgvDetail.Rows.Add(cb_product_name.SelectedValue.ToString(), txt_quantity.Text, dt.Rows[0][5].ToString(),
+                    (Convert.ToInt32(dt.Rows[0][5]) * Convert.ToInt32(txt_quantity.Text)).ToString(), cb_size.Text, cb_color.Text);                
             }
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-
+            catch (SqlException)
+            {
+                MessageBox.Show("Không thêm được. Lỗi rồi!");
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -381,9 +387,15 @@ namespace QuanLyTiemQuanAo
             txtTonKho.Text = dt.Rows[0][7].ToString();
         }
 
-        private void dgvDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
-
+            // Khai báo biến traloi 
+            DialogResult traloi;
+            // Hiện hộp thoại hỏi đáp 
+            traloi = MessageBox.Show("Chắc không?", "Trả lời",
+            MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            // Kiểm tra có nhắp chọn nút Ok không? 
+            if (traloi == DialogResult.OK) this.Close();
         }
     }
 }

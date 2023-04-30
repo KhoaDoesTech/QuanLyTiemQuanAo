@@ -45,12 +45,13 @@ namespace BALayer
             return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindEmployeeByName(@full_name)",
                  new SqlParameter("@full_name", full_name));
         }
-        public bool UpdateEmployee(ref string err, string job_id,
+        public bool UpdateEmployee(ref string err, string employee_id, string job_id,
             string full_name, string gender, DateTime birthday, string phone,
             string employee_address, string email, bool work_status)
         {
             return db.MyExecuteNonQuery("SP_Update_Employee",
                 ref err,
+                new SqlParameter("@employee_id", employee_id),
                 new SqlParameter("@job_id", job_id),
                 new SqlParameter("@full_name", full_name),
                 new SqlParameter("@gender", gender),

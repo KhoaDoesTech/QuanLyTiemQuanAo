@@ -57,13 +57,13 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dgvJob = new System.Windows.Forms.DataGridView();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnTim = new DevExpress.XtraEditors.SimpleButton();
             this.job_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.job_title_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.job_title_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.branch_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.job_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.base_salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnTim = new DevExpress.XtraEditors.SimpleButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -393,6 +393,24 @@
             this.dgvJob.TabIndex = 4;
             this.dgvJob.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJob_CellClick);
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(759, 70);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(171, 27);
+            this.txtSearch.TabIndex = 184;
+            // 
+            // btnTim
+            // 
+            this.btnTim.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnTim.Location = new System.Drawing.Point(934, 70);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(95, 27);
+            this.btnTim.TabIndex = 185;
+            this.btnTim.Text = "Tìm";
+            // 
             // job_id
             // 
             this.job_id.DataPropertyName = "job_id";
@@ -407,6 +425,8 @@
             this.job_title_id.HeaderText = "Mã chức danh công việc";
             this.job_title_id.MinimumWidth = 6;
             this.job_title_id.Name = "job_title_id";
+            this.job_title_id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.job_title_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.job_title_id.Width = 125;
             // 
             // branch_id
@@ -432,24 +452,6 @@
             this.base_salary.MinimumWidth = 6;
             this.base_salary.Name = "base_salary";
             this.base_salary.Width = 125;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(759, 70);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(171, 27);
-            this.txtSearch.TabIndex = 184;
-            // 
-            // btnTim
-            // 
-            this.btnTim.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnTim.Location = new System.Drawing.Point(934, 70);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(95, 27);
-            this.btnTim.TabIndex = 185;
-            this.btnTim.Text = "Tìm";
             // 
             // frmJob
             // 
@@ -498,11 +500,6 @@
         private System.Windows.Forms.ToolStripButton btnThoat;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dgvJob;
-        private System.Windows.Forms.DataGridViewTextBoxColumn job_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn job_title_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn branch_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn job_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn base_salary;
         private System.Windows.Forms.TextBox txtSearch;
         private DevExpress.XtraEditors.SimpleButton btnTim;
         private DevExpress.XtraEditors.GroupControl panel;
@@ -525,5 +522,10 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn job_id;
+        private System.Windows.Forms.DataGridViewComboBoxColumn job_title_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn branch_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn job_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn base_salary;
     }
 }

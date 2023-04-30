@@ -21,6 +21,12 @@ namespace BALayer
         {
             return db.ExecuteQueryDataTable("select * from Discount");
         }
+        
+        public DataTable GetCurrentDiscount(DateTime day)
+        {
+            return db.ExecuteNonQueryDataTable("select * from DBO.CurrentDiscount(@day)",
+                new SqlParameter("@day", day));
+        }
 
         public bool InsertDiscount(ref string err, float discount_percent,
             int discount_price)

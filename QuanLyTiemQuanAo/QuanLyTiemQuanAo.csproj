@@ -71,11 +71,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bussiness.cs">
+    <Compile Include="frmBussiness.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bussiness.Designer.cs">
-      <DependentUpon>Bussiness.cs</DependentUpon>
+    <Compile Include="frmBussiness.Designer.cs">
+      <DependentUpon>frmBussiness.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAccount.cs">
       <SubType>Form</SubType>
@@ -88,6 +88,12 @@
     </Compile>
     <Compile Include="frmBranch.Designer.cs">
       <DependentUpon>frmBranch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePass.Designer.cs">
+      <DependentUpon>frmChangePass.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCurrentDiscount.cs">
       <SubType>Form</SubType>
@@ -125,6 +131,12 @@
     <Compile Include="frmEvent.Designer.cs">
       <DependentUpon>frmEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHistoryPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistoryPurchase.Designer.cs">
+      <DependentUpon>frmHistoryPurchase.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmJob.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +160,12 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModifyPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModifyPerson.Designer.cs">
+      <DependentUpon>frmModifyPerson.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMonthSummary.cs">
       <SubType>Form</SubType>
@@ -179,6 +197,36 @@
     <Compile Include="frmPurchaseOrder.Designer.cs">
       <DependentUpon>frmPurchaseOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStatisticsCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatisticsCustomer.Designer.cs">
+      <DependentUpon>frmStatisticsCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStatisticsEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatisticsEmployee.Designer.cs">
+      <DependentUpon>frmStatisticsEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStock.Designer.cs">
+      <DependentUpon>frmStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStockImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStockImport.Designer.cs">
+      <DependentUpon>frmStockImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStockTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStockTransfer.Designer.cs">
+      <DependentUpon>frmStockTransfer.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,14 +236,17 @@
     <Compile Include="IConnectionForm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Bussiness.resx">
-      <DependentUpon>Bussiness.cs</DependentUpon>
+    <EmbeddedResource Include="frmBussiness.resx">
+      <DependentUpon>frmBussiness.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAccount.resx">
       <DependentUpon>frmAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBranch.resx">
       <DependentUpon>frmBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePass.resx">
+      <DependentUpon>frmChangePass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCurrentDiscount.resx">
       <DependentUpon>frmCurrentDiscount.cs</DependentUpon>
@@ -215,6 +266,9 @@
     <EmbeddedResource Include="frmEvent.resx">
       <DependentUpon>frmEvent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHistoryPurchase.resx">
+      <DependentUpon>frmHistoryPurchase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmJob.resx">
       <DependentUpon>frmJob.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModifyPerson.resx">
+      <DependentUpon>frmModifyPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMonthSummary.resx">
       <DependentUpon>frmMonthSummary.cs</DependentUpon>
@@ -241,6 +298,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPurchaseOrder.resx">
       <DependentUpon>frmPurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatisticsCustomer.resx">
+      <DependentUpon>frmStatisticsCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatisticsEmployee.resx">
+      <DependentUpon>frmStatisticsEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStock.resx">
+      <DependentUpon>frmStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStockImport.resx">
+      <DependentUpon>frmStockImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStockTransfer.resx">
+      <DependentUpon>frmStockTransfer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmView.resx">
       <DependentUpon>frmView.cs</DependentUpon>

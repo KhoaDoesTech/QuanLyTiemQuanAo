@@ -611,6 +611,7 @@
             this.dgvEmployee.RowTemplate.Height = 24;
             this.dgvEmployee.Size = new System.Drawing.Size(1419, 197);
             this.dgvEmployee.TabIndex = 128;
+            this.dgvEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellClick_1);
             // 
             // employee_id
             // 

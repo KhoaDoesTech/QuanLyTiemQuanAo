@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace QuanLyTiemQuanAo
 {
-    public partial class frmCurrentDiscount : DevExpress.XtraEditors.XtraForm
+    public partial class frmCurrentDiscount : DevExpress.XtraEditors.XtraForm, IConnectionForm
     {
         DB_Discount dbd;
         DataTable dtDiscount = null;
@@ -27,14 +27,15 @@ namespace QuanLyTiemQuanAo
         public void SetConnection(string connectString)
         {
             ConnStr = connectString;
+            dbe = new DB_Event(ConnStr);
+            dbct = new DB_CustomerType(ConnStr);
+            dbd = new DB_Discount(ConnStr);
         }
         // Khai báo biến kiểm tra việc Thêm hay Sửa dữ liệu 
         bool Them;
         public frmCurrentDiscount()
         {
             InitializeComponent();
-            dbe = new DB_Event(ConnStr);
-            dbct = new DB_CustomerType(ConnStr);
         }
 
         void LoadData()
@@ -69,6 +70,11 @@ namespace QuanLyTiemQuanAo
                 DataGridViewComboBoxColumn).ValueMember =
                 "customer_type_id";
 
+                // Vận chuyển dữ liệu vào DataTable dtDiscount
+                dtDiscount = new DataTable();
+                dtDiscount.Clear();
+                dtDiscount = dbd.GetCurrentDiscount(DateTime.Parse(dtpDate.Text.ToString()));
+
                 MoHienThi();
                 KhoaTuongTac();
 
@@ -77,7 +83,7 @@ namespace QuanLyTiemQuanAo
             }
             catch (SqlException e)
             {
-                MessageBox.Show("Không lấy được nội dung trong table Employee. Lỗi rồi!!!" + e.Message);
+                MessageBox.Show("Không lấy được nội dung trong table Disscount. Lỗi rồi!!!" + e.Message);
             }
         }
 
@@ -261,6 +267,17 @@ namespace QuanLyTiemQuanAo
                         break;
                 }
             }
+        }
+
+        private void dtpDate_ValueChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = dbd.GetCurrentDiscount(DateTime.Parse(dtpDate.Text.ToString()));
+        }
+
+        private void dgvDiscount_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

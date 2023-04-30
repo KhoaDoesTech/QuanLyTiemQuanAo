@@ -222,8 +222,6 @@ namespace QuanLyTiemQuanAo
             else
             {
                 DataTable dt = new DataTable();
-                //choose type to search
-                dgvJobTitle.DataSource = dt;
 
                 int x = cbSearch.SelectedIndex;
                 switch (x)

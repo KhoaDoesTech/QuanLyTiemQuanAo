@@ -1,6 +1,6 @@
 ﻿namespace QuanLyTiemQuanAo
 {
-    partial class Bussiness
+    partial class frmBussiness
     {
         /// <summary>
         /// Required designer variable.

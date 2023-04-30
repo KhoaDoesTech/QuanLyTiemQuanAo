@@ -332,7 +332,7 @@
             this.dgvDiscount.RowTemplate.Height = 24;
             this.dgvDiscount.Size = new System.Drawing.Size(1229, 198);
             this.dgvDiscount.TabIndex = 0;
-            this.dgvDiscount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiscount_CellClick);
+            this.dgvDiscount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiscount_CellClick);
             // 
             // event_id
             // 

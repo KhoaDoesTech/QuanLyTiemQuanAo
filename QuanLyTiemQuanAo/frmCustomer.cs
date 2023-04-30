@@ -221,7 +221,7 @@ namespace QuanLyTiemQuanAo
             // Chuyển thông tin lên panel 
             txt_customer_id.Text =
             dgvCustomer.Rows[r].Cells[0].Value.ToString();
-            cb_customer_type_id.Text =
+            cb_customer_type_id.SelectedValue =
             dgvCustomer.Rows[r].Cells[1].Value.ToString();
             txt_full_name.Text =
             dgvCustomer.Rows[r].Cells[2].Value.ToString();
@@ -244,8 +244,6 @@ namespace QuanLyTiemQuanAo
             else
             {
                DataTable dt = new DataTable();
-               //choose type to search
-               dgvCustomer.DataSource = dt;
 
                int x = cbSearch.SelectedIndex;
                switch (x)

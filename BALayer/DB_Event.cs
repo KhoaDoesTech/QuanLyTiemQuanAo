@@ -18,7 +18,7 @@ namespace BALayer
         }
         public DataTable GetEvent()
         {
-            return db.ExecuteQueryDataTable("select * from Event");
+            return db.ExecuteQueryDataTable("select * from BranchEvent");
         }
         public bool InsertEvent(ref string err, string event_name,
                      DateTime date_start, DateTime date_end)

@@ -54,6 +54,11 @@ namespace QuanLyTiemQuanAo
                 txt_job_title_name.Text = r[6].ToString();
                 txt_branch_name.Text = r[7].ToString();
                 txt_base_salary.Text = r[8].ToString();
+
+                dtPersonal.Clear();
+                dtPersonal = dbp.GetPersonSummary(username, password);
+
+                dgvPerson.DataSource = dtPersonal;
             }
             catch (SqlException e)
             {
@@ -81,6 +86,11 @@ namespace QuanLyTiemQuanAo
         }
 
         private void txt_full_name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

@@ -19,7 +19,7 @@ namespace BALayer
 
         public DataTable GetMonthSummary()
         {
-            return db.ExecuteQueryDataTable("select * from MonthSummary");
+            return db.ExecuteQueryDataTable("select * from MonthlySummary");
         }
 
         public bool InsertMonthSummary(ref string err,
@@ -45,18 +45,12 @@ namespace BALayer
             return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindMonthSummaryByYear(@summary_year)",
                  new SqlParameter("@summary_year", summary_year));
         }
-        public bool UpdateMonthSummary(ref string err,
-            string employee_id, int summary_month, int summary_year,
-            int products_sold, int bonus_salary, int salary)
+        public bool UpdateMonthSummary(ref string err, int summary_month, int summary_year)
         {
             return db.MyExecuteNonQuery("SP_Update_MonthSummary",
                 ref err,
-                new SqlParameter("@employee_id", employee_id),
                 new SqlParameter("@summary_month", summary_month),
-                new SqlParameter("@summary_year", summary_year),
-                new SqlParameter("@products_sold", products_sold),
-                new SqlParameter("@bonus_salary", bonus_salary),
-                new SqlParameter("@salary", salary));
+                new SqlParameter("@summary_year", summary_year));
         }
     }
 }

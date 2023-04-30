@@ -44,14 +44,12 @@ namespace QuanLyTiemQuanAo
                 dtJobTitle.Clear();
                 dtJobTitle = dbjt.GetJobTitle();
                 // Đưa dữ liệu lên ComboBox trong DataGridView
-                (dgvJob.Columns["customer_type_id"] as
+                (dgvJob.Columns["job_title_id"] as
                 DataGridViewComboBoxColumn).DataSource = dtJobTitle;
-                (dgvJob.Columns["customer_type_id"] as
-                DataGridViewComboBoxColumn).DisplayMember =
-                "customer_type_name";
-                (dgvJob.Columns["customer_type_id"] as
-                DataGridViewComboBoxColumn).ValueMember =
-                "customer_type_id";
+                (dgvJob.Columns["job_title_id"] as
+                DataGridViewComboBoxColumn).DisplayMember = "job_title_name";
+                (dgvJob.Columns["job_title_id"] as
+                DataGridViewComboBoxColumn).ValueMember = "job_title_id";
 
                 // Vận chuyển dữ liệu vào DataTable dtJob
                 dtJob = new DataTable();
@@ -250,9 +248,7 @@ namespace QuanLyTiemQuanAo
             else
             {
                 DataTable dt = new DataTable();
-                //choose type to search
-                dgvJob.DataSource = dt;
-
+ 
                 int x = cbSearch.SelectedIndex;
                 switch (x)
                 {

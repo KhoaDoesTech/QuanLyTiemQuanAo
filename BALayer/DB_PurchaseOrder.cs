@@ -16,9 +16,9 @@ namespace BALayer
         {
             db = new DAL(strConnect_local);
         }
-        public DataTable GetPurchaseOrder()
+        public string GetDefaultOrderID()
         {
-            return db.ExecuteQueryDataTable("select * from PurchaseOrder");
+            return (string)db.MyExecuteScalar("SELECT DBO.AutoIDPurchaseOrder()");
         }
         public bool UpdatePurchaseOrder(ref string err, string branch_id,
             string product_name, string employee_id, string event_id, DateTime order_date, int total_cost)
@@ -37,6 +37,10 @@ namespace BALayer
             return db.MyExecuteNonQuery("SP_Delete_OrderDetail",
                 ref err,
                 new SqlParameter("@product_name", product_name));
+        }
+        public int GetTotalCost()
+        {
+            return (int)db.MyExecuteScalar("select dbo.GetTotalCost()");
         }
     }
 }

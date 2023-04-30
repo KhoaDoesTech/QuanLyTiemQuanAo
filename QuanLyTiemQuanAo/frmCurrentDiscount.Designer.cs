@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnThem = new System.Windows.Forms.ToolStripButton();
-            this.btnLuu = new System.Windows.Forms.ToolStripButton();
-            this.btnHuy = new System.Windows.Forms.ToolStripButton();
-            this.btnThoat = new System.Windows.Forms.ToolStripButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.txt_discount_price = new System.Windows.Forms.TextBox();
             this.txt_discount_percent = new System.Windows.Forms.TextBox();
             this.cb_event_id = new System.Windows.Forms.ComboBox();
@@ -47,19 +44,24 @@
             this.layoutControll2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cbSearch = new System.Windows.Forms.ComboBox();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dgvDiscount = new System.Windows.Forms.DataGridView();
             this.event_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.customer_type_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.discount_percent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discount_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnThem = new System.Windows.Forms.ToolStripButton();
+            this.btnLuu = new System.Windows.Forms.ToolStripButton();
+            this.btnHuy = new System.Windows.Forms.ToolStripButton();
+            this.btnThoat = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -81,13 +83,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControll2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -103,46 +106,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(1143, 47);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btnThem
-            // 
-            this.btnThem.Image = global::QuanLyTiemQuanAo.Properties.Resources.Add_32x32;
-            this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(50, 44);
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Image = global::QuanLyTiemQuanAo.Properties.Resources.Save_32x32;
-            this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(37, 44);
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Image = global::QuanLyTiemQuanAo.Properties.Resources.Undo_32x32;
-            this.btnHuy.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(60, 44);
-            this.btnHuy.Text = "Bỏ qua";
-            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Image = global::QuanLyTiemQuanAo.Properties.Resources.Action_Close_32x32;
-            this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(51, 44);
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // groupControl1
             // 
@@ -193,6 +156,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.dtpDate);
             this.layoutControl1.Controls.Add(this.txt_discount_price);
             this.layoutControl1.Controls.Add(this.txt_discount_percent);
             this.layoutControl1.Controls.Add(this.cb_event_id);
@@ -204,6 +168,14 @@
             this.layoutControl1.Size = new System.Drawing.Size(728, 242);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Location = new System.Drawing.Point(115, 130);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(601, 23);
+            this.dtpDate.TabIndex = 9;
+            this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
             // 
             // txt_discount_price
             // 
@@ -244,7 +216,8 @@
             this.layoutControlItem1,
             this.layoutControll2,
             this.layoutControl3,
-            this.layoutControl4});
+            this.layoutControl4,
+            this.layoutControlItem4});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(728, 242);
             this.Root.TextVisible = false;
@@ -252,9 +225,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 118);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 147);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(708, 104);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(708, 75);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
@@ -296,6 +269,15 @@
             this.layoutControl4.Text = "Giá giảm";
             this.layoutControl4.TextSize = new System.Drawing.Size(91, 16);
             // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.dtpDate;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 118);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(708, 29);
+            this.layoutControlItem4.Text = "Thời gian";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(91, 16);
+            // 
             // layoutControl2
             // 
             this.layoutControl2.Controls.Add(this.btnSearch);
@@ -309,19 +291,6 @@
             this.layoutControl2.Size = new System.Drawing.Size(399, 242);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Appearance.Options.UseFont = true;
-            this.btnSearch.ImageOptions.Image = global::QuanLyTiemQuanAo.Properties.Resources.Search_16x16;
-            this.btnSearch.Location = new System.Drawing.Point(325, 12);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(62, 30);
-            this.btnSearch.StyleController = this.layoutControl2;
-            this.btnSearch.TabIndex = 9;
-            this.btnSearch.Text = "Tìm";
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -368,15 +337,6 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.btnSearch;
-            this.layoutControlItem3.Location = new System.Drawing.Point(313, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(66, 222);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
-            // 
             // dgvDiscount
             // 
             this.dgvDiscount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -392,6 +352,7 @@
             this.dgvDiscount.RowTemplate.Height = 24;
             this.dgvDiscount.Size = new System.Drawing.Size(1139, 238);
             this.dgvDiscount.TabIndex = 0;
+            this.dgvDiscount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiscount_CellClick);
             this.dgvDiscount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCurrentDiscount_CellClick);
             // 
             // event_id
@@ -428,6 +389,68 @@
             this.discount_price.Name = "discount_price";
             this.discount_price.Width = 125;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Appearance.Options.UseFont = true;
+            this.btnSearch.ImageOptions.Image = global::QuanLyTiemQuanAo.Properties.Resources.Search_16x16;
+            this.btnSearch.Location = new System.Drawing.Point(325, 12);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(62, 30);
+            this.btnSearch.StyleController = this.layoutControl2;
+            this.btnSearch.TabIndex = 9;
+            this.btnSearch.Text = "Tìm";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.btnSearch;
+            this.layoutControlItem3.Location = new System.Drawing.Point(313, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(66, 222);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Image = global::QuanLyTiemQuanAo.Properties.Resources.Add_32x32;
+            this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(50, 44);
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Image = global::QuanLyTiemQuanAo.Properties.Resources.Save_32x32;
+            this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(37, 44);
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Image = global::QuanLyTiemQuanAo.Properties.Resources.Undo_32x32;
+            this.btnHuy.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(60, 44);
+            this.btnHuy.Text = "Bỏ qua";
+            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Image = global::QuanLyTiemQuanAo.Properties.Resources.Action_Close_32x32;
+            this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(51, 44);
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // frmCurrentDiscount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -460,13 +483,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControll2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -506,5 +530,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn customer_type_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn discount_percent;
         private System.Windows.Forms.DataGridViewTextBoxColumn discount_price;
+        private System.Windows.Forms.DateTimePicker dtpDate;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

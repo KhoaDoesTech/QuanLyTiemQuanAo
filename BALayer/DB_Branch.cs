@@ -20,7 +20,7 @@ namespace BALayer
         {
             return db.ExecuteQueryDataTable("select * from Branch");
         }
-        public bool InsertBranch(ref string err, string branch_id,
+        public bool InsertBranch(ref string err,
              string branch_name, int max_stock, int rent_amount)
         {
             return db.MyExecuteNonQuery("SP_Insert_Branch",

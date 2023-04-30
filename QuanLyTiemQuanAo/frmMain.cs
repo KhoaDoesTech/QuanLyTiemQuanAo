@@ -61,7 +61,9 @@ namespace QuanLyTiemQuanAo
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            ribbonPage3.Visible = false;
+            ribbonPage2.Visible = false;
+            ribbonPage4.Visible = false;
         }
 
         private void barButtonItem27_ItemClick(object sender, ItemClickEventArgs e)
@@ -126,7 +128,62 @@ namespace QuanLyTiemQuanAo
 
         private void barButtonItem33_ItemClick(object sender, ItemClickEventArgs e)
         {
-            openForm(typeof(Bussiness));
+            openForm(typeof(frmBussiness));
+        }
+
+        private void barButtonItem29_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmCurrentDiscount));
+        }
+
+        private void barButtonItem23_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmDiscount));
+        }
+
+        private void barButtonItem34_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmStatisticsEmployee));
+        }
+
+        private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openViewForm(typeof(frmView), 1);
+        }
+
+        private void barButtonItem28_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openViewForm(typeof(frmView), 2);
+        }
+
+        private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmStockImport));
+        }
+
+        private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmStockTransfer));
+        }
+
+        private void barButtonItem19_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmAccount));
+        }
+
+        private void barButtonItem24_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmHistoryPurchase));
+        }
+
+        private void btnSuaThongTin_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmModifyPerson));
+        }
+
+        private void btnSuaMatKhau_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmChangePass));
         }
     }
 }

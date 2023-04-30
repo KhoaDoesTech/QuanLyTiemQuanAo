@@ -197,11 +197,11 @@ namespace QuanLyTiemQuanAo
             txt_event_id.Text =
             dgvEvent.Rows[r].Cells[0].Value.ToString();
             txt_event_name.Text =
-            dgvEvent.Rows[r].Cells[0].Value.ToString();
+            dgvEvent.Rows[r].Cells[1].Value.ToString();
             dtp_date_start.Text =
-            dgvEvent.Rows[r].Cells[4].Value.ToString();
+            dgvEvent.Rows[r].Cells[2].Value.ToString();
             dtp_date_end.Text =
-            dgvEvent.Rows[r].Cells[4].Value.ToString();
+            dgvEvent.Rows[r].Cells[3].Value.ToString();
         }
 
         private void btn_Tim_Click(object sender, EventArgs e)
@@ -213,8 +213,6 @@ namespace QuanLyTiemQuanAo
             else
             {
                 DataTable dt = new DataTable();
-                //choose type to search
-                dgvEvent.DataSource = dt;
 
                 int x = cbSearch.SelectedIndex;
                 switch (x)

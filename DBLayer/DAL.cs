@@ -148,5 +148,21 @@ namespace DBLayer
             CloseDB();
             return result;
         }
+
+        public object MyExecuteScalarNoQuery(string strSQL, params SqlParameter[] param)
+        {
+            OpenDB();
+
+            comm.CommandText = strSQL;
+            comm.CommandType = CommandType.Text;
+
+            foreach (SqlParameter p in param)
+                comm.Parameters.AddWithValue(p.ParameterName, p.Value);
+
+            object result = comm.ExecuteScalar();
+
+            CloseDB();
+            return result;
+        }
     }
 }

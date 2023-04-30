@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnThem = new System.Windows.Forms.ToolStripButton();
+            this.btnLuu = new System.Windows.Forms.ToolStripButton();
+            this.btnHuy = new System.Windows.Forms.ToolStripButton();
+            this.btnThoat = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel = new DevExpress.XtraEditors.GroupControl();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -48,6 +52,7 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnTim = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cbSearch = new System.Windows.Forms.ComboBox();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -56,19 +61,15 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dgvMonthSummary = new System.Windows.Forms.DataGridView();
             this.employee_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.summary_month = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.summary_year = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.summary_month = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.summary_year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.products_sold = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bonus_salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnTim = new System.Windows.Forms.Button();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnThem = new System.Windows.Forms.ToolStripButton();
-            this.btnLuu = new System.Windows.Forms.ToolStripButton();
-            this.btnHuy = new System.Windows.Forms.ToolStripButton();
-            this.btnThoat = new System.Windows.Forms.ToolStripButton();
+            this.btnSua = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -98,8 +99,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMonthSummary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMonthSummary)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -107,6 +108,7 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnThem,
+            this.btnSua,
             this.btnLuu,
             this.btnHuy,
             this.btnThoat});
@@ -115,6 +117,46 @@
             this.toolStrip1.Size = new System.Drawing.Size(927, 47);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnThem
+            // 
+            this.btnThem.Image = global::QuanLyTiemQuanAo.Properties.Resources.Add_32x32;
+            this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(50, 44);
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Image = global::QuanLyTiemQuanAo.Properties.Resources.Save_32x32;
+            this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(37, 44);
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Image = global::QuanLyTiemQuanAo.Properties.Resources.Undo_32x32;
+            this.btnHuy.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(60, 44);
+            this.btnHuy.Text = "Bỏ qua";
+            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Image = global::QuanLyTiemQuanAo.Properties.Resources.Action_Close_32x32;
+            this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(51, 44);
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // splitContainer1
             // 
@@ -315,6 +357,17 @@
             this.layoutControl4.TabIndex = 2;
             this.layoutControl4.Text = "layoutControl4";
             // 
+            // btnTim
+            // 
+            this.btnTim.Image = global::QuanLyTiemQuanAo.Properties.Resources.Search_16x16;
+            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTim.Location = new System.Drawing.Point(588, 12);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(79, 25);
+            this.btnTim.TabIndex = 190;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseVisualStyleBackColor = true;
+            // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(420, 12);
@@ -390,6 +443,15 @@
             this.emptySpaceItem4.Size = new System.Drawing.Size(244, 29);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.btnTim;
+            this.layoutControlItem9.Location = new System.Drawing.Point(576, 0);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(83, 29);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem9.TextVisible = false;
+            // 
             // dgvMonthSummary
             // 
             this.dgvMonthSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -411,7 +473,7 @@
             // 
             // employee_id
             // 
-            this.employee_id.DataPropertyName = "work_status";
+            this.employee_id.DataPropertyName = "employee_id";
             this.employee_id.HeaderText = "Mã nhân viên";
             this.employee_id.MinimumWidth = 6;
             this.employee_id.Name = "employee_id";
@@ -424,7 +486,6 @@
             this.summary_month.MinimumWidth = 6;
             this.summary_month.Name = "summary_month";
             this.summary_month.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.summary_month.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.summary_month.Width = 75;
             // 
             // summary_year
@@ -434,7 +495,6 @@
             this.summary_year.MinimumWidth = 6;
             this.summary_year.Name = "summary_year";
             this.summary_year.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.summary_year.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.summary_year.Width = 75;
             // 
             // products_sold
@@ -461,65 +521,15 @@
             this.salary.Name = "salary";
             this.salary.Width = 150;
             // 
-            // btnTim
+            // btnSua
             // 
-            this.btnTim.Image = global::QuanLyTiemQuanAo.Properties.Resources.Search_16x16;
-            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTim.Location = new System.Drawing.Point(588, 12);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(79, 25);
-            this.btnTim.TabIndex = 190;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.UseVisualStyleBackColor = true;
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.btnTim;
-            this.layoutControlItem9.Location = new System.Drawing.Point(576, 0);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(83, 29);
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem9.TextVisible = false;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Image = global::QuanLyTiemQuanAo.Properties.Resources.Add_32x32;
-            this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(50, 44);
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Image = global::QuanLyTiemQuanAo.Properties.Resources.Save_32x32;
-            this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(37, 44);
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Image = global::QuanLyTiemQuanAo.Properties.Resources.Undo_32x32;
-            this.btnHuy.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(60, 44);
-            this.btnHuy.Text = "Bỏ qua";
-            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Image = global::QuanLyTiemQuanAo.Properties.Resources.Action_Close_32x32;
-            this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(51, 44);
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            this.btnSua.Image = global::QuanLyTiemQuanAo.Properties.Resources.Edit_32x32;
+            this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(38, 44);
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // frmMonthSummary
             // 
@@ -561,8 +571,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMonthSummary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMonthSummary)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -578,12 +588,6 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private DevExpress.XtraEditors.GroupControl panel;
         private System.Windows.Forms.DataGridView dgvMonthSummary;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employee_id;
-        private System.Windows.Forms.DataGridViewComboBoxColumn summary_month;
-        private System.Windows.Forms.DataGridViewComboBoxColumn summary_year;
-        private System.Windows.Forms.DataGridViewTextBoxColumn products_sold;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bonus_salary;
-        private System.Windows.Forms.DataGridViewTextBoxColumn salary;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
@@ -611,5 +615,12 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private System.Windows.Forms.Button btnTim;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employee_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn summary_month;
+        private System.Windows.Forms.DataGridViewTextBoxColumn summary_year;
+        private System.Windows.Forms.DataGridViewTextBoxColumn products_sold;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bonus_salary;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salary;
+        private System.Windows.Forms.ToolStripButton btnSua;
     }
 }

@@ -13,7 +13,7 @@ using BALayer;
 
 namespace QuanLyTiemQuanAo
 {
-    public partial class frmEmployee : DevExpress.XtraEditors.XtraForm
+    public partial class frmEmployee : DevExpress.XtraEditors.XtraForm, IConnectionForm
     {
         DB_Employee dbe;
         DataTable dtEmployee = null;
@@ -24,14 +24,14 @@ namespace QuanLyTiemQuanAo
         public void SetConnection(string connectString)
         {
             ConnStr = connectString;
+            dbe = new DB_Employee(ConnStr);
+            dbj = new DB_Job(ConnStr);
         }
         // Khai báo biến kiểm tra việc Thêm hay Sửa dữ liệu 
         bool Them;
         public frmEmployee()
         {
             InitializeComponent();
-            dbe = new DB_Employee(ConnStr);
-            dbj = new DB_Job(ConnStr);
         }
 
         void LoadData()
@@ -140,6 +140,7 @@ namespace QuanLyTiemQuanAo
             XoaTrong();
             MoTuongTac();
             txt_full_name.Focus();
+            Them = true;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -208,7 +209,7 @@ namespace QuanLyTiemQuanAo
                 string err = "";
                 try
                 {
-                    f = dbe.InsertEmployee(ref err, cb_job_id.Text,
+                    f = dbe.InsertEmployee(ref err, cb_job_id.SelectedValue.ToString(),
                         txt_full_name.Text, txt_gender.Text,
                         DateTime.Parse(dtp_birthday.Text.ToString()), txt_phone.Text,
                         txt_employee_address.Text, txt_email.Text, ckb_work_status.Checked);
@@ -234,7 +235,7 @@ namespace QuanLyTiemQuanAo
                 string err = "";
                 try
                 {
-                    f = dbe.UpdateEmployee(ref err, cb_job_id.Text,
+                    f = dbe.UpdateEmployee(ref err, txt_employee_id.Text, cb_job_id.SelectedValue.ToString(),
                         txt_full_name.Text, txt_gender.Text,
                         DateTime.Parse(dtp_birthday.Text.ToString()), txt_phone.Text,
                         txt_employee_address.Text, txt_email.Text, ckb_work_status.Checked);
@@ -311,8 +312,6 @@ namespace QuanLyTiemQuanAo
             else
             {
                 DataTable dt = new DataTable();
-                //choose type to search
-                dgvEmployee.DataSource = dt;
 
                 int x = cbSearch.SelectedIndex;
                 switch (x)
@@ -337,6 +336,33 @@ namespace QuanLyTiemQuanAo
             cbSearch.Text = cbSearch.Items[0].ToString();
 
             LoadData();
+        }
+
+        private void dgvEmployee_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            // Đưa dữ liệu lên ComboBox
+            cb_job_id.DataSource = dtJob;
+            cb_job_id.DisplayMember = "job_name";
+            cb_job_id.ValueMember = "job_id";
+            // Thứ tự dòng hiện hành 
+            int r = dgvEmployee.CurrentCell.RowIndex;
+            // Chuyển thông tin lên panel 
+            txt_employee_id.Text =
+            dgvEmployee.Rows[r].Cells[0].Value.ToString();
+            cb_job_id.SelectedValue =
+            dgvEmployee.Rows[r].Cells[1].Value.ToString();
+            txt_full_name.Text =
+            dgvEmployee.Rows[r].Cells[2].Value.ToString();
+            txt_gender.Text =
+            dgvEmployee.Rows[r].Cells[3].Value.ToString();
+            dtp_birthday.Text =
+            dgvEmployee.Rows[r].Cells[4].Value.ToString();
+            txt_phone.Text =
+            dgvEmployee.Rows[r].Cells[5].Value.ToString();
+            txt_employee_address.Text =
+            dgvEmployee.Rows[r].Cells[6].Value.ToString();
+            txt_email.Text =
+            dgvEmployee.Rows[r].Cells[7].Value.ToString();
         }
     }
 }

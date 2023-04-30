@@ -114,7 +114,6 @@ namespace QuanLyTiemQuanAo
             KhoaHienThi();
             this.txt_branch_id.Focus();
         }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             bool f = false;
@@ -123,7 +122,7 @@ namespace QuanLyTiemQuanAo
                 string err = "";
                 try
                 {
-                    f = dbb.InsertBranch(ref err, txt_branch_id.Text,
+                    f = dbb.InsertBranch(ref err,
                         txt_branch_name.Text,
                         Convert.ToInt32(txt_max_stock.Text),
                         Convert.ToInt32(txt_rent_amount.Text));
@@ -227,8 +226,6 @@ namespace QuanLyTiemQuanAo
             else
             {
                 DataTable dt = new DataTable();
-                //choose type to search
-                dgvBranch.DataSource = dt;
 
                 int x = cbSearch.SelectedIndex;
                 switch (x)

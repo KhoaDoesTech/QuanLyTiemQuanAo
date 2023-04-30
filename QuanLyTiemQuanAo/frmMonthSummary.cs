@@ -13,7 +13,7 @@ using BALayer;
 
 namespace QuanLyTiemQuanAo
 {
-    public partial class frmMonthSummary : DevExpress.XtraEditors.XtraForm
+    public partial class frmMonthSummary : DevExpress.XtraEditors.XtraForm, IConnectionForm
     {
         DB_MonthSummary dbms;
         DataTable dtMonthSummary = null;
@@ -24,17 +24,29 @@ namespace QuanLyTiemQuanAo
         public void SetConnection(string connectString)
         {
             ConnStr = connectString;
+            dbms = new DB_MonthSummary(ConnStr);
         }
 
         public frmMonthSummary()
         {
-            InitializeComponent();
-            dbms = new DB_MonthSummary(ConnStr);
+            InitializeComponent();            
         }
         void LoadData()
         {
             try
             {
+                int month;
+                for (month = 1; month <= 12; month++)
+                {
+                    cb_summary_month.Items.Add(month);
+                }
+
+                int year;
+                for (year = 2023; year <= 2029; year++)
+                {
+                    cb_summary_year.Items.Add(year);
+                }
+
                 // Vận chuyển dữ liệu vào DataTable dtProduct
                 dtMonthSummary = new DataTable();
                 dtMonthSummary.Clear();
@@ -46,7 +58,7 @@ namespace QuanLyTiemQuanAo
                 // Đưa dữ liệu lên DataGridView 
                 dgvMonthSummary.DataSource = dtMonthSummary;
 
-                dgvMonthSummary_CellClick(null, null);
+                
 
             }
             catch (SqlException e)
@@ -58,7 +70,7 @@ namespace QuanLyTiemQuanAo
         private void KhoaHienThi()
         {
             btnThem.Visible = false;
-            
+            btnSua.Visible = false;
 
             btnLuu.Visible = true;
             btnHuy.Visible = true;
@@ -68,7 +80,7 @@ namespace QuanLyTiemQuanAo
         private void MoHienThi()
         {
             btnThem.Visible = true;
-            
+            btnSua.Visible = true;
 
             btnLuu.Visible = false;
             btnHuy.Visible = false;
@@ -110,6 +122,7 @@ namespace QuanLyTiemQuanAo
             XoaTrong();
             MoTuongTac();
             txt_employee_id.Focus();
+            Them = true;
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -120,7 +133,7 @@ namespace QuanLyTiemQuanAo
                 try
                 {
                     f = dbms.InsertMonthSummary(ref err, cb_summary_month.SelectedIndex + 1,
-                        cb_summary_year.SelectedIndex + 2003);
+                        cb_summary_year.SelectedIndex + 2023);
                     if (f)
                     {
                         // Load lại dữ liệu trên DataGridView 
@@ -138,11 +151,13 @@ namespace QuanLyTiemQuanAo
                     MessageBox.Show("Không thêm được. Lỗi rồi!");
                 }
             }
-            /*if (!Them)
+            if (!Them)
             {
                 string err = "";
                 try
                 {
+                    f = dbms.UpdateMonthSummary(ref err, cb_summary_month.SelectedIndex + 1,
+                        cb_summary_year.SelectedIndex + 2023);
                     if (f)
                     {
                         // Load lại dữ liệu trên DataGridView 
@@ -159,7 +174,7 @@ namespace QuanLyTiemQuanAo
                 {
                     MessageBox.Show("Không cập nhật được. Lỗi rồi!");
                 }
-            }*/
+            }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -167,7 +182,6 @@ namespace QuanLyTiemQuanAo
             MoHienThi();
             XoaTrong();
             KhoaTuongTac();
-            dgvMonthSummary_CellClick(null, null);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -179,24 +193,6 @@ namespace QuanLyTiemQuanAo
             MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             // Kiểm tra có nhấp chọn nút Ok không? 
             if (answer == DialogResult.OK) this.Close();
-        }
-        private void dgvMonthSummary_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Thứ tự dòng hiện hành 
-            int r = dgvMonthSummary.CurrentCell.RowIndex;
-            // Chuyển thông tin lên panel 
-            txt_employee_id.Text =
-            dgvMonthSummary.Rows[r].Cells[0].Value.ToString();
-            cb_summary_month.SelectedValue =
-            dgvMonthSummary.Rows[r].Cells[1].Value.ToString();
-            cb_summary_year.Text =
-            dgvMonthSummary.Rows[r].Cells[2].Value.ToString();
-            txt_products_sold.Text =
-            dgvMonthSummary.Rows[r].Cells[3].Value.ToString();
-            txt_bonus_salary.Text =
-            dgvMonthSummary.Rows[r].Cells[4].Value.ToString();
-            txt_salary.Text =
-            dgvMonthSummary.Rows[r].Cells[6].Value.ToString();
         }
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
@@ -236,7 +232,16 @@ namespace QuanLyTiemQuanAo
 
         private void frmMonthSummary_Load(object sender, EventArgs e)
         {
+            LoadData();
+        }
 
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            KhoaHienThi();
+            XoaTrong();
+            MoTuongTac();
+            txt_employee_id.Focus();
+            Them = false;
         }
     }
 }

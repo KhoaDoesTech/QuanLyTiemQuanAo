@@ -11,22 +11,11 @@ using System.Windows.Forms;
 
 namespace QuanLyTiemQuanAo
 {
-    public partial class Bussiness : DevExpress.XtraEditors.XtraForm
+    public partial class frmStockTransfer : DevExpress.XtraEditors.XtraForm
     {
-        public Bussiness()
+        public frmStockTransfer()
         {
             InitializeComponent();
-            groupControl3.Text = "3 đơn hàng";
-        }
-
-        private void groupControl3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

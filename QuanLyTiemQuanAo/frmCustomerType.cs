@@ -204,8 +204,6 @@ namespace QuanLyTiemQuanAo
             else
             {
                 DataTable dt = new DataTable();
-                //choose type to search
-                dgvCustomerType.DataSource = dt;
 
                 int x = cbSearch.SelectedIndex;
                 switch (x)

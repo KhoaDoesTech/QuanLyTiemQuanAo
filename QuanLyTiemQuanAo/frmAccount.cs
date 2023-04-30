@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace QuanLyTiemQuanAo
 {
-    public partial class frmAccount : DevExpress.XtraEditors.XtraForm
+    public partial class frmAccount : DevExpress.XtraEditors.XtraForm, IConnectionForm
     {
         DB_Account dba;
         DataTable dtAccount = null;
@@ -25,14 +25,14 @@ namespace QuanLyTiemQuanAo
         public void SetConnection(string connectString)
         {
             ConnStr = connectString;
+            dba = new DB_Account(ConnStr);
+            dbe = new DB_Employee(ConnStr);
         }
         // Khai báo biến kiểm tra việc Thêm hay Sửa dữ liệu 
         bool Them;
         public frmAccount()
         {
             InitializeComponent();
-            dba = new DB_Account(ConnStr);
-            dbe = new DB_Employee(ConnStr);
         }
 
         void LoadData()
@@ -226,8 +226,6 @@ namespace QuanLyTiemQuanAo
             else
             {
                 DataTable dt = new DataTable();
-                //choose type to search
-                dgvAccount.DataSource = dt;
 
                 int x = cbSearch.SelectedIndex;
                 dt = dba.FindAccount(txtSearch.Text);

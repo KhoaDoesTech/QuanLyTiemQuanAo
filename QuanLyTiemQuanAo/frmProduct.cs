@@ -84,6 +84,8 @@ namespace QuanLyTiemQuanAo
             btnThoat.Visible= false;
 
             btnLayHinh.Enabled= true;
+
+            
         }
 
         private void MoHienThi()
@@ -96,6 +98,7 @@ namespace QuanLyTiemQuanAo
             btnThoat.Visible = true;
 
             btnLayHinh.Enabled = false;
+            dgvProduct.Enabled = true;
         }
 
         private void XoaTrong()
@@ -128,9 +131,11 @@ namespace QuanLyTiemQuanAo
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            Them = true;
             KhoaHienThi();            
             XoaTrong();
             MoTuongTac();
+            dgvProduct.Enabled = false;
             txt_product_name.Focus();
         }
 
@@ -226,9 +231,9 @@ namespace QuanLyTiemQuanAo
             cb_product_type_id.ValueMember = "product_type_id";
             // Thứ tự dòng hiện hành 
             int r = dgvProduct.CurrentCell.RowIndex;
-            // Chuyển thông tin lên panel 
+            // Chuyển thông tin lên panel
             txt_product_id.Text =
-            dgvProduct.Rows[r].Cells[0].Value.ToString();
+            dgvProduct.Rows[r].Cells[0].Value.ToString();            
             cb_product_type_id.SelectedValue =
             dgvProduct.Rows[r].Cells[1].Value.ToString();
             txt_product_name.Text =
@@ -268,9 +273,7 @@ namespace QuanLyTiemQuanAo
             }
             else
             {
-                DataTable dt = new DataTable();
-                //choose type to search
-                dgvProduct.DataSource = dt;
+                DataTable dt = new DataTable();                
 
                 int x = cbTim.SelectedIndex;
                 switch (x)
