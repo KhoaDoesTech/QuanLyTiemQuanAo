@@ -17,6 +17,10 @@ namespace BALayer
         {
             db = new DAL(strConnect_local);
         }
+        public string GetDefaultJobID()
+        {
+            return (string)db.MyExecuteScalar("SELECT DBO.AutoIDJob()");
+        }
         public DataTable GetJob()
         {
             return db.ExecuteQueryDataTable("select * from Job");

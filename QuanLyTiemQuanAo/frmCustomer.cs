@@ -88,6 +88,7 @@ namespace QuanLyTiemQuanAo
             btnLuu.Visible = false;
             btnHuy.Visible = false;
             btnThoat.Visible = true;
+            dgvCustomer.Enabled = true;
         }
 
         private void XoaTrong()
@@ -125,6 +126,7 @@ namespace QuanLyTiemQuanAo
             KhoaHienThi();
             XoaTrong();
             MoTuongTac();
+            dgvCustomer.Enabled = false;
             txt_full_name.Focus();
         }
 
@@ -210,30 +212,6 @@ namespace QuanLyTiemQuanAo
             // Kiểm tra có nhấp chọn nút Ok không? 
             if (answer == DialogResult.OK) this.Close();
         }
-        private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Đưa dữ liệu lên ComboBox
-            cb_customer_type_id.DataSource = dtCustomerType;
-            cb_customer_type_id.DisplayMember = "customer_type_name";
-            cb_customer_type_id.ValueMember = "customer_type_id";
-            // Thứ tự dòng hiện hành 
-            int r = dgvCustomer.CurrentCell.RowIndex;
-            // Chuyển thông tin lên panel 
-            txt_customer_id.Text =
-            dgvCustomer.Rows[r].Cells[0].Value.ToString();
-            cb_customer_type_id.SelectedValue =
-            dgvCustomer.Rows[r].Cells[1].Value.ToString();
-            txt_full_name.Text =
-            dgvCustomer.Rows[r].Cells[2].Value.ToString();
-            txt_gender.Text =
-            dgvCustomer.Rows[r].Cells[3].Value.ToString();
-            dtp_birthday.Text =
-            dgvCustomer.Rows[r].Cells[4].Value.ToString();
-            txt_phone.Text =
-            dgvCustomer.Rows[r].Cells[5].Value.ToString();
-            txt_email.Text =
-            dgvCustomer.Rows[r].Cells[6].Value.ToString();
-        }
 
         private void btn_Tim_Click(object sender, EventArgs e)
         {
@@ -268,6 +246,31 @@ namespace QuanLyTiemQuanAo
             cbSearch.Text = cbSearch.Items[0].ToString();
 
             LoadData();
+        }
+
+        private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Đưa dữ liệu lên ComboBox
+            cb_customer_type_id.DataSource = dtCustomerType;
+            cb_customer_type_id.DisplayMember = "customer_type_name";
+            cb_customer_type_id.ValueMember = "customer_type_id";
+            // Thứ tự dòng hiện hành 
+            int r = dgvCustomer.CurrentCell.RowIndex;
+            // Chuyển thông tin lên panel 
+            txt_customer_id.Text =
+            dgvCustomer.Rows[r].Cells[0].Value.ToString();
+            cb_customer_type_id.SelectedValue =
+            dgvCustomer.Rows[r].Cells[1].Value.ToString();
+            txt_full_name.Text =
+            dgvCustomer.Rows[r].Cells[2].Value.ToString();
+            txt_gender.Text =
+            dgvCustomer.Rows[r].Cells[3].Value.ToString();
+            dtp_birthday.Text =
+            dgvCustomer.Rows[r].Cells[4].Value.ToString();
+            txt_phone.Text =
+            dgvCustomer.Rows[r].Cells[5].Value.ToString();
+            txt_email.Text =
+            dgvCustomer.Rows[r].Cells[6].Value.ToString();
         }
     } 
 }

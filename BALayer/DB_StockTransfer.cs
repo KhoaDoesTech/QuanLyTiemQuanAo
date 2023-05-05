@@ -52,5 +52,20 @@ namespace BALayer
                 new SqlParameter("@product_id", product_id),
                 new SqlParameter("@transfer_date", transfer_date));
         }
+        public DataTable FindProductByFromBranch(string from_branch_id)
+        {
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindProductByFromBranch(@from_branch_id)",
+                 new SqlParameter("@from_branch_id", from_branch_id));
+        }
+        public DataTable FindProductByToBranch(string to_branch_id)
+        {
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindProductByToBranch(@to_branch_id)",
+                 new SqlParameter("@to_branch_id", to_branch_id));
+        }
+        public DataTable FindProductByID(string product_id)
+        {
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindProductByID(@product_id)",
+                 new SqlParameter("@product_id", product_id));
+        }
     }
 }

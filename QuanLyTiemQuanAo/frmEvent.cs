@@ -74,6 +74,7 @@ namespace QuanLyTiemQuanAo
             btnLuu.Visible = false;
             btnHuy.Visible = false;
             btnThoat.Visible = true;
+            dgvEvent.Enabled = true;
 
         }
         private void XoaTrong()
@@ -103,6 +104,7 @@ namespace QuanLyTiemQuanAo
             KhoaHienThi();
             XoaTrong();
             MoTuongTac();
+            dgvEvent.Enabled = false;
             txt_event_name.Focus();
         }
 
@@ -189,20 +191,6 @@ namespace QuanLyTiemQuanAo
             // Kiểm tra có nhấp chọn nút Ok không? 
             if (answer == DialogResult.OK) this.Close();
         }
-        private void dgvEvent_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Thứ tự dòng hiện hành 
-            int r = dgvEvent.CurrentCell.RowIndex;
-            // Chuyển thông tin lên panel 
-            txt_event_id.Text =
-            dgvEvent.Rows[r].Cells[0].Value.ToString();
-            txt_event_name.Text =
-            dgvEvent.Rows[r].Cells[1].Value.ToString();
-            dtp_date_start.Text =
-            dgvEvent.Rows[r].Cells[2].Value.ToString();
-            dtp_date_end.Text =
-            dgvEvent.Rows[r].Cells[3].Value.ToString();
-        }
 
         private void btn_Tim_Click(object sender, EventArgs e)
         {
@@ -237,6 +225,21 @@ namespace QuanLyTiemQuanAo
             cbSearch.Text = cbSearch.Items[0].ToString();
 
             LoadData();
+        }
+
+        private void dgvEvent_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Thứ tự dòng hiện hành 
+            int r = dgvEvent.CurrentCell.RowIndex;
+            // Chuyển thông tin lên panel 
+            txt_event_id.Text =
+            dgvEvent.Rows[r].Cells[0].Value.ToString();
+            txt_event_name.Text =
+            dgvEvent.Rows[r].Cells[1].Value.ToString();
+            dtp_date_start.Text =
+            dgvEvent.Rows[r].Cells[2].Value.ToString();
+            dtp_date_end.Text =
+            dgvEvent.Rows[r].Cells[3].Value.ToString();
         }
     }
 }

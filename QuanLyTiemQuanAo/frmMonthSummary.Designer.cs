@@ -30,6 +30,7 @@
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnThem = new System.Windows.Forms.ToolStripButton();
+            this.btnSua = new System.Windows.Forms.ToolStripButton();
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
             this.btnHuy = new System.Windows.Forms.ToolStripButton();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
@@ -69,7 +70,6 @@
             this.products_sold = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bonus_salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSua = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -128,6 +128,16 @@
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // btnSua
+            // 
+            this.btnSua.Image = global::QuanLyTiemQuanAo.Properties.Resources.Edit_32x32;
+            this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(38, 44);
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
             // btnLuu
             // 
             this.btnLuu.Image = global::QuanLyTiemQuanAo.Properties.Resources.Save_32x32;
@@ -185,7 +195,6 @@
             this.panel.Size = new System.Drawing.Size(927, 263);
             this.panel.TabIndex = 1;
             this.panel.Text = "Thông tin sản phẩm";
-            this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // splitContainer2
             // 
@@ -367,6 +376,7 @@
             this.btnTim.TabIndex = 190;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // txtSearch
             // 
@@ -470,6 +480,7 @@
             this.dgvMonthSummary.RowTemplate.Height = 24;
             this.dgvMonthSummary.Size = new System.Drawing.Size(927, 201);
             this.dgvMonthSummary.TabIndex = 130;
+            this.dgvMonthSummary.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonthSummary_CellClick);
             // 
             // employee_id
             // 
@@ -520,16 +531,6 @@
             this.salary.MinimumWidth = 6;
             this.salary.Name = "salary";
             this.salary.Width = 150;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Image = global::QuanLyTiemQuanAo.Properties.Resources.Edit_32x32;
-            this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(38, 44);
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // frmMonthSummary
             // 

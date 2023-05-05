@@ -47,12 +47,12 @@ namespace QuanLyTiemQuanAo
                 dtEvent.Clear();
                 dtEvent = dbe.GetEvent();
                 // Đưa dữ liệu lên ComboBox trong DataGridView
-                (dgvDiscount.Columns["event_id"] as
+                (dgvCurrentDiscount.Columns["event_id"] as
                 DataGridViewComboBoxColumn).DataSource = dtEvent;
-                (dgvDiscount.Columns["event_id"] as
+                (dgvCurrentDiscount.Columns["event_id"] as
                 DataGridViewComboBoxColumn).DisplayMember =
                 "event_name";
-                (dgvDiscount.Columns["event_id"] as
+                (dgvCurrentDiscount.Columns["event_id"] as
                 DataGridViewComboBoxColumn).ValueMember =
                 "event_id";
 
@@ -61,12 +61,12 @@ namespace QuanLyTiemQuanAo
                 dtCustomerType.Clear();
                 dtCustomerType = dbct.GetCustomerType();
                 // Đưa dữ liệu lên ComboBox trong DataGridView
-                (dgvDiscount.Columns["customer_type_id"] as
+                (dgvCurrentDiscount.Columns["customer_type_id"] as
                 DataGridViewComboBoxColumn).DataSource = dtEvent;
-                (dgvDiscount.Columns["customer_type_id"] as
+                (dgvCurrentDiscount.Columns["customer_type_id"] as
                 DataGridViewComboBoxColumn).DisplayMember =
                 "customer_type_name";
-                (dgvDiscount.Columns["customer_type_id"] as
+                (dgvCurrentDiscount.Columns["customer_type_id"] as
                 DataGridViewComboBoxColumn).ValueMember =
                 "customer_type_id";
 
@@ -103,6 +103,8 @@ namespace QuanLyTiemQuanAo
             btnLuu.Visible = false;
             btnHuy.Visible = false;
             btnThoat.Visible = true;
+            dgvCurrentDiscount.Enabled = true;
+
         }
 
         private void XoaTrong()
@@ -132,6 +134,7 @@ namespace QuanLyTiemQuanAo
             KhoaHienThi();
             XoaTrong();
             MoTuongTac();
+            dgvCurrentDiscount.Enabled = false;
             cb_event_id.Focus();
         }
 
@@ -215,29 +218,6 @@ namespace QuanLyTiemQuanAo
             LoadData();
         }
 
-        private void dgvCurrentDiscount_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Đưa dữ liệu lên ComboBox
-            cb_event_id.DataSource = dtEvent;
-            cb_event_id.DisplayMember = "event_name";
-            cb_event_id.ValueMember = "event_id";
-            // Đưa dữ liệu lên ComboBox
-            cb_customer_type_id.DataSource = dtCustomerType;
-            cb_customer_type_id.DisplayMember = "customer_type_name";
-            cb_customer_type_id.ValueMember = "customer_type_id";
-            // Thứ tự dòng hiện hành 
-            int r = dgvDiscount.CurrentCell.RowIndex;
-            // Chuyển thông tin lên panel 
-            cb_event_id.Text =
-            dgvDiscount.Rows[r].Cells[0].Value.ToString();
-            cb_customer_type_id.SelectedValue =
-            dgvDiscount.Rows[r].Cells[1].Value.ToString();
-            txt_discount_percent.Text =
-            dgvDiscount.Rows[r].Cells[2].Value.ToString();
-            txt_discount_price.Text =
-            dgvDiscount.Rows[r].Cells[3].Value.ToString();
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (txtSearch.Text == "")
@@ -247,23 +227,21 @@ namespace QuanLyTiemQuanAo
             else
             {
                 DataTable dt = new DataTable();
-                //choose type to search
-                dgvDiscount.DataSource = dt;
 
                 int x = cbSearch.SelectedIndex;
                 switch (x)
                 {
                     case 0:
                         dt = dbd.FindDiscountByID(txtSearch.Text);
-                        dgvDiscount.DataSource = dt;
+                        dgvCurrentDiscount.DataSource = dt;
                         break;
                     case 1:
                         dt = dbd.FindDiscountByDiscountPercent(Convert.ToInt32(txtSearch.Text));
-                        dgvDiscount.DataSource = dt;
+                        dgvCurrentDiscount.DataSource = dt;
                         break;
                     case 2:
                         dt = dbd.FindDiscountByDiscountPrice(Convert.ToInt32(txtSearch.Text));
-                        dgvDiscount.DataSource = dt;
+                        dgvCurrentDiscount.DataSource = dt;
                         break;
                 }
             }
@@ -275,9 +253,27 @@ namespace QuanLyTiemQuanAo
             dt = dbd.GetCurrentDiscount(DateTime.Parse(dtpDate.Text.ToString()));
         }
 
-        private void dgvDiscount_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCurrentDiscount_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            // Đưa dữ liệu lên ComboBox
+            cb_event_id.DataSource = dtEvent;
+            cb_event_id.DisplayMember = "event_name";
+            cb_event_id.ValueMember = "event_id";
+            // Đưa dữ liệu lên ComboBox
+            cb_customer_type_id.DataSource = dtCustomerType;
+            cb_customer_type_id.DisplayMember = "customer_type_name";
+            cb_customer_type_id.ValueMember = "customer_type_id";
+            // Thứ tự dòng hiện hành 
+            int r = dgvCurrentDiscount.CurrentCell.RowIndex;
+            // Chuyển thông tin lên panel 
+            cb_event_id.Text =
+            dgvCurrentDiscount.Rows[r].Cells[0].Value.ToString();
+            cb_customer_type_id.SelectedValue =
+            dgvCurrentDiscount.Rows[r].Cells[1].Value.ToString();
+            txt_discount_percent.Text =
+            dgvCurrentDiscount.Rows[r].Cells[2].Value.ToString();
+            txt_discount_price.Text =
+            dgvCurrentDiscount.Rows[r].Cells[3].Value.ToString();
         }
     }
 }

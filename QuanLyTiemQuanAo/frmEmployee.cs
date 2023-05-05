@@ -89,6 +89,7 @@ namespace QuanLyTiemQuanAo
             btnLuu.Visible = false;
             btnHuy.Visible = false;
             btnThoat.Visible = true;
+            dgvEmployee.Enabled = true;
         }
 
         private void XoaTrong()
@@ -139,6 +140,7 @@ namespace QuanLyTiemQuanAo
             KhoaHienThi();
             XoaTrong();
             MoTuongTac();
+            dgvEmployee.Enabled = false;
             txt_full_name.Focus();
             Them = true;
         }
@@ -175,7 +177,7 @@ namespace QuanLyTiemQuanAo
                 {
 
                     // Thực hiện câu lệnh SQL 
-                    bool f = dbe.DeleteEmployee(ref err, str_employee_id);
+                    bool f = dbe.DeleteEmployee(ref err, txt_employee_id.Text);
                     if (f)
                     {
                         // Cập nhật lại DataGridView 
@@ -276,6 +278,17 @@ namespace QuanLyTiemQuanAo
             // Kiểm tra có nhấp chọn nút Ok không? 
             if (answer == DialogResult.OK) this.Close();
         }
+
+        private void frmEmployee_Load(object sender, EventArgs e)
+        {
+            // Nội dung tìm Nhân viên
+            cbSearch.Items.Add("Mã nhân viên");
+            cbSearch.Items.Add("Tên nhân viên");
+            cbSearch.Text = cbSearch.Items[0].ToString();
+
+            LoadData();
+        }
+
         private void dgvEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Đưa dữ liệu lên ComboBox
@@ -303,9 +316,9 @@ namespace QuanLyTiemQuanAo
             dgvEmployee.Rows[r].Cells[7].Value.ToString();
         }
 
-        private void btnTim_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            if(txtSearch.Text == "")
+            if (txtSearch.Text == "")
             {
                 LoadData();
             }
@@ -326,43 +339,6 @@ namespace QuanLyTiemQuanAo
                         break;
                 }
             }
-        }
-
-        private void frmEmployee_Load(object sender, EventArgs e)
-        {
-            // Nội dung tìm Nhân viên
-            cbSearch.Items.Add("Mã nhân viên");
-            cbSearch.Items.Add("Tên nhân viên");
-            cbSearch.Text = cbSearch.Items[0].ToString();
-
-            LoadData();
-        }
-
-        private void dgvEmployee_CellClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            // Đưa dữ liệu lên ComboBox
-            cb_job_id.DataSource = dtJob;
-            cb_job_id.DisplayMember = "job_name";
-            cb_job_id.ValueMember = "job_id";
-            // Thứ tự dòng hiện hành 
-            int r = dgvEmployee.CurrentCell.RowIndex;
-            // Chuyển thông tin lên panel 
-            txt_employee_id.Text =
-            dgvEmployee.Rows[r].Cells[0].Value.ToString();
-            cb_job_id.SelectedValue =
-            dgvEmployee.Rows[r].Cells[1].Value.ToString();
-            txt_full_name.Text =
-            dgvEmployee.Rows[r].Cells[2].Value.ToString();
-            txt_gender.Text =
-            dgvEmployee.Rows[r].Cells[3].Value.ToString();
-            dtp_birthday.Text =
-            dgvEmployee.Rows[r].Cells[4].Value.ToString();
-            txt_phone.Text =
-            dgvEmployee.Rows[r].Cells[5].Value.ToString();
-            txt_employee_address.Text =
-            dgvEmployee.Rows[r].Cells[6].Value.ToString();
-            txt_email.Text =
-            dgvEmployee.Rows[r].Cells[7].Value.ToString();
         }
     }
 }

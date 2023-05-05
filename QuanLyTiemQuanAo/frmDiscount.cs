@@ -106,6 +106,7 @@ namespace QuanLyTiemQuanAo
             btnLuu.Visible = false;
             btnHuy.Visible = false;
             btnThoat.Visible = true;
+            dgvDiscount.Enabled = true;
         }
 
         private void XoaTrong()
@@ -135,6 +136,7 @@ namespace QuanLyTiemQuanAo
             KhoaHienThi();
             XoaTrong();
             MoTuongTac();
+            dgvDiscount.Enabled = false;
             cb_event_id.Focus();
         }
 

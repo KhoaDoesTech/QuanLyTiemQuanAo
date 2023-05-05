@@ -72,6 +72,7 @@ namespace QuanLyTiemQuanAo
             btnLuu.Visible = false;
             btnHuy.Visible = false;
             btnThoat.Visible = true;
+            dgvJobTitle.Enabled = true;
         }
 
         private void XoaTrong()
@@ -100,6 +101,7 @@ namespace QuanLyTiemQuanAo
             KhoaHienThi();
             XoaTrong();
             MoTuongTac();
+            dgvJobTitle.Enabled = false;
             txt_job_title_id.Focus();
         }
 

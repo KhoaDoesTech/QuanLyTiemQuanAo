@@ -107,6 +107,7 @@ namespace QuanLyTiemQuanAo
             btnLuu.Visible = false;
             btnHuy.Visible = false;
             btnThoat.Visible = true;
+            dgvStockImport.Enabled = true;
         }
 
         private void XoaTrong()
@@ -134,32 +135,12 @@ namespace QuanLyTiemQuanAo
             txt_quantity.Enabled = false;
         }
 
-        private void dgvStockImport_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Đưa dữ liệu lên ComboBox
-            cb_branch_id.DataSource = dtBranch;
-            cb_branch_id.DisplayMember = "branch_name";
-            cb_branch_id.ValueMember = "branch_id";
-            // Thứ tự dòng hiện hành 
-            int r = dgvStockImport.CurrentCell.RowIndex;
-            // Chuyển thông tin lên panel 
-            cb_branch_id.SelectedValue =
-            dgvStockImport.Rows[r].Cells[0].Value.ToString();
-            cb_product_id.SelectedValue =
-            dgvStockImport.Rows[r].Cells[1].Value.ToString();
-            dtp_import_date.Text =
-            dgvStockImport.Rows[r].Cells[2].Value.ToString();
-            txt_import_price.Text =
-            dgvStockImport.Rows[r].Cells[3].Value.ToString();
-            txt_quantity.Text =
-            dgvStockImport.Rows[r].Cells[4].Value.ToString();
-        }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             KhoaHienThi();
             XoaTrong();
             MoTuongTac();
+            dgvStockImport.Enabled = false;
             cb_branch_id.Focus();
         }
 
@@ -195,7 +176,8 @@ namespace QuanLyTiemQuanAo
                 {
 
                     // Thực hiện câu lệnh SQL 
-                    bool f = dbsi.DeleteStockImport(ref err, cb_branch_id.Text, cb_product_id.Text,
+                    bool f = dbsi.DeleteStockImport(ref err, cb_branch_id.SelectedValue.ToString(),
+                        cb_product_id.SelectedValue.ToString(),
                         DateTime.Parse(dtp_import_date.Text.ToString()));
                     if (f)
                     {
@@ -230,8 +212,8 @@ namespace QuanLyTiemQuanAo
                 string err = "";
                 try
                 {
-                    f = dbsi.InsertStockImport(ref err, cb_branch_id.Text,
-                        cb_product_id.Text, DateTime.Parse(dtp_import_date.Text.ToString()),
+                    f = dbsi.InsertStockImport(ref err, cb_branch_id.SelectedValue.ToString(),
+                        cb_product_id.SelectedValue.ToString(), DateTime.Parse(dtp_import_date.Text.ToString()),
                         Convert.ToInt32(txt_import_price.Text), Convert.ToInt32(txt_quantity.Text));
                     if (f)
                     {
@@ -255,8 +237,8 @@ namespace QuanLyTiemQuanAo
                 string err = "";
                 try
                 {
-                    f = dbsi.UpdateStockImport(ref err, cb_branch_id.Text,
-                        cb_product_id.Text, DateTime.Parse(dtp_import_date.Text.ToString()),
+                    f = dbsi.UpdateStockImport(ref err, cb_branch_id.SelectedValue.ToString(),
+                        cb_product_id.SelectedValue.ToString(), DateTime.Parse(dtp_import_date.Text.ToString()),
                         Convert.ToInt32(txt_import_price.Text), Convert.ToInt32(txt_quantity.Text));
                     if (f)
                     {
@@ -299,6 +281,52 @@ namespace QuanLyTiemQuanAo
         private void frmStockImport_Load(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void dgvStockImport_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Đưa dữ liệu lên ComboBox
+            cb_branch_id.DataSource = dtBranch;
+            cb_branch_id.DisplayMember = "branch_name";
+            cb_branch_id.ValueMember = "branch_id";
+            // Thứ tự dòng hiện hành 
+            int r = dgvStockImport.CurrentCell.RowIndex;
+            // Chuyển thông tin lên panel 
+            cb_branch_id.SelectedValue =
+            dgvStockImport.Rows[r].Cells[0].Value.ToString();
+            cb_product_id.SelectedValue =
+            dgvStockImport.Rows[r].Cells[1].Value.ToString();
+            dtp_import_date.Text =
+            dgvStockImport.Rows[r].Cells[2].Value.ToString();
+            txt_import_price.Text =
+            dgvStockImport.Rows[r].Cells[3].Value.ToString();
+            txt_quantity.Text =
+            dgvStockImport.Rows[r].Cells[4].Value.ToString();
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                LoadData();
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+
+                int x = cbSearch.SelectedIndex;
+                switch (x)
+                {
+                    case 0:
+                        dt = dbsi.FindProductByBranch(txtSearch.Text);
+                        dgvStockImport.DataSource = dt;
+                        break;
+                    case 1:
+                        dt = dbsi.FindProductByID(txtSearch.Text);
+                        dgvStockImport.DataSource = dt;
+                        break;
+                }
+            }
         }
     }
 }

@@ -61,9 +61,9 @@ namespace QuanLyTiemQuanAo
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            ribbonPage3.Visible = false;
-            ribbonPage2.Visible = false;
-            ribbonPage4.Visible = false;
+            ribbonPage3.Visible = true;
+            ribbonPage2.Visible = true;
+            ribbonPage4.Visible = true;
         }
 
         private void barButtonItem27_ItemClick(object sender, ItemClickEventArgs e)
@@ -184,6 +184,16 @@ namespace QuanLyTiemQuanAo
         private void btnSuaMatKhau_ItemClick(object sender, ItemClickEventArgs e)
         {
             openForm(typeof(frmChangePass));
+        }
+
+        private void barButtonItem35_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmStatisticsCustomer));
+        }
+
+        private void barButtonItem36_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

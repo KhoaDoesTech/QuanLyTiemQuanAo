@@ -85,6 +85,7 @@ namespace QuanLyTiemQuanAo
             btnLuu.Visible = false;
             btnHuy.Visible = false;
             btnThoat.Visible = true;
+            dgvMonthSummary.Enabled = true;
         }
 
         private void XoaTrong()
@@ -121,6 +122,7 @@ namespace QuanLyTiemQuanAo
             KhoaHienThi();
             XoaTrong();
             MoTuongTac();
+            dgvMonthSummary.Enabled = false;
             txt_employee_id.Focus();
             Them = true;
         }
@@ -195,7 +197,21 @@ namespace QuanLyTiemQuanAo
             if (answer == DialogResult.OK) this.Close();
         }
 
-        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        private void frmMonthSummary_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            KhoaHienThi();
+            XoaTrong();
+            MoTuongTac();
+            txt_employee_id.Focus();
+            Them = false;
+        }
+
+        private void dgvMonthSummary_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -210,8 +226,6 @@ namespace QuanLyTiemQuanAo
             cbSearch.Items.Add("Tháng");
             cbSearch.Items.Add("Năm");
             cbSearch.Text = cbSearch.Items[0].ToString();
-            cbSearch.Text = cbSearch.Items[1].ToString();
-            cbSearch.Text = cbSearch.Items[2].ToString();
             int x = cbSearch.SelectedIndex;
             switch (x)
             {
@@ -228,20 +242,6 @@ namespace QuanLyTiemQuanAo
                     dgvMonthSummary.DataSource = dt;
                     break;
             }
-        }
-
-        private void frmMonthSummary_Load(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            KhoaHienThi();
-            XoaTrong();
-            MoTuongTac();
-            txt_employee_id.Focus();
-            Them = false;
         }
     }
 }

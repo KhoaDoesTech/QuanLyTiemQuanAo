@@ -16,6 +16,10 @@ namespace BALayer
         {
             db = new DAL(strConnect_local);
         }
+        public string GetDefaultEventID()
+        {
+            return (string)db.MyExecuteScalar("SELECT DBO.AutoIDEvent()");
+        }
         public DataTable GetEvent()
         {
             return db.ExecuteQueryDataTable("select * from BranchEvent");

@@ -62,7 +62,7 @@ namespace QuanLyTiemQuanAo
             }
             catch (SqlException e)
             {
-                MessageBox.Show("Không lấy được nội dung trong table KHACHHANG. Lỗi rồi!!!" + e.Message);
+                MessageBox.Show("Không lấy được nội dung trong table. Lỗi rồi!!!" + e.Message);
             }
         }
 

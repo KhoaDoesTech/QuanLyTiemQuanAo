@@ -71,7 +71,7 @@ namespace QuanLyTiemQuanAo
             }
             catch (SqlException e)
             {
-                MessageBox.Show("Không lấy được nội dung trong table KHACHHANG. Lỗi rồi!!!" + e.Message);
+                MessageBox.Show("Không lấy được nội dung trong table Product. Lỗi rồi!!!" + e.Message);
             }
         }
         private void KhoaHienThi()
@@ -273,7 +273,7 @@ namespace QuanLyTiemQuanAo
             }
             else
             {
-                DataTable dt = new DataTable();                
+                DataTable dt = new DataTable();
 
                 int x = cbTim.SelectedIndex;
                 switch (x)

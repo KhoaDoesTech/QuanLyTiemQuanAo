@@ -73,6 +73,7 @@ namespace QuanLyTiemQuanAo
             btnLuu.Visible = false;
             btnHuy.Visible = false;
             btnThoat.Visible = true;
+            dgvCustomerType.Enabled = true;
 
         }
 
@@ -99,6 +100,7 @@ namespace QuanLyTiemQuanAo
             KhoaHienThi();
             XoaTrong();
             MoTuongTac();
+            dgvCustomerType.Enabled = false;
             txt_customer_type_name.Focus();
         }
 
@@ -144,7 +146,7 @@ namespace QuanLyTiemQuanAo
                 string err = "";
                 try
                 {
-                    f = dbt.UpdateCustomerType(ref err,txt_customer_type_id.Text, txt_customer_type_name.Text,
+                    f = dbt.UpdateCustomerType(ref err, txt_customer_type_id.Text, txt_customer_type_name.Text,
                         Convert.ToInt32(txt_units_purchased.Text));
                     if (f)
                     {
@@ -182,18 +184,6 @@ namespace QuanLyTiemQuanAo
             // Kiểm tra có nhắp chọn nút Ok không? 
             if (answer == DialogResult.OK) this.Close();
         }
-        private void dgvCustomerType_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Thứ tự dòng hiện hành 
-            int r = dgvCustomerType.CurrentCell.RowIndex;
-            // Chuyển thông tin lên panel 
-            txt_customer_type_id.Text =
-            dgvCustomerType.Rows[r].Cells[0].Value.ToString();
-            txt_customer_type_name.Text =
-            dgvCustomerType.Rows[r].Cells[1].Value.ToString();
-            txt_units_purchased.Text =
-            dgvCustomerType.Rows[r].Cells[2].Value.ToString();
-        }
 
         private void btn_Tim_Click(object sender, EventArgs e)
         {
@@ -228,6 +218,19 @@ namespace QuanLyTiemQuanAo
             cbSearch.Text = cbSearch.Items[0].ToString();
 
             LoadData();
+        }
+
+        private void dgvCustomerType_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Thứ tự dòng hiện hành 
+            int r = dgvCustomerType.CurrentCell.RowIndex;
+            // Chuyển thông tin lên panel 
+            txt_customer_type_id.Text =
+            dgvCustomerType.Rows[r].Cells[0].Value.ToString();
+            txt_customer_type_name.Text =
+            dgvCustomerType.Rows[r].Cells[1].Value.ToString();
+            txt_units_purchased.Text =
+            dgvCustomerType.Rows[r].Cells[2].Value.ToString();
         }
     }
 }

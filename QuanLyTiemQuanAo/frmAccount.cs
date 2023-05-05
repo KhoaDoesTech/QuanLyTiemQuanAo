@@ -83,6 +83,7 @@ namespace QuanLyTiemQuanAo
             btnLuu.Visible = false;
             btnHuy.Visible = false;
             btnThoat.Visible = true;
+            dgvAccount.Enabled = true;
         }
 
         private void XoaTrong()
@@ -108,6 +109,7 @@ namespace QuanLyTiemQuanAo
             KhoaHienThi();
             XoaTrong();
             MoTuongTac();
+            dgvAccount.Enabled = false; 
             cb_employee_id.Focus();
         }
 
@@ -152,7 +154,8 @@ namespace QuanLyTiemQuanAo
                 string err = "";
                 try
                 {
-                    f = dba.UpdateAccount(ref err, txt_username.Text, txt_passcode.Text);
+                    f = dba.UpdateAccount(ref err, cb_employee_id.SelectedValue.ToString(),
+                        txt_username.Text, txt_passcode.Text);
                     if (f)
                     {
                         // Load lại dữ liệu trên DataGridView 

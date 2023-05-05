@@ -16,6 +16,10 @@ namespace BALayer
         {
             db = new DAL (strConnect_local);
         }
+        public string GetDefaultProductID()
+        {
+            return (string)db.MyExecuteScalar("SELECT DBO.AutoIDProduct()");
+        }
         public DataTable GetProduct()
         {
             return db.ExecuteQueryDataTable("select * from Product");

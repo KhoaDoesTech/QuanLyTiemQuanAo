@@ -49,7 +49,7 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.btnTim = new System.Windows.Forms.Button();
+            this.btSearch = new DevExpress.XtraEditors.SimpleButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cbSearch = new System.Windows.Forms.ComboBox();
             this.dtp_birthday = new System.Windows.Forms.DateTimePicker();
@@ -61,8 +61,8 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.ckb_work_status = new System.Windows.Forms.CheckBox();
             this.txt_email = new System.Windows.Forms.TextBox();
@@ -113,8 +113,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
@@ -349,7 +349,7 @@
             // 
             // layoutControl2
             // 
-            this.layoutControl2.Controls.Add(this.btnTim);
+            this.layoutControl2.Controls.Add(this.btSearch);
             this.layoutControl2.Controls.Add(this.txtSearch);
             this.layoutControl2.Controls.Add(this.cbSearch);
             this.layoutControl2.Controls.Add(this.dtp_birthday);
@@ -364,25 +364,23 @@
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
-            // btnTim
+            // btSearch
             // 
-            this.btnTim.Image = global::QuanLyTiemQuanAo.Properties.Resources.Search_16x16;
-            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnTim.Location = new System.Drawing.Point(12, 129);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnTim.Size = new System.Drawing.Size(499, 25);
-            this.btnTim.TabIndex = 254;
-            this.btnTim.Text = "             Tìm";
-            this.btnTim.UseVisualStyleBackColor = true;
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            this.btSearch.ImageOptions.Image = global::QuanLyTiemQuanAo.Properties.Resources.Search_16x16;
+            this.btSearch.Location = new System.Drawing.Point(437, 99);
+            this.btSearch.Name = "btSearch";
+            this.btSearch.Size = new System.Drawing.Size(74, 27);
+            this.btSearch.StyleController = this.layoutControl2;
+            this.btSearch.TabIndex = 254;
+            this.btSearch.Text = "Tìm";
+            this.btSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(263, 99);
+            this.txtSearch.Location = new System.Drawing.Point(223, 99);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(248, 25);
+            this.txtSearch.Size = new System.Drawing.Size(210, 25);
             this.txtSearch.TabIndex = 253;
             // 
             // cbSearch
@@ -391,7 +389,7 @@
             this.cbSearch.Location = new System.Drawing.Point(99, 99);
             this.cbSearch.Margin = new System.Windows.Forms.Padding(4);
             this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(160, 24);
+            this.cbSearch.Size = new System.Drawing.Size(120, 24);
             this.cbSearch.TabIndex = 252;
             // 
             // dtp_birthday
@@ -428,8 +426,8 @@
             this.layoutControlItem6,
             this.layoutControlItem10,
             this.layoutControlItem11,
-            this.layoutControlItem12,
-            this.emptySpaceItem2});
+            this.emptySpaceItem2,
+            this.layoutControlItem12});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(523, 241);
             this.layoutControlGroup1.TextVisible = false;
@@ -466,35 +464,35 @@
             this.layoutControlItem10.Control = this.cbSearch;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 87);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(251, 30);
+            this.layoutControlItem10.Size = new System.Drawing.Size(211, 31);
             this.layoutControlItem10.Text = "Tìm kiếm";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(75, 16);
             // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.txtSearch;
-            this.layoutControlItem11.Location = new System.Drawing.Point(251, 87);
+            this.layoutControlItem11.Location = new System.Drawing.Point(211, 87);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(252, 30);
+            this.layoutControlItem11.Size = new System.Drawing.Size(214, 31);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
-            // 
-            // layoutControlItem12
-            // 
-            this.layoutControlItem12.Control = this.btnTim;
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 117);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(503, 29);
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem12.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 146);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 118);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(503, 75);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(503, 103);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.btSearch;
+            this.layoutControlItem12.Location = new System.Drawing.Point(425, 87);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(78, 31);
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem12.TextVisible = false;
             // 
             // layoutControl3
             // 
@@ -611,7 +609,7 @@
             this.dgvEmployee.RowTemplate.Height = 24;
             this.dgvEmployee.Size = new System.Drawing.Size(1419, 197);
             this.dgvEmployee.TabIndex = 128;
-            this.dgvEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellClick_1);
+            this.dgvEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellClick);
             // 
             // employee_id
             // 
@@ -730,8 +728,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
@@ -800,8 +798,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private System.Windows.Forms.TextBox txtSearch;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
-        private System.Windows.Forms.Button btnTim;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraEditors.SimpleButton btSearch;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
     }
 }

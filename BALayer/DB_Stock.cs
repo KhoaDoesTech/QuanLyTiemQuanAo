@@ -20,7 +20,15 @@ namespace BALayer
         {
             return db.ExecuteQueryDataTable("SELECT * FROM DBO.GetStock()");
         }
-
-
+        public DataTable FindProductByBranch(string branch_id)
+        {
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindProductByBranch(@branch_id)",
+                 new SqlParameter("@branch_id", branch_id));
+        }
+        public DataTable FindProductByID(string product_id)
+        {
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindProductByID(@product_id)",
+                 new SqlParameter("@product_id", product_id));
+        }
     }
 }

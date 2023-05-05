@@ -70,6 +70,7 @@ namespace QuanLyTiemQuanAo
 
             btnLuu.Visible = false;
             btnHuy.Visible = false;
+            dgvProductType.Enabled = true;
         }
 
         private void XoaTrong()
@@ -99,6 +100,7 @@ namespace QuanLyTiemQuanAo
             KhoaHienThi();
             XoaTrong();
             MoTuongTac();
+            dgvProductType.Enabled = false;
             txt_product_type_name.Focus();
         }
 
@@ -158,7 +160,55 @@ namespace QuanLyTiemQuanAo
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
+            bool f = false;
+            if (Them)
+            {
+                string err = "";
+                try
+                {
+                    f = dbpt.InsertProductType(ref err, txt_product_type_name.Text,
+                        txt_class.Text, txt_gender.Text);
+                    if (f)
+                    {
+                        // Load lại dữ liệu trên DataGridView 
+                        LoadData();
+                        // Thông báo 
+                        MessageBox.Show("Đã thêm xong!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã thêm chưa xong!\n\r" + "Lỗi:" + err);
+                    }
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Không thêm được. Lỗi rồi!");
+                }
+            }
+            if (!Them)
+            {
+                string err = "";
+                try
+                {
+                    f = dbpt.UpdateProductType(ref err, txt_product_type_id.Text, txt_product_type_name.Text,
+                        txt_class.Text, txt_gender.Text);
+                    if (f)
+                    {
+                        // Load lại dữ liệu trên DataGridView 
+                        LoadData();
+                        // Thông báo 
+                        MessageBox.Show("Đã cập nhật xong!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật chưa xong!\n\r" + "Lỗi:" + err);
+                    }
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Không cập nhật được. Lỗi rồi!");
+                }
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

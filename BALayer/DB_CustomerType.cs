@@ -16,6 +16,10 @@ namespace BALayer
         {
             db = new DAL(strConnect_local);
         }
+        public string GetDefaultCustomerTypeID()
+        {
+            return (string)db.MyExecuteScalar("SELECT DBO.AutoIDCustomerType()");
+        }
         public DataTable GetCustomerType()
         {
             return db.ExecuteQueryDataTable("select * from CustomerType");

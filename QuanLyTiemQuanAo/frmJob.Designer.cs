@@ -31,7 +31,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnThem = new System.Windows.Forms.ToolStripButton();
             this.btnSua = new System.Windows.Forms.ToolStripButton();
-            this.btnXoa = new System.Windows.Forms.ToolStripButton();
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
             this.btnHuy = new System.Windows.Forms.ToolStripButton();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
@@ -57,13 +56,13 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dgvJob = new System.Windows.Forms.DataGridView();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnTim = new DevExpress.XtraEditors.SimpleButton();
             this.job_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.job_title_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.branch_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.job_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.base_salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnTim = new DevExpress.XtraEditors.SimpleButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -92,7 +91,6 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnThem,
             this.btnSua,
-            this.btnXoa,
             this.btnLuu,
             this.btnHuy,
             this.btnThoat});
@@ -121,15 +119,6 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Image = global::QuanLyTiemQuanAo.Properties.Resources.Trash_32x32;
-            this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(39, 44);
-            this.btnXoa.Text = "Xoá";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // btnLuu
             // 
@@ -218,7 +207,7 @@
             this.simpleButton1.StyleController = this.layoutControl1;
             this.simpleButton1.TabIndex = 188;
             this.simpleButton1.Text = "Tìm";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.simpleButton1.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // textBox1
             // 
@@ -393,24 +382,6 @@
             this.dgvJob.TabIndex = 4;
             this.dgvJob.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJob_CellClick);
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(759, 70);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(171, 27);
-            this.txtSearch.TabIndex = 184;
-            // 
-            // btnTim
-            // 
-            this.btnTim.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnTim.Location = new System.Drawing.Point(934, 70);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(95, 27);
-            this.btnTim.TabIndex = 185;
-            this.btnTim.Text = "Tìm";
-            // 
             // job_id
             // 
             this.job_id.DataPropertyName = "job_id";
@@ -453,6 +424,24 @@
             this.base_salary.Name = "base_salary";
             this.base_salary.Width = 125;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(759, 70);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(171, 27);
+            this.txtSearch.TabIndex = 184;
+            // 
+            // btnTim
+            // 
+            this.btnTim.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnTim.Location = new System.Drawing.Point(934, 70);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(95, 27);
+            this.btnTim.TabIndex = 185;
+            this.btnTim.Text = "Tìm";
+            // 
             // frmJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -494,7 +483,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnThem;
         private System.Windows.Forms.ToolStripButton btnSua;
-        private System.Windows.Forms.ToolStripButton btnXoa;
         private System.Windows.Forms.ToolStripButton btnLuu;
         private System.Windows.Forms.ToolStripButton btnHuy;
         private System.Windows.Forms.ToolStripButton btnThoat;

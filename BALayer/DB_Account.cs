@@ -35,11 +35,12 @@ namespace BALayer
             return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindAccount(@employee_id)",
                  new SqlParameter("@employee_id", employee_id));
         }
-        public bool UpdateAccount(ref string err, string username,
+        public bool UpdateAccount(ref string err, string employee_id, string username,
             string passcode)
         {
             return db.MyExecuteNonQuery("SP_Update_Account",
                 ref err,
+                new SqlParameter("@employee_id", employee_id),
                 new SqlParameter("@username", username),
                 new SqlParameter("@passcode", passcode));
         }

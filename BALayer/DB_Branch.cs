@@ -16,6 +16,10 @@ namespace BALayer
         {
             db = new DAL (strConnect_local);
         }
+        public string GetDefaultBranchID()
+        {
+            return (string)db.MyExecuteScalar("SELECT DBO.AutoIDBranch()");
+        }
         public DataTable GetBranch()
         {
             return db.ExecuteQueryDataTable("select * from Branch");
