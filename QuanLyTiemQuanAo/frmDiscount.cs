@@ -111,8 +111,8 @@ namespace QuanLyTiemQuanAo
 
         private void XoaTrong()
         {
-            cb_event_id.ResetText();
-            cb_customer_type_id.ResetText();
+            /*cb_event_id.ResetText();
+            cb_customer_type_id.ResetText();*/
             txt_discount_percent.ResetText();
             txt_discount_price.ResetText();
         }

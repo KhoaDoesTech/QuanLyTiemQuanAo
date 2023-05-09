@@ -45,13 +45,13 @@
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.dgvEmployeeQuantity = new System.Windows.Forms.DataGridView();
-            this.gctEmployeeQuantity = new DevExpress.XtraEditors.GroupControl();
-            this.dgvMost = new System.Windows.Forms.DataGridView();
             this.employee_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.job_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.work_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gctEmployeeQuantity = new DevExpress.XtraEditors.GroupControl();
+            this.dgvMost = new System.Windows.Forms.DataGridView();
             this.sold_employee_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sold_full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -158,6 +158,8 @@
             this.cb_Year.Name = "cb_Year";
             this.cb_Year.Size = new System.Drawing.Size(802, 24);
             this.cb_Year.TabIndex = 6;
+            this.cb_Year.SelectedIndexChanged += new System.EventHandler(this.cb_Year_SelectedIndexChanged);
+            this.cb_Year.SelectionChangeCommitted += new System.EventHandler(this.cb_Year_SelectionChangeCommitted);
             // 
             // cb_Month
             // 
@@ -166,6 +168,8 @@
             this.cb_Month.Name = "cb_Month";
             this.cb_Month.Size = new System.Drawing.Size(801, 24);
             this.cb_Month.TabIndex = 5;
+            this.cb_Month.SelectedIndexChanged += new System.EventHandler(this.cb_Month_SelectedIndexChanged);
+            this.cb_Month.SelectionChangeCommitted += new System.EventHandler(this.cb_Month_SelectionChangeCommitted);
             // 
             // cb_Branch
             // 
@@ -174,6 +178,7 @@
             this.cb_Branch.Name = "cb_Branch";
             this.cb_Branch.Size = new System.Drawing.Size(1676, 24);
             this.cb_Branch.TabIndex = 4;
+            this.cb_Branch.SelectionChangeCommitted += new System.EventHandler(this.cb_Branch_SelectionChangeCommitted);
             // 
             // Root
             // 
@@ -279,30 +284,6 @@
             this.dgvEmployeeQuantity.Size = new System.Drawing.Size(838, 331);
             this.dgvEmployeeQuantity.TabIndex = 0;
             // 
-            // gctEmployeeQuantity
-            // 
-            this.gctEmployeeQuantity.Controls.Add(this.dgvMost);
-            this.gctEmployeeQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gctEmployeeQuantity.Location = new System.Drawing.Point(0, 0);
-            this.gctEmployeeQuantity.Name = "gctEmployeeQuantity";
-            this.gctEmployeeQuantity.Size = new System.Drawing.Size(919, 361);
-            this.gctEmployeeQuantity.TabIndex = 1;
-            this.gctEmployeeQuantity.Text = "Nhân viên bán nhiều đơn nhất:";
-            // 
-            // dgvMost
-            // 
-            this.dgvMost.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMost.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sold_employee_id,
-            this.sold_full_name,
-            this.order_quantity});
-            this.dgvMost.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMost.Location = new System.Drawing.Point(2, 28);
-            this.dgvMost.Name = "dgvMost";
-            this.dgvMost.RowHeadersWidth = 51;
-            this.dgvMost.Size = new System.Drawing.Size(915, 331);
-            this.dgvMost.TabIndex = 1;
-            // 
             // employee_id
             // 
             this.employee_id.DataPropertyName = "employee_id";
@@ -342,6 +323,30 @@
             this.work_status.MinimumWidth = 6;
             this.work_status.Name = "work_status";
             this.work_status.Width = 125;
+            // 
+            // gctEmployeeQuantity
+            // 
+            this.gctEmployeeQuantity.Controls.Add(this.dgvMost);
+            this.gctEmployeeQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gctEmployeeQuantity.Location = new System.Drawing.Point(0, 0);
+            this.gctEmployeeQuantity.Name = "gctEmployeeQuantity";
+            this.gctEmployeeQuantity.Size = new System.Drawing.Size(919, 361);
+            this.gctEmployeeQuantity.TabIndex = 1;
+            this.gctEmployeeQuantity.Text = "Nhân viên bán nhiều đơn nhất:";
+            // 
+            // dgvMost
+            // 
+            this.dgvMost.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMost.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sold_employee_id,
+            this.sold_full_name,
+            this.order_quantity});
+            this.dgvMost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMost.Location = new System.Drawing.Point(2, 28);
+            this.dgvMost.Name = "dgvMost";
+            this.dgvMost.RowHeadersWidth = 51;
+            this.dgvMost.Size = new System.Drawing.Size(915, 331);
+            this.dgvMost.TabIndex = 1;
             // 
             // sold_employee_id
             // 

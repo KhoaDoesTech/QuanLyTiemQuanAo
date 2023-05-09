@@ -94,9 +94,8 @@ namespace QuanLyTiemQuanAo
 
         private void XoaTrong()
         {
-            txt_employee_id.ResetText();
             txt_full_name.ResetText();
-            cb_job_id.ResetText();
+
             txt_gender.ResetText();
             dtp_birthday.ResetText();
             txt_phone.ResetText();
@@ -138,6 +137,7 @@ namespace QuanLyTiemQuanAo
         private void btnThem_Click(object sender, EventArgs e)
         {
             KhoaHienThi();
+            txt_employee_id.Text = dbe.GetDefaultEmployeeID();
             XoaTrong();
             MoTuongTac();
             dgvEmployee.Enabled = false;
@@ -263,7 +263,7 @@ namespace QuanLyTiemQuanAo
         private void btnHuy_Click(object sender, EventArgs e)
         {
             MoHienThi();
-            XoaTrong();
+            //XoaTrong();
             KhoaTuongTac();
             dgvEmployee_CellClick(null, null);
         }

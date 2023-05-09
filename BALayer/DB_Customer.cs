@@ -25,13 +25,12 @@ namespace BALayer
         {
             return db.ExecuteQueryDataTable("select * from Customer");
         }
-        public bool InsertCustomer(ref string err, string customer_type_id,
+        public bool InsertCustomer(ref string err,
             string full_name, string gender, DateTime birthday, string phone,string email)
 
         {
             return db.MyExecuteNonQuery("SP_Insert_Customer",
                 ref err,
-                new SqlParameter("@customer_type_id", customer_type_id),
                 new SqlParameter("@full_name", full_name),
                 new SqlParameter("@gender", gender),
                 new SqlParameter("@birthday", birthday),
@@ -48,6 +47,11 @@ namespace BALayer
             return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindCustomerByName(@full_name)",
                  new SqlParameter("@full_name", full_name));
         }
+        public DataTable FindCustomerByPhone(string phone)
+        {
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindCustomerByPhone(@phone)",
+                 new SqlParameter("@phone", phone));
+        }
         public bool UpdateCustomer(ref string err, string customer_id, string customer_type_id,
             string full_name, string gender, DateTime birthday, string phone,
             string email)
@@ -55,7 +59,6 @@ namespace BALayer
             return db.MyExecuteNonQuery("SP_Update_Customer",
                 ref err,
                 new SqlParameter("@customer_id", customer_id),
-                new SqlParameter("@customer_type_id", customer_type_id),
                 new SqlParameter("@full_name", full_name),
                 new SqlParameter("@gender", gender),
                 new SqlParameter("@birthday", birthday),

@@ -77,7 +77,6 @@ namespace QuanLyTiemQuanAo
 
         private void XoaTrong()
         {
-            txt_job_title_id.ResetText();
             txt_job_title_name.ResetText();
             txt_job_description.ResetText();
             txtSearch.ResetText();
@@ -88,17 +87,20 @@ namespace QuanLyTiemQuanAo
             txt_job_title_id.Enabled = false;
             txt_job_title_name.Enabled = true;
             txt_job_description.Enabled = true;
+            cb_role_name.Enabled = true;
         }
         private void KhoaTuongTac()
         {
             txt_job_title_id.Enabled = false;
             txt_job_title_name.Enabled = false;
             txt_job_description.Enabled = false;
+            cb_role_name.Enabled = false;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             KhoaHienThi();
+            txt_job_title_id.Text = dbjt.GetDefaultJobTitleID();
             XoaTrong();
             MoTuongTac();
             dgvJobTitle.Enabled = false;
@@ -199,6 +201,8 @@ namespace QuanLyTiemQuanAo
             dgvJobTitle.Rows[r].Cells[1].Value.ToString();
             txt_job_description.Text =
             dgvJobTitle.Rows[r].Cells[2].Value.ToString();
+            cb_role_name.SelectedValue =
+            dgvJobTitle.Rows[r].Cells[3].Value.ToString();
         }
         private void groupControl1_Paint(object sender, PaintEventArgs e)
         {

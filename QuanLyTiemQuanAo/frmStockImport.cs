@@ -112,8 +112,8 @@ namespace QuanLyTiemQuanAo
 
         private void XoaTrong()
         {
-            cb_branch_id.ResetText();
-            cb_product_id.ResetText();
+            /*cb_branch_id.ResetText();
+            cb_product_id.ResetText();*/
             dtp_import_date.ResetText();
             txt_import_price.ResetText();
             txt_quantity.ResetText();
@@ -280,6 +280,11 @@ namespace QuanLyTiemQuanAo
 
         private void frmStockImport_Load(object sender, EventArgs e)
         {
+            // Nội dung tìm
+            cbSearch.Items.Add("Chi nhánh nhập");
+            cbSearch.Items.Add("Sản phẩm");
+            cbSearch.Text = cbSearch.Items[0].ToString();
+
             LoadData();
         }
 

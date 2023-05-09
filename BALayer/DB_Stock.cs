@@ -30,5 +30,22 @@ namespace BALayer
             return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindProductByID(@product_id)",
                  new SqlParameter("@product_id", product_id));
         }
+        public bool SellProduct(ref string err, string branch_id, string product_id, int quantity)
+        {
+            return db.MyExecuteNonQuery("SP_Sell_Product",
+                ref err,
+                new SqlParameter("@branch_id", branch_id),
+                new SqlParameter("@product_id", product_id),
+                new SqlParameter("@quantity", quantity));
+        }
+        public bool UndoSellProduct(ref string err, string branch_id, string product_id, int quantity)
+        {
+            return db.MyExecuteNonQuery("SP_Undo_Sell_Product",
+                ref err,
+                new SqlParameter("@branch_id", branch_id),
+                new SqlParameter("@product_id", product_id),
+                new SqlParameter("@quantity", quantity));
+        }
+
     }
 }

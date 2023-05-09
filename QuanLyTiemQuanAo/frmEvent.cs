@@ -79,7 +79,6 @@ namespace QuanLyTiemQuanAo
         }
         private void XoaTrong()
         {
-            txt_event_id.ResetText();
             txt_event_name.ResetText();
             dtp_date_start.ResetText();
             dtp_date_end.ResetText();
@@ -102,6 +101,7 @@ namespace QuanLyTiemQuanAo
         private void btnThem_Click(object sender, EventArgs e)
         {
             KhoaHienThi();
+            txt_event_id.Text = dbe.GetDefaultEventID();
             XoaTrong();
             MoTuongTac();
             dgvEvent.Enabled = false;

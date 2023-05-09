@@ -53,11 +53,17 @@ namespace QuanLyTiemQuanAo
                 DataGridViewComboBoxColumn).ValueMember =
                 "employee_id";
 
+                // Vận chuyển dữ liệu vào DataTable dtEmployee
+                dtAccount = new DataTable();
+                dtAccount.Clear();
+                dtAccount = dba.GetAccount();
+
                 MoHienThi();
                 KhoaTuongTac();
 
-                dgvAccount_CellClick(null, null);
+                dgvAccount.DataSource = dtAccount;
 
+                dgvAccount_CellClick(null, null);
             }
             catch (SqlException e)
             {
@@ -109,6 +115,7 @@ namespace QuanLyTiemQuanAo
             KhoaHienThi();
             XoaTrong();
             MoTuongTac();
+            Them = true;
             dgvAccount.Enabled = false; 
             cb_employee_id.Focus();
         }
@@ -131,7 +138,7 @@ namespace QuanLyTiemQuanAo
                 string err = "";
                 try
                 {
-                    f = dba.InsertAccount(ref err, txt_username.Text, txt_passcode.Text);
+                    f = dba.InsertAccount(ref err, cb_employee_id.SelectedValue.ToString(), txt_username.Text, txt_passcode.Text);
                     if (f)
                     {
                         // Load lại dữ liệu trên DataGridView 

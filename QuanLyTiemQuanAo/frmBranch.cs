@@ -76,7 +76,6 @@ namespace QuanLyTiemQuanAo
 
         private void XoaTrong()
         {
-            txt_branch_id.ResetText();
             txt_branch_name.ResetText();
             txt_max_stock.ResetText();
             txt_rent_amount.ResetText();
@@ -101,6 +100,7 @@ namespace QuanLyTiemQuanAo
         private void btnThem_Click(object sender, EventArgs e)
         {
             KhoaHienThi();
+            txt_branch_id.Text = dbb.GetDefaultBranchID();
             XoaTrong();
             MoTuongTac();
             dgvBranch.Enabled = false;

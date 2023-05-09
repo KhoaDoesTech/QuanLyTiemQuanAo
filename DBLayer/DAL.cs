@@ -12,12 +12,12 @@ namespace DBLayer
     {
         string ConnStr;
         SqlConnection conn = null;
-        SqlCommand  comm = null;
+        SqlCommand comm = null;
         SqlDataAdapter da = null;
-        
-        public DAL(string ConnString) 
+
+        public DAL(string ConnString)
         {
-            ConnStr = ConnString;            
+            ConnStr = ConnString;
         }
         public void OpenDB()
         {
@@ -44,7 +44,7 @@ namespace DBLayer
             if (conn != null)
             {
                 conn.Close();
-                conn.Dispose(); 
+                conn.Dispose();
                 conn = null;
             }
         }
@@ -106,10 +106,10 @@ namespace DBLayer
         public DataTable ExecuteQueryDataTable(string strSQL)
         {
             OpenDB();
-            
+
             comm.CommandText = strSQL;
             comm.CommandType = CommandType.Text;
-            
+
             da = new SqlDataAdapter(comm);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -118,7 +118,7 @@ namespace DBLayer
             return dt;
         }
 
-        public DataTable ExecuteNonQueryDataTable(string strSQL, params SqlParameter[] param) 
+        public DataTable ExecuteNonQueryDataTable(string strSQL, params SqlParameter[] param)
         {
             OpenDB();
 

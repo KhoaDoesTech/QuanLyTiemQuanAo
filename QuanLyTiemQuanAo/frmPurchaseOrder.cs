@@ -14,6 +14,9 @@ using BALayer;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using DevExpress.ClipboardSource.SpreadsheetML;
+using static DevExpress.Data.Helpers.ExpressiveSortInfo;
+using DevExpress.XtraEditors.TextEditController.Win32;
 
 namespace QuanLyTiemQuanAo
 {
@@ -41,7 +44,11 @@ namespace QuanLyTiemQuanAo
         DB_Discount dbd;
         DataTable dtDiscount = null;
 
+        DB_Stock dbs;
+        DataTable dtStock = null;
+
         bool Them;
+        bool khach;
         public void SetConnection(string connectString)
         {
             ConnStr = connectString;
@@ -51,6 +58,7 @@ namespace QuanLyTiemQuanAo
             dbp = new DB_Product(ConnStr);
             dbd = new DB_Discount(ConnStr);
             dbpo = new DB_PurchaseOrder(ConnStr);
+            dbs = new DB_Stock(ConnStr);
 
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(ConnStr);
             username = builder.UserID;
@@ -65,11 +73,9 @@ namespace QuanLyTiemQuanAo
         {
             try
             {
-                // Vận chuyển dữ liệu vào DataTable dtCurrentDiscount 
-                DataTable dt = new DataTable();
-                dt = dbd.GetCurrentDiscount(DateTime.Now);
-                cb_event.DataSource = dt;
-                cb_event.DisplayMember = "event_id";
+                dtDiscount = dbd.GetCurrentDiscount(DateTime.Parse(dtp_order_date.Text.ToString()));
+                cb_event.DataSource = dtDiscount;
+                cb_event.DisplayMember = "event_name";
                 cb_event.ValueMember = "event_id";
 
                 MoTuongTacKhach();
@@ -77,24 +83,51 @@ namespace QuanLyTiemQuanAo
                 KhoaTuongTacDon();
 
                 txt_order_id.Text = dbpo.GetDefaultOrderID();
-                txtTongTien.Text = dbpo.GetTotalCost().ToString();
-                 if (dt.Rows[0][2].ToString() != null)
+                if (dtDiscount.Rows[0][2].ToString() != null)
                 {
-                    txt_discount.Text = dt.Rows[0][2].ToString();
-                    txtGiamGia.Text = (Convert.ToInt32(txtTongTien.Text) * Convert.ToDouble(txt_discount.Text)).ToString();
+                    txt_discount.Text = dtDiscount.Rows[0][2].ToString();                    
                 }
                 else
                 {
-                    txt_discount.Text = dt.Rows[0][3].ToString();
-                    txtGiamGia.Text = txt_discount.Text;
-                }
-                txt_total_cost.Text = (Convert.ToInt32(txtTongTien.Text) - Convert.ToDouble(txtGiamGia.Text)).ToString();
+                    txt_discount.Text = dtDiscount.Rows[0][3].ToString();
+                }                
             }
             catch (SqlException e)
             {
                 MessageBox.Show("Không lấy được nội dung. Lỗi rồi!!!" + e.Message);
             }
         }
+
+        private void TinhTien()
+        {
+            int total = 0;
+
+            for (int i = 0; i < dgvDetail.Rows.Count; i++)
+            {
+                DataGridViewRow r = dgvDetail.Rows[i];
+                object value = r.Cells[3].Value;
+                if (value != null)
+                {
+                    total = total + int.Parse(value.ToString());
+                }
+            }
+            txtTongTien.Text = total.ToString();
+
+            int z = cb_event.SelectedIndex;
+            if (!string.IsNullOrEmpty(dtDiscount.Rows[z][2].ToString()))
+            {
+                txt_discount.Text = dtDiscount.Rows[z][2].ToString();
+                txtGiamGia.Text = (Convert.ToInt32(txtTongTien.Text) * Convert.ToDouble(txt_discount.Text)).ToString();
+            }
+
+            if (!string.IsNullOrEmpty(dtDiscount.Rows[z][3].ToString()))
+            {
+                txt_discount.Text = dtDiscount.Rows[z][3].ToString();
+                txtGiamGia.Text = txt_discount.Text;
+            }
+
+            txt_total_cost.Text = (Convert.ToInt32(txtTongTien.Text) - Convert.ToDouble(txtGiamGia.Text)).ToString();
+        }       
 
         private void frmPurchaseOrder_Load(object sender, EventArgs e)
         {
@@ -182,14 +215,26 @@ namespace QuanLyTiemQuanAo
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string err = "";
+            bool f = false;
             try
             {
                 DataTable dt = new DataTable();
                 dt = dbp.FindInfoProduct(cb_product_name.SelectedValue.ToString(),
                     cb_size.SelectedValue.ToString(), cb_color.SelectedValue.ToString(), dtPersonal.Rows[0][10].ToString());
                 dgvDetail.Rows.Add(cb_product_name.SelectedValue.ToString(), txt_quantity.Text, dt.Rows[0][5].ToString(),
-                    (Convert.ToInt32(dt.Rows[0][5]) * Convert.ToInt32(txt_quantity.Text)).ToString(), cb_size.Text, cb_color.Text);                
+                    (Convert.ToInt32(dt.Rows[0][5]) * Convert.ToInt32(txt_quantity.Text)).ToString(), cb_size.Text, cb_color.Text);
+                TinhTien();
+
+                string err = "";
+                f = dbs.SellProduct(ref err, dtPersonal.Rows[0][10].ToString(), dt.Rows[0][0].ToString(), Convert.ToInt32(txt_quantity.Text));
+                if (f)
+                {
+                    MessageBox.Show("Đã thêm xong!");
+                }
+                else
+                {
+                    MessageBox.Show("Đã thêm chưa xong!\n\r" + "Lỗi:" + err);
+                }
             }
             catch (SqlException)
             {
@@ -199,56 +244,66 @@ namespace QuanLyTiemQuanAo
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            bool f = false;
             try
             {
-                // Lấy thứ tự record hiện hành 
                 int r = dgvDetail.CurrentCell.RowIndex;
-                // Lấy product_name của record hiện hành 
-                string str_employee_id =
-                dgvDetail.Rows[r].Cells[0].Value.ToString();
-                // Viết câu lệnh SQL 
-                // Hiện thông báo xác nhận việc xóa mẫu tin 
-                // Khai báo biến answer 
-                DialogResult answer;
-                // Hiện hộp thoại hỏi đáp 
-                answer = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                // Kiểm tra có nhấp chọn nút Ok không? 
-                string err = "";
-                if (answer == DialogResult.Yes)
-                {
 
-                    // Thực hiện câu lệnh SQL 
-                    bool f = dbpo.DeleteOrderDetail(ref err, cb_product_name.SelectedValue.ToString());
-                    if (f)
-                    {
-                        // Cập nhật lại DataGridView 
-                        LoadData();
-                        // Thông báo 
-                        MessageBox.Show("Đã xóa xong!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không xóa được!\n\r" + "Lỗi:" + err);
-                    }
+                DataGridViewRow row = dgvDetail.Rows[r];
+                DataTable dt = new DataTable();
+                dt = dbp.FindInfoProduct(row.Cells[0].Value.ToString(),
+                    row.Cells[4].Value.ToString(), row.Cells[5].Value.ToString(), dtPersonal.Rows[0][10].ToString());
+
+                string err = "";
+                f = dbs.UndoSellProduct(ref err, dtPersonal.Rows[0][10].ToString(), dt.Rows[0][0].ToString(), Convert.ToInt32(row.Cells[1].Value.ToString()));
+                if (f)
+                {
+                    dgvDetail.Rows.Remove(row);
+                    TinhTien();
+                    MessageBox.Show("Đã thêm xong!");
                 }
                 else
                 {
-                    // Thông báo 
-                    MessageBox.Show("Không thực hiện việc xóa mẫu tin!");
+                    MessageBox.Show("Đã thêm chưa xong!\n\r" + "Lỗi:" + err);
                 }
             }
             catch (SqlException)
             {
                 MessageBox.Show("Không xóa được. Lỗi rồi!!!");
             }
-            // Đóng kết nối
         }
 
         private void btnClear_Click(object sender, EventArgs e)
-        {
-            dgvDetail.Rows.Clear();
-            dgvDetail.Refresh();
+        {            
+            bool f = false;
+            try
+            {
+                for (int i = 0; i <= dgvDetail.Rows.Count; i++)
+                {
+                    DataGridViewRow row = dgvDetail.Rows[0];
+                    DataTable dt = new DataTable();
+                    dt = dbp.FindInfoProduct(row.Cells[0].Value.ToString(),
+                        row.Cells[4].Value.ToString(), row.Cells[5].Value.ToString(), dtPersonal.Rows[0][10].ToString());
+
+                    string err = "";
+                    f = dbs.UndoSellProduct(ref err, dtPersonal.Rows[0][10].ToString(), dt.Rows[0][0].ToString(), Convert.ToInt32(row.Cells[1].Value.ToString()));
+                    if (f)
+                    {
+                        dgvDetail.Rows.Remove(row);
+                        
+                        MessageBox.Show("Đã thêm xong!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã thêm chưa xong!\n\r" + "Lỗi:" + err);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Không xóa được. Lỗi rồi!!!");
+            }
+            TinhTien();
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -256,34 +311,51 @@ namespace QuanLyTiemQuanAo
             if (txtTim.Text == "")
             {
                 XoaTrongKhach();
+                MoTuongTacKhach();
+                khach = false;
             }
             else
             {
                 XoaTrongKhach();
+                KhoaTuongTacKhach();
                 DataRow r;
-                DataTable dt;
                 int x = cbTim.SelectedIndex;
+                khach = true;
                 switch (x)
                 {
                     case 0:
-                        dt = dbc.FindCustomerByID(txtTim.Text);
-                        r = dt.Rows[0];
-                        txt_customer_type_id.Text = r[0].ToString();
-                        txt_gender.Text = r[1].ToString();
-                        txt_phone.Text = r[2].ToString();
-                        txt_email.Text = r[3].ToString();
-                        txt_full_name.Text = r[4].ToString();
-                        dtp_birthday.Text = r[5].ToString();
+                        dtCustomer = dbc.FindCustomerByPhone(txtTim.Text);
+                        if (dtCustomer.Rows.Count == 0)
+                        {
+                            MoTuongTacKhach();
+                            khach = false; 
+                            break;
+                        }
+                        r = dtCustomer.Rows[0];
+                        txt_customer_id.Text = r[0].ToString();
+                        txt_customer_type_id.Text = r[1].ToString();
+                        txt_full_name.Text = r[2].ToString();
+                        txt_gender.Text = r[3].ToString();
+                        dtp_birthday.Value = Convert.ToDateTime(r[4]);
+                        txt_phone.Text = r[5].ToString();
+                        txt_email.Text = r[6].ToString();                                 
                         break;
                     case 1:
-                        dt = dbc.FindCustomerByName(txtTim.Text);
-                        r = dt.Rows[0];
-                        txt_customer_type_id.Text = r[0].ToString();
-                        txt_gender.Text = r[1].ToString();
-                        txt_phone.Text = r[2].ToString();
-                        txt_email.Text = r[3].ToString();
-                        txt_full_name.Text = r[4].ToString();
-                        dtp_birthday.Text = r[5].ToString();
+                        dtCustomer = dbc.FindCustomerByID(txtTim.Text);
+                        if (dtCustomer.Rows.Count == 0)
+                        {
+                            MoTuongTacKhach();
+                            khach = false;
+                            break;
+                        }
+                        r = dtCustomer.Rows[0];
+                        txt_customer_id.Text = r[0].ToString();
+                        txt_customer_type_id.Text = r[1].ToString();
+                        txt_full_name.Text = r[2].ToString();
+                        txt_gender.Text = r[3].ToString();
+                        dtp_birthday.Value = Convert.ToDateTime(r[4]);
+                        txt_phone.Text = r[5].ToString();
+                        txt_email.Text = r[6].ToString();
                         break;
                 }
             }
@@ -291,8 +363,61 @@ namespace QuanLyTiemQuanAo
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+            if (khach == false)
+            {
+                bool c = false;
+                string error = "";
+                c = dbc.InsertCustomer(ref error,
+                        txt_full_name.Text, txt_gender.Text,
+                        DateTime.Parse(dtp_birthday.Text), txt_phone.Text, txt_email.Text);
+                if (c)
+                {
+                    MessageBox.Show("Đã thêm xong!");
+                }
+                else
+                {
+                    MessageBox.Show("Đã thêm chưa xong!\n\r" + "Lỗi:" + error);
+                }
+            }
 
-        }     
+            bool f = false;
+            string err = "";
+            f = dbpo.InsertPurchaseOrder(ref err,
+                    txt_customer_id.Text, dtPersonal.Rows[0][10].ToString(), dtPersonal.Rows[0][9].ToString(), cb_event.SelectedValue.ToString(),
+                    DateTime.Parse(dtp_order_date.Text), Convert.ToInt32(txt_total_cost.Text));
+            if (f)
+            {
+                MessageBox.Show("Đã thêm xong!");
+            }
+            else
+            {
+                MessageBox.Show("Đã thêm chưa xong!\n\r" + "Lỗi:" + err);
+            }
+
+            bool z = false;
+            for (int i = 0; i < dgvDetail.Rows.Count; i++)
+            {
+                DataGridViewRow row = dgvDetail.Rows[0];
+                DataTable dt = new DataTable();
+                dt = dbp.FindInfoProduct(row.Cells[0].Value.ToString(),
+                    row.Cells[4].Value.ToString(), row.Cells[5].Value.ToString(), dtPersonal.Rows[0][10].ToString());
+
+                string er = "";
+                z = dbpo.InsertOrderDetail(ref er, txt_order_id.Text.ToString(), dt.Rows[0][0].ToString(), Convert.ToInt32(row.Cells[1].Value.ToString()));
+                if (z)
+                {
+                    dgvDetail.Rows.Remove(row);
+
+                    MessageBox.Show("Đã thêm xong!");
+                }
+                else
+                {
+                    MessageBox.Show("Đã thêm chưa xong!\n\r" + "Lỗi:" + er);
+                }
+            }
+
+            LoadData();
+        }
 
         private void btnFind_Click(object sender, EventArgs e)
         {
@@ -343,12 +468,12 @@ namespace QuanLyTiemQuanAo
 
         private void cb_size_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
+            //DataTable dt = new DataTable();
 
-            dt = dbp.FindColorBySize(cb_size.SelectedValue.ToString(), cb_product_name.SelectedValue.ToString());
-            cb_color.DataSource = dt;
-            cb_color.DisplayMember = "color";
-            cb_color.ValueMember = "color";
+            //dt = dbp.FindColorBySize(cb_size.SelectedValue.ToString(), cb_product_name.SelectedValue.ToString());
+            //cb_color.DataSource = dt;
+            //cb_color.DisplayMember = "color";
+            //cb_color.ValueMember = "color";
 
             LayThongTin();
         }
@@ -396,6 +521,26 @@ namespace QuanLyTiemQuanAo
             MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             // Kiểm tra có nhắp chọn nút Ok không? 
             if (traloi == DialogResult.OK) this.Close();
+        }
+
+        private void dtp_order_date_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_event_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            int i = cb_event.SelectedIndex;
+            if (!string.IsNullOrEmpty(dtDiscount.Rows[i][2].ToString()))
+            {
+                txt_discount.Text = dtDiscount.Rows[i][2].ToString();
+            }
+
+            if (!string.IsNullOrEmpty(dtDiscount.Rows[i][3].ToString()))
+            {
+                txt_discount.Text = dtDiscount.Rows[i][3].ToString();
+            }
+            TinhTien();
         }
     }
 }

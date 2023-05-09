@@ -62,7 +62,7 @@ namespace QuanLyTiemQuanAo
                 dtCustomerType = dbct.GetCustomerType();
                 // Đưa dữ liệu lên ComboBox trong DataGridView
                 (dgvCurrentDiscount.Columns["customer_type_id"] as
-                DataGridViewComboBoxColumn).DataSource = dtEvent;
+                DataGridViewComboBoxColumn).DataSource = dtCustomerType;
                 (dgvCurrentDiscount.Columns["customer_type_id"] as
                 DataGridViewComboBoxColumn).DisplayMember =
                 "customer_type_name";
@@ -109,8 +109,8 @@ namespace QuanLyTiemQuanAo
 
         private void XoaTrong()
         {
-            cb_event_id.ResetText();
-            cb_customer_type_id.ResetText();
+            /*cb_event_id.ResetText();
+            cb_customer_type_id.ResetText();*/
             txt_discount_percent.ResetText();
             txt_discount_price.ResetText();
         }
@@ -255,25 +255,25 @@ namespace QuanLyTiemQuanAo
 
         private void dgvCurrentDiscount_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Đưa dữ liệu lên ComboBox
-            cb_event_id.DataSource = dtEvent;
-            cb_event_id.DisplayMember = "event_name";
-            cb_event_id.ValueMember = "event_id";
-            // Đưa dữ liệu lên ComboBox
-            cb_customer_type_id.DataSource = dtCustomerType;
-            cb_customer_type_id.DisplayMember = "customer_type_name";
-            cb_customer_type_id.ValueMember = "customer_type_id";
-            // Thứ tự dòng hiện hành 
-            int r = dgvCurrentDiscount.CurrentCell.RowIndex;
-            // Chuyển thông tin lên panel 
-            cb_event_id.Text =
-            dgvCurrentDiscount.Rows[r].Cells[0].Value.ToString();
-            cb_customer_type_id.SelectedValue =
-            dgvCurrentDiscount.Rows[r].Cells[1].Value.ToString();
-            txt_discount_percent.Text =
-            dgvCurrentDiscount.Rows[r].Cells[2].Value.ToString();
-            txt_discount_price.Text =
-            dgvCurrentDiscount.Rows[r].Cells[3].Value.ToString();
+            //// Đưa dữ liệu lên ComboBox
+            //cb_event_id.DataSource = dtEvent;
+            //cb_event_id.DisplayMember = "event_name";
+            //cb_event_id.ValueMember = "event_id";
+            //// Đưa dữ liệu lên ComboBox
+            //cb_customer_type_id.DataSource = dtCustomerType;
+            //cb_customer_type_id.DisplayMember = "customer_type_name";
+            //cb_customer_type_id.ValueMember = "customer_type_id";
+            //// Thứ tự dòng hiện hành 
+            //int r = dgvCurrentDiscount.CurrentCell.RowIndex;
+            //// Chuyển thông tin lên panel 
+            //cb_event_id.Text =
+            //dgvCurrentDiscount.Rows[r].Cells[0].Value.ToString();
+            //cb_customer_type_id.SelectedValue =
+            //dgvCurrentDiscount.Rows[r].Cells[1].Value.ToString();
+            //txt_discount_percent.Text =
+            //dgvCurrentDiscount.Rows[r].Cells[2].Value.ToString();
+            //txt_discount_price.Text =
+            //dgvCurrentDiscount.Rows[r].Cells[3].Value.ToString();
         }
     }
 }

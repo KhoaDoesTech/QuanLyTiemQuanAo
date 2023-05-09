@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace QuanLyTiemQuanAo
 {
-    public partial class frmStock : DevExpress.XtraEditors.XtraForm
+    public partial class frmStock : DevExpress.XtraEditors.XtraForm, IConnectionForm
     {
         DB_Stock dbs;
         DataTable dtStock = null;
@@ -79,13 +79,10 @@ namespace QuanLyTiemQuanAo
 
                 // Đưa dữ liệu lên DataGridView 
                 dgvStock.DataSource = dtStock;
-
-                dgvStock_CellClick(null, null);
-
             }
             catch (SqlException e)
             {
-                MessageBox.Show("Không lấy được nội dung trong table StockImport. Lỗi rồi!!!" + e.Message);
+                MessageBox.Show("Không lấy được nội dung trong table Stock. Lỗi rồi!!!" + e.Message);
             }
         }
         private void KhoaHienThi()
@@ -137,6 +134,11 @@ namespace QuanLyTiemQuanAo
 
         private void frmStock_Load(object sender, EventArgs e)
         {
+            // Nội dung tìm
+            cbSearch.Items.Add("Chi nhánh nhập");
+            cbSearch.Items.Add("Sản phẩm");
+            cbSearch.Text = cbSearch.Items[0].ToString();
+
             LoadData();
         }
 

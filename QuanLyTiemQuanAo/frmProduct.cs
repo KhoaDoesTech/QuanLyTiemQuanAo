@@ -103,7 +103,6 @@ namespace QuanLyTiemQuanAo
 
         private void XoaTrong()
         {
-            txt_product_id.ResetText();
             txt_product_name.ResetText();
             txt_size.ResetText();
             txt_color.ResetText();
@@ -131,8 +130,8 @@ namespace QuanLyTiemQuanAo
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            Them = true;
-            KhoaHienThi();            
+            KhoaHienThi();
+            txt_product_id.Text = dbp.GetDefaultProductID();
             XoaTrong();
             MoTuongTac();
             dgvProduct.Enabled = false;
@@ -140,7 +139,12 @@ namespace QuanLyTiemQuanAo
         }
 
         private void frmProduct_Load(object sender, EventArgs e)
-        {            
+        {
+            // Nội dung tìm
+            cbTim.Items.Add("Mã sản phẩm");
+            cbTim.Items.Add("Tên sản phẩm");
+            cbTim.Text = cbTim.Items[0].ToString();
+
             LoadData();
         }
 

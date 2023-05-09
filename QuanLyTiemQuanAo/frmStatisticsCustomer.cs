@@ -46,7 +46,6 @@ namespace QuanLyTiemQuanAo
         {
             try
             {
-
                 // Vận chuyển dữ liệu vào DataTable dtBranch
                 dtBranch = new DataTable();
                 dtBranch.Clear();
@@ -56,33 +55,8 @@ namespace QuanLyTiemQuanAo
                 cb_Branch.DisplayMember = "branch_name";
                 cb_Branch.ValueMember = "branch_id";
                 cb_Branch.Text = "Tất cả";
-
-               /*
-                dtStatisticsCustomer = new DataTable();
-                dtStatisticsCustomer.Clear();
-                dtStatisticsCustomer = dbsc.GetStatisticsCustomer();
-                dgvStatisticsCustomer.DataSource = dtStatisticsCustomer;
-
-                // Đưa dữ liệu lên ComboBox cb_StatisticsCustomer
-                cb_StatisticsCustomer.DataSource = dtCustomer;
-                cb_StatisticsCustomer.DisplayMember = "customer_type_name";
-                cb_StatisticsCustomer.ValueMember = "customer_type_id";
-
-                cb_StatisticsCustomer.DataSource = dtCustomer;
-                cb_StatisticsCustomer.DisplayMember = "gender";
-
-                // Vận chuyển dữ liệu vào DataTable dtCustomerType
-                dtCustomerType = new DataTable();
-                dtCustomerType.Clear();
-                dtCustomerType = dbt.GetCustomerType();
-                // Vận chuyển dữ liệu vào DataTable dtCustomer
-                dtCustomer = new DataTable();
-                dtCustomer.Clear();
-                dtCustomer = dbc.GetCustomer();
-
-                // Đưa dữ liệu lên DataGridView 
-                dgvStatisticsCustomer.DataSource = dtCustomer;
-               */
+                
+                
             }
             catch
             {

@@ -46,7 +46,7 @@ namespace BALayer
         public bool UpdateEvent(ref string err, string event_id, string event_name,
                      DateTime date_start, DateTime date_end)
         {
-            return db.MyExecuteNonQuery("SP_Update_Event",
+            return db.MyExecuteNonQuery("SP_Update_BranchEvent",
                 ref err,
                 new SqlParameter("@event_id",event_id),
                 new SqlParameter("@event_name", event_name),

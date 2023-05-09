@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraBars;
+using DevExpress.XtraLayout.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,13 @@ namespace QuanLyTiemQuanAo
         {
             InitializeComponent();
             ConnStr = strConnect_local;
+
+            ribbonPageGroup1.Visible = true;
+            ribbonPage2.Visible = true;
+            ribbonPage3.Visible = true;
+            ribbonPage4.Visible = true;
+            ribbonPage5.Visible = true;
+            barButtonItem45.Visibility = BarItemVisibility.Always;
         }
 
         void openForm(Type typeForm)
@@ -61,9 +69,9 @@ namespace QuanLyTiemQuanAo
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            ribbonPage3.Visible = true;
-            ribbonPage2.Visible = true;
-            ribbonPage4.Visible = true;
+            //ribbonPage3.Visible = true;
+            //ribbonPage2.Visible = true;
+            //ribbonPage4.Visible = true;
         }
 
         private void barButtonItem27_ItemClick(object sender, ItemClickEventArgs e)
@@ -148,7 +156,7 @@ namespace QuanLyTiemQuanAo
 
         private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
         {
-            openViewForm(typeof(frmView), 1);
+            openForm(typeof(frmStock));
         }
 
         private void barButtonItem28_ItemClick(object sender, ItemClickEventArgs e)
@@ -173,7 +181,7 @@ namespace QuanLyTiemQuanAo
 
         private void barButtonItem24_ItemClick(object sender, ItemClickEventArgs e)
         {
-            openForm(typeof(frmHistoryPurchase));
+            //openForm(typeof(frmHistoryPurchase));
         }
 
         private void btnSuaThongTin_ItemClick(object sender, ItemClickEventArgs e)
@@ -194,6 +202,23 @@ namespace QuanLyTiemQuanAo
         private void barButtonItem36_ItemClick(object sender, ItemClickEventArgs e)
         {
 
+        }
+
+        private void barButtonItem43_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem44_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmLogin));
+        }
+
+        private void barButtonItem45_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            this.Hide();
+            login.Show();
         }
     }
 }

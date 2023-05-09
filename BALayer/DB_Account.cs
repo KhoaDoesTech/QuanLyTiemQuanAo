@@ -19,14 +19,15 @@ namespace BALayer
 
         public DataTable GetAccount()
         {
-            return db.ExecuteQueryDataTable("select * from Acccount");
+            return db.ExecuteQueryDataTable("select * from Accounts");
         }
 
-        public bool InsertAccount(ref string err, string username,
+        public bool InsertAccount(ref string err, string employee_id, string username,
             string passcode)
         {
-            return db.MyExecuteNonQuery("SP_Insert_Account",
+            return db.MyExecuteNonQuery("SP_Insert_Accounts",
                 ref err,
+                new SqlParameter("@employee_id", employee_id),
                 new SqlParameter("@username", username),
                 new SqlParameter("@passcode", passcode));
         }
@@ -38,7 +39,7 @@ namespace BALayer
         public bool UpdateAccount(ref string err, string employee_id, string username,
             string passcode)
         {
-            return db.MyExecuteNonQuery("SP_Update_Account",
+            return db.MyExecuteNonQuery("SP_Update_Accounts",
                 ref err,
                 new SqlParameter("@employee_id", employee_id),
                 new SqlParameter("@username", username),

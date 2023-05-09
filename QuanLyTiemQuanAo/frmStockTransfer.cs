@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace QuanLyTiemQuanAo
 {
-    public partial class frmStockTransfer : DevExpress.XtraEditors.XtraForm
+    public partial class frmStockTransfer : DevExpress.XtraEditors.XtraForm, IConnectionForm
     {
         DB_StockTransfer dbst;
         DataTable dtStockTransfer = null;
@@ -126,9 +126,9 @@ namespace QuanLyTiemQuanAo
 
         private void XoaTrong()
         {
-            cb_from_branch_id.ResetText();
+            /*cb_from_branch_id.ResetText();
             cb_to_branch_id.ResetText();
-            cb_product_id.ResetText();
+            cb_product_id.ResetText();*/
             dtp_transfer_date.ResetText();
             txt_quantity.ResetText();
         }
@@ -287,12 +287,18 @@ namespace QuanLyTiemQuanAo
             // Hiện hộp thoại hỏi đáp 
             answer = MessageBox.Show("Chắc không?", "Trả lời",
             MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            // Kiểm tra có nhấp chọn nút Ok không? 
+            // Kiểm tra có nhấp chọn nút Ok không?
             if (answer == DialogResult.OK) this.Close();
         }
 
         private void frmStockTransfer_Load(object sender, EventArgs e)
         {
+            // Nội dung tìm
+            cbSearch.Items.Add("Chi nhánh chuyển");
+            cbSearch.Items.Add("Chi nhánh nhập");
+            cbSearch.Items.Add("Sản phẩm");
+            cbSearch.Text = cbSearch.Items[0].ToString();
+
             LoadData();
         }
         private void dgvStockTransfer_CellClick(object sender, DataGridViewCellEventArgs e)

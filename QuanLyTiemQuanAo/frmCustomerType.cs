@@ -79,7 +79,6 @@ namespace QuanLyTiemQuanAo
 
         private void XoaTrong()
         {
-            txt_customer_type_id.ResetText();
             txt_customer_type_name.ResetText();
             txt_units_purchased.ResetText();
         }
@@ -98,6 +97,7 @@ namespace QuanLyTiemQuanAo
         private void btnThem_Click(object sender, EventArgs e)
         {
             KhoaHienThi();
+            txt_customer_type_id.Text = dbt.GetDefaultCustomerTypeID();
             XoaTrong();
             MoTuongTac();
             dgvCustomerType.Enabled = false;

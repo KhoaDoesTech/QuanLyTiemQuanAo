@@ -75,7 +75,6 @@ namespace QuanLyTiemQuanAo
 
         private void XoaTrong()
         {
-            txt_product_type_id.ResetText();
             txt_product_type_name.ResetText();
             txt_class.ResetText();
             txt_gender.ResetText();
@@ -98,6 +97,7 @@ namespace QuanLyTiemQuanAo
         private void btnThem_Click(object sender, EventArgs e)
         {
             KhoaHienThi();
+            txt_product_type_id.Text = dbpt.GetDefaultProductTypeID();
             XoaTrong();
             MoTuongTac();
             dgvProductType.Enabled = false;

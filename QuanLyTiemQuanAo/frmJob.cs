@@ -91,7 +91,6 @@ namespace QuanLyTiemQuanAo
 
         private void XoaTrong()
         {
-            txt_job_id.ResetText();
             txt_job_title_id.ResetText();
             txt_branch_id.ResetText();
             txt_job_name.ResetText();
@@ -118,6 +117,7 @@ namespace QuanLyTiemQuanAo
         private void btnThem_Click(object sender, EventArgs e)
         {
             KhoaHienThi();
+            txt_job_id.Text = dbj.GetDefaultJobID();
             XoaTrong();
             MoTuongTac();
             dgvJob.Enabled = false;

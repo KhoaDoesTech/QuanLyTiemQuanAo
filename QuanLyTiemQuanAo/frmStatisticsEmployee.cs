@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using BALayer;
 using System.IO;
+using System.Security.Claims;
 
 namespace QuanLyTiemQuanAo
 {
@@ -52,26 +53,14 @@ namespace QuanLyTiemQuanAo
                 for (month = 1; month <= 12; month++)
                 {
                     cb_Month.Items.Add(month);
-                }
-
+                }                
                 int year;
                 for (year = 2020; year <= 2023; year++)
                 {
                     cb_Year.Items.Add(year);
                 }
-
-                dtStatisticsEmployee = new DataTable();
-                dtStatisticsEmployee.Clear();
-                dtStatisticsEmployee = dbse.GetStatisticsEmployee();
-                dgvEmployeeQuantity.DataSource = dtStatisticsEmployee;
-
-                groupControl2.Text = "" + dbse.GetEmployeeQuantity().ToString();
-
-                DataTable dtStatistics = new DataTable();
-                dtStatistics.Clear();
-                dtStatistics = dbse.GetMostSoldEmployee();
-
-                dgvMost.DataSource = dtStatistics;
+                cb_Year.Text = cb_Year.Items[0].ToString();
+                cb_Month.Text = cb_Month.Items[0].ToString();
             }
             catch
             {
@@ -97,6 +86,50 @@ namespace QuanLyTiemQuanAo
         private void groupControl2_Paint(object sender, PaintEventArgs e)
         {
             
+        }
+
+        private void cb_Year_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            DataTable dtStatistics = new DataTable();
+            dtStatistics.Clear();
+            dtStatistics = dbse.GetMostSoldEmployee(cb_Branch.SelectedValue.ToString(), Convert.ToInt32(cb_Month.Text.ToString()), Convert.ToInt32(cb_Year.Text.ToString()));
+
+            dgvMost.DataSource = dtStatistics;
+        }
+
+        private void cb_Month_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cb_Month_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            DataTable dtStatistics = new DataTable();
+            dtStatistics.Clear();
+            dtStatistics = dbse.GetMostSoldEmployee(cb_Branch.SelectedValue.ToString(), Convert.ToInt32(cb_Month.Text.ToString()), Convert.ToInt32(cb_Year.Text.ToString()));
+
+            dgvMost.DataSource = dtStatistics;
+        }
+
+        private void cb_Year_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            DataTable dtStatistics = new DataTable();
+            dtStatistics.Clear();
+            dtStatistics = dbse.GetMostSoldEmployee(cb_Branch.SelectedValue.ToString(), Convert.ToInt32(cb_Month.Text.ToString()), Convert.ToInt32(cb_Year.Text.ToString()));
+
+            dgvMost.DataSource = dtStatistics;
+
+            dtStatisticsEmployee = new DataTable();
+            dtStatisticsEmployee.Clear();
+            dtStatisticsEmployee = dbse.GetStatisticsEmployee(cb_Branch.SelectedValue.ToString());
+            dgvEmployeeQuantity.DataSource = dtStatisticsEmployee;
+
+            groupControl2.Text = "Số lượng nhân viên: " + dbse.GetEmployeeQuantity().ToString();
         }
     }
 }

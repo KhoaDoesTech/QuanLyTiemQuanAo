@@ -17,5 +17,10 @@ namespace QuanLyTiemQuanAo
         {
             InitializeComponent();
         }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,21 +16,21 @@ namespace BALayer
         {
             db = new DAL(strConnect_local);
         }
-        public DataTable GetTime()
+        public DataTable GetStatisticsEmployee(string branch_id)
         {
-            return db.ExecuteQueryDataTable("select * from DBO.");
-        }
-        public DataTable GetStatisticsEmployee()
-        {
-            return db.ExecuteQueryDataTable("select * from DBO.GetStatisticsEmployee()");
+            return db.ExecuteNonQueryDataTable("select * from DBO.GetStatisticsEmployee(@branch_id)",
+                new SqlParameter("@branch_id", branch_id));
         }
         public int GetEmployeeQuantity()
         {
             return (int)db.MyExecuteScalar("select dbo.GetEmployeeQuantity()");
         }
-        public DataTable GetMostSoldEmployee()
+        public DataTable GetMostSoldEmployee(string branch_id, int month, int year)
         {
-            return db.ExecuteQueryDataTable("select * from DBO.GetMostSoldEmployee()");
+            return db.ExecuteNonQueryDataTable("select * from DBO.GetMostSoldEmployee(@branch_id, @month, @year)",
+                new SqlParameter("@branch_id", branch_id),
+                new SqlParameter("@month", month),
+                new SqlParameter("@year", year));
         }
     }
 }

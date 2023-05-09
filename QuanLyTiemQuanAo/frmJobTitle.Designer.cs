@@ -54,9 +54,12 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dgvJobTitle = new System.Windows.Forms.DataGridView();
+            this.cb_role_name = new System.Windows.Forms.ComboBox();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.job_title_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.job_title_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.job_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.role_name = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -76,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobTitle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -173,6 +177,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.cb_role_name);
             this.layoutControl1.Controls.Add(this.xtraScrollableControl1);
             this.layoutControl1.Controls.Add(this.btnTim);
             this.layoutControl1.Controls.Add(this.txtSearch);
@@ -183,7 +188,7 @@
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(2, 28);
             this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1108, 0, 812, 500);
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1108, 50, 812, 500);
             this.layoutControl1.Root = this.Root;
             this.layoutControl1.Size = new System.Drawing.Size(802, 137);
             this.layoutControl1.TabIndex = 0;
@@ -191,18 +196,18 @@
             // 
             // xtraScrollableControl1
             // 
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(12, 109);
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(12, 139);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(778, 16);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(757, 1);
             this.xtraScrollableControl1.TabIndex = 180;
             // 
             // btnTim
             // 
             this.btnTim.ImageOptions.Image = global::QuanLyTiemQuanAo.Properties.Resources.Search_16x16;
             this.btnTim.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnTim.Location = new System.Drawing.Point(418, 42);
+            this.btnTim.Location = new System.Drawing.Point(407, 42);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(372, 27);
+            this.btnTim.Size = new System.Drawing.Size(362, 27);
             this.btnTim.StyleController = this.layoutControl1;
             this.btnTim.TabIndex = 179;
             this.btnTim.Text = "Tìm";
@@ -210,41 +215,41 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(679, 12);
+            this.txtSearch.Location = new System.Drawing.Point(661, 12);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(111, 26);
+            this.txtSearch.Size = new System.Drawing.Size(108, 26);
             this.txtSearch.TabIndex = 178;
             // 
             // cbSearch
             // 
             this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(572, 12);
+            this.cbSearch.Location = new System.Drawing.Point(561, 12);
             this.cbSearch.Margin = new System.Windows.Forms.Padding(4);
             this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(103, 24);
+            this.cbSearch.Size = new System.Drawing.Size(96, 24);
             this.cbSearch.TabIndex = 177;
             // 
             // txt_job_title_name
             // 
             this.txt_job_title_name.Location = new System.Drawing.Point(166, 41);
             this.txt_job_title_name.Name = "txt_job_title_name";
-            this.txt_job_title_name.Size = new System.Drawing.Size(248, 25);
+            this.txt_job_title_name.Size = new System.Drawing.Size(237, 25);
             this.txt_job_title_name.TabIndex = 176;
             // 
             // txt_job_description
             // 
             this.txt_job_description.Location = new System.Drawing.Point(166, 70);
             this.txt_job_description.Name = "txt_job_description";
-            this.txt_job_description.Size = new System.Drawing.Size(248, 25);
+            this.txt_job_description.Size = new System.Drawing.Size(237, 25);
             this.txt_job_description.TabIndex = 171;
             // 
             // txt_job_title_id
             // 
             this.txt_job_title_id.Location = new System.Drawing.Point(166, 12);
             this.txt_job_title_id.Name = "txt_job_title_id";
-            this.txt_job_title_id.Size = new System.Drawing.Size(248, 25);
+            this.txt_job_title_id.Size = new System.Drawing.Size(237, 25);
             this.txt_job_title_id.TabIndex = 170;
             // 
             // Root
@@ -259,9 +264,10 @@
             this.layoutControlItem5,
             this.layoutControlItem2,
             this.layoutControlItem6,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.layoutControlItem8});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(802, 137);
+            this.Root.Size = new System.Drawing.Size(781, 152);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -269,16 +275,16 @@
             this.layoutControlItem1.Control = this.txt_job_title_id;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(406, 29);
+            this.layoutControlItem1.Size = new System.Drawing.Size(395, 29);
             this.layoutControlItem1.Text = "Mã chức danh công việc";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(142, 16);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 87);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 117);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(782, 10);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(761, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
@@ -286,25 +292,25 @@
             this.layoutControlItem3.Control = this.txt_job_title_name;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 29);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(406, 29);
+            this.layoutControlItem3.Size = new System.Drawing.Size(395, 29);
             this.layoutControlItem3.Text = "Tên chức danh công việc";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(142, 16);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.cbSearch;
-            this.layoutControlItem4.Location = new System.Drawing.Point(406, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(395, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(261, 30);
+            this.layoutControlItem4.Size = new System.Drawing.Size(254, 30);
             this.layoutControlItem4.Text = "Tìm kiếm";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(142, 16);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtSearch;
-            this.layoutControlItem5.Location = new System.Drawing.Point(667, 0);
+            this.layoutControlItem5.Location = new System.Drawing.Point(649, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(115, 30);
+            this.layoutControlItem5.Size = new System.Drawing.Size(112, 30);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -313,25 +319,25 @@
             this.layoutControlItem2.Control = this.txt_job_description;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 58);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(406, 29);
+            this.layoutControlItem2.Size = new System.Drawing.Size(395, 29);
             this.layoutControlItem2.Text = "Miêu tả công việc";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(142, 16);
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btnTim;
-            this.layoutControlItem6.Location = new System.Drawing.Point(406, 30);
+            this.layoutControlItem6.Location = new System.Drawing.Point(395, 30);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(376, 57);
+            this.layoutControlItem6.Size = new System.Drawing.Size(366, 87);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.xtraScrollableControl1;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 97);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 127);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(782, 20);
+            this.layoutControlItem7.Size = new System.Drawing.Size(761, 5);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -341,7 +347,8 @@
             this.dgvJobTitle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.job_title_id,
             this.job_title_name,
-            this.job_description});
+            this.job_description,
+            this.role_name});
             this.dgvJobTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvJobTitle.Location = new System.Drawing.Point(0, 0);
             this.dgvJobTitle.Name = "dgvJobTitle";
@@ -350,6 +357,23 @@
             this.dgvJobTitle.Size = new System.Drawing.Size(806, 263);
             this.dgvJobTitle.TabIndex = 3;
             this.dgvJobTitle.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJobTitle_CellClick);
+            // 
+            // cb_role_name
+            // 
+            this.cb_role_name.FormattingEnabled = true;
+            this.cb_role_name.Location = new System.Drawing.Point(166, 99);
+            this.cb_role_name.Name = "cb_role_name";
+            this.cb_role_name.Size = new System.Drawing.Size(237, 24);
+            this.cb_role_name.TabIndex = 181;
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.cb_role_name;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 87);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(395, 30);
+            this.layoutControlItem8.Text = "Role name";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(142, 16);
             // 
             // job_title_id
             // 
@@ -374,6 +398,14 @@
             this.job_description.MinimumWidth = 450;
             this.job_description.Name = "job_description";
             this.job_description.Width = 450;
+            // 
+            // role_name
+            // 
+            this.role_name.DataPropertyName = "role_name";
+            this.role_name.HeaderText = "Role name";
+            this.role_name.MinimumWidth = 6;
+            this.role_name.Name = "role_name";
+            this.role_name.Width = 125;
             // 
             // frmJobTitle
             // 
@@ -405,6 +437,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobTitle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -420,9 +453,6 @@
         private System.Windows.Forms.ToolStripButton btnThoat;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dgvJobTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn job_title_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn job_title_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn job_description;
         private DevExpress.XtraEditors.GroupControl panel;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.SimpleButton btnTim;
@@ -441,5 +471,11 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private System.Windows.Forms.ComboBox cb_role_name;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn job_title_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn job_title_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn job_description;
+        private System.Windows.Forms.DataGridViewComboBoxColumn role_name;
     }
 }

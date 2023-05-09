@@ -20,27 +20,57 @@ namespace BALayer
         {
             return (string)db.MyExecuteScalar("SELECT DBO.AutoIDPurchaseOrder()");
         }
-        public bool UpdatePurchaseOrder(ref string err, string branch_id,
-            string product_name, string employee_id, string event_id, DateTime order_date, int total_cost)
+        public bool InsertPurchaseOrder(ref string err, string customer_id,
+            string branch_id, string employee_id, string event_id, DateTime order_date, int total_cost)
         {
-            return db.MyExecuteNonQuery("SP_Update_OrderDetail",
+            return db.MyExecuteNonQuery("SP_Insert_PurchaseOrder",
                 ref err,
+                new SqlParameter("@customer_id", customer_id),
                 new SqlParameter("@branch_id", branch_id),
-                new SqlParameter("@product_name", product_name),
                 new SqlParameter("@employee_id", employee_id),
                 new SqlParameter("@event_id", event_id),
                 new SqlParameter("@order_date", order_date),
                 new SqlParameter("@total_cost", total_cost));
         }
-        public bool DeleteOrderDetail(ref string err, string product_name)
+
+        public bool InsertOrderDetail(ref string err, string order_id,
+            string product_id, int quantity)
         {
-            return db.MyExecuteNonQuery("SP_Delete_OrderDetail",
+            return db.MyExecuteNonQuery("SP_Insert_OrderDetail",
                 ref err,
-                new SqlParameter("@product_name", product_name));
+                new SqlParameter("@order_id", order_id),
+                new SqlParameter("@product_id", product_id),
+                new SqlParameter("@quantity", quantity));
         }
-        public int GetTotalCost()
+        public DataTable GetOrderDetail(string order_id)
         {
-            return (int)db.MyExecuteScalar("select dbo.GetTotalCost()");
+            return db.ExecuteNonQueryDataTable("select * from dbo.GetOrderDetail(@order_id)",
+                new SqlParameter("@order_id", order_id));
+        }
+        public DataTable FindOrderByID(string order_id)
+        {
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindOrderByID(@order_id)",
+                 new SqlParameter("@order_id", order_id));
+        }
+        public DataTable FindOrderByCustomer(string customer_id)
+        {
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindOrderByCustomer(@customer_id)",
+                 new SqlParameter("@customer_id", customer_id));
+        }
+        public DataTable FindOrderByBranch(string branch_id)
+        {
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindOrderByBranch(@branch_id)",
+                 new SqlParameter("@branch_id", branch_id));
+        }
+        public DataTable FindOrderByEmployee(string employee_id)
+        {
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindOrderByEmployee(@employee_id)",
+                 new SqlParameter("@employee_id", employee_id));
+        }
+        public DataTable FindOrderByEvent(string event_id)
+        {
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.FindOrderByEvent(@event_id)",
+                 new SqlParameter("@event_id", event_id));
         }
     }
 }

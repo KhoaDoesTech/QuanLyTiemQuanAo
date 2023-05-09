@@ -45,6 +45,7 @@ namespace QuanLyTiemQuanAo
                 if (f)
                 {
                     MessageBox.Show("Đã thêm xong!");
+                    this.Close();
                 }
                 else
                 {
