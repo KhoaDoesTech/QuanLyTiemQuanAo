@@ -25,6 +25,11 @@ namespace BALayer
         {
             return (int)db.MyExecuteScalar("select dbo.GetEmployeeQuantity()");
         }
+        public int GetBranchEmployeeQuantity(string branch_id)
+        {
+            return (int)db.MyExecuteScalarNoQuery("select dbo.GetEmployeeQuantity(@branch_id)",
+                new SqlParameter("@branch_id", branch_id));
+        }
         public DataTable GetMostSoldEmployee(string branch_id, int month, int year)
         {
             return db.ExecuteNonQueryDataTable("select * from DBO.GetMostSoldEmployee(@branch_id, @month, @year)",

@@ -20,8 +20,9 @@ namespace QuanLyTiemQuanAo
         DB_Branch dbb;
         DataTable dtBranch = null;
 
+        DB_Employee dbe;
+
         DB_StatisticsEmployee dbse;
-        DataTable dtStatisticsEmployee = null;
         string ConnStr;
 
         public void SetConnection(string connectString)
@@ -97,11 +98,6 @@ namespace QuanLyTiemQuanAo
             dgvMost.DataSource = dtStatistics;
         }
 
-        private void cb_Month_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void cb_Month_SelectionChangeCommitted(object sender, EventArgs e)
         {
             DataTable dtStatistics = new DataTable();
@@ -124,12 +120,22 @@ namespace QuanLyTiemQuanAo
 
             dgvMost.DataSource = dtStatistics;
 
-            dtStatisticsEmployee = new DataTable();
-            dtStatisticsEmployee.Clear();
-            dtStatisticsEmployee = dbse.GetStatisticsEmployee(cb_Branch.SelectedValue.ToString());
-            dgvEmployeeQuantity.DataSource = dtStatisticsEmployee;
+            DataTable dt = new DataTable();
 
-            groupControl2.Text = "Số lượng nhân viên: " + dbse.GetEmployeeQuantity().ToString();
+            int x = cb_Branch.SelectedIndex;
+            switch (x)
+            {
+                case 0:
+                    dt = dbe.GetEmployee();
+                    dgvEmployeeQuantity.DataSource = dt;
+                    groupControl2.Text = "Số lượng nhân viên: " + dbse.GetEmployeeQuantity().ToString();
+                    break;
+                case 1:
+                    dt = dbse.GetStatisticsEmployee(cb_Branch.SelectedValue.ToString());
+                    dgvEmployeeQuantity.DataSource = dt;
+                    groupControl2.Text = "Số lượng nhân viên: " + dbse.GetBranchEmployeeQuantity(cb_Branch.SelectedValue.ToString()).ToString();
+                    break;
+            }
         }
     }
 }
