@@ -47,7 +47,6 @@
             this.txt_event_id = new System.Windows.Forms.TextBox();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -55,13 +54,12 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.dgvEvent = new System.Windows.Forms.DataGridView();
             this.event_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.event_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -73,7 +71,6 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
@@ -81,9 +78,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -165,7 +162,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvEvent);
+            this.splitContainer1.Panel2.Controls.Add(this.groupControl2);
             this.splitContainer1.Size = new System.Drawing.Size(881, 399);
             this.splitContainer1.SplitterDistance = 204;
             this.splitContainer1.SplitterWidth = 5;
@@ -205,10 +202,10 @@
             // 
             this.btn_Tim.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Tim.ImageOptions.Image")));
             this.btn_Tim.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btn_Tim.Location = new System.Drawing.Point(440, 54);
+            this.btn_Tim.Location = new System.Drawing.Point(783, 12);
             this.btn_Tim.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Tim.Name = "btn_Tim";
-            this.btn_Tim.Size = new System.Drawing.Size(425, 27);
+            this.btn_Tim.Size = new System.Drawing.Size(82, 27);
             this.btn_Tim.StyleController = this.layoutControl1;
             this.btn_Tim.TabIndex = 235;
             this.btn_Tim.Text = "Tìm";
@@ -219,7 +216,7 @@
             this.txtSearch.Location = new System.Drawing.Point(654, 12);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(211, 25);
+            this.txtSearch.Size = new System.Drawing.Size(125, 25);
             this.txtSearch.TabIndex = 234;
             // 
             // cbSearch
@@ -235,7 +232,7 @@
             // 
             this.dtp_date_end.CalendarFont = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_date_end.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_date_end.Location = new System.Drawing.Point(101, 137);
+            this.dtp_date_end.Location = new System.Drawing.Point(101, 101);
             this.dtp_date_end.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dtp_date_end.Name = "dtp_date_end";
             this.dtp_date_end.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -246,7 +243,7 @@
             // 
             this.dtp_date_start.CalendarFont = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_date_start.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_date_start.Location = new System.Drawing.Point(101, 93);
+            this.dtp_date_start.Location = new System.Drawing.Point(101, 72);
             this.dtp_date_start.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dtp_date_start.Name = "dtp_date_start";
             this.dtp_date_start.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -255,7 +252,7 @@
             // 
             // txt_event_name
             // 
-            this.txt_event_name.Location = new System.Drawing.Point(101, 54);
+            this.txt_event_name.Location = new System.Drawing.Point(101, 43);
             this.txt_event_name.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txt_event_name.Name = "txt_event_name";
             this.txt_event_name.Size = new System.Drawing.Size(335, 25);
@@ -275,16 +272,13 @@
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.emptySpaceItem1,
-            this.layoutControlItem2,
             this.layoutControlItem5,
             this.layoutControlItem6,
+            this.emptySpaceItem2,
+            this.layoutControlItem2,
             this.layoutControlItem7,
             this.layoutControlItem3,
-            this.layoutControlItem4,
-            this.emptySpaceItem2,
-            this.emptySpaceItem3,
-            this.emptySpaceItem4});
+            this.layoutControlItem4});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(877, 174);
             this.Root.TextVisible = false;
@@ -294,22 +288,14 @@
             this.layoutControlItem1.Control = this.txt_event_id;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(428, 30);
+            this.layoutControlItem1.Size = new System.Drawing.Size(428, 31);
             this.layoutControlItem1.Text = "Mã sự kiện";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(77, 16);
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(428, 81);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(429, 73);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txt_event_name;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 42);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 31);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(428, 29);
             this.layoutControlItem2.Text = "Tên sự kiên";
@@ -320,7 +306,7 @@
             this.layoutControlItem5.Control = this.cbSearch;
             this.layoutControlItem5.Location = new System.Drawing.Point(428, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(214, 30);
+            this.layoutControlItem5.Size = new System.Drawing.Size(214, 31);
             this.layoutControlItem5.Text = "Tìm kiếm";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(77, 16);
             // 
@@ -329,23 +315,23 @@
             this.layoutControlItem6.Control = this.txtSearch;
             this.layoutControlItem6.Location = new System.Drawing.Point(642, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(215, 30);
+            this.layoutControlItem6.Size = new System.Drawing.Size(129, 31);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btn_Tim;
-            this.layoutControlItem7.Location = new System.Drawing.Point(428, 42);
+            this.layoutControlItem7.Location = new System.Drawing.Point(771, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(429, 39);
+            this.layoutControlItem7.Size = new System.Drawing.Size(86, 31);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.dtp_date_start;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 81);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 60);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(428, 29);
             this.layoutControlItem3.Text = "Ngày bắt đầu";
@@ -354,35 +340,19 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.dtp_date_end;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 125);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 89);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(428, 29);
+            this.layoutControlItem4.Size = new System.Drawing.Size(428, 65);
             this.layoutControlItem4.Text = "Ngày kết thúc";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(77, 16);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 30);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(428, 31);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(857, 12);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(429, 123);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem3
-            // 
-            this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 71);
-            this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(428, 10);
-            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem4
-            // 
-            this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 110);
-            this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(428, 15);
-            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // dgvEvent
             // 
@@ -394,12 +364,12 @@
             this.date_end});
             this.dgvEvent.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgvEvent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEvent.Location = new System.Drawing.Point(0, 0);
+            this.dgvEvent.Location = new System.Drawing.Point(2, 28);
             this.dgvEvent.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dgvEvent.Name = "dgvEvent";
             this.dgvEvent.RowHeadersWidth = 51;
             this.dgvEvent.RowTemplate.Height = 24;
-            this.dgvEvent.Size = new System.Drawing.Size(881, 190);
+            this.dgvEvent.Size = new System.Drawing.Size(877, 160);
             this.dgvEvent.TabIndex = 131;
             this.dgvEvent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEvent_CellClick);
             // 
@@ -435,6 +405,16 @@
             this.date_end.Name = "date_end";
             this.date_end.Width = 125;
             // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.dgvEvent);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(0, 0);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(881, 190);
+            this.groupControl2.TabIndex = 132;
+            this.groupControl2.Text = "Bảng sự kiện";
+            // 
             // frmEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -444,7 +424,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEvent";
-            this.Text = "frmEvent";
+            this.Text = "Danh mục sự kiện";
             this.Load += new System.EventHandler(this.frmEvent_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -458,7 +438,6 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
@@ -466,9 +445,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -494,7 +473,6 @@
         private System.Windows.Forms.TextBox txt_event_name;
         private System.Windows.Forms.TextBox txt_event_id;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private System.Windows.Forms.DateTimePicker dtp_date_end;
         private System.Windows.Forms.DateTimePicker dtp_date_start;
@@ -507,7 +485,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_Tim;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
     }
 }

@@ -105,5 +105,11 @@ namespace BALayer
                 new SqlParameter("@picture", picture),
                 new SqlParameter("@unit_price", unit_price));
         }
+
+        public DataTable ShowProduct(string branch_id)
+        {
+            return db.ExecuteNonQueryDataTable("SELECT * FROM DBO.ShowProduct(@branch_id)",
+                new SqlParameter("@branch_id", branch_id));
+        }
     }
 }

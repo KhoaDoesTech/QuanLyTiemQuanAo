@@ -1,31 +1,57 @@
-﻿using DevExpress.XtraBars;
+﻿using BALayer;
+using DevExpress.XtraBars;
+using DevExpress.XtraEditors.TextEditController.Win32;
 using DevExpress.XtraLayout.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace QuanLyTiemQuanAo
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         string ConnStr;
+        string username;
+        string password;
+
+        string LogOut = @"Data Source=(local); Initial Catalog=QLTiemQuanAo; Integrated Security=True";
+        SqlConnection conn = null;
+        SqlCommand comm = null;
+
+        DB_Personal dbp;
         public frmMain(string strConnect_local)
         {
             InitializeComponent();
             ConnStr = strConnect_local;
+            dbp = new DB_Personal(ConnStr);
 
-            ribbonPageGroup1.Visible = true;
-            ribbonPage2.Visible = true;
-            ribbonPage3.Visible = true;
-            ribbonPage4.Visible = true;
-            ribbonPage5.Visible = true;
-            barButtonItem45.Visibility = BarItemVisibility.Always;
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(ConnStr);
+            username = builder.UserID;
+            password = builder.Password;
+
+            if (dbp.GetRole(username, password) == "sysadmin")
+            {
+                ribbonPage2.Visible = true;
+                ribbonPage3.Visible = true;
+                ribbonPage4.Visible = true;
+                ribbonPage5.Visible = false;
+            }
+            else
+            {
+                ribbonPage2.Visible = false;
+                ribbonPage3.Visible = false;
+                ribbonPage4.Visible = false;
+                ribbonPage5.Visible = true;
+            }
         }
 
         void openForm(Type typeForm)
@@ -161,7 +187,7 @@ namespace QuanLyTiemQuanAo
 
         private void barButtonItem28_ItemClick(object sender, ItemClickEventArgs e)
         {
-            openViewForm(typeof(frmView), 2);
+            openForm(typeof(frmShowProduct));
         }
 
         private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
@@ -181,7 +207,7 @@ namespace QuanLyTiemQuanAo
 
         private void barButtonItem24_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //openForm(typeof(frmHistoryPurchase));
+            openForm(typeof(frmHistoryPurchase));
         }
 
         private void btnSuaThongTin_ItemClick(object sender, ItemClickEventArgs e)
@@ -199,26 +225,49 @@ namespace QuanLyTiemQuanAo
             openForm(typeof(frmStatisticsCustomer));
         }
 
-        private void barButtonItem36_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
-        private void barButtonItem43_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
-        private void barButtonItem44_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            openForm(typeof(frmLogin));
-        }
-
         private void barButtonItem45_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmLogin login = new frmLogin();
-            this.Hide();
-            login.Show();
+            conn = new SqlConnection(LogOut);
+            comm = conn.CreateCommand();
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+            conn.Open();
+
+            comm.Parameters.Clear();
+            comm.CommandText = "SP_Logout";
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@username", username);
+            try
+            {
+                comm.ExecuteNonQuery();
+                frmLogin login = new frmLogin();
+                this.Hide();
+                login.Show();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Đã thêm chưa xong!\n\r" + "Lỗi:" + ex.Message);
+            }
+            finally
+            {
+                if (comm != null)
+                {
+                    comm.Dispose();
+                    comm = null;
+                }
+
+                if (conn != null)
+                {
+                    conn.Close();
+                    conn.Dispose();
+                    conn = null;
+                }
+            }
+        }
+
+        private void barButtonItem36_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmStatisticsProduct));
         }
     }
 }

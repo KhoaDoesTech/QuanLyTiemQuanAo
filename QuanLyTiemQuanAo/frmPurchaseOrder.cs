@@ -487,7 +487,7 @@ namespace QuanLyTiemQuanAo
             cb_size.DisplayMember = "size";
             cb_size.ValueMember = "size";
 
-            LayThongTin();
+            //LayThongTin();
         }
 
         private void LayThongTin()

@@ -159,7 +159,7 @@ namespace QuanLyTiemQuanAo
         {
             try
             {
-                // Lấy thứ tự record hiện hành 
+                // Lấy thứ tự record hiện hành
                 int r = dgvEmployee.CurrentCell.RowIndex;
                 // Lấy employee_id của record hiện hành 
                 string str_employee_id =

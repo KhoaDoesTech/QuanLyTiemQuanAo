@@ -46,5 +46,32 @@ namespace BALayer
                 new SqlParameter("@passcodeold", passcodeold),
                 new SqlParameter("@passcodenew", passcodenew));
         }
+
+        public string GetRole(string username, string passcode)
+        {
+            return (string)db.MyExecuteScalarNoQuery("SELECT DBO.GetRole(@username, @passcode)",
+                new SqlParameter("@username", username),
+                new SqlParameter("@passcode", passcode));
+        }
+
+        public bool UpdatePerson(ref string err, string full_name, string gender, string birthday,
+            string phone, string address, string email)
+        {
+            return db.MyExecuteNonQuery("SP_Update_Person",
+                ref err,
+                new SqlParameter("@full_name", full_name),
+                new SqlParameter("@gender", gender),
+                new SqlParameter("@birthday", birthday),
+                new SqlParameter("@phone", phone),
+                new SqlParameter("@address", address),
+                new SqlParameter("@email", email));
+        }
+
+        public bool Logout(ref string err, string username)
+        {
+            return db.MyExecuteNonQuery("SP_Logout",
+                ref err,
+                new SqlParameter("@username", username));
+        }
     }
 }

@@ -131,6 +131,12 @@
     <Compile Include="frmEvent.Designer.cs">
       <DependentUpon>frmEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHistoryPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistoryPurchase.Designer.cs">
+      <DependentUpon>frmHistoryPurchase.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmJob.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,12 +167,6 @@
     <Compile Include="frmModifyPerson.Designer.cs">
       <DependentUpon>frmModifyPerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMonthSummary.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMonthSummary.Designer.cs">
-      <DependentUpon>frmMonthSummary.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPerson.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +191,12 @@
     <Compile Include="frmPurchaseOrder.Designer.cs">
       <DependentUpon>frmPurchaseOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmShowProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowProduct.Designer.cs">
+      <DependentUpon>frmShowProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStatisticsCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,12 @@
     </Compile>
     <Compile Include="frmStatisticsEmployee.Designer.cs">
       <DependentUpon>frmStatisticsEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStatisticsProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatisticsProduct.Designer.cs">
+      <DependentUpon>frmStatisticsProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="frmStock.cs">
       <SubType>Form</SubType>
@@ -228,6 +240,12 @@
       <DependentUpon>frmView.cs</DependentUpon>
     </Compile>
     <Compile Include="IConnectionForm.cs" />
+    <Compile Include="frmMonthSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMonthSummary.Designer.cs">
+      <DependentUpon>frmMonthSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBussiness.resx">
@@ -260,6 +278,9 @@
     <EmbeddedResource Include="frmEvent.resx">
       <DependentUpon>frmEvent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHistoryPurchase.resx">
+      <DependentUpon>frmHistoryPurchase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmJob.resx">
       <DependentUpon>frmJob.cs</DependentUpon>
     </EmbeddedResource>
@@ -290,11 +311,17 @@
     <EmbeddedResource Include="frmPurchaseOrder.resx">
       <DependentUpon>frmPurchaseOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmShowProduct.resx">
+      <DependentUpon>frmShowProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmStatisticsCustomer.resx">
       <DependentUpon>frmStatisticsCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStatisticsEmployee.resx">
       <DependentUpon>frmStatisticsEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatisticsProduct.resx">
+      <DependentUpon>frmStatisticsProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStock.resx">
       <DependentUpon>frmStock.cs</DependentUpon>

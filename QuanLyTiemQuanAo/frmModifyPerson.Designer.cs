@@ -119,6 +119,7 @@
             this.btnThoat.Size = new System.Drawing.Size(51, 44);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // panelControl1
             // 
@@ -378,6 +379,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmModifyPerson";
             this.Text = "Chỉnh sửa thông tin cá nhân";
+            this.Load += new System.EventHandler(this.frmModifyPerson_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

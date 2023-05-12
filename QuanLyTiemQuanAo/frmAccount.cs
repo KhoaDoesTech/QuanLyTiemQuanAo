@@ -42,7 +42,7 @@ namespace QuanLyTiemQuanAo
                 // Vận chuyển dữ liệu vào DataTable dtEmployee 
                 dtEmployee = new DataTable();
                 dtEmployee.Clear();
-                dtEmployee = dbe.GetEmployee();
+                dtEmployee = dbe.GetAccountEmployee();
                 // Đưa dữ liệu lên ComboBox trong DataGridView
                 (dgvAccount.Columns["employee_id"] as
                 DataGridViewComboBoxColumn).DataSource = dtEmployee;
@@ -75,7 +75,7 @@ namespace QuanLyTiemQuanAo
         {
             btnThem.Visible = false;
             btnSua.Visible = false;
-
+            btnXoa.Visible = false;
             btnLuu.Visible = true;
             btnHuy.Visible = true;
             btnThoat.Visible = false;
@@ -241,6 +241,54 @@ namespace QuanLyTiemQuanAo
                 dt = dba.FindAccount(txtSearch.Text);
                 dgvAccount.DataSource = dt;
             }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lấy thứ tự record hiện hành
+                int r = dgvAccount.CurrentCell.RowIndex;
+                // Lấy employee_id của record hiện hành 
+                string str_employee_id =
+                dgvAccount.Rows[r].Cells[0].Value.ToString();
+                // Viết câu lệnh SQL 
+                // Hiện thông báo xác nhận việc xóa mẫu tin 
+                // Khai báo biến answer 
+                DialogResult answer;
+                // Hiện hộp thoại hỏi đadmiáp 
+                answer = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                // Kiểm tra có nhấp chọn nút Ok không? 
+                string err = "";
+                if (answer == DialogResult.Yes)
+                {
+
+                    // Thực hiện câu lệnh SQL 
+                    bool f = dba.DeleteAccounts(ref err, cb_employee_id.SelectedValue.ToString());
+                    if (f)
+                    {
+                        // Cập nhật lại DataGridView 
+                        LoadData();
+                        // Thông báo 
+                        MessageBox.Show("Đã xóa xong!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không xóa được!\n\r" + "Lỗi:" + err);
+                    }
+                }
+                else
+                {
+                    // Thông báo 
+                    MessageBox.Show("Không thực hiện việc xóa mẫu tin!");
+                }
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Không xóa được. Lỗi rồi!!!");
+            }
+            // Đóng kết nối
         }
     }
 }

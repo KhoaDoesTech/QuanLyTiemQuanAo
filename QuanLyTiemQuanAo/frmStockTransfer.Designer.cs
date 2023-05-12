@@ -36,12 +36,6 @@
             this.btnHuy = new System.Windows.Forms.ToolStripButton();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.dgvStockTransfer = new System.Windows.Forms.DataGridView();
-            this.from_branch_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.to_branch_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.product_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.transfer_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -65,6 +59,13 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.dgvStockTransfer = new System.Windows.Forms.DataGridView();
+            this.from_branch_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.to_branch_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.product_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.transfer_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
@@ -72,7 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).BeginInit();
             this.splitContainerControl1.Panel2.SuspendLayout();
             this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStockTransfer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
@@ -96,6 +96,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStockTransfer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -188,68 +191,11 @@
             // 
             // splitContainerControl1.Panel2
             // 
-            this.splitContainerControl1.Panel2.Controls.Add(this.dgvStockTransfer);
+            this.splitContainerControl1.Panel2.Controls.Add(this.groupControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1278, 463);
             this.splitContainerControl1.SplitterPosition = 169;
             this.splitContainerControl1.TabIndex = 4;
-            // 
-            // dgvStockTransfer
-            // 
-            this.dgvStockTransfer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStockTransfer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.from_branch_id,
-            this.to_branch_id,
-            this.product_id,
-            this.transfer_date,
-            this.quantity});
-            this.dgvStockTransfer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvStockTransfer.Location = new System.Drawing.Point(0, 0);
-            this.dgvStockTransfer.Name = "dgvStockTransfer";
-            this.dgvStockTransfer.RowHeadersWidth = 51;
-            this.dgvStockTransfer.RowTemplate.Height = 24;
-            this.dgvStockTransfer.Size = new System.Drawing.Size(1278, 282);
-            this.dgvStockTransfer.TabIndex = 1;
-            // 
-            // from_branch_id
-            // 
-            this.from_branch_id.DataPropertyName = "from_branch_id";
-            this.from_branch_id.HeaderText = "Chi nhánh chuyển";
-            this.from_branch_id.MinimumWidth = 6;
-            this.from_branch_id.Name = "from_branch_id";
-            this.from_branch_id.Width = 125;
-            // 
-            // to_branch_id
-            // 
-            this.to_branch_id.DataPropertyName = "to_branch_id";
-            this.to_branch_id.HeaderText = "Chi nhánh nhập";
-            this.to_branch_id.MinimumWidth = 6;
-            this.to_branch_id.Name = "to_branch_id";
-            this.to_branch_id.Width = 125;
-            // 
-            // product_id
-            // 
-            this.product_id.DataPropertyName = "product_id";
-            this.product_id.HeaderText = "Sản phẩm";
-            this.product_id.MinimumWidth = 6;
-            this.product_id.Name = "product_id";
-            this.product_id.Width = 125;
-            // 
-            // transfer_date
-            // 
-            this.transfer_date.DataPropertyName = "transfer_date";
-            this.transfer_date.HeaderText = "Ngày nhập";
-            this.transfer_date.MinimumWidth = 6;
-            this.transfer_date.Name = "transfer_date";
-            this.transfer_date.Width = 125;
-            // 
-            // quantity
-            // 
-            this.quantity.DataPropertyName = "quantity";
-            this.quantity.HeaderText = "Số lượng";
-            this.quantity.MinimumWidth = 6;
-            this.quantity.Name = "quantity";
-            this.quantity.Width = 125;
             // 
             // groupControl1
             // 
@@ -490,6 +436,73 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
+            // dgvStockTransfer
+            // 
+            this.dgvStockTransfer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStockTransfer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.from_branch_id,
+            this.to_branch_id,
+            this.product_id,
+            this.transfer_date,
+            this.quantity});
+            this.dgvStockTransfer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvStockTransfer.Location = new System.Drawing.Point(2, 28);
+            this.dgvStockTransfer.Name = "dgvStockTransfer";
+            this.dgvStockTransfer.RowHeadersWidth = 51;
+            this.dgvStockTransfer.RowTemplate.Height = 24;
+            this.dgvStockTransfer.Size = new System.Drawing.Size(1274, 252);
+            this.dgvStockTransfer.TabIndex = 1;
+            // 
+            // from_branch_id
+            // 
+            this.from_branch_id.DataPropertyName = "from_branch_id";
+            this.from_branch_id.HeaderText = "Chi nhánh chuyển";
+            this.from_branch_id.MinimumWidth = 6;
+            this.from_branch_id.Name = "from_branch_id";
+            this.from_branch_id.Width = 125;
+            // 
+            // to_branch_id
+            // 
+            this.to_branch_id.DataPropertyName = "to_branch_id";
+            this.to_branch_id.HeaderText = "Chi nhánh nhập";
+            this.to_branch_id.MinimumWidth = 6;
+            this.to_branch_id.Name = "to_branch_id";
+            this.to_branch_id.Width = 125;
+            // 
+            // product_id
+            // 
+            this.product_id.DataPropertyName = "product_id";
+            this.product_id.HeaderText = "Sản phẩm";
+            this.product_id.MinimumWidth = 6;
+            this.product_id.Name = "product_id";
+            this.product_id.Width = 125;
+            // 
+            // transfer_date
+            // 
+            this.transfer_date.DataPropertyName = "transfer_date";
+            this.transfer_date.HeaderText = "Ngày nhập";
+            this.transfer_date.MinimumWidth = 6;
+            this.transfer_date.Name = "transfer_date";
+            this.transfer_date.Width = 125;
+            // 
+            // quantity
+            // 
+            this.quantity.DataPropertyName = "quantity";
+            this.quantity.HeaderText = "Số lượng";
+            this.quantity.MinimumWidth = 6;
+            this.quantity.Name = "quantity";
+            this.quantity.Width = 125;
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.dgvStockTransfer);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(0, 0);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(1278, 282);
+            this.groupControl2.TabIndex = 2;
+            this.groupControl2.Text = "Bảng chuyển kho";
+            // 
             // frmStockTransfer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -508,7 +521,6 @@
             this.splitContainerControl1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStockTransfer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2.Panel1)).EndInit();
@@ -532,6 +544,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStockTransfer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -576,5 +591,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
     }
 }

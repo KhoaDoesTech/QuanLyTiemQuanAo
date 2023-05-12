@@ -25,12 +25,13 @@ namespace BALayer
             return db.ExecuteQueryDataTable("select * from JobTitle");
         }
         public bool InsertJobTitle(ref string err,
-             string job_title_name, string job_description)
+             string job_title_name, string job_description, string role_name)
         {
             return db.MyExecuteNonQuery("SP_Insert_JobTitle",
                 ref err,
                 new SqlParameter("@job_title_name", job_title_name),
-                new SqlParameter("@job_description", job_description));
+                new SqlParameter("@job_description", job_description),
+                new SqlParameter("@role_name", role_name));
         }
         public DataTable FindJobTitleByID(string job_title_id)
         {
@@ -43,13 +44,14 @@ namespace BALayer
                  new SqlParameter("@job_title_name", job_title_name));
         }
         public bool UpdateJobTitle(ref string err, string job_title_id,
-             string job_title_name, string job_description)
+             string job_title_name, string job_description, string role_name)
         {
             return db.MyExecuteNonQuery("SP_Update_JobTitle",
                 ref err,
                 new SqlParameter("@job_title_id", job_title_id),
                 new SqlParameter("@job_title_name", job_title_name),
-                new SqlParameter("@job_description", job_description));
+                new SqlParameter("@job_description", job_description),
+                new SqlParameter("@role_name", role_name));
         }
     }
 }

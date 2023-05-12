@@ -55,6 +55,7 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.dgvJob = new System.Windows.Forms.DataGridView();
             this.job_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.job_title_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -82,6 +83,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJob)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,7 +166,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvJob);
+            this.splitContainer1.Panel2.Controls.Add(this.groupControl1);
             this.splitContainer1.Size = new System.Drawing.Size(898, 443);
             this.splitContainer1.SplitterDistance = 228;
             this.splitContainer1.TabIndex = 4;
@@ -364,6 +367,16 @@
             this.layoutControlItem9.Text = "Lương cơ bản";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(137, 16);
             // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.dgvJob);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(898, 211);
+            this.groupControl1.TabIndex = 5;
+            this.groupControl1.Text = "Bảng thông tin";
+            // 
             // dgvJob
             // 
             this.dgvJob.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -374,11 +387,11 @@
             this.job_name,
             this.base_salary});
             this.dgvJob.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvJob.Location = new System.Drawing.Point(0, 0);
+            this.dgvJob.Location = new System.Drawing.Point(2, 28);
             this.dgvJob.Name = "dgvJob";
             this.dgvJob.RowHeadersWidth = 51;
             this.dgvJob.RowTemplate.Height = 24;
-            this.dgvJob.Size = new System.Drawing.Size(898, 211);
+            this.dgvJob.Size = new System.Drawing.Size(894, 181);
             this.dgvJob.TabIndex = 4;
             this.dgvJob.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJob_CellClick);
             // 
@@ -450,7 +463,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmJob";
-            this.Text = "frmJob";
+            this.Text = "Quản lý công việc";
             this.Load += new System.EventHandler(this.frmJob_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -472,6 +485,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvJob)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -515,5 +530,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn branch_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn job_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn base_salary;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
     }
 }

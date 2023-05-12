@@ -59,6 +59,7 @@
             this.customer_type_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customer_type_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.units_purchased = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -80,6 +81,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -161,7 +164,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvCustomerType);
+            this.splitContainer1.Panel2.Controls.Add(this.groupControl2);
             this.splitContainer1.Size = new System.Drawing.Size(910, 387);
             this.splitContainer1.SplitterDistance = 179;
             this.splitContainer1.SplitterWidth = 5;
@@ -200,10 +203,10 @@
             // 
             this.btn_Tim.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Tim.ImageOptions.Image")));
             this.btn_Tim.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btn_Tim.Location = new System.Drawing.Point(803, 12);
+            this.btn_Tim.Location = new System.Drawing.Point(827, 12);
             this.btn_Tim.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Tim.Name = "btn_Tim";
-            this.btn_Tim.Size = new System.Drawing.Size(91, 27);
+            this.btn_Tim.Size = new System.Drawing.Size(67, 27);
             this.btn_Tim.StyleController = this.layoutControl1;
             this.btn_Tim.TabIndex = 220;
             this.btn_Tim.Text = "Tìm";
@@ -215,7 +218,7 @@
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(138, 27);
+            this.txtSearch.Size = new System.Drawing.Size(162, 27);
             this.txtSearch.TabIndex = 219;
             // 
             // cbSearch
@@ -237,7 +240,7 @@
             // 
             // txt_customer_type_name
             // 
-            this.txt_customer_type_name.Location = new System.Drawing.Point(136, 55);
+            this.txt_customer_type_name.Location = new System.Drawing.Point(136, 41);
             this.txt_customer_type_name.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txt_customer_type_name.Name = "txt_customer_type_name";
             this.txt_customer_type_name.Size = new System.Drawing.Size(313, 25);
@@ -245,7 +248,7 @@
             // 
             // txt_units_purchased
             // 
-            this.txt_units_purchased.Location = new System.Drawing.Point(136, 112);
+            this.txt_units_purchased.Location = new System.Drawing.Point(136, 70);
             this.txt_units_purchased.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txt_units_purchased.Name = "txt_units_purchased";
             this.txt_units_purchased.Size = new System.Drawing.Size(313, 25);
@@ -256,16 +259,16 @@
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
             this.emptySpaceItem2,
-            this.layoutControlItem2,
             this.layoutControlItem3,
             this.emptySpaceItem1,
             this.emptySpaceItem3,
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.emptySpaceItem4,
-            this.layoutControlItem6});
+            this.layoutControlItem6,
+            this.layoutControlItem2,
+            this.layoutControlItem1});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(906, 149);
             this.Root.TextVisible = false;
@@ -273,7 +276,7 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txt_units_purchased;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 100);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 58);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(441, 29);
             this.layoutControlItem1.Text = "Số lượng hàng mua";
@@ -290,7 +293,7 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txt_customer_type_name;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 43);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 29);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(441, 29);
             this.layoutControlItem2.Text = "Tên loại khách";
@@ -308,17 +311,17 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 29);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 87);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(441, 14);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(441, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 72);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 97);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(441, 28);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(441, 32);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
@@ -336,7 +339,7 @@
             this.layoutControlItem5.CustomizationFormText = "|";
             this.layoutControlItem5.Location = new System.Drawing.Point(649, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(142, 31);
+            this.layoutControlItem5.Size = new System.Drawing.Size(166, 31);
             this.layoutControlItem5.Text = "|";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
@@ -352,9 +355,9 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btn_Tim;
-            this.layoutControlItem6.Location = new System.Drawing.Point(791, 0);
+            this.layoutControlItem6.Location = new System.Drawing.Point(815, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(95, 31);
+            this.layoutControlItem6.Size = new System.Drawing.Size(71, 31);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -367,12 +370,12 @@
             this.units_purchased});
             this.dgvCustomerType.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgvCustomerType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCustomerType.Location = new System.Drawing.Point(0, 0);
+            this.dgvCustomerType.Location = new System.Drawing.Point(2, 28);
             this.dgvCustomerType.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dgvCustomerType.Name = "dgvCustomerType";
             this.dgvCustomerType.RowHeadersWidth = 51;
             this.dgvCustomerType.RowTemplate.Height = 24;
-            this.dgvCustomerType.Size = new System.Drawing.Size(910, 203);
+            this.dgvCustomerType.Size = new System.Drawing.Size(906, 173);
             this.dgvCustomerType.TabIndex = 133;
             this.dgvCustomerType.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerType_CellClick);
             // 
@@ -400,6 +403,16 @@
             this.units_purchased.Name = "units_purchased";
             this.units_purchased.Width = 75;
             // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.dgvCustomerType);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(0, 0);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(910, 203);
+            this.groupControl2.TabIndex = 134;
+            this.groupControl2.Text = "Bảng loại khách hàng";
+            // 
             // frmCustomerType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -409,7 +422,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCustomerType";
-            this.Text = "frmCustomerType";
+            this.Text = "Danh mục loại khách hàng";
             this.Load += new System.EventHandler(this.frmCustomerType_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -433,6 +446,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,5 +485,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_Tim;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
     }
 }

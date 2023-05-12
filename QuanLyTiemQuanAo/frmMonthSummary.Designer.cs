@@ -34,35 +34,22 @@
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
             this.btnHuy = new System.Windows.Forms.ToolStripButton();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.panel = new DevExpress.XtraEditors.GroupControl();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.txt_salary = new System.Windows.Forms.TextBox();
-            this.txt_bonus_salary = new System.Windows.Forms.TextBox();
-            this.txt_products_sold = new System.Windows.Forms.TextBox();
             this.cb_summary_year = new System.Windows.Forms.ComboBox();
             this.cb_summary_month = new System.Windows.Forms.ComboBox();
-            this.txt_employee_id = new System.Windows.Forms.TextBox();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
-            this.btnTim = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.cbSearch = new System.Windows.Forms.ComboBox();
-            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnTim = new DevExpress.XtraEditors.SimpleButton();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.dgvMonthSummary = new System.Windows.Forms.DataGridView();
             this.employee_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.summary_month = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,35 +58,25 @@
             this.bonus_salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panel)).BeginInit();
-            this.panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
+            this.splitContainerControl1.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).BeginInit();
+            this.splitContainerControl1.Panel2.SuspendLayout();
+            this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).BeginInit();
-            this.layoutControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonthSummary)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,8 +91,8 @@
             this.btnThoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(927, 47);
-            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Size = new System.Drawing.Size(1278, 47);
+            this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // btnThem
@@ -168,299 +145,176 @@
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // splitContainer1
+            // splitContainerControl1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 47);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl1.Horizontal = false;
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 47);
+            this.splitContainerControl1.Name = "splitContainerControl1";
             // 
-            // splitContainer1.Panel1
+            // splitContainerControl1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.panel);
+            this.splitContainerControl1.Panel1.Controls.Add(this.groupControl1);
+            this.splitContainerControl1.Panel1.Text = "Panel1";
             // 
-            // splitContainer1.Panel2
+            // splitContainerControl1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvMonthSummary);
-            this.splitContainer1.Size = new System.Drawing.Size(927, 468);
-            this.splitContainer1.SplitterDistance = 263;
-            this.splitContainer1.TabIndex = 3;
+            this.splitContainerControl1.Panel2.Controls.Add(this.groupControl2);
+            this.splitContainerControl1.Panel2.Text = "Panel2";
+            this.splitContainerControl1.Size = new System.Drawing.Size(1278, 463);
+            this.splitContainerControl1.SplitterPosition = 122;
+            this.splitContainerControl1.TabIndex = 2;
             // 
-            // panel
+            // groupControl1
             // 
-            this.panel.Controls.Add(this.splitContainer2);
-            this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel.Location = new System.Drawing.Point(0, 0);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(927, 263);
-            this.panel.TabIndex = 1;
-            this.panel.Text = "Thông tin sản phẩm";
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(2, 28);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.layoutControl1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.layoutControl4);
-            this.splitContainer2.Size = new System.Drawing.Size(923, 233);
-            this.splitContainer2.SplitterDistance = 132;
-            this.splitContainer2.TabIndex = 0;
+            this.groupControl1.Controls.Add(this.layoutControl1);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(1278, 122);
+            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Text = "THÁNG TÍNH LƯƠNG";
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.txt_salary);
-            this.layoutControl1.Controls.Add(this.txt_bonus_salary);
-            this.layoutControl1.Controls.Add(this.txt_products_sold);
             this.layoutControl1.Controls.Add(this.cb_summary_year);
             this.layoutControl1.Controls.Add(this.cb_summary_month);
-            this.layoutControl1.Controls.Add(this.txt_employee_id);
+            this.layoutControl1.Controls.Add(this.cbSearch);
+            this.layoutControl1.Controls.Add(this.txtSearch);
+            this.layoutControl1.Controls.Add(this.btnTim);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Location = new System.Drawing.Point(2, 28);
             this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1108, 50, 812, 500);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(923, 132);
+            this.layoutControl1.Size = new System.Drawing.Size(1274, 92);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // txt_salary
-            // 
-            this.txt_salary.Location = new System.Drawing.Point(607, 70);
-            this.txt_salary.Name = "txt_salary";
-            this.txt_salary.Size = new System.Drawing.Size(304, 25);
-            this.txt_salary.TabIndex = 202;
-            // 
-            // txt_bonus_salary
-            // 
-            this.txt_bonus_salary.Location = new System.Drawing.Point(607, 41);
-            this.txt_bonus_salary.Name = "txt_bonus_salary";
-            this.txt_bonus_salary.Size = new System.Drawing.Size(304, 25);
-            this.txt_bonus_salary.TabIndex = 201;
-            // 
-            // txt_products_sold
-            // 
-            this.txt_products_sold.Location = new System.Drawing.Point(607, 12);
-            this.txt_products_sold.Name = "txt_products_sold";
-            this.txt_products_sold.Size = new System.Drawing.Size(304, 25);
-            this.txt_products_sold.TabIndex = 200;
             // 
             // cb_summary_year
             // 
             this.cb_summary_year.FormattingEnabled = true;
-            this.cb_summary_year.Location = new System.Drawing.Point(156, 71);
+            this.cb_summary_year.Location = new System.Drawing.Point(654, 12);
             this.cb_summary_year.Name = "cb_summary_year";
-            this.cb_summary_year.Size = new System.Drawing.Size(303, 24);
-            this.cb_summary_year.TabIndex = 199;
+            this.cb_summary_year.Size = new System.Drawing.Size(608, 24);
+            this.cb_summary_year.TabIndex = 5;
             // 
             // cb_summary_month
             // 
             this.cb_summary_month.FormattingEnabled = true;
-            this.cb_summary_month.Location = new System.Drawing.Point(156, 41);
+            this.cb_summary_month.Location = new System.Drawing.Point(77, 12);
             this.cb_summary_month.Name = "cb_summary_month";
-            this.cb_summary_month.Size = new System.Drawing.Size(303, 24);
-            this.cb_summary_month.TabIndex = 198;
+            this.cb_summary_month.Size = new System.Drawing.Size(508, 24);
+            this.cb_summary_month.TabIndex = 4;
             // 
-            // txt_employee_id
+            // cbSearch
             // 
-            this.txt_employee_id.Location = new System.Drawing.Point(156, 12);
-            this.txt_employee_id.Name = "txt_employee_id";
-            this.txt_employee_id.Size = new System.Drawing.Size(303, 25);
-            this.txt_employee_id.TabIndex = 186;
+            this.cbSearch.FormattingEnabled = true;
+            this.cbSearch.Location = new System.Drawing.Point(77, 53);
+            this.cbSearch.Name = "cbSearch";
+            this.cbSearch.Size = new System.Drawing.Size(297, 24);
+            this.cbSearch.TabIndex = 9;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(378, 53);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(440, 25);
+            this.txtSearch.TabIndex = 10;
+            // 
+            // btnTim
+            // 
+            this.btnTim.Location = new System.Drawing.Point(822, 53);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(440, 27);
+            this.btnTim.StyleController = this.layoutControl1;
+            this.btnTim.TabIndex = 11;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.emptySpaceItem1,
             this.layoutControlItem1,
+            this.emptySpaceItem1,
             this.layoutControlItem2,
-            this.layoutControlItem3,
-            this.layoutControlItem4,
-            this.layoutControlItem5,
-            this.layoutControlItem6});
+            this.layoutControlItem6,
+            this.layoutControlItem7,
+            this.layoutControlItem8});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(923, 132);
+            this.Root.Size = new System.Drawing.Size(1274, 92);
             this.Root.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.cb_summary_month;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(577, 30);
+            this.layoutControlItem1.Text = "Tháng";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(53, 16);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(451, 87);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 30);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(452, 25);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1254, 11);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.txt_employee_id;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(451, 29);
-            this.layoutControlItem1.Text = "Mã nhân viên";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(132, 16);
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.cb_summary_month;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 29);
+            this.layoutControlItem2.Control = this.cb_summary_year;
+            this.layoutControlItem2.Location = new System.Drawing.Point(577, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(451, 30);
-            this.layoutControlItem2.Text = "Tháng";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(132, 16);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.cb_summary_year;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 59);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(451, 53);
-            this.layoutControlItem3.Text = "Năm";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(132, 16);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.txt_products_sold;
-            this.layoutControlItem4.Location = new System.Drawing.Point(451, 0);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(452, 29);
-            this.layoutControlItem4.Text = "Số sản phẩm bán được";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(132, 16);
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.txt_bonus_salary;
-            this.layoutControlItem5.Location = new System.Drawing.Point(451, 29);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(452, 29);
-            this.layoutControlItem5.Text = "Lương cộng thêm";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(132, 16);
+            this.layoutControlItem2.Size = new System.Drawing.Size(677, 30);
+            this.layoutControlItem2.Text = "Năm";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(53, 16);
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.txt_salary;
-            this.layoutControlItem6.Location = new System.Drawing.Point(451, 58);
+            this.layoutControlItem6.Control = this.cbSearch;
+            this.layoutControlItem6.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem6.CustomizationFormText = "Tìm kiếm";
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 41);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(452, 29);
-            this.layoutControlItem6.Text = "Lương tổng";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(132, 16);
-            // 
-            // layoutControl4
-            // 
-            this.layoutControl4.Controls.Add(this.btnTim);
-            this.layoutControl4.Controls.Add(this.txtSearch);
-            this.layoutControl4.Controls.Add(this.cbSearch);
-            this.layoutControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl4.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl4.Name = "layoutControl4";
-            this.layoutControl4.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(986, 0, 812, 500);
-            this.layoutControl4.Root = this.layoutControlGroup3;
-            this.layoutControl4.Size = new System.Drawing.Size(923, 97);
-            this.layoutControl4.TabIndex = 2;
-            this.layoutControl4.Text = "layoutControl4";
-            // 
-            // btnTim
-            // 
-            this.btnTim.Image = global::QuanLyTiemQuanAo.Properties.Resources.Search_16x16;
-            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTim.Location = new System.Drawing.Point(588, 12);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(79, 25);
-            this.btnTim.TabIndex = 190;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.UseVisualStyleBackColor = true;
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(420, 12);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(164, 25);
-            this.txtSearch.TabIndex = 189;
-            // 
-            // cbSearch
-            // 
-            this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(319, 12);
-            this.cbSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(97, 24);
-            this.cbSearch.TabIndex = 188;
-            // 
-            // layoutControlGroup3
-            // 
-            this.layoutControlGroup3.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup3.GroupBordersVisible = false;
-            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.emptySpaceItem2,
-            this.layoutControlItem7,
-            this.layoutControlItem8,
-            this.emptySpaceItem3,
-            this.emptySpaceItem4,
-            this.layoutControlItem9});
-            this.layoutControlGroup3.Name = "Root";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(923, 97);
-            this.layoutControlGroup3.TextVisible = false;
-            // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(408, 29);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(495, 48);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.Size = new System.Drawing.Size(366, 31);
+            this.layoutControlItem6.Text = "Tìm kiếm";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(53, 16);
             // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.cbSearch;
-            this.layoutControlItem7.Location = new System.Drawing.Point(242, 0);
+            this.layoutControlItem7.Control = this.txtSearch;
+            this.layoutControlItem7.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem7.CustomizationFormText = "layoutControlItem7";
+            this.layoutControlItem7.Location = new System.Drawing.Point(366, 41);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(166, 77);
-            this.layoutControlItem7.Text = "Tìm kiếm";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(53, 16);
+            this.layoutControlItem7.Size = new System.Drawing.Size(444, 31);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.txtSearch;
-            this.layoutControlItem8.Location = new System.Drawing.Point(408, 0);
+            this.layoutControlItem8.Control = this.btnTim;
+            this.layoutControlItem8.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem8.CustomizationFormText = "layoutControlItem8";
+            this.layoutControlItem8.Location = new System.Drawing.Point(810, 41);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(168, 29);
+            this.layoutControlItem8.Size = new System.Drawing.Size(444, 31);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
-            // emptySpaceItem3
+            // groupControl2
             // 
-            this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 0);
-            this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(242, 77);
-            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem4
-            // 
-            this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(659, 0);
-            this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(244, 29);
-            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.btnTim;
-            this.layoutControlItem9.Location = new System.Drawing.Point(576, 0);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(83, 29);
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem9.TextVisible = false;
+            this.groupControl2.Controls.Add(this.dgvMonthSummary);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(0, 0);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(1278, 329);
+            this.groupControl2.TabIndex = 0;
+            this.groupControl2.Text = "THÔNG TIN LƯƠNG";
             // 
             // dgvMonthSummary
             // 
@@ -472,15 +326,12 @@
             this.products_sold,
             this.bonus_salary,
             this.salary});
-            this.dgvMonthSummary.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgvMonthSummary.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMonthSummary.Location = new System.Drawing.Point(0, 0);
+            this.dgvMonthSummary.Location = new System.Drawing.Point(2, 28);
             this.dgvMonthSummary.Name = "dgvMonthSummary";
             this.dgvMonthSummary.RowHeadersWidth = 51;
-            this.dgvMonthSummary.RowTemplate.Height = 24;
-            this.dgvMonthSummary.Size = new System.Drawing.Size(927, 201);
-            this.dgvMonthSummary.TabIndex = 130;
-            this.dgvMonthSummary.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonthSummary_CellClick);
+            this.dgvMonthSummary.Size = new System.Drawing.Size(1274, 299);
+            this.dgvMonthSummary.TabIndex = 0;
             // 
             // employee_id
             // 
@@ -488,7 +339,7 @@
             this.employee_id.HeaderText = "Mã nhân viên";
             this.employee_id.MinimumWidth = 6;
             this.employee_id.Name = "employee_id";
-            this.employee_id.Width = 115;
+            this.employee_id.Width = 125;
             // 
             // summary_month
             // 
@@ -496,8 +347,7 @@
             this.summary_month.HeaderText = "Tháng";
             this.summary_month.MinimumWidth = 6;
             this.summary_month.Name = "summary_month";
-            this.summary_month.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.summary_month.Width = 75;
+            this.summary_month.Width = 125;
             // 
             // summary_year
             // 
@@ -505,16 +355,15 @@
             this.summary_year.HeaderText = "Năm";
             this.summary_year.MinimumWidth = 6;
             this.summary_year.Name = "summary_year";
-            this.summary_year.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.summary_year.Width = 75;
+            this.summary_year.Width = 125;
             // 
             // products_sold
             // 
             this.products_sold.DataPropertyName = "products_sold";
-            this.products_sold.HeaderText = "Số sản phẩm bán được";
+            this.products_sold.HeaderText = "Sản phẩm đã bán được trong tháng";
             this.products_sold.MinimumWidth = 6;
             this.products_sold.Name = "products_sold";
-            this.products_sold.Width = 175;
+            this.products_sold.Width = 125;
             // 
             // bonus_salary
             // 
@@ -522,7 +371,7 @@
             this.bonus_salary.HeaderText = "Lương cộng thêm";
             this.bonus_salary.MinimumWidth = 6;
             this.bonus_salary.Name = "bonus_salary";
-            this.bonus_salary.Width = 150;
+            this.bonus_salary.Width = 125;
             // 
             // salary
             // 
@@ -530,49 +379,39 @@
             this.salary.HeaderText = "Lương tổng";
             this.salary.MinimumWidth = 6;
             this.salary.Name = "salary";
-            this.salary.Width = 150;
+            this.salary.Width = 125;
             // 
             // frmMonthSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 515);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(1278, 510);
+            this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmMonthSummary";
-            this.Text = "Danh mục lương nhân viên";
+            this.Text = "Bảng tính lương";
             this.Load += new System.EventHandler(this.frmMonthSummary_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panel)).EndInit();
-            this.panel.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
+            this.splitContainerControl1.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).EndInit();
+            this.splitContainerControl1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
+            this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();
-            this.layoutControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonthSummary)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -581,47 +420,34 @@
 
         #endregion
 
+        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnThem;
+        private System.Windows.Forms.ToolStripButton btnSua;
         private System.Windows.Forms.ToolStripButton btnLuu;
         private System.Windows.Forms.ToolStripButton btnHuy;
         private System.Windows.Forms.ToolStripButton btnThoat;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private DevExpress.XtraEditors.GroupControl panel;
-        private System.Windows.Forms.DataGridView dgvMonthSummary;
-        private System.Windows.Forms.SplitContainer splitContainer2;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraLayout.LayoutControl layoutControl4;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
-        private System.Windows.Forms.TextBox txt_employee_id;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private System.Windows.Forms.ComboBox cb_summary_month;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private System.Windows.Forms.ComboBox cb_summary_year;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private System.Windows.Forms.TextBox txt_products_sold;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private System.Windows.Forms.TextBox txt_bonus_salary;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private System.Windows.Forms.TextBox txt_salary;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private System.Windows.Forms.ComboBox cb_summary_month;
+        private DevExpress.XtraLayout.LayoutControlGroup Root;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private System.Windows.Forms.DataGridView dgvMonthSummary;
         private System.Windows.Forms.ComboBox cbSearch;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private System.Windows.Forms.TextBox txtSearch;
+        private DevExpress.XtraEditors.SimpleButton btnTim;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
-        private System.Windows.Forms.Button btnTim;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private System.Windows.Forms.DataGridViewTextBoxColumn employee_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn summary_month;
         private System.Windows.Forms.DataGridViewTextBoxColumn summary_year;
         private System.Windows.Forms.DataGridViewTextBoxColumn products_sold;
         private System.Windows.Forms.DataGridViewTextBoxColumn bonus_salary;
         private System.Windows.Forms.DataGridViewTextBoxColumn salary;
-        private System.Windows.Forms.ToolStripButton btnSua;
     }
 }

@@ -83,6 +83,7 @@
             this.employee_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.work_status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -124,6 +125,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -215,7 +218,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvEmployee);
+            this.splitContainer1.Panel2.Controls.Add(this.groupControl1);
             this.splitContainer1.Size = new System.Drawing.Size(1419, 472);
             this.splitContainer1.SplitterDistance = 271;
             this.splitContainer1.TabIndex = 2;
@@ -603,11 +606,11 @@
             this.work_status});
             this.dgvEmployee.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgvEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEmployee.Location = new System.Drawing.Point(0, 0);
+            this.dgvEmployee.Location = new System.Drawing.Point(2, 28);
             this.dgvEmployee.Name = "dgvEmployee";
             this.dgvEmployee.RowHeadersWidth = 51;
             this.dgvEmployee.RowTemplate.Height = 24;
-            this.dgvEmployee.Size = new System.Drawing.Size(1419, 197);
+            this.dgvEmployee.Size = new System.Drawing.Size(1415, 167);
             this.dgvEmployee.TabIndex = 128;
             this.dgvEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellClick);
             // 
@@ -687,6 +690,16 @@
             this.work_status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.work_status.Width = 125;
             // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.dgvEmployee);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(1419, 197);
+            this.groupControl1.TabIndex = 129;
+            this.groupControl1.Text = "Bảng nhân viên";
+            // 
             // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -739,6 +752,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -801,5 +816,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraEditors.SimpleButton btSearch;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
     }
 }

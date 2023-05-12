@@ -16,6 +16,10 @@ namespace BALayer
         {
             db = new DAL(strConnect_local);
         }
+        public DataTable GetPurchaseOrder()
+        {
+            return db.ExecuteQueryDataTable("SELECT * FROM PurchaseOrder");
+        }
         public string GetDefaultOrderID()
         {
             return (string)db.MyExecuteScalar("SELECT DBO.AutoIDPurchaseOrder()");

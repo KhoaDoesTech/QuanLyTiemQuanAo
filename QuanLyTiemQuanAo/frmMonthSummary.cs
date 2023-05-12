@@ -29,12 +29,17 @@ namespace QuanLyTiemQuanAo
 
         public frmMonthSummary()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
         void LoadData()
         {
             try
             {
+                cbSearch.Items.Add("Mã nhân viên");
+                cbSearch.Items.Add("Tháng");
+                cbSearch.Items.Add("Năm");
+                cbSearch.Text = cbSearch.Items[0].ToString();
+
                 int month;
                 for (month = 1; month <= 12; month++)
                 {
@@ -57,8 +62,6 @@ namespace QuanLyTiemQuanAo
 
                 // Đưa dữ liệu lên DataGridView 
                 dgvMonthSummary.DataSource = dtMonthSummary;
-
-                
 
             }
             catch (SqlException e)
@@ -90,31 +93,19 @@ namespace QuanLyTiemQuanAo
 
         private void XoaTrong()
         {
-            txt_employee_id.ResetText();
             cb_summary_month.ResetText();
             cb_summary_year.ResetText();
-            txt_products_sold.ResetText();
-            txt_bonus_salary.ResetText();
-            txt_salary.ResetText();
             txtSearch.ResetText();
         }
         private void MoTuongTac()
         {
-            txt_employee_id.Enabled = false;
             cb_summary_month.Enabled = true;
             cb_summary_year.Enabled = true;
-            txt_products_sold.Enabled = true;
-            txt_bonus_salary.Enabled = true;
-            txt_salary.Enabled = true;
         }
         private void KhoaTuongTac()
         {
-            txt_employee_id.Enabled = false;
             cb_summary_month.Enabled = false;
             cb_summary_year.Enabled = false;
-            txt_products_sold.Enabled = false;
-            txt_bonus_salary.Enabled = false;
-            txt_salary.Enabled = false;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -123,7 +114,6 @@ namespace QuanLyTiemQuanAo
             XoaTrong();
             MoTuongTac();
             dgvMonthSummary.Enabled = false;
-            txt_employee_id.Focus();
             Them = true;
         }
         private void btnLuu_Click(object sender, EventArgs e)
@@ -207,7 +197,6 @@ namespace QuanLyTiemQuanAo
             KhoaHienThi();
             XoaTrong();
             MoTuongTac();
-            txt_employee_id.Focus();
             Them = false;
         }
 
@@ -222,10 +211,6 @@ namespace QuanLyTiemQuanAo
             //choose type to search
             dgvMonthSummary.DataSource = dt;
 
-            cbSearch.Items.Add("Mã nhân viên");
-            cbSearch.Items.Add("Tháng");
-            cbSearch.Items.Add("Năm");
-            cbSearch.Text = cbSearch.Items[0].ToString();
             int x = cbSearch.SelectedIndex;
             switch (x)
             {

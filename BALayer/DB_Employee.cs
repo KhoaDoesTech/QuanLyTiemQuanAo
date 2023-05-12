@@ -24,6 +24,10 @@ namespace BALayer
         {
             return db.ExecuteQueryDataTable("select * from Employee");
         }
+        public DataTable GetAccountEmployee()
+        {
+            return db.ExecuteQueryDataTable("select * from Employee where work_status = 1");
+        }
         public bool InsertEmployee(ref string err, string job_id,
             string full_name, string gender, DateTime birthday, string phone,
             string employee_address, string email, bool work_status)

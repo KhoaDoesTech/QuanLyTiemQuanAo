@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnLuu = new System.Windows.Forms.ToolStripButton();
+            this.btnThoat = new System.Windows.Forms.ToolStripButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.txt_passcodenew2 = new System.Windows.Forms.TextBox();
+            this.txt_passcodenew1 = new System.Windows.Forms.TextBox();
             this.txt_passcodeold = new System.Windows.Forms.TextBox();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.txt_passcodenew1 = new System.Windows.Forms.TextBox();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txt_passcodenew2 = new System.Windows.Forms.TextBox();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.btnLuu = new System.Windows.Forms.ToolStripButton();
-            this.btnThoat = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -77,6 +77,26 @@
             this.toolStrip1.Size = new System.Drawing.Size(1278, 47);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Image = global::QuanLyTiemQuanAo.Properties.Resources.Save_32x32;
+            this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(37, 44);
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Image = global::QuanLyTiemQuanAo.Properties.Resources.Action_Close_32x32;
+            this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(51, 44);
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // panelControl1
             // 
@@ -135,6 +155,27 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // txt_passcodenew2
+            // 
+            this.txt_passcodenew2.Location = new System.Drawing.Point(152, 143);
+            this.txt_passcodenew2.Name = "txt_passcodenew2";
+            this.txt_passcodenew2.Size = new System.Drawing.Size(606, 25);
+            this.txt_passcodenew2.TabIndex = 6;
+            // 
+            // txt_passcodenew1
+            // 
+            this.txt_passcodenew1.Location = new System.Drawing.Point(152, 74);
+            this.txt_passcodenew1.Name = "txt_passcodenew1";
+            this.txt_passcodenew1.Size = new System.Drawing.Size(606, 25);
+            this.txt_passcodenew1.TabIndex = 5;
+            // 
+            // txt_passcodeold
+            // 
+            this.txt_passcodeold.Location = new System.Drawing.Point(152, 12);
+            this.txt_passcodeold.Name = "txt_passcodeold";
+            this.txt_passcodeold.Size = new System.Drawing.Size(606, 25);
+            this.txt_passcodeold.TabIndex = 4;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -149,13 +190,6 @@
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(770, 314);
             this.Root.TextVisible = false;
-            // 
-            // txt_passcodeold
-            // 
-            this.txt_passcodeold.Location = new System.Drawing.Point(152, 12);
-            this.txt_passcodeold.Name = "txt_passcodeold";
-            this.txt_passcodeold.Size = new System.Drawing.Size(606, 25);
-            this.txt_passcodeold.TabIndex = 4;
             // 
             // layoutControlItem1
             // 
@@ -174,13 +208,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(750, 134);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // txt_passcodenew1
-            // 
-            this.txt_passcodenew1.Location = new System.Drawing.Point(152, 74);
-            this.txt_passcodenew1.Name = "txt_passcodenew1";
-            this.txt_passcodenew1.Size = new System.Drawing.Size(606, 25);
-            this.txt_passcodenew1.TabIndex = 5;
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txt_passcodenew1;
@@ -189,13 +216,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(750, 29);
             this.layoutControlItem2.Text = "Mật khẩu mới";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(128, 16);
-            // 
-            // txt_passcodenew2
-            // 
-            this.txt_passcodenew2.Location = new System.Drawing.Point(152, 143);
-            this.txt_passcodenew2.Name = "txt_passcodenew2";
-            this.txt_passcodenew2.Size = new System.Drawing.Size(606, 25);
-            this.txt_passcodenew2.TabIndex = 6;
             // 
             // layoutControlItem3
             // 
@@ -222,26 +242,6 @@
             this.emptySpaceItem3.Size = new System.Drawing.Size(750, 40);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // btnLuu
-            // 
-            this.btnLuu.Image = global::QuanLyTiemQuanAo.Properties.Resources.Save_32x32;
-            this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(37, 44);
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Image = global::QuanLyTiemQuanAo.Properties.Resources.Action_Close_32x32;
-            this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(51, 44);
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // frmChangePass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -253,7 +253,7 @@
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmChangePass";
-            this.Text = "frmChangePass";
+            this.Text = "Đổi mật khẩu";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

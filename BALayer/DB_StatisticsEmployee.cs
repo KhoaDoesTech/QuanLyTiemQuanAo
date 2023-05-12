@@ -18,8 +18,7 @@ namespace BALayer
         }
         public DataTable GetStatisticsEmployee(string branch_id)
         {
-            return db.ExecuteNonQueryDataTable("select * from DBO.GetStatisticsEmployee(@branch_id)",
-                new SqlParameter("@branch_id", branch_id));
+            return db.ExecuteQueryDataTable("select * from StatisticsEmployee where branch_id ='" + branch_id + "'");
         }
         public int GetEmployeeQuantity()
         {
@@ -27,13 +26,19 @@ namespace BALayer
         }
         public int GetBranchEmployeeQuantity(string branch_id)
         {
-            return (int)db.MyExecuteScalarNoQuery("select dbo.GetEmployeeQuantity(@branch_id)",
+            return (int)db.MyExecuteScalarNoQuery("select dbo.GetBranchEmployeeQuantity(@branch_id)",
                 new SqlParameter("@branch_id", branch_id));
         }
-        public DataTable GetMostSoldEmployee(string branch_id, int month, int year)
+        public DataTable GetBranchMostSoldEmployee(string branch_id, int month, int year)
         {
-            return db.ExecuteNonQueryDataTable("select * from DBO.GetMostSoldEmployee(@branch_id, @month, @year)",
+            return db.ExecuteNonQueryDataTable("select * from DBO.GetBranchMostSoldEmployee(@branch_id, @month, @year)",
                 new SqlParameter("@branch_id", branch_id),
+                new SqlParameter("@month", month),
+                new SqlParameter("@year", year));
+        }
+        public DataTable GetMostSoldEmployee(int month, int year)
+        {
+            return db.ExecuteNonQueryDataTable("select * from DBO.GetMostSoldEmployee(@month, @year)",
                 new SqlParameter("@month", month),
                 new SqlParameter("@year", year));
         }

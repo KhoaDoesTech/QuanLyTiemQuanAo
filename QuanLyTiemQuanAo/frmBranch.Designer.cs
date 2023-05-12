@@ -60,6 +60,7 @@
             this.branch_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.max_stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rent_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -81,6 +82,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBranch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -161,7 +164,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvBranch);
+            this.splitContainer1.Panel2.Controls.Add(this.groupControl1);
             this.splitContainer1.Size = new System.Drawing.Size(887, 448);
             this.splitContainer1.SplitterDistance = 173;
             this.splitContainer1.TabIndex = 2;
@@ -367,11 +370,11 @@
             this.max_stock,
             this.rent_amount});
             this.dgvBranch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBranch.Location = new System.Drawing.Point(0, 0);
+            this.dgvBranch.Location = new System.Drawing.Point(2, 28);
             this.dgvBranch.Name = "dgvBranch";
             this.dgvBranch.RowHeadersWidth = 51;
             this.dgvBranch.RowTemplate.Height = 24;
-            this.dgvBranch.Size = new System.Drawing.Size(887, 271);
+            this.dgvBranch.Size = new System.Drawing.Size(883, 241);
             this.dgvBranch.TabIndex = 2;
             this.dgvBranch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBranch_CellClick);
             // 
@@ -407,6 +410,16 @@
             this.rent_amount.Name = "rent_amount";
             this.rent_amount.Width = 200;
             // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.dgvBranch);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(887, 271);
+            this.groupControl1.TabIndex = 3;
+            this.groupControl1.Text = "Bảng chi nhánh";
+            // 
             // frmBranch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -415,7 +428,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmBranch";
-            this.Text = "Danh mục chi nhánh";
+            this.Text = "Quản lý chi nhánh";
             this.Load += new System.EventHandler(this.frmBranch_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -439,6 +452,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBranch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,5 +493,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
     }
 }

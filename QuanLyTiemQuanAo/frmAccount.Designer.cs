@@ -36,6 +36,7 @@
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txt_passcode = new System.Windows.Forms.TextBox();
@@ -54,16 +55,20 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.dgvAccount = new System.Windows.Forms.DataGridView();
             this.employee_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnXoa = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
             this.splitContainerControl1.Panel1.SuspendLayout();
@@ -83,6 +88,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +99,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnThem,
             this.btnSua,
+            this.btnXoa,
             this.btnLuu,
             this.btnHuy,
             this.btnThoat});
@@ -168,19 +176,29 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.splitContainerControl1);
+            this.splitContainer1.Panel1.Controls.Add(this.groupControl3);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvAccount);
+            this.splitContainer1.Panel2.Controls.Add(this.groupControl2);
             this.splitContainer1.Size = new System.Drawing.Size(1134, 470);
             this.splitContainer1.SplitterDistance = 208;
             this.splitContainer1.TabIndex = 5;
             // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.splitContainerControl1);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(0, 0);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(1134, 208);
+            this.groupControl3.TabIndex = 1;
+            this.groupControl3.Text = "Thông tin tài khoản";
+            // 
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl1.Location = new System.Drawing.Point(2, 28);
             this.splitContainerControl1.Name = "splitContainerControl1";
             // 
             // splitContainerControl1.Panel1
@@ -192,7 +210,7 @@
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.layoutControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1134, 208);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1130, 178);
             this.splitContainerControl1.SplitterPosition = 692;
             this.splitContainerControl1.TabIndex = 0;
             // 
@@ -205,7 +223,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(692, 208);
+            this.layoutControl1.Size = new System.Drawing.Size(692, 178);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -241,7 +259,7 @@
             this.layoutControlItem2,
             this.layoutControlItem3});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(692, 208);
+            this.Root.Size = new System.Drawing.Size(692, 178);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -258,7 +276,7 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 88);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(672, 100);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(672, 70);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -288,7 +306,7 @@
             this.layoutControl2.Location = new System.Drawing.Point(0, 0);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup1;
-            this.layoutControl2.Size = new System.Drawing.Size(430, 208);
+            this.layoutControl2.Size = new System.Drawing.Size(426, 178);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -297,9 +315,9 @@
             this.btnSearch.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Appearance.Options.UseFont = true;
             this.btnSearch.ImageOptions.Image = global::QuanLyTiemQuanAo.Properties.Resources.Search_16x16;
-            this.btnSearch.Location = new System.Drawing.Point(355, 12);
+            this.btnSearch.Location = new System.Drawing.Point(352, 12);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(63, 30);
+            this.btnSearch.Size = new System.Drawing.Size(62, 30);
             this.btnSearch.StyleController = this.layoutControl2;
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "Tìm";
@@ -307,9 +325,9 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(191, 12);
+            this.txtSearch.Location = new System.Drawing.Point(189, 12);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(160, 25);
+            this.txtSearch.Size = new System.Drawing.Size(159, 25);
             this.txtSearch.TabIndex = 9;
             // 
             // cbSearch
@@ -317,7 +335,7 @@
             this.cbSearch.FormattingEnabled = true;
             this.cbSearch.Location = new System.Drawing.Point(77, 12);
             this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(110, 24);
+            this.cbSearch.Size = new System.Drawing.Size(108, 24);
             this.cbSearch.TabIndex = 4;
             // 
             // layoutControlGroup1
@@ -329,7 +347,7 @@
             this.layoutControlItem5,
             this.layoutControlItem6});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(430, 208);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(426, 178);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem4
@@ -337,27 +355,37 @@
             this.layoutControlItem4.Control = this.cbSearch;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(179, 188);
+            this.layoutControlItem4.Size = new System.Drawing.Size(177, 158);
             this.layoutControlItem4.Text = "Tìm kiếm";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(53, 16);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtSearch;
-            this.layoutControlItem5.Location = new System.Drawing.Point(179, 0);
+            this.layoutControlItem5.Location = new System.Drawing.Point(177, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(164, 188);
+            this.layoutControlItem5.Size = new System.Drawing.Size(163, 158);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btnSearch;
-            this.layoutControlItem6.Location = new System.Drawing.Point(343, 0);
+            this.layoutControlItem6.Location = new System.Drawing.Point(340, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(67, 188);
+            this.layoutControlItem6.Size = new System.Drawing.Size(66, 158);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.dgvAccount);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(0, 0);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(1134, 258);
+            this.groupControl2.TabIndex = 1;
+            this.groupControl2.Text = "Bảng tài khoản";
             // 
             // dgvAccount
             // 
@@ -367,11 +395,11 @@
             this.username,
             this.passcode});
             this.dgvAccount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvAccount.Location = new System.Drawing.Point(0, 0);
+            this.dgvAccount.Location = new System.Drawing.Point(2, 28);
             this.dgvAccount.Name = "dgvAccount";
             this.dgvAccount.RowHeadersWidth = 51;
             this.dgvAccount.RowTemplate.Height = 24;
-            this.dgvAccount.Size = new System.Drawing.Size(1134, 258);
+            this.dgvAccount.Size = new System.Drawing.Size(1130, 228);
             this.dgvAccount.TabIndex = 0;
             this.dgvAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellClick);
             // 
@@ -399,6 +427,16 @@
             this.passcode.Name = "passcode";
             this.passcode.Width = 125;
             // 
+            // btnXoa
+            // 
+            this.btnXoa.Image = global::QuanLyTiemQuanAo.Properties.Resources.Trash_32x32;
+            this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(39, 44);
+            this.btnXoa.Text = "Xoá";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // frmAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -408,7 +446,7 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmAccount";
-            this.Text = "frmAccount";
+            this.Text = "Quản lý tài khoản";
             this.Load += new System.EventHandler(this.frmAccount_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -417,6 +455,8 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
             this.splitContainerControl1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).EndInit();
@@ -436,6 +476,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -474,5 +516,8 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn employee_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn passcode;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private System.Windows.Forms.ToolStripButton btnXoa;
     }
 }

@@ -60,6 +60,7 @@
     <Compile Include="DB_PurchaseOrder.cs" />
     <Compile Include="DB_StatisticsCustomer.cs" />
     <Compile Include="DB_StatisticsEmployee.cs" />
+    <Compile Include="DB_StatisticsProduct.cs" />
     <Compile Include="DB_Stock.cs" />
     <Compile Include="DB_StockImport.cs" />
     <Compile Include="DB_StockTransfer.cs" />

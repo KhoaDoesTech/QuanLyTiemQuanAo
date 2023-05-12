@@ -16,9 +16,9 @@ namespace BALayer
         {
             db = new DAL(strConnect_local);
         }
-        public DataTable GetStatisticsCustomer()
+        public DataTable GetStatisticsOrder()
         {
-            return db.ExecuteQueryDataTable("select * from GetStatisticsCustomer");
+            return db.ExecuteNonQueryDataTable("select * from GetStatisticsOrder");
         }
     }
 }

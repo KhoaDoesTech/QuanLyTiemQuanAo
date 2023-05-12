@@ -40,6 +40,14 @@ namespace QuanLyTiemQuanAo
                 dtJobTitle.Clear();
                 dtJobTitle = dbjt.GetJobTitle();
 
+                (dgvJobTitle.Columns["role_name"] as
+                DataGridViewComboBoxColumn).Items.Add("Staff");
+                (dgvJobTitle.Columns["role_name"] as
+                DataGridViewComboBoxColumn).Items.Add("sysadmin");
+
+                cb_role_name.Items.Add("Staff");
+                cb_role_name.Items.Add("sysadmin");
+
                 MoHienThi();
                 KhoaTuongTac();
 
@@ -126,7 +134,7 @@ namespace QuanLyTiemQuanAo
                 try
                 {
                     f = dbjt.InsertJobTitle(ref err, txt_job_title_name.Text,
-                        txt_job_description.Text);
+                        txt_job_description.Text, cb_role_name.SelectedValue.ToString());
                     if (f)
                     {
                         // Load lại dữ liệu trên DataGridView 
@@ -151,7 +159,7 @@ namespace QuanLyTiemQuanAo
                 {
                     f = dbjt.UpdateJobTitle(ref err, txt_job_title_id.Text,
                         txt_job_title_name.Text,
-                        txt_job_description.Text);
+                        txt_job_description.Text, cb_role_name.SelectedValue.ToString());
                     if (f)
                     {
                         // Load lại dữ liệu trên DataGridView 
@@ -201,7 +209,7 @@ namespace QuanLyTiemQuanAo
             dgvJobTitle.Rows[r].Cells[1].Value.ToString();
             txt_job_description.Text =
             dgvJobTitle.Rows[r].Cells[2].Value.ToString();
-            cb_role_name.SelectedValue =
+            cb_role_name.Text =
             dgvJobTitle.Rows[r].Cells[3].Value.ToString();
         }
         private void groupControl1_Paint(object sender, PaintEventArgs e)

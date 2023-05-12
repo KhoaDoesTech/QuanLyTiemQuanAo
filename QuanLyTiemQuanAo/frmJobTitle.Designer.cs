@@ -37,6 +37,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.cb_role_name = new System.Windows.Forms.ComboBox();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.btnTim = new DevExpress.XtraEditors.SimpleButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -53,13 +54,14 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dgvJobTitle = new System.Windows.Forms.DataGridView();
-            this.cb_role_name = new System.Windows.Forms.ComboBox();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.dgvJobTitle = new System.Windows.Forms.DataGridView();
             this.job_title_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.job_title_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.job_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.role_name = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -78,8 +80,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvJobTitle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJobTitle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -160,7 +165,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvJobTitle);
+            this.splitContainer1.Panel2.Controls.Add(this.groupControl1);
             this.splitContainer1.Size = new System.Drawing.Size(806, 434);
             this.splitContainer1.SplitterDistance = 167;
             this.splitContainer1.TabIndex = 3;
@@ -194,6 +199,14 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // cb_role_name
+            // 
+            this.cb_role_name.FormattingEnabled = true;
+            this.cb_role_name.Location = new System.Drawing.Point(166, 99);
+            this.cb_role_name.Name = "cb_role_name";
+            this.cb_role_name.Size = new System.Drawing.Size(216, 24);
+            this.cb_role_name.TabIndex = 181;
+            // 
             // xtraScrollableControl1
             // 
             this.xtraScrollableControl1.Location = new System.Drawing.Point(12, 139);
@@ -205,9 +218,9 @@
             // 
             this.btnTim.ImageOptions.Image = global::QuanLyTiemQuanAo.Properties.Resources.Search_16x16;
             this.btnTim.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnTim.Location = new System.Drawing.Point(407, 42);
+            this.btnTim.Location = new System.Drawing.Point(710, 12);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(362, 27);
+            this.btnTim.Size = new System.Drawing.Size(59, 27);
             this.btnTim.StyleController = this.layoutControl1;
             this.btnTim.TabIndex = 179;
             this.btnTim.Text = "Tìm";
@@ -215,41 +228,41 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(661, 12);
+            this.txtSearch.Location = new System.Drawing.Point(569, 12);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(108, 26);
+            this.txtSearch.Size = new System.Drawing.Size(137, 26);
             this.txtSearch.TabIndex = 178;
             // 
             // cbSearch
             // 
             this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(561, 12);
+            this.cbSearch.Location = new System.Drawing.Point(540, 12);
             this.cbSearch.Margin = new System.Windows.Forms.Padding(4);
             this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(96, 24);
+            this.cbSearch.Size = new System.Drawing.Size(25, 24);
             this.cbSearch.TabIndex = 177;
             // 
             // txt_job_title_name
             // 
             this.txt_job_title_name.Location = new System.Drawing.Point(166, 41);
             this.txt_job_title_name.Name = "txt_job_title_name";
-            this.txt_job_title_name.Size = new System.Drawing.Size(237, 25);
+            this.txt_job_title_name.Size = new System.Drawing.Size(216, 25);
             this.txt_job_title_name.TabIndex = 176;
             // 
             // txt_job_description
             // 
             this.txt_job_description.Location = new System.Drawing.Point(166, 70);
             this.txt_job_description.Name = "txt_job_description";
-            this.txt_job_description.Size = new System.Drawing.Size(237, 25);
+            this.txt_job_description.Size = new System.Drawing.Size(216, 25);
             this.txt_job_description.TabIndex = 171;
             // 
             // txt_job_title_id
             // 
             this.txt_job_title_id.Location = new System.Drawing.Point(166, 12);
             this.txt_job_title_id.Name = "txt_job_title_id";
-            this.txt_job_title_id.Size = new System.Drawing.Size(237, 25);
+            this.txt_job_title_id.Size = new System.Drawing.Size(216, 25);
             this.txt_job_title_id.TabIndex = 170;
             // 
             // Root
@@ -261,10 +274,11 @@
             this.emptySpaceItem1,
             this.layoutControlItem3,
             this.layoutControlItem4,
-            this.layoutControlItem5,
-            this.layoutControlItem2,
-            this.layoutControlItem6,
             this.layoutControlItem7,
+            this.layoutControlItem6,
+            this.layoutControlItem5,
+            this.emptySpaceItem2,
+            this.layoutControlItem2,
             this.layoutControlItem8});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(781, 152);
@@ -275,7 +289,7 @@
             this.layoutControlItem1.Control = this.txt_job_title_id;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(395, 29);
+            this.layoutControlItem1.Size = new System.Drawing.Size(374, 29);
             this.layoutControlItem1.Text = "Mã chức danh công việc";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(142, 16);
             // 
@@ -292,25 +306,25 @@
             this.layoutControlItem3.Control = this.txt_job_title_name;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 29);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(395, 29);
+            this.layoutControlItem3.Size = new System.Drawing.Size(374, 29);
             this.layoutControlItem3.Text = "Tên chức danh công việc";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(142, 16);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.cbSearch;
-            this.layoutControlItem4.Location = new System.Drawing.Point(395, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(374, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(254, 30);
+            this.layoutControlItem4.Size = new System.Drawing.Size(183, 30);
             this.layoutControlItem4.Text = "Tìm kiếm";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(142, 16);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtSearch;
-            this.layoutControlItem5.Location = new System.Drawing.Point(649, 0);
+            this.layoutControlItem5.Location = new System.Drawing.Point(557, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(112, 30);
+            this.layoutControlItem5.Size = new System.Drawing.Size(141, 30);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -319,16 +333,16 @@
             this.layoutControlItem2.Control = this.txt_job_description;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 58);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(395, 29);
+            this.layoutControlItem2.Size = new System.Drawing.Size(374, 29);
             this.layoutControlItem2.Text = "Miêu tả công việc";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(142, 16);
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btnTim;
-            this.layoutControlItem6.Location = new System.Drawing.Point(395, 30);
+            this.layoutControlItem6.Location = new System.Drawing.Point(698, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(366, 87);
+            this.layoutControlItem6.Size = new System.Drawing.Size(63, 117);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -341,6 +355,25 @@
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.cb_role_name;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 87);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(374, 30);
+            this.layoutControlItem8.Text = "Role name";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(142, 16);
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.dgvJobTitle);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(806, 263);
+            this.groupControl1.TabIndex = 4;
+            this.groupControl1.Text = "Bảng thông tin";
+            // 
             // dgvJobTitle
             // 
             this.dgvJobTitle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -350,30 +383,13 @@
             this.job_description,
             this.role_name});
             this.dgvJobTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvJobTitle.Location = new System.Drawing.Point(0, 0);
+            this.dgvJobTitle.Location = new System.Drawing.Point(2, 28);
             this.dgvJobTitle.Name = "dgvJobTitle";
             this.dgvJobTitle.RowHeadersWidth = 51;
             this.dgvJobTitle.RowTemplate.Height = 24;
-            this.dgvJobTitle.Size = new System.Drawing.Size(806, 263);
+            this.dgvJobTitle.Size = new System.Drawing.Size(802, 233);
             this.dgvJobTitle.TabIndex = 3;
             this.dgvJobTitle.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJobTitle_CellClick);
-            // 
-            // cb_role_name
-            // 
-            this.cb_role_name.FormattingEnabled = true;
-            this.cb_role_name.Location = new System.Drawing.Point(166, 99);
-            this.cb_role_name.Name = "cb_role_name";
-            this.cb_role_name.Size = new System.Drawing.Size(237, 24);
-            this.cb_role_name.TabIndex = 181;
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.cb_role_name;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 87);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(395, 30);
-            this.layoutControlItem8.Text = "Role name";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(142, 16);
             // 
             // job_title_id
             // 
@@ -407,6 +423,14 @@
             this.role_name.Name = "role_name";
             this.role_name.Width = 125;
             // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(374, 30);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(324, 87);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // frmJobTitle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -415,7 +439,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmJobTitle";
-            this.Text = "frmJobTitle";
+            this.Text = "Quản lý chức danh";
             this.Load += new System.EventHandler(this.frmJobTitle_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -436,8 +460,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvJobTitle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJobTitle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -477,5 +504,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn job_title_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn job_description;
         private System.Windows.Forms.DataGridViewComboBoxColumn role_name;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
     }
 }

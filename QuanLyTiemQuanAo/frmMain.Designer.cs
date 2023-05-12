@@ -98,7 +98,6 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -605,7 +604,6 @@
             this.barButtonItem43.Caption = "Đăng xuất";
             this.barButtonItem43.Id = 49;
             this.barButtonItem43.Name = "barButtonItem43";
-            this.barButtonItem43.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem43_ItemClick);
             // 
             // barButtonItem44
             // 
@@ -614,7 +612,6 @@
             this.barButtonItem44.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem44.ImageOptions.Image")));
             this.barButtonItem44.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem44.ImageOptions.LargeImage")));
             this.barButtonItem44.Name = "barButtonItem44";
-            this.barButtonItem44.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem44_ItemClick);
             // 
             // barButtonItem45
             // 
@@ -699,6 +696,7 @@
             // 
             // ribbonPageGroup14
             // 
+            this.ribbonPageGroup14.AllowTextClipping = false;
             this.ribbonPageGroup14.ItemLinks.Add(this.barButtonItem25);
             this.ribbonPageGroup14.ItemLinks.Add(this.barButtonItem26);
             this.ribbonPageGroup14.Name = "ribbonPageGroup14";
@@ -709,8 +707,7 @@
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup6,
             this.ribbonPageGroup15,
-            this.ribbonPageGroup16,
-            this.ribbonPageGroup17});
+            this.ribbonPageGroup16});
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "THỐNG KÊ";
             // 
@@ -724,21 +721,17 @@
             // 
             // ribbonPageGroup15
             // 
+            this.ribbonPageGroup15.AllowTextClipping = false;
             this.ribbonPageGroup15.ItemLinks.Add(this.barButtonItem36);
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
             this.ribbonPageGroup15.Text = "Sản phẩm";
             // 
             // ribbonPageGroup16
             // 
+            this.ribbonPageGroup16.AllowTextClipping = false;
             this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem34);
             this.ribbonPageGroup16.Name = "ribbonPageGroup16";
             this.ribbonPageGroup16.Text = "Nhân viên";
-            // 
-            // ribbonPageGroup17
-            // 
-            this.ribbonPageGroup17.ItemLinks.Add(this.barButtonItem33);
-            this.ribbonPageGroup17.Name = "ribbonPageGroup17";
-            this.ribbonPageGroup17.Text = "Kinh doanh";
             // 
             // ribbonPage5
             // 
@@ -773,9 +766,10 @@
             // 
             // ribbonPageGroup18
             // 
+            this.ribbonPageGroup18.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far;
             this.ribbonPageGroup18.ItemLinks.Add(this.barButtonItem45);
             this.ribbonPageGroup18.Name = "ribbonPageGroup18";
-            this.ribbonPageGroup18.Text = "Đăng nhập";
+            this.ribbonPageGroup18.Text = "Hệ thống";
             // 
             // ribbonStatusBar
             // 
@@ -820,7 +814,8 @@
             this.Name = "frmMain";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "frmMain";
+            this.Text = "CỬA HÀNG BÁN QUẦN ÁO";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
@@ -891,7 +886,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem31;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
         private DevExpress.XtraBars.BarButtonItem barButtonItem32;
         private DevExpress.XtraBars.BarButtonItem barButtonItem33;
         private DevExpress.XtraBars.BarButtonItem barButtonItem34;

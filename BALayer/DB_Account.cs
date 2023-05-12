@@ -45,5 +45,10 @@ namespace BALayer
                 new SqlParameter("@username", username),
                 new SqlParameter("@passcode", passcode));
         }
+        public bool DeleteAccounts(ref string err, string employee_id)
+        {
+            return db.MyExecuteNonQuery("SP_Delete_Accounts", ref err,
+                new SqlParameter("@employee_id", employee_id));
+        }
     }
 }
